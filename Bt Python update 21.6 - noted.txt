@@ -150,3 +150,119 @@ def bai_7(n):
         print("Không hợp lệ")
 n=int(input("Nhap vao mot so: "))    
 bai_7(n)
+
+#Đề bài
+# Cho một số nguyên dương n, hãy tìm số lượng các số từ 1 đến n mà tất cả các chữ số của chúng đều khác nhau.
+def dem_so(number):
+    digits = set()
+    while number > 0:
+        digit = number % 10 
+        if digit in digits:
+            return False
+        digits.add(digit)
+        number //= 10
+    return True
+
+def chay_so(n):
+    count = 0
+    for i in range(1, n + 1):
+        if dem_so(i):
+            count = count + 1
+    return count
+
+def dem_so_giong(numbers):
+    digitss = set()
+    while numbers > 0:
+        dig = numbers % 10
+        if dig in digitss:
+            return True
+        digitss.add(dig)
+        numbers //= 10
+    return False
+def chayy_so(nn):
+    countt = 0
+    for i in range(1, nn + 1):
+        if dem_so_giong(i):
+            countt = countt + 1
+    return countt
+
+n = 21
+nn = 20
+print(chay_so(n))
+print(chayy_so(nn))
+
+###
+def reverse_string(a):
+    return a[::-1]
+
+print(reverse_string("hello"))
+
+def is_palindrome(s):
+    return s == s[::-1]
+
+print(is_palindrome("racecar"))
+print(is_palindrome("python"))
+
+def second_largest(nums):
+    first, second = float('-inf'), float('-inf')
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif first > num > second:
+            second = num
+    return second
+
+print(second_largest([10, 20, 4, 45, 99]))
+
+def second_smallest(nums):
+    first, second = float('inf'), float('inf')
+    for num in nums:
+        if num < first:
+            second = first
+            first = num
+        elif first < num < second:
+            second = num
+    return second
+
+print(second_smallest([10, 20, 4, 45, 99]))
+
+def smallest(nums):
+    first = float('inf')
+    for num in nums:
+        if num < first:
+            first = num
+    return first
+
+print(smallest([10, 20, 4, 45, 99]))
+
+def sum_lists(nums):
+    total = 0
+    for num in nums:
+        total = total + num
+    return total
+print(sum_lists([1,3,5,7,9]))
+
+def sort_dict_by_value(d):
+    return dict(sorted(d.items(), key=lambda item: item[1]))
+
+my_dict = {'apple': 5, 'banana': 2, 'orange': 3}
+print(sort_dict_by_value(my_dict))
+
+def word_lists(word_list):
+    count_word = {}
+    for word in word_list:
+        if word in count_word:
+            count_word[word] = count_word[word] + 1
+        else:
+            count_word[word] = 1
+    return count_word
+print(word_lists(["apple", "banana", "apple", "banana"]))
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+print(factorial(4))
