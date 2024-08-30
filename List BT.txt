@@ -1,0 +1,21 @@
+Bài 1: Tạo 1 function có 2 biến, tính tổng 2 biến và in ra.
+Bài 2: Tạo 1 function có 0 biến, người dùng nhập 1 chuỗi. Sau đó in chuỗi ra theo dạng in hoa. Ex : cao quang khoa => CAO QUANG KHOA
+Bài 3: Tạo 1 function có 2 biến, người dùng nhập 2 biến số là số. Sau đó in ra số nào là số chẵn , số nào là số lẻ
+Bài 4: Tạo 1 function có 3 biến, ghép 3 biến lại thành 1 chuỗi có nghĩa. #1: "Khoa" #2: "Cao" #3: "Quang"
+Bài 5: Định nghĩa một class có ít nhất 2 method:
+getString: để nhận một chuỗi do người dùng nhập vào từ giao diện điều khiển.
+printUpperString: in chuỗi vừa nhập sang chữ hoa.
+printLowerString: in chuỗi vừa nhập sang chữ hoa.
+Thêm vào các hàm kiểm tra đơn giản để kiểm tra method của class.
+Bài 6: Viết function 2 biến tìm tất cả các số chia hết cho 7 nhưng không phải bội số của 5, nằm trong đoạn 2000 và 3200 (tính cả 2000 và 3200)
+Bài 7: Viết chương trình 1 biến, hãy viết chương trình để tạo ra một dictionary chứa (i, i*i) như là số nguyên từ 1 đến n (bao gồm cả 1 và n) sau đó in ra dictionary này. 
+#Ví dụ: Giả sử số n là 8 thì đầu ra sẽ là: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}. Neu ng dung nhap duoi 100 thi in ra la khong hop le , => 100 thi thuc thi
+Bài 8: Viết một function biến chuỗi input thành chuỗi đảo ngược. Exp: "hello" -> "olleh"
+Bài 9: Viết một function so sánh chuỗi input sau đảo ngược và chuỗi lúc ban đầu. Nếu giống nhau hàm trả về là hàm True và ngược lại nếu không thì hàm trả về là hàm False.
+Bài 10: Viết một function tìm một số lớn nhất trong một danh sách số nguyên.
+Bài 11: Viết một function tìm một số thứ hai lớn nhất trong một danh sách số nguyên.
+Bài 12: Viết một function tìm một số thứ hai nhỏ nhất trong một danh sách số nguyên.
+Bài 13: Viết một function tìm một số nhỏ nhất trong một danh sách số nguyên.
+Bài 14: Viết một function tìm tổng của danh sách số nguyên.
+Bài 15: Viết một function để đếm số lần xuất hiện của mỗi từ trong danh sách từ và trả về kết quả dưới dạng từ điển, với các từ là khóa và số lần xuất hiện của chúng là giá trị.
+Bài 16: Viết một hàm để tính giai thừa của một số nguyên không âm n bằng cách sử dụng đệ quy.

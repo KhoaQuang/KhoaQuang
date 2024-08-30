@@ -1,0 +1,152 @@
+#1. Tạo 1 function có 2 biến, tính tổng 2 biến và in ra.
+#function
+a = 1
+b = 2
+sum = a+b
+print (sum)
+=> Cũng đúng nhưng không hợp lệ theo yêu cầu đề bài nha em này đề bài là có hai biến thì khi tạo một funtion thì phải có def, def là đánh dấu bắt đầu của một function header và theo hai biến như đề bài
+=> sửa
+def bai_1(a, b):
+   print("a" + "b")
+   print(a + b)
+bai_1(2, 4)
+
+#2. Tạo 1 function có 0 biến, người dùng nhập 1 chuỗi. Sau đó in chuỗi ra theo dạng in hoa. Ex : cao quang khoa => CAO QUANG KHOA
+#function
+str=input("Nhập vào một chuỗi:")
+str_new= str.upper()
+print(str_new)
+=> Cũng đúng nhưng Không đúng theo cấu trúc của đề tương tự như câu 1 thì khi tạo một function thì phải có cấu trúc def 
+=> sửa
+def bai_2():
+    a = input("Nhap chuoi vao:")
+    print(a.upper())
+bai_2()
+
+#3. Tạo 1 function có 2 biến, người dùng nhập 2 biến số là số. Sau đó in ra số nào là số chẵn , số nào là số lẻ
+#function
+a = int(input("nhập số a:"))
+b = int(input("nhập số b:"))
+def kiemtrachanle(n):
+    if(n%2)==0:
+	print(n,"là số chẵn")
+    else:
+	print(n,"là số lẻ")
+kiemtrachanle(a)
+kiemtrachanle(b)
+
+=> Đúng theo định dạng của một function nhưng mà bài làm sai function đề bài cho là có hai biến mà function em cho chỉ có một biến 
+=> sửa
+a = input("nhập số a:")
+b = input("nhập số b:")
+def bai_3(a,b):
+    if (int(a) % 2) == 0:
+	    print(a + ' là số chẵn')
+    else:
+	    print(a + ' là số lẻ')
+    if (int(b) % 2) == 0:
+	    print(b + ' là số chẵn')
+    else:
+	    print(b + ' là số lẻ')
+bai_3(a,b)
+
+#4. Tạo 1 function có 3 biến, ghép 3 biến lại thành 1 chuỗi có nghĩa. #1: "Khoa" #2: "Cao" #3: "Quang"
+#function
+str1 = 'Cao '
+str2 = 'Quang '
+str3 = 'Khoa.'
+print(''.join([str1, str2,str3]))
+
+=> Đúng nhưng mà Không đúng theo cấu trúc của một function 
+=> sửa
+a = 'Khoa'
+b = 'Cao'
+c = 'Quang'
+def bai_4(a, b, c):
+    print(' '.join([b, c, a]))
+bai_4(a, b, c)
+
+def bai_4( a, b, c):
+	print("Cach 2: " + a + " " +  b + " " + c)
+bai_4("Cao" , "Quang" , "Khoa")
+
+def bai_4(*a):
+   print("Cach 3: " + a[1] + " " + a[2] + " " + a[0])
+bai_4("Khoa", "Cao", "Quang")
+
+#5. Định nghĩa một class có ít nhất 2 method:
+getString: để nhận một chuỗi do người dùng nhập vào từ giao diện điều khiển.
+printUpperString: in chuỗi vừa nhập sang chữ hoa.
+printLowerString: in chuỗi vừa nhập sang chữ hoa.
+Thêm vào các hàm kiểm tra đơn giản để kiểm tra method của class.
+
+#function
+class InputOutString(object):    
+    def __init__(self):        
+        self.s = ""    #Sử dụng __init__ để xây dựng các tham số.
+    def getString(self):       
+        self.s = input("Nhập chuỗi:")
+    def printUpperString(self):        
+        print (self.s.upper()) 
+    def printLowerString(self):        
+        print (self.s.lower()) 
+strObj = InputOutString()                      dung
+strObj.getString() 
+strObj.printUpperString()
+strObj.printLowerString()
+
+#6. Viết chương trình 2 biến tìm tất cả các số chia hết cho 7 nhưng không phải bội số của 5, nằm trong đoạn 2000 và 3200 (tính cả 2000 và 3200)
+#function
+j=[]
+for i in range(2000,3201):
+    if(i%7==0) and (i%5!=0):
+        j.append(str(i))
+print(','.join(j))                  
+=> khong dung theo yêu cầu đề bài là tạo function có 2 biến theo cấu trúc như là def bai(a,b): ...
+=> sửa
+def bai_6(a,b):
+    array = []
+    print("Bat dau function bai_1")
+    if 2000 < a < 3200 and 2000 < b < 3200:
+        print("a va b deu nam trong khoang hop le")
+        for a in range (2000,3201):
+            if (a % 7 == 0) and (a % 5 != 0):
+                array.append(str(a))
+        for b in range (2000,3201):
+            if (b % 7 == 0) and (b % 5 != 0):
+                array.append(str(b))
+        print(",".join(array))
+    else:
+        print("a or b khong hop le")
+    print("----end----")
+    
+a = 1999
+b = 3000
+#or
+#a = input ("Nhap vao so a")
+#b = input ("Nhap vao so b")
+bai_6(a,b)
+
+#7. Viết chương trình 1 biến, hãy viết chương trình để tạo ra một dictionary chứa (i, i*i) như là số nguyên từ 1 đến n (bao gồm cả 1 và n) sau đó in ra dictionary này. 
+#Ví dụ: Giả sử số n là 8 thì đầu ra sẽ là: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}. Neu ng dung nhap duoi 100 thi in ra la khong hop le , => 100 thi thuc thi 
+#function
+n=int(input("nhập số:"))
+if(n >= 100):
+    d=dict()
+    for i in range (1, n+1):
+        d[i]=i*i
+    print (d)
+else:print(n,"không hợp lệ")
+=> Đúng nhưng mà không đúng theo yêu cầu đề bài là tạo function có 1 biến theo cấu trúc như là def bai(a): ...
+def bai_7(n):
+    dd = dict()
+    print("Bắt đầu bai_2")
+    if n >=100: 
+        for i in range(1,n+1):
+            dd[i]=i*i 
+        print(dd)
+        print("Hơp lệ")
+    else: 
+        print("Không hợp lệ")
+n=int(input("Nhap vao mot so: "))    
+bai_7(n)
