@@ -1,0 +1,16 @@
+*** Add branch new:
+git init 
+git remote add origin https://github.com/KhoaQuang/KhoaQuang.git
+git remote -v
+git branch -a
+
+Nếu chưa có get được branch nào hết thì 
+git fetch origin
+git checkout branch_name Ex: remotes/origin/frontend-app = git checkout frontend-app
+
+*** Pull code:
+git pull 
+git status
+git add 
+git commit -m "note... "
+git push origin frontend-app
