@@ -1,68 +1,233 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.13.3 on win32)" generated="2026-01-15T10:59:30.849831" rpa="false" schemaversion="5">
-<suite id="s1" name="Khoa2" source="e:\Backupwin11\Launch-auto\TESTS\Khoa2.robot">
-<test id="s1-t1" name="Simple Web Client Test" line="21">
-<kw name="Create Web Client" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-15T10:59:30.996844" level="INFO">https://10.103.3.58/iview/views/index.jsf</msg>
-<msg time="2026-01-15T10:59:30.998147" level="INFO">Start function _setup_chrome</msg>
-<msg time="2026-01-15T10:59:30.998822" level="INFO">Setting up chrome driver</msg>
-<msg time="2026-01-15T10:59:30.999105" level="INFO">Using local chrome driver at C:\Auto_Browsers\chromedriver.exe</msg>
-<msg time="2026-01-15T10:59:38.534239" level="INFO">chrome driver setup successfully</msg>
-<msg time="2026-01-15T10:59:38.535092" level="INFO">Navigating to URL: https://10.103.3.58/iview/views/index.jsf</msg>
-<msg time="2026-01-15T10:59:39.017999" level="INFO">Web Client created successfully</msg>
-<arg>${BROWSER}</arg>
-<arg>${CLIENT}</arg>
-<arg>${IVIEW}</arg>
-<doc>Create Web_Clients instance and store it internally</doc>
-<status status="PASS" start="2026-01-15T10:59:30.877372" elapsed="8.141127"/>
+<robot generator="Robot 7.0.1 (Python 3.13.3 on win32)" generated="2026-01-15T15:34:21.749881" rpa="false" schemaversion="5">
+<suite id="s1" name="Khoa1" source="e:\Backupwin11\Launch-auto\TESTS\Khoa1.robot">
+<test id="s1-t1" name="Simple Web Client Test" line="15">
+<kw name="Create Web Client" type="SETUP">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2026-01-15T15:34:21.818699" level="INFO" html="true">Directory '&lt;a href="file://e:\Backupwin11\Launch-auto\LOGS"&gt;e:\Backupwin11\Launch-auto\LOGS&lt;/a&gt;' already exists.</msg>
+<arg>e:\\Backupwin11\\Launch-auto\\TESTS${/}..${/}LOGS</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2026-01-15T15:34:21.818189" elapsed="0.003751"/>
 </kw>
-<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-15T10:59:39.020683" level="INFO">Attempting to sign in</msg>
-<msg time="2026-01-15T10:59:41.622718" level="INFO">Successfully signed in - logout button detected</msg>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>__import__('sys').path.append(r'E:\\Backupwin11\\Launch-auto')</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-15T15:34:21.822367" elapsed="0.000740"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-15T15:34:22.234669" level="INFO">https://10.103.3.58/iview/views/index.jsf</msg>
+<msg time="2026-01-15T15:34:22.235500" level="INFO">Start function _setup_chrome</msg>
+<msg time="2026-01-15T15:34:22.236832" level="INFO">Setting up chrome driver</msg>
+<msg time="2026-01-15T15:34:22.237731" level="INFO">Using local chrome driver at C:\Auto_Browsers\chromedriver.exe</msg>
+<msg time="2026-01-15T15:34:24.959693" level="INFO">chrome driver setup successfully</msg>
+<msg time="2026-01-15T15:34:24.960752" level="INFO">Navigating to URL: https://10.103.3.58/iview/views/index.jsf</msg>
+<msg time="2026-01-15T15:34:25.240959" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x00000180E5F24440&gt;</msg>
+<var>${wc}</var>
+<arg>__import__('importlib').import_module('GUI.Web_function.Web_clients').Web_Clients('${BROWSER}', ${CLIENT}, ${IVIEW}, use_local_driver=True)</arg>
+<arg>importlib</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-15T15:34:21.823544" elapsed="3.420336"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-01-15T15:34:25.247491" level="INFO">${WEB_CLIENT} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x00000180E5F24440&gt;</msg>
+<arg>${WEB_CLIENT}</arg>
+<arg>${wc}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-01-15T15:34:25.245228" elapsed="0.002627"/>
+</kw>
+<status status="PASS" start="2026-01-15T15:34:21.816086" elapsed="3.432024"/>
+</kw>
+<kw name="Sign In">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-01-15T15:34:25.250368" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x00000180E5F24440&gt;</msg>
+<var>${wc}</var>
+<arg>${WEB_CLIENT}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-01-15T15:34:25.249746" elapsed="0.000915"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${wc}' == 'None'</arg>
+<arg>Fail</arg>
+<arg>Browser instance not initialized</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-15T15:34:25.251249" elapsed="0.000617"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-15T15:34:30.253201" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-15T15:34:25.252233" elapsed="5.001221"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-01-15T15:34:30.253903" level="INFO">Attempting to sign in</msg>
+<msg time="2026-01-15T15:34:32.854420" level="INFO">Successfully signed in - logout button detected</msg>
+<arg>${wc}</arg>
 <arg>sign_in</arg>
-<doc>Call ANY method from Web_Clients dynamically</doc>
-<status status="PASS" start="2026-01-15T10:59:39.019682" elapsed="2.603475"/>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-15T15:34:30.253637" elapsed="2.601216"/>
 </kw>
-<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-15T10:59:41.624283" level="INFO">Attempting to open settings</msg>
-<msg time="2026-01-15T10:59:41.695047" level="INFO">Settings button clicked successfully</msg>
+<status status="PASS" start="2026-01-15T15:34:25.249027" elapsed="7.606061"/>
+</kw>
+<kw name="Tab Settings">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-01-15T15:34:32.856903" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x00000180E5F24440&gt;</msg>
+<var>${wc}</var>
+<arg>${WEB_CLIENT}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-01-15T15:34:32.856370" elapsed="0.000737"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${wc}' == 'None'</arg>
+<arg>Fail</arg>
+<arg>Browser instance not initialized</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-15T15:34:32.857349" elapsed="0.000304"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-15T15:34:37.858403" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-15T15:34:32.857864" elapsed="5.000832"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-01-15T15:34:37.859210" level="INFO">Attempting to open settings</msg>
+<msg time="2026-01-15T15:34:37.949833" level="INFO">Settings button clicked successfully</msg>
+<arg>${wc}</arg>
 <arg>open_settings</arg>
-<doc>Call ANY method from Web_Clients dynamically</doc>
-<status status="PASS" start="2026-01-15T10:59:41.623911" elapsed="0.071680"/>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-15T15:34:37.858900" elapsed="0.091456"/>
 </kw>
-<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-15T10:59:41.696948" level="INFO">Attempting to open user portal</msg>
-<msg time="2026-01-15T10:59:42.261617" level="INFO">User portal link clicked</msg>
-<msg time="2026-01-15T10:59:42.273163" level="INFO">User portal page loaded successfully</msg>
+<status status="PASS" start="2026-01-15T15:34:32.855797" elapsed="5.094787"/>
+</kw>
+<kw name="Tab User Portal">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-01-15T15:34:37.951975" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x00000180E5F24440&gt;</msg>
+<var>${wc}</var>
+<arg>${WEB_CLIENT}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-01-15T15:34:37.951719" elapsed="0.000486"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${wc}' == 'None'</arg>
+<arg>Fail</arg>
+<arg>Browser instance not initialized</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-15T15:34:37.952925" elapsed="0.000680"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-15T15:34:42.954543" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-15T15:34:37.953912" elapsed="5.000931"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-01-15T15:34:42.955469" level="INFO">Attempting to open user portal</msg>
+<msg time="2026-01-15T15:34:43.024764" level="INFO">User portal link clicked</msg>
+<msg time="2026-01-15T15:34:43.038964" level="INFO">User portal page loaded successfully</msg>
+<arg>${wc}</arg>
 <arg>open_user_portal</arg>
-<doc>Call ANY method from Web_Clients dynamically</doc>
-<status status="PASS" start="2026-01-15T10:59:41.696437" elapsed="0.577064"/>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-15T15:34:42.955113" elapsed="0.084241"/>
 </kw>
-<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-15T10:59:42.274214" level="INFO">Attempting to open custom branding option</msg>
-<msg time="2026-01-15T10:59:42.805158" level="INFO">Custom branding option is visible</msg>
-<msg time="2026-01-15T10:59:42.858325" level="INFO">Custom branding option clicked successfully</msg>
-<msg time="2026-01-15T10:59:42.858778" level="INFO">Waiting for Custom Branding content</msg>
-<msg time="2026-01-15T10:59:42.859045" level="INFO">Waiting for title locator: ('xpath', "//span[normalize-space()='Organization']")</msg>
-<msg time="2026-01-15T10:59:42.859304" level="INFO">Custom Branding content loaded</msg>
+<status status="PASS" start="2026-01-15T15:34:37.951243" elapsed="5.088308"/>
+</kw>
+<kw name="Tab Custom Branding">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-01-15T15:34:43.041095" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x00000180E5F24440&gt;</msg>
+<var>${wc}</var>
+<arg>${WEB_CLIENT}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-01-15T15:34:43.040693" elapsed="0.000619"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${wc}' == 'None'</arg>
+<arg>Fail</arg>
+<arg>Browser instance not initialized</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-15T15:34:43.041600" elapsed="0.000497"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-15T15:34:48.043739" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-15T15:34:43.042420" elapsed="5.001869"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-01-15T15:34:48.044741" level="INFO">Attempting to open custom branding option</msg>
+<msg time="2026-01-15T15:34:48.068806" level="INFO">Custom branding option is visible</msg>
+<msg time="2026-01-15T15:34:48.120606" level="INFO">Custom branding option clicked successfully</msg>
+<msg time="2026-01-15T15:34:48.121187" level="INFO">Waiting for Custom Branding content</msg>
+<msg time="2026-01-15T15:34:48.121511" level="INFO">Waiting for title locator: ('xpath', "//span[normalize-space()='Organization']")</msg>
+<msg time="2026-01-15T15:34:48.121774" level="INFO">Custom Branding content loaded</msg>
+<arg>${wc}</arg>
 <arg>pressing_option_custom_branding</arg>
-<doc>Call ANY method from Web_Clients dynamically</doc>
-<status status="PASS" start="2026-01-15T10:59:42.273939" elapsed="0.585614"/>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-15T15:34:48.044476" elapsed="0.077733"/>
 </kw>
-<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-15T10:59:42.860562" level="INFO">Attempting to sign out</msg>
-<msg time="2026-01-15T10:59:42.943348" level="INFO">Successfully signed out</msg>
+<status status="PASS" start="2026-01-15T15:34:43.040136" elapsed="5.082449"/>
+</kw>
+<kw name="Sign Out">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-01-15T15:34:48.126044" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x00000180E5F24440&gt;</msg>
+<var>${wc}</var>
+<arg>${WEB_CLIENT}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-01-15T15:34:48.124745" elapsed="0.002039"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${wc}' == 'None'</arg>
+<arg>Fail</arg>
+<arg>Browser instance not initialized</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-15T15:34:48.127309" elapsed="0.000861"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-15T15:34:53.129544" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-15T15:34:48.128579" elapsed="5.001183"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-01-15T15:34:53.130196" level="INFO">Attempting to sign out</msg>
+<msg time="2026-01-15T15:34:53.180860" level="INFO">Successfully signed out</msg>
+<arg>${wc}</arg>
 <arg>sign_out</arg>
-<doc>Call ANY method from Web_Clients dynamically</doc>
-<status status="PASS" start="2026-01-15T10:59:42.860137" elapsed="0.083577"/>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-15T15:34:53.129944" elapsed="0.051451"/>
 </kw>
-<status status="PASS" start="2026-01-15T10:59:30.876704" elapsed="12.067548"/>
+<status status="PASS" start="2026-01-15T15:34:48.123895" elapsed="5.057713"/>
+</kw>
+<kw name="Quit Browser" type="TEARDOWN">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-01-15T15:34:53.183823" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x00000180E5F24440&gt;</msg>
+<var>${wc}</var>
+<arg>${WEB_CLIENT}</arg>
+<arg>None</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-01-15T15:34:53.183545" elapsed="0.000418"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2026-01-15T15:34:53.184799" level="INFO">Attempting to quit the browser</msg>
+<msg time="2026-01-15T15:34:55.739624" level="INFO">Browser quit successfully</msg>
+<arg>${wc}</arg>
+<arg>quit</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-01-15T15:34:53.184443" elapsed="2.555714"/>
+</kw>
+<arg>'${wc}' != 'None'</arg>
+<arg>Call Method</arg>
+<arg>${wc}</arg>
+<arg>quit</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-15T15:34:53.184126" elapsed="2.556187"/>
+</kw>
+<status status="PASS" start="2026-01-15T15:34:53.183125" elapsed="2.557322"/>
+</kw>
+<status status="PASS" start="2026-01-15T15:34:21.814867" elapsed="33.926004"/>
 </test>
-<kw name="Safe Quit Browser" owner="Libraries.web_client_library.WebClientLibrary" type="TEARDOWN">
-<doc>ALWAYS safe to call in teardown</doc>
-<status status="PASS" start="2026-01-15T10:59:45.387354" elapsed="0.000246"/>
-</kw>
-<status status="PASS" start="2026-01-15T10:59:30.854143" elapsed="14.533560"/>
+<status status="PASS" start="2026-01-15T15:34:21.758398" elapsed="33.984050"/>
 </suite>
 <statistics>
 <total>
@@ -71,7 +236,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Khoa2">Khoa2</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Khoa1">Khoa1</stat>
 </suite>
 </statistics>
 <errors>

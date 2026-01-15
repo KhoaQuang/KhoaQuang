@@ -1,11 +1,7 @@
-import sys
-import os
-import time
+import sys,os,time
 import logging
 import datetime
-import unittest
-import inspect
-import re
+import unittest,inspect,re
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select

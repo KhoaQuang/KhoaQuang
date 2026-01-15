@@ -1,7 +1,7 @@
 *** Settings ***
 Library     Collections
 Library     OperatingSystem
-Library     DataDriver    ${TRUE}    WITH NAME       user_profile
+# Library     DataDriver    ${TRUE}    WITH NAME       user_profile
 
 *** Keywords ***
 GET
