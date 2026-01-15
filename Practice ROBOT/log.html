@@ -5,7 +5,11 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< Updated upstream:Practice ROBOT/log.html
 <meta content="Robot Framework 7.0.1 (Python 3.11.9 on win32)" name="Generator">
+=======
+<meta content="Robot Framework 7.3.2 (Python 3.13.3 on win32)" name="Generator">
+>>>>>>> Stashed changes:LOGS/log.html
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -724,10 +728,13 @@ function toggleSuite(suiteId) {
     toggleElement(suiteId, ['keyword', 'suite', 'test']);
 }
 function toggleTest(testId) {
-    toggleElement(testId, ['keyword']);
     var test = window.testdata.findLoaded(testId);
-    if (test.status == "FAIL" || test.status == "SKIP")
+    var autoExpand = test.status == "FAIL" || test.status == "SKIP";
+    var closed = $('#' + testId).children('.element-header').hasClass('closed');
+    if (autoExpand && closed)
         expandFailed(test);
+    else
+        toggleElement(testId, ['keyword']);
 }
 function toggleKeyword(kwId) {
     toggleElement(kwId, ['keyword']);
@@ -1252,58 +1259,48 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0) {
+        if (total == 0)
             return [0.0, 0.0, 0.0];
-        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1
+            pass = 0.1;
         if (fail > 0 && fail < 0.1)
-            fail = 0.1
+            fail = 0.1;
         if (skip > 0 && skip < 0.1)
-            skip = 0.1
+            skip = 0.1;
         if (pass > 99.95 && pass < 100)
-            pass = 99.9
+            pass = 99.9;
         if (fail > 99.95 && fail < 100)
-            fail = 99.9
+            fail = 99.9;
         if (skip > 99.95 && skip < 100)
-            skip = 99.9
-        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
+            skip = 99.9;
+        return [round1(pass), round1(skip), round1(fail)];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1
+            num1 = 1.0;
         if (num2 > 0 && num2 < 1)
-            num2 = 1
+            num2 = 1.0;
         if (num3 > 0 && num3 < 1)
-            num3 = 1
+            num3 = 1.0;
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 > num2 && num1 > num3)
-                num1 -= 0.1;
-            else if (num2 > num1 && num2 > num3)
-                num2 -= 0.1;
-            else if (num3 > num1 && num3 > num2)
-                num3 -= 0.1;
-            else if (num1 > num3 && num1 == num2) {
-                num1 -= 0.1;
-                num2 -= 0.1;
-            }
-            else if (num1 > num2 && num1 == num3) {
-                num1 -= 0.1;
-                num3 -= 0.1;
-            }
-            else if (num2 > num1 && num2 == num3) {
-                num2 -= 0.1;
-                num3 -= 0.1;
-            }
+            if (num1 >= num2 && num1 >= num3)
+                num1 = round1(num1 - 0.1);
+            else if (num2 >= num1 && num2 >= num3)
+                num2 = round1(num2 - 0.1);
+            else
+                num3 = round1(num3 - 0.1);
         }
-        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
+        return [num1, num2, num3];
+    }
+    function round1(num) {
+        return Math.round(num*10) / 10;
     }
     return {
         Statistics: Statistics
@@ -1522,7 +1519,7 @@ window.testdata = function () {
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
                          'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -2081,31 +2078,49 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
+<<<<<<< Updated upstream:Practice ROBOT/log.html
 window.output["suite"] = [1,2,3,0,[],[1,0,37189],[],[[4,0,0,[],[1,230,36958],[[1,5,0,0,0,6,0,0,[1,231,6601],[[0,7,0,0,0,0,0,0,[1,231,4],[[0,8,9,0,10,11,12,0,[1,232,2],[[233,2,13],[234,2,14]]],[0,15,9,0,16,12,0,0,[1,235,0],[[235,2,14]]]]],[0,17,9,0,18,19,0,0,[1,235,6597],[[6832,2,20]]]]],[0,21,0,0,0,22,0,0,[1,6833,13169],[[0,17,9,0,18,23,0,0,[1,6833,13169],[[20002,2,24]]]]],[0,25,0,0,0,0,0,0,[1,20002,5040],[[0,17,9,0,18,26,0,0,[1,20003,5039],[[25042,2,27]]]]],[0,28,0,0,0,0,0,0,[1,25043,12143],[[0,29,9,0,30,31,0,0,[1,25043,12143],[[0,17,9,0,18,32,0,0,[1,25043,12143],[[37187,2,33]]]]]]],[2,34,9,0,35,28,0,0,[1,37188,0],[]]]]],[],[1,1,0,0]];
+=======
+window.output["suite"] = [1,2,3,0,[],[1,0,36237],[],[[4,0,0,[],[1,52,36184],[[1,5,0,0,0,0,0,0,[1,53,3816],[[0,6,7,0,8,9,0,0,[1,53,0],[[54,2,10]]],[0,11,12,0,13,14,0,0,[1,54,0],[]],[0,11,12,0,13,15,16,0,[1,54,3811],[[1248,2,17],[1248,2,18],[1249,2,19],[1249,2,20],[1250,1,21],[1633,1,22],[2169,1,23],[2169,1,24],[3409,1,25],[3409,1,26],[3409,1,27],[3410,1,28],[3439,1,29],[3439,1,30],[3439,1,27],[3439,1,31],[3551,1,32],[3551,1,33],[3551,1,27],[3551,2,34],[3552,2,35],[3552,1,36],[3864,1,37],[3865,1,38],[3865,1,27],[3865,2,39]]],[0,40,12,0,41,42,0,0,[1,3866,2],[[3868,2,43]]]]],[0,44,0,0,0,0,0,0,[1,3872,9525],[[0,45,12,0,46,47,16,0,[1,3873,1],[[3874,2,39]]],[0,48,12,0,49,50,0,0,[1,3875,1],[]],[0,51,12,0,52,53,0,0,[1,3876,5001],[[8877,2,54]]],[0,55,12,0,56,57,0,0,[1,8877,4519],[[8877,2,58],[8878,1,59],[8889,1,60],[8889,1,61],[8889,1,27],[8890,1,62],[8938,1,63],[8938,1,38],[8938,1,27],[8938,1,64],[8956,1,65],[8956,1,38],[8956,1,27],[8956,1,66],[8980,1,67],[8980,1,38],[8980,1,27],[8980,1,68],[8980,1,69],[8987,1,60],[8987,1,70],[8987,1,27],[8988,1,71],[9023,1,72],[9023,1,38],[9023,1,27],[9023,1,73],[9023,1,74],[9040,1,60],[9040,1,75],[9041,1,27],[9041,1,76],[9082,1,77],[9082,1,38],[9082,1,27],[9082,1,78],[9082,1,79],[9093,1,80],[9093,1,81],[9093,1,27],[9594,1,79],[9601,1,80],[9601,1,81],[9601,1,27],[10102,1,79],[10109,1,80],[10109,1,81],[10110,1,27],[10610,1,79],[10618,1,80],[10618,1,81],[10618,1,27],[11119,1,79],[13396,1,60],[13396,1,82],[13396,1,27],[13396,2,83]]]]],[0,84,0,0,0,0,0,0,[1,13397,5066],[[0,45,12,0,46,47,16,0,[1,13397,0],[[13398,2,39]]],[0,48,12,0,49,50,0,0,[1,13398,0],[]],[0,51,12,0,52,53,0,0,[1,13398,5001],[[18398,2,54]]],[0,55,12,0,56,85,0,0,[1,18399,64],[[18399,2,86],[18399,1,87],[18408,1,60],[18409,1,88],[18409,1,27],[18411,1,89],[18419,1,90],[18419,1,91],[18419,1,27],[18419,1,92],[18424,1,93],[18424,1,91],[18424,1,27],[18424,1,94],[18462,1,95],[18462,1,38],[18462,1,27],[18462,2,96]]]]],[0,97,0,0,0,0,0,0,[1,18463,5068],[[0,45,12,0,46,47,16,0,[1,18463,0],[[18464,2,39]]],[0,48,12,0,49,50,0,0,[1,18464,0],[]],[0,51,12,0,52,53,0,0,[1,18464,5001],[[23465,2,54]]],[0,55,12,0,56,98,0,0,[1,23465,66],[[23465,2,99],[23466,1,100],[23476,1,60],[23476,1,101],[23476,1,27],[23476,1,102],[23484,1,90],[23484,1,91],[23484,1,27],[23484,1,103],[23488,1,104],[23488,1,91],[23488,1,27],[23488,1,105],[23522,1,106],[23522,1,38],[23522,1,27],[23522,2,107],[23522,1,108],[23531,1,60],[23531,1,109],[23531,1,27],[23531,2,110]]]]],[0,111,0,0,0,0,0,0,[1,23531,5095],[[0,45,12,0,46,47,16,0,[1,23532,0],[[23532,2,39]]],[0,48,12,0,49,50,0,0,[1,23532,0],[]],[0,51,12,0,52,53,0,0,[1,23532,5000],[[28532,2,54]]],[0,55,12,0,56,112,0,0,[1,28533,94],[[28533,2,113],[28533,1,114],[28553,1,60],[28553,1,115],[28553,1,27],[28554,1,116],[28563,1,90],[28563,1,91],[28563,1,27],[28563,1,117],[28570,1,118],[28570,1,91],[28571,1,27],[28571,2,119],[28571,1,120],[28577,1,90],[28577,1,38],[28577,1,27],[28577,1,121],[28626,1,122],[28626,1,38],[28626,1,27],[28626,2,123],[28626,2,124],[28626,2,125],[28626,2,126]]]]],[0,127,0,0,0,0,0,0,[1,28627,5057],[[0,45,12,0,46,47,16,0,[1,28628,0],[[28628,2,39]]],[0,48,12,0,49,50,0,0,[1,28629,0],[]],[0,51,12,0,52,53,0,0,[1,28629,5001],[[33630,2,54]]],[0,55,12,0,56,128,0,0,[1,33630,55],[[33630,2,129],[33630,1,79],[33637,1,60],[33637,1,82],[33637,1,27],[33637,1,130],[33642,1,90],[33642,1,91],[33643,1,27],[33643,1,131],[33648,1,132],[33648,1,91],[33648,1,27],[33649,1,133],[33684,1,134],[33684,1,38],[33684,1,27],[33684,2,135]]]]],[2,136,0,0,0,0,0,0,[1,33685,2551],[[0,45,12,0,46,137,16,0,[1,33686,0],[[33686,2,39]]],[0,48,12,0,49,138,0,0,[1,33687,2549],[[0,55,12,0,56,139,0,0,[1,33687,2549],[[33687,2,140],[33687,1,141],[34078,1,142],[34078,1,38],[34078,1,27],[36235,2,143]]]]]]]]]],[],[1,1,0,0]];
+>>>>>>> Stashed changes:LOGS/log.html
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
+<<<<<<< Updated upstream:Practice ROBOT/log.html
 window.output["strings"] = window.output["strings"].concat(["*","*Khoa1","*c:\\Backup-HDD-Khoa\\Practice ROBOT\\TESTS\\Khoa1.robot","eNqzSVTIKEpNs1VKy8xJtdLX13e20ndKTM4uLdD1cHHR9c7IT9QPKEpMLslMTlU1Mgjyd/IP0Q9xDQ4J1gfJGeoV5SfllyjZUaTdRj/RDgCOeysY","*Test Browser Automation","*Open Browser And Navigate To URL","*${url}","*Initialize Browser Automation","*Evaluate","*BuiltIn","*<p>Evaluates the given expression in Python and returns the result.\x3c/p>","*Khoa.Web()    modules=Khoa","*${BROWSER}","*Create a object website","*${BROWSER} = &lt;Khoa.Web object at 0x000002A33C448E50&gt;","*Set Global Variable","*<p>Makes a variable available globally in all tests and suites.\x3c/p>","*Call Method","*<p>Calls the named method of the given object with the provided arguments.\x3c/p>","*${BROWSER}    launch_browser    ${url}","*Start launch_browser\nWebdriver is ready\nWebdriver was created\nEnd launch_browser","*Sign In","*${username}    ${password}","*${BROWSER}    signin    ${username}    ${password}","*Input Username\nInput Password\nClick button Sign In","*Sign Out","*${BROWSER}    signout","*Click button Sign Out","*Close Browser","*Run Keyword If","*<p>Runs the given keyword with the given arguments, if <code>condition\x3c/code> is true.\x3c/p>","*'${BROWSER}' != 'None'    Call Method    ${BROWSER}    close_browser","*${BROWSER}    close_browser","*Đóng browser","*Run Keyword If Test Failed","*<p>Runs the given keyword with the given arguments, if the test failed.\x3c/p>","*Imported library 'c:\\Backup-HDD-Khoa\\Practice ROBOT\\GUI\\Khoa.py' contains no keywords."]);
 </script>
 <script type="text/javascript">
 window.output["stats"] = [[{"elapsed":"00:00:37","fail":0,"label":"All Tests","pass":1,"skip":0}],[],[{"elapsed":"00:00:37","fail":0,"id":"s1","label":"Khoa1","name":"Khoa1","pass":1,"skip":0}]];
+=======
+window.output["strings"] = window.output["strings"].concat(["*","*Khoa1","*E:\\Backupwin11\\Launch-auto\\TESTS\\Khoa1.robot","*../TESTS/Khoa1.robot","*Simple Web Client Test","*Create Web Client","*Create Directory","*OperatingSystem","*<p>Creates the specified directory.\x3c/p>","*E:\\\\Backupwin11\\\\Launch-auto\\\\TESTS${/}..${/}LOGS","*Directory '<a href=\"file://E:\\Backupwin11\\Launch-auto\\LOGS\">E:\\Backupwin11\\Launch-auto\\LOGS\x3c/a>' already exists.","*Evaluate","*BuiltIn","*<p>Evaluates the given expression in Python and returns the result.\x3c/p>","*__import__('sys').path.append(r'E:\\\\Backupwin11\\\\Launch-auto')    sys","*__import__('importlib').import_module('GUI.Web_function.Web_clients').Web_Clients('${BROWSER}', ${CLIENT}, ${IVIEW}, use_local_driver=True)    importlib","*${wc}","eNqzSVTIKEpNs1XKKCkpKLbS1zc00DM0MNYz1jO10M8sy0wt1wcRxfqZeSmpFXpZxWlKdkQrtdFPtAMAxtMe0A==","*Start function _setup_chrome","*Setting up chrome driver","*Using local chrome driver at C:\\Auto_Browsers\\chromedriver.exe","*Skipping Selenium Manager; path to chrome driver specified in Service class: C:\\Auto_Browsers\\chromedriver.exe","*Started executable: `C:\\Auto_Browsers\\chromedriver.exe` in a child process with pid: 35724 using 0 to output -3","eNp9TslqwzAQ/RWTQ3Sp6tJCKc7yBWkTSG8hh7E8lgWyx4zGTU3Iv1deSiGH6vTW0Tvsj5/JGpKKsdwsKpE2S1NPBnxFQbLXl+entzRgCI6axfZ/f53CNrkqAy3kzjtxGFQWhdJxkHcQU0V6ut7OD4kCf4E+/IpXlTNdAvIH1Bi5MhVTRDHYgsUdQXEUBkHbR3fpZXW4kx8b4hp8rE5ALa2sYt0S2Wy6tm8ljpwm4bdgE2Z6GgexHbHSunABco8a2tY7A0NLGzDVuOfP7uJeXWPhQAc0HTvpN8LdnHKNIds4oftSPmBDX8j9nLRxMmqDLK4c/kONzMRBnW/x/QDVjJBZ","*Starting new HTTP connection (1): localhost:63208","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session HTTP/1.1\" 200 0","eNqFU1tP2zAU/itR9lCQKDhtQtNMlQZ00yqhDTG2vURCJ/ZJ45HYnu0UUNf/vuMA3cNuefK5fOf2fbnGTnuMLDqjlcMich587xYTxqIfkQAPi228gbbHuNjGHAxUspVeogs2cI7GrwjIe4sXaD25a2gdHsWV1fcO7QfoCBrzxmp67N1f0DqpFUWSdHrMjmfpfH6czBhlPKeGdsNLWLn5G2A+iQ4qnPCkTmuRZkk2y2EOAk5zYMCTiTjN5tPTSZWmVT22WLuTyoLizbhBEO4kFHmzfZWyfLo7pNY9TbaknZfSUqOLoiw/k8eVJf9+12goyzNjQrwsLzWHtixvsDNl6bg2KG6FtNNsNklvk2TO0mk2YXm8O4prFLwr6FS6V+E+3vZ0nrXW6+JpwY/G02bDQQVW/XqN9kwIooRccRsaNdr5ImNJnoSCA9RYzSljtYyLlGUsP4oV+ntt7y60UshDxbcKqhbFnhEDa7zUID55Cx7Xj1RdadtBS5ubFnxNxjNd91IJ4ikErH6gzC31dei/Dv5rqv+yh/NWcv9OtrhSHi1w/6SQx31bLzvUvR/2k51pJZeEZr/miYspCx8V41Ya/2xTx141oATtcEV3Mv4cG9hIHbgR0nXSuYjCkdJe1o806z1W0PtGFfjgUQW5FNyiOG919TLuH1JasGv8T04n1ZVUl6jWvvlHmrH1b9GNtL6H9owMVF5y8No+q2C4qQvIlQjC5tNkUvM8IwnnNSSMpSmJPWezGVa1gHi3o38yKJc0uXh/c3P1fngviYCD7YiIpzn8+GnKURGN5iwfHUX7wM2jweAGE0iAIJGTb06r1xFvwBK7i97X4wHCgTc45gS0ug0YpceDb7Q7/Al1d3Fa","*Finished Request","eNqtjEsOwiAUAK9CuunG5EFBi6T2CGqiF3jyEZIGmkKCxnh3u+gRXM3MZq6X250MSPxi3anxpcwKYEoaJ59yUQfeUQnZ5hxSBKY565yWezyidMgoFYIJLmnf24czCDVEkyosVpdm/ONsABzJp321itAdad8bazDFr35O0a7pbXj6svX3Bz/lQ2Y=","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/window/rect HTTP/1.1\" 200 0","*Remote response: status=200 | data={\"value\":{\"height\":1012,\"width\":945,\"x\":0,\"y\":0}} | headers=HTTPHeaderDict({'Content-Length': '49', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})","eNqtzAEOQCAUANCrNBf4pRDDFdi4wJdabcjUxpi7u4R3gNd3w0hqJPbQpklsjHsFsHiFi/UhVjlPqYSgQ3B+A6Y4S42SGZYoDTJKhWCCS1oUejIzwum22Z+w4uVWd+uk/TmsAVvyvB+ONjpE","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/window/maximize HTTP/1.1\" 200 0","*Remote response: status=200 | data={\"value\":{\"height\":1048,\"width\":1936,\"x\":-8,\"y\":-8}} | headers=HTTPHeaderDict({'Content-Length': '52', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})","*chrome driver setup successfully","*Navigating to URL: <a href=\"https://10.103.3.58/iview/views/index.jsf\">https://10.103.3.58/iview/views/index.jsf\x3c/a>","eNqtjk0OgjAUhK/SsOmur6UgtUGuoIle4AltKGnA8OpPYry7EFfuXLiZzGLyzXfYH0+sRtbPzu+yPqWLBYhTi7GfKNmNzqUBckRhGkG1WuW+NSVu0XhUUhaFKrSRVeXOvkO4zjFr/gCpARv25EvjlvEvPVrQSgoltdCiNBBuwd1hDYIwdu4hBvIfiZ+m6xV/vQH22FGs","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/url HTTP/1.1\" 200 0","*Remote response: status=200 | data={\"value\":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})","*${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x0000015205BB3770&gt;","*Set Suite Variable","*<p>Makes a variable available everywhere within the scope of the current suite.\x3c/p>","*${WEB_CLIENT}    ${wc}","*${WEB_CLIENT} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x0000015205BB3770&gt;","*Sign In","*Get Variable Value","*<p>Returns variable value or <code>default\x3c/code> if the variable does not exist.\x3c/p>","*${WEB_CLIENT}","*Run Keyword If","*<p>Runs the given keyword with the given arguments, if <code>condition\x3c/code> is true.\x3c/p>","*'${wc}' == 'None'    Fail    Browser instance not initialized","*Sleep","*<p>Pauses the test executed for the given time.\x3c/p>","*5","*Slept 5 seconds.","*Call Method","*<p>Calls the named method of the given object with the provided arguments.\x3c/p>","*${wc}    sign_in","*Attempting to sign in","eNqtzLsOwiAUANBfISwsJkBbLZK2o6smuhmHK719JBQMl7oY/139B+eTnNPxfGENsCnh0PIp54eV0kcHfoqU7a4slJGERHMMUrtSF4MzW9iDGUArVVW6Ko2qa7wPPUj0uGDIvPtT1Ejo2EusNIdRWCYcEaOvuRyT2DDxBL/iD65z33IfxzkcYlrsSpgCLMhv4v0BmO1IVA==","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1\" 200 0","*Remote response: status=200 | data={\"value\":{\"element-6066-11e4-a52e-4f735466cecf\":\"f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.2\"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})","eNrNzmEOgiAUAOCrOA8APHj4sJkbof6trS5ACNNl2pJ/rbt3jb4TfJfz9VY0vpjeMR3LKefXgfNlC36Ztj0fKiWF4Xvc93lbOQQFMgWjfe1N8iAEIqAygije0+h5XOIzrpknhjicwLhakxRCK616GiwggKtwqDrDRkZOy95h3QNZsNRDR7WVg8JOWUXGscgkD8scHmX7p7GG+7b4fH/n4Fnk","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.2/click HTTP/1.1\" 200 0","eNrNzmEOgiAUAOCrOA8APHj40Jkbof6trS5ACrONtIn/WnfvGn0n+K6X271ofbHsIZ7K5TjeDedpm3xatnw0lZLC8Bxyfm4rh0mBjJPRvvYmehACEVAZQRQecfY8pPAK68EjQxzPYFytSQqhlVYDjRYQwFU4Vr1hMyOn5eCwHoAsWBqgp9rKUWGvrCLjWGCSTyn4vez+NNZy3xWf7w/odVnm","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.2/clear HTTP/1.1\" 200 0","eNrNzstKxDAYBeBXCbPJRpL8uTRpmRmIabtV0J3M4p82oYVexGYGQXx3rU/h5oNzzuY8P728kiOS4SOm02HI+b3ifFo7nIZ1y1WhpHB8i9s2rguHToFMnTNYoksIQmgNWjlhbbymHnmc4hyXzBPTun0EF0pjpRBGGdXY1oMGCIVui9qxntlgZBN02YD14G0DtS29bJWulVfWBRaZ5HecbvFw/qfHjhzP5Ivm+JlpRSj287jQB0L/xt/mjeIe+515Z9xZ6OX7B1XYZ14=","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.2/value HTTP/1.1\" 200 0","*Entered username: admin","eNqtzLsOwiAUANBfISwsJtCHFknb0VUT3YzDlUJLQqHhUh2M/67+g/NJzul4vpAWyJSM7eiU86I491GDnyJmtatKITkaRBcDL3RVlFbLLexBWiiEqOuirqRoGnO3A3DjzWxCpv2fopZDT15sRRdGpgjTiAS/pnNMbEPYA/xqfnB1Q0d9HF04xDSrBRCfMQ30xt4fmUNIZw==","*Remote response: status=200 | data={\"value\":{\"element-6066-11e4-a52e-4f735466cecf\":\"f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.4\"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})","eNrNzk1qwzAQBeCrmBDQplgaaWzJJgmo/tmFFtpdKWHqyDjgxqZSTUPp3VtlkTN08/GG9xbz+PD0nGwoGT5cv10NIcwl5+PU0ThMPpS5ksJw77w/TWcOnQLZdyajgkxPIAQioDJCa/fWH4m70b27c+B9itjeg6mKTEshMpWpRrcWEKDKsc1rkx5TXWWyqbBoQFuwuoFaF1a2CmtllTZV6lLkC42fbrX7p49tOO2SbxbcV2BlwuxCF9p3fl4OIBWu2V3Crru/8oXZ6xmhyOWW9pEu4iPzbXeIQERGVAQja/b68wviInR+","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.4/value HTTP/1.1\" 200 0","*Entered password","eNqtzMEKwiAYAOBXES9eAnVbzWTbsWtBu0UHZ7+b4DT2uwiid6/eofMH3+l47kljyLSAa+mU811zHpI1YUqY9a4shOIIiD5FLm0pC2fV1uyNckYKUVWyKpWoaxjczXAIMEPMtPtT1HDTkRdb0ceRacIsIsGv2ZwWtiHsYcIKP7j4W0tDGn08pGXWuA6zzz08M72y9wcrxkkt","*Remote response: status=200 | data={\"value\":{\"element-6066-11e4-a52e-4f735466cecf\":\"f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.30\"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})","eNrNztENwiAQANBVGgcAjjt61FQTpO2vJroAUkiN1RrLn3F31/BN8E7H86VqQzW9U95tplJeWynnJYZ5WtayrVErK9e0rrflKSEi6BytCU2wOYBSREBoFXO65jHINKdHehaZBdFwAOsbw1opgwZ7HhwQgK9pqDsrRsHe6N5T0wM7cNxDx43TA1KHDtl6kQQqGedbvG/2/zprZdhXn+8Pi+RaRg==","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.30/click HTTP/1.1\" 200 0","*Clicked login button","eNqtzLEKwjAUQNFfCVmyCEnaamNoO7oq6CYizzRpC2mf9KUu4r9b/8HtwoF7Op4vrALWzz7UvE/paaWM6CD2SMnu8kwZSZ5owElql+ssOLOFPZgAWqmi0EVuVFn6R2hB+uhHPyXe/GlUSWjYWyw0TJ2wTDgiRqu5hLPYMPGCuPgfXIe25hE7XNIB59GueV+b38TnC5pgSG4=","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1\" 404 0","eNplks1u2zAQhF+F4MUJYLv6pUwVOjUocuihaJxTWQQUubLUSlyDpIwGrt+9VIA6ZXJbfauRZhbzDSb0QCy4IxoHNXFe+tk1RVKQP0RLL5szPclxBlqfKViLltbUIHGz6gmMMIHxdE0ncE4e4P2uJo9GtiMQj2REJcPPrpuzCDrfoxa0FlQ5R1zYKY9W0LWgrw9h+33QjaAjHnD2n9FOdRifwizoD0EvwhBy8xA8DGjIYDqsieotTtCkRb5NtlXB+TatkttgNSRUv7yVanH78Dy1ODpi0BN5ksO4eN2Su3k6DuZAZhMug+MJNGn/qWphhE9+V11XZRkrdjtdviE8T/4nRZayUkek4jLP3xCdq4go3bEqJlLxmDCpMh6TVvLoy5wlLIv88FJ2LCYVZ4pFKYJjXcQEdBU5ZGXadfE7ZZbK+Bp5BTq7krYDDrDTrylUkrCdKpfs9HIJnetBarCuud/vv96/zHeD8jfn1Sc0PtRm8wXMwfermqxCrtWaXBf75yMsWB6P4xCaFrrw4adD8zF0QVoHvpl9t9ktknDJHjYqCC2Oi8bg5oWtLrd/AXTDAMA=","*Remote response: status=200 | data={\"value\":{\"element-6066-11e4-a52e-4f735466cecf\":\"f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.43\"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})","*Successfully signed in - logout button detected","*Tab Settings","*${wc}    open_settings","*Attempting to open settings","eNqtzEEOgjAQQNGrNN10Y9IWUGoDXEET3RljxjKVJoUaprgx3l28g+v384+H05k1wIYZfcuHnJ9WypgcxCFRtruyUEYSEoU0Se1KXXhntrAH40ErVVW6Ko2qa7z7HiRGHHHKvPvTqJHQsbdYKEwPYZlwRIxWcznNYsPEC+KCP7iEvuXBjTfCnNeYX8XnC6TjRaM=","*Remote response: status=200 | data={\"value\":{\"element-6066-11e4-a52e-4f735466cecf\":\"f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.45\"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})","eNqtjk1PwkAURf/KhE2R2Pnq63SKQAKUbjHRnboYhje0SW2bzmAkwH8XY9y5dHvPzbn3cfv0TGaGVAO6+agKoZ8y1nTWNFXnw1Qlkmvm0fu6a5mwiZDO6tTkRjsjOAcQkGieZbhze8PwE+0xIPOn1o4W/2mbMbMg58jboe5DNCURm5DaF7XvG3PCPZmwAcNxaMnYHVsbbv7x3fmP6MMM5DAPVe0vF4+Ne3htfykxZmx+Grt5OPXYOUppdE8iMxz8bfPlHGGD79iGWHGlYiEQYpNKjMFlSQpKWbTu+5yjAOVK6HWeZpLzNEmTTVYuBQixVlCqQtM9lSXwQi4LsVmByGUhRa5zlaxzqWFTCqBIIY2ub9cvxuiA3g==","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/execute/sync HTTP/1.1\" 200 0","*Remote response: status=200 | data={\"value\":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})","eNrNzu0NgyAQANBVjAMAB4cejTXxiy7QBVCP2IRqU/nXdPeu0TfBu033ognF9uZ4LbecXxcp07GEtB1nvlRGK5Inn+fj2CUsBnRcyAYXKAZQChHQkKprnuMaJCd+8p5lFIi+BxqcrbVS1lgz1b4DBBgq9NVIYhXaoxp1N8LUIzg9anDkKjM4TTh5QMECreQ9zInXsv3fWyNDW3y+P3K2WxQ=","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"GET /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.45/enabled HTTP/1.1\" 200 0","eNrNzmEOgiAYANCrOA8AfPCh4MxNRf7WVhcghOkybcG/1t27Ru8E73K+3orWFcs7xFO55PxqKN0O77blSLmpBGeKppDSeuwUvAAevZJOOxUdMIYIKBSr63CPs6NhC8+wZxoJoh1AjVrWnDEppJhq2wMCjBXayigyE26RGd4bmAYEzQ0HrXQlRs0VThaQBIKS+m31j7L711lLXVd8vj9mJFnw","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.45/click HTTP/1.1\" 200 0","*Settings button clicked successfully","*Tab User Portal","*${wc}    open_user_portal","*Attempting to open user portal","eNqtjLEKwjAURX8ldImC8JK2ai1VxMFJUNBNHJ7tiw3GpDRpEcR/t67ObpdzD+ewP55YgaxuSS2jOoQmBzCuRFM7H/JZEosMPHmvnQVZJjJWZTbFBWYKpRBpKtMkE/M5XVWFQIYeZEO0+lOoAFyxF++8tjeeM/5sMNR8wniPpqOBRACV7s+lswG19aO1robXkAobbA9oyfDxBQB/jSHebV37yL9DiljutL0PavT+AB8DVxA=","*Remote response: status=200 | data={\"value\":{\"element-6066-11e4-a52e-4f735466cecf\":\"f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.68\"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})","eNqtjs1OwkAYRV9lwmaQ2PnvdIpAApRuMdGduhiGb2iT2jadwUiAdxdj3Ll0e8/Nufdx+/SMZhZVA/j5qIqxn1LadM42VRfiVEvBDA0QQt21lDvJhXcmtbk13nLGlOJKGpZlsPN7S+ET3DECDafWjRb/aZtRu0BnHNxQ9xFPEaYTVIeiDn1jT7BHEzpAPA4tGvtj6+LNP747/xF92AEd5rGqw+USoPEPr+0vRdaO7U9jN4+nHjpPCMH3CNvhEG6bL2cMDbxDGxPNtE44B5XYVECifCZTpbUD57/PeaJUueJmnaeZYCyVqdxk5ZIrztdalbowZE9EqVghlgXfrBTPRSF4bnIt17kwalNyRYBog69v1y/HA4Dj","eNrNztENgyAQANBVjAMABycejTVRgS7QBVCP2MRqU/1runvX6Jvg3cK9aFKxvDlfy+U8Xxcp131K67If58UarUgefByPfZMwGdB5oiq5RDmBUoiAhlRd85jnJHnlJ2+nzAIx9kCDq2qtVGUqE+rYAQIMFqP1JGahIyqvOw+hR3Daa3DkrBmcJgwRULCwJHlL48pz2f7vrZGpLT7fH3ZmWx4=","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"GET /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.68/enabled HTTP/1.1\" 200 0","eNrNztsNgjAUANBVCAO0ve2l3BIk4dVfTXSBWtpARDCWP+PuruGZ4FzO11tWu2x+h3jK5+N4VZyvu3frvKej0koK4imktOwbB69ARk+FM46iAyEQARWJsgz3ODke1vAM28EjQ7QdUG+KUgpRqEKNpW0BAXqNVg/EJiYtikG2A4wdgpGDBENGq95IwtECssA0cb8u/pE3/zqruWuyz/cHabZZ+g==","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.68/click HTTP/1.1\" 200 0","*User portal link clicked","eNqtzNEKwiAYQOFXEW8sCNRtlY01gh6gwbqLLv5tOgXTMd0IonfPh+j2O3CaW3tHFSA9S3XGOsappNT6Hqz2IZaHPGOCBhmC8Y7yPueZ6sUeTiAUcMaKghe5YMej7NQAVFr5ki7i+k+jikKNPmQJxo2kROQ9QdRkh8gKdpFJMKWDWR+9dxGMC5uLGVKdzajjNVlatEvXgJOWbJ/4+wMA6kwb","*Remote response: status=200 | data={\"value\":{\"element-6066-11e4-a52e-4f735466cecf\":\"f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.69\"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})","*User portal page loaded successfully","*Tab Custom Branding","*${wc}    pressing_option_custom_branding","*Attempting to open custom branding option","eNqtjN0KgjAYQF9leLMC4fOvNDGJXqAg7yLic04dzE38pgTRu+dlD9DtOYdzvdwqViDrJ9kevd65MQfQVqDuLbl8H0dBBiSJlDUQijiMWpHt8IBZi2EQJEmYxFmQprJuGwSp5SCN88o/jQrAkr35TMp0PGf8NaLruc/4gnqWK/EAGrXchTUOlaHNSTU+n0dBXYU18e0DAH+s0EjkczGTs8N5QtOs46fDei29zxeQUFbh","*Remote response: status=200 | data={\"value\":{\"element-6066-11e4-a52e-4f735466cecf\":\"f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.102\"}} | headers=HTTPHeaderDict({'Content-Length': '127', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})","eNqtjkFPwjAYhv9Kw2VIXNuv67oOgQQYu2KiN/VQyle2ZG7LWowE+O9ijDePXt/nzfO+j9unZzIzpBrQzUdVCP2Usaazpqk6H6YqEVwzj97XXcvAJiCc1anJjXYGOJcSZKJ5luHO7Q3DT7THgMyfWjta/KdtxsyCnCNvh7oP0ZREbEJqX9S+b8wJ92TCBgzHoSVjd2xtuPnHd+c/og8zkMM8VLW/XDw27uG1/aXEmLH5aezm4dRj5yil0T2JzHDwt82Xc4QNvmMbYsWVigFQxiYVGEuXJalUyqJ13+cclbJcgV7naSY4T5M02WTlEiTAWslSFZruqSglL8SygM1KQi4KAbnOVbLOhZabEiRFClxE17frF0cegQg=","eNrNzu0NgyAQANBVjAMAdxwKjTXxA7pAF0A9YhOqTfVf0927Rt8E7+bvRROL9c3pWq7n+bpImfc55nU/zkulUVl58HE89k3CrAHTbE100aYIShEBaavqmqe0RMmZn7ydMgmi0IMdnKlRKaON9nXogACGikI1WrEIDKRG7EbwPYHDEcFZV+nBoSUfgAQLUCh5i1PmpWz/ONfI2Baf7w8S2Vto","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"GET /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.102/enabled HTTP/1.1\" 200 0","*Custom branding option is visible","*POST <a href=\"http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/execute/sync\">http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/execute/sync\x3c/a> {'script': \"arguments[0].scrollIntoView({block:'center'});\", 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.102'}]}","eNrNztENgjAQANBVCAO0vesBLUESoPRXE12gljYQEYz0z7i7a/gmeJfz9ZY1LpvfIZ7yOaVXzfm6e7fO+5HqUqJQ/AjHsewbBy8Bo1eF005FB0IQAUklqirc4+R4WMMzbIlHRmR7UIMuKhSikIUcK9sBAQwl2dIoNjG0JAx2BsaeQKNB0EqXctCoaLRALDAQyP26+Efe/m2t4a7NPt8fBVJaRA==","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.102/click HTTP/1.1\" 200 0","*Custom branding option clicked successfully","*Waiting for Custom Branding content","*Waiting for title locator: ('xpath', \"//span[normalize-space()='Organization']\")","*Custom Branding content loaded","*Sign Out","*${wc}    sign_out","*Attempting to sign out","eNqtjk1PwkAURf/KhE2RyHy+TqcIJEDpVhPdqYtheEOb1LbpDEYC/ncxxp1Lt/fcnHsf7h+fyNySakC/GFUx9jPGms7ZpupCnGkluWEBQ6i7lgmnhPTOpDa3xlvBOYAAZXiW4c7vLcMPdMeILJxaN1r+p23O7JKck+CGuo/JjCRsQupQ1KFv7An3ZMIGjMehJWN/bF28+sc35z+idzuQwyJWdbhcAjb+7qX9pcTasf1p7Bbx1GPnKaXJLUnscAjXzedzgg2+YRunmms9FQJhalOJU/CZSkFrh85/n/MUoFwLs8nTTHKeqlRts3IlQIiNhlIXhu6pLIEXclWI7RpELgspcpNrtcmlgW0pgCIFlXy+fn4Bxt6A3A==","eNrNztENgyAQANBVjANwHBwCjTVRkS7QBVCP2MRqU/1runvX6Jvg3YZ7UadieXO+lst5vi4A6z6lddmP81JpJR0cfByPfQOcNKo8OZN8cjmhlERI2klrecxzAl75ydsJWRDFDl3vjVVSGm30YGOLhNhXFKvgxCxUJBlUG3DoCL0KCr3zle69cjREJMGCNPCWxpXnsvnfWw2pKT7fH3E+WxA=","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"GET /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.43/enabled HTTP/1.1\" 200 0","eNrNztsNgjAUANBVCAO0vbeX0hIk4dVfTXSBWtpARDCWP+PuruGZ4FzO11tWu2x+h3jK5+N4VZyvu3frvKejUhKF5imktOwbBy8Bo9eFM05HB0IQAUktyjLc4+R4WMMzbAePjMh2oHtTlChEIQs5lrYFAugVWTVoNjG0JAZsBxg7AoMDgtFGyd6gptECscBIcr8u/pE3/zqruWuyz/cHZLhZ7A==","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.43/click HTTP/1.1\" 200 0","*Successfully signed out","*Quit Browser","*${WEB_CLIENT}    None","*'${wc}' != 'None'    Call Method    ${wc}    quit","*${wc}    quit","*Attempting to quit the browser","eNpzcfVxDXFVsElUyChKTbNVyigpKbDS18/JT07MycgvLrEyMzYysNAvTi0uzszP0zdMNjY0Sku2ME20TLRISzQ0MDAxMTQxtjAwN09NSktJVLKj0AAb/UQ7hepaANnmLf0=","*<a href=\"http://localhost:63208\">http://localhost:63208\x3c/a> \"DELETE /session/1c312fc85a9a8fa100441438077ebfda HTTP/1.1\" 200 0","*Browser quit successfully"]);
+</script>
+<script type="text/javascript">
+window.output["stats"] = [[{"elapsed":"00:00:36","fail":0,"label":"All Tests","pass":1,"skip":0}],[],[{"elapsed":"00:00:36","fail":0,"id":"s1","label":"Khoa1","name":"Khoa1","pass":1,"skip":0}]];
+>>>>>>> Stashed changes:LOGS/log.html
 </script>
 <script type="text/javascript">
 window.output["errors"] = [[229,3,36]];
 </script>
 <script type="text/javascript">
+<<<<<<< Updated upstream:Practice ROBOT/log.html
 window.output["baseMillis"] = 1721982903062;
 </script>
 <script type="text/javascript">
 window.output["generated"] = 37199;
+=======
+window.output["baseMillis"] = 1767846628909;
+</script>
+<script type="text/javascript">
+window.output["generated"] = 36261;
+>>>>>>> Stashed changes:LOGS/log.html
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
 </script>
 <script type="text/javascript">
-window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.html","rpa":false,"splitLogBase":"log","title":""};
+window.settings = {"defaultLevel":"DEBUG","minLevel":"DEBUG","reportURL":"report.html","rpa":false,"splitLogBase":"log","title":""};
 </script>
 <title></title>
 </head>
@@ -2214,7 +2229,7 @@ function addExecutionLog(main) {
 
 <script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
   <tr class="row-${$item.index}">
-    <td class="stats-col-name" title="{{html doc}}">
+    <td class="stats-col-name" title="${doc}">
       <div class="stat-name">
         <span>{{html label}}</span>
         {{if info}}(${info}){{/if}}

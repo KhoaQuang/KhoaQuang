@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.3 on win32)" generated="2026-01-14T10:11:46.946165" rpa="false" schemaversion="5">
+<suite id="s1" name="Khoa2" source="e:\Backupwin11\Launch-auto\TESTS\Khoa2.robot">
+<test id="s1-t1" name="Simple Web Client Test" line="21">
+<kw name="Create Web Client" owner="Libraries.web_client_library.WebClientLibrary">
+<msg time="2026-01-14T10:11:47.485728" level="INFO">https://10.103.3.58/iview/views/index.jsf</msg>
+<msg time="2026-01-14T10:11:47.487408" level="INFO">Start function _setup_chrome</msg>
+<msg time="2026-01-14T10:11:47.488331" level="INFO">Setting up chrome driver</msg>
+<msg time="2026-01-14T10:11:47.488638" level="INFO">Using local chrome driver at C:\Auto_Browsers\chromedriver.exe</msg>
+<msg time="2026-01-14T10:11:54.076924" level="INFO">chrome driver setup successfully</msg>
+<msg time="2026-01-14T10:11:54.077509" level="INFO">Navigating to URL: https://10.103.3.58/iview/views/index.jsf</msg>
+<msg time="2026-01-14T10:11:54.597248" level="INFO">Web Client created successfully</msg>
+<arg>${BROWSER}</arg>
+<arg>${CLIENT}</arg>
+<arg>${IVIEW}</arg>
+<doc>Create Web_Clients instance and store it internally</doc>
+<status status="PASS" start="2026-01-14T10:11:46.981583" elapsed="7.616135"/>
+</kw>
+<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
+<msg time="2026-01-14T10:11:54.600096" level="INFO">Attempting to sign in</msg>
+<msg time="2026-01-14T10:11:57.243754" level="INFO">Successfully signed in - logout button detected</msg>
+<arg>sign_in</arg>
+<doc>Call ANY method from Web_Clients dynamically</doc>
+<status status="PASS" start="2026-01-14T10:11:54.598843" elapsed="2.645267"/>
+</kw>
+<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
+<msg time="2026-01-14T10:11:57.245187" level="INFO">Attempting to open settings</msg>
+<msg time="2026-01-14T10:11:57.335449" level="INFO">Settings button clicked successfully</msg>
+<arg>open_settings</arg>
+<doc>Call ANY method from Web_Clients dynamically</doc>
+<status status="PASS" start="2026-01-14T10:11:57.244730" elapsed="0.091841"/>
+</kw>
+<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
+<msg time="2026-01-14T10:11:57.337749" level="INFO">Attempting to open user portal</msg>
+<msg time="2026-01-14T10:11:57.905150" level="INFO">User portal link clicked</msg>
+<msg time="2026-01-14T10:11:57.915633" level="INFO">User portal page loaded successfully</msg>
+<arg>open_user_portal</arg>
+<doc>Call ANY method from Web_Clients dynamically</doc>
+<status status="PASS" start="2026-01-14T10:11:57.337190" elapsed="0.578818"/>
+</kw>
+<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
+<msg time="2026-01-14T10:11:57.917098" level="INFO">Attempting to open custom branding option</msg>
+<msg time="2026-01-14T10:11:58.450570" level="INFO">Custom branding option is visible</msg>
+<msg time="2026-01-14T10:11:58.502263" level="INFO">Custom branding option clicked successfully</msg>
+<msg time="2026-01-14T10:11:58.502763" level="INFO">Waiting for Custom Branding content</msg>
+<msg time="2026-01-14T10:11:58.503084" level="INFO">Waiting for title locator: ('xpath', "//span[normalize-space()='Organization']")</msg>
+<msg time="2026-01-14T10:11:58.503413" level="INFO">Custom Branding content loaded</msg>
+<arg>pressing_option_custom_branding</arg>
+<doc>Call ANY method from Web_Clients dynamically</doc>
+<status status="PASS" start="2026-01-14T10:11:57.916584" elapsed="0.587204"/>
+</kw>
+<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
+<msg time="2026-01-14T10:11:58.505663" level="INFO">Attempting to sign out</msg>
+<msg time="2026-01-14T10:11:58.575545" level="INFO">Successfully signed out</msg>
+<arg>sign_out</arg>
+<doc>Call ANY method from Web_Clients dynamically</doc>
+<status status="PASS" start="2026-01-14T10:11:58.504920" elapsed="0.071013"/>
+</kw>
+<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
+<msg time="2026-01-14T10:11:58.576848" level="INFO">Attempting to quit the browser</msg>
+<msg time="2026-01-14T10:12:00.982244" level="INFO">Browser quit successfully</msg>
+<arg>quit</arg>
+<doc>Call ANY method from Web_Clients dynamically</doc>
+<status status="PASS" start="2026-01-14T10:11:58.576496" elapsed="2.406062"/>
+</kw>
+<status status="PASS" start="2026-01-14T10:11:46.980633" elapsed="14.002374"/>
+</test>
+<kw name="Safe Quit Browser" owner="Libraries.web_client_library.WebClientLibrary" type="TEARDOWN">
+<doc>ALWAYS safe to call in teardown</doc>
+<status status="PASS" start="2026-01-14T10:12:00.984293" elapsed="0.000232"/>
+</kw>
+<status status="PASS" start="2026-01-14T10:11:46.952912" elapsed="14.031710"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Khoa2" id="s1" pass="1" fail="0" skip="0">Khoa2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
