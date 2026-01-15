@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.3.2 (Python 3.13.3 on win32)" name="Generator">
+<meta content="Robot Framework 7.0.1 (Python 3.13.3 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -724,13 +724,10 @@ function toggleSuite(suiteId) {
     toggleElement(suiteId, ['keyword', 'suite', 'test']);
 }
 function toggleTest(testId) {
+    toggleElement(testId, ['keyword']);
     var test = window.testdata.findLoaded(testId);
-    var autoExpand = test.status == "FAIL" || test.status == "SKIP";
-    var closed = $('#' + testId).children('.element-header').hasClass('closed');
-    if (autoExpand && closed)
+    if (test.status == "FAIL" || test.status == "SKIP")
         expandFailed(test);
-    else
-        toggleElement(testId, ['keyword']);
 }
 function toggleKeyword(kwId) {
     toggleElement(kwId, ['keyword']);
@@ -1255,48 +1252,58 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0)
+        if (total == 0) {
             return [0.0, 0.0, 0.0];
+        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1;
+            pass = 0.1
         if (fail > 0 && fail < 0.1)
-            fail = 0.1;
+            fail = 0.1
         if (skip > 0 && skip < 0.1)
-            skip = 0.1;
+            skip = 0.1
         if (pass > 99.95 && pass < 100)
-            pass = 99.9;
+            pass = 99.9
         if (fail > 99.95 && fail < 100)
-            fail = 99.9;
+            fail = 99.9
         if (skip > 99.95 && skip < 100)
-            skip = 99.9;
-        return [round1(pass), round1(skip), round1(fail)];
+            skip = 99.9
+        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1.0;
+            num1 = 1
         if (num2 > 0 && num2 < 1)
-            num2 = 1.0;
+            num2 = 1
         if (num3 > 0 && num3 < 1)
-            num3 = 1.0;
+            num3 = 1
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 >= num2 && num1 >= num3)
-                num1 = round1(num1 - 0.1);
-            else if (num2 >= num1 && num2 >= num3)
-                num2 = round1(num2 - 0.1);
-            else
-                num3 = round1(num3 - 0.1);
+            if (num1 > num2 && num1 > num3)
+                num1 -= 0.1;
+            else if (num2 > num1 && num2 > num3)
+                num2 -= 0.1;
+            else if (num3 > num1 && num3 > num2)
+                num3 -= 0.1;
+            else if (num1 > num3 && num1 == num2) {
+                num1 -= 0.1;
+                num2 -= 0.1;
+            }
+            else if (num1 > num2 && num1 == num3) {
+                num1 -= 0.1;
+                num3 -= 0.1;
+            }
+            else if (num2 > num1 && num2 == num3) {
+                num2 -= 0.1;
+                num3 -= 0.1;
+            }
         }
-        return [num1, num2, num3];
-    }
-    function round1(num) {
-        return Math.round(num*10) / 10;
+        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
     }
     return {
         Statistics: Statistics
@@ -1515,7 +1522,7 @@ window.testdata = function () {
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
                          'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -2074,25 +2081,25 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,14032],[],[[4,0,0,[],[1,28,14002],[[0,5,6,0,7,8,0,0,[1,29,7616],[[533,2,9],[534,2,10],[535,2,11],[536,2,12],[7124,2,13],[7125,2,14],[7644,2,15]]],[0,16,6,0,17,18,0,0,[1,7646,2645],[[7647,2,19],[10291,2,20]]],[0,16,6,0,17,21,0,0,[1,10292,92],[[10292,2,22],[10382,2,23]]],[0,16,6,0,17,24,0,0,[1,10384,579],[[10385,2,25],[10952,2,26],[10963,2,27]]],[0,16,6,0,17,28,0,0,[1,10964,587],[[10964,2,29],[11498,2,30],[11549,2,31],[11550,2,32],[11550,2,33],[11550,2,34]]],[0,16,6,0,17,35,0,0,[1,11552,71],[[11553,2,36],[11623,2,37]]],[0,16,6,0,17,38,0,0,[1,11623,2406],[[11624,2,39],[14029,2,40]]]]]],[[2,41,6,0,42,0,0,0,[1,14031,0],[]]],[1,1,0,0]];
+window.output["suite"] = [1,2,3,0,[],[1,0,14534],[],[[4,0,0,[],[1,23,12068],[[0,5,6,0,7,8,0,0,[1,23,8141],[[143,2,9],[144,2,10],[145,2,11],[145,2,12],[7680,2,13],[7681,2,14],[8164,2,15]]],[0,16,6,0,17,18,0,0,[1,8166,2603],[[8167,2,19],[10769,2,20]]],[0,16,6,0,17,21,0,0,[1,10770,72],[[10770,2,22],[10841,2,23]]],[0,16,6,0,17,24,0,0,[1,10842,577],[[10843,2,25],[11408,2,26],[11419,2,27]]],[0,16,6,0,17,28,0,0,[1,11420,586],[[11420,2,29],[11951,2,30],[12004,2,31],[12005,2,32],[12005,2,33],[12005,2,34]]],[0,16,6,0,17,35,0,0,[1,12006,84],[[12007,2,36],[12089,2,37]]]]]],[[2,38,6,0,39,0,0,0,[1,14533,0],[]]],[1,1,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Khoa2","*e:\\Backupwin11\\Launch-auto\\TESTS\\Khoa2.robot","eNqzSVTIKEpNs1VKy8xJtdLX13e10ndKTM4uLSjPzDM01PdJLM1LztBNLC3J1w9xDQ4J1vfOyE800ivKT8ovUbIjR5eNfqIdAB0rJzY=","*Simple Web Client Test","*Create Web Client","*Libraries.web_client_library.WebClientLibrary","*<p>Create Web_Clients instance and store it internally\x3c/p>","*${BROWSER}    ${CLIENT}    ${IVIEW}","eNqzSVTIKEpNs1XKKCkpKLbS1zc00DM0MNYz1jO10M8sy0wt1wcRxfqZeSmpFXpZxWlKdkQrtdFPtAMAxtMe0A==","*Start function _setup_chrome","*Setting up chrome driver","*Using local chrome driver at C:\\Auto_Browsers\\chromedriver.exe","*chrome driver setup successfully","*Navigating to URL: <a href=\"https://10.103.3.58/iview/views/index.jsf\">https://10.103.3.58/iview/views/index.jsf\x3c/a>","*Web Client created successfully","*Call Web Client Method","*<p>Call ANY method from Web_Clients dynamically\x3c/p>","*sign_in","*Attempting to sign in","*Successfully signed in - logout button detected","*open_settings","*Attempting to open settings","*Settings button clicked successfully","*open_user_portal","*Attempting to open user portal","*User portal link clicked","*User portal page loaded successfully","*pressing_option_custom_branding","*Attempting to open custom branding option","*Custom branding option is visible","*Custom branding option clicked successfully","*Waiting for Custom Branding content","*Waiting for title locator: ('xpath', \"//span[normalize-space()='Organization']\")","*Custom Branding content loaded","*sign_out","*Attempting to sign out","*Successfully signed out","*quit","*Attempting to quit the browser","*Browser quit successfully","*Safe Quit Browser","*<p>ALWAYS safe to call in teardown\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Khoa2","*e:\\Backupwin11\\Launch-auto\\TESTS\\Khoa2.robot","eNqzSVTIKEpNs1VKy8xJtdLX13e10ndKTM4uLSjPzDM01PdJLM1LztBNLC3J1w9xDQ4J1vfOyE800ivKT8ovUbIjR5eNfqIdAB0rJzY=","*Simple Web Client Test","*Create Web Client","*Libraries.web_client_library.WebClientLibrary","*<p>Create Web_Clients instance and store it internally\x3c/p>","*${BROWSER}    ${CLIENT}    ${IVIEW}","eNqzSVTIKEpNs1XKKCkpKLbS1zc00DM0MNYz1jO10M8sy0wt1wcRxfqZeSmpFXpZxWlKdkQrtdFPtAMAxtMe0A==","*Start function _setup_chrome","*Setting up chrome driver","*Using local chrome driver at C:\\Auto_Browsers\\chromedriver.exe","*chrome driver setup successfully","*Navigating to URL: <a href=\"https://10.103.3.58/iview/views/index.jsf\">https://10.103.3.58/iview/views/index.jsf\x3c/a>","*Web Client created successfully","*Call Web Client Method","*<p>Call ANY method from Web_Clients dynamically\x3c/p>","*sign_in","*Attempting to sign in","*Successfully signed in - logout button detected","*open_settings","*Attempting to open settings","*Settings button clicked successfully","*open_user_portal","*Attempting to open user portal","*User portal link clicked","*User portal page loaded successfully","*pressing_option_custom_branding","*Attempting to open custom branding option","*Custom branding option is visible","*Custom branding option clicked successfully","*Waiting for Custom Branding content","*Waiting for title locator: ('xpath', \"//span[normalize-space()='Organization']\")","*Custom Branding content loaded","*sign_out","*Attempting to sign out","*Successfully signed out","*Safe Quit Browser","*<p>ALWAYS safe to call in teardown\x3c/p>"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:14","fail":0,"label":"All Tests","pass":1,"skip":0}],[],[{"elapsed":"00:00:14","fail":0,"id":"s1","label":"Khoa2","name":"Khoa2","pass":1,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:12","fail":0,"label":"All Tests","pass":1,"skip":0}],[],[{"elapsed":"00:00:15","fail":0,"id":"s1","label":"Khoa2","name":"Khoa2","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1768360306953;
+window.output["baseMillis"] = 1768449570854;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 14047;
+window.output["generated"] = 14551;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2207,7 +2214,7 @@ function addExecutionLog(main) {
 
 <script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
   <tr class="row-${$item.index}">
-    <td class="stats-col-name" title="${doc}">
+    <td class="stats-col-name" title="{{html doc}}">
       <div class="stat-name">
         <span>{{html label}}</span>
         {{if info}}(${info}){{/if}}

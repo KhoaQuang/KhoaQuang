@@ -15,7 +15,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.StreamHandler(sys.stdout),   # 👉 in ra terminal
+        logging.StreamHandler(sys.stdout),
         logging.FileHandler("automation.log", mode="a", encoding="utf-8")
     ]
 )
@@ -57,7 +57,6 @@ class Web_Clients:
         try:
             logging.info(f"Setting up {browser_name} driver")
             if self.use_local_driver:
-                # Use local driver binary via Service
                 logging.info(f"Using local {browser_name} driver at {service.path}")
                 if browser_name == "chrome":
                     self.driver = webdriver.Chrome(service=service, options=options)

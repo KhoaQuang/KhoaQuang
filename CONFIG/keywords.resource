@@ -1,5 +1,5 @@
 *** Settings ***
-Library    Libraries.web_client_library
+Library    Libraries.web_client_library.WebClientLibrary
 
 *** Keywords ***
 Open User Portal

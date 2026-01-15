@@ -1,23 +1,21 @@
-2026-01-14 10:11:47,485 - INFO - https://10.103.3.58/iview/views/index.jsf
-2026-01-14 10:11:47,487 - INFO - Start function _setup_chrome
-2026-01-14 10:11:47,488 - INFO - Setting up chrome driver
-2026-01-14 10:11:47,488 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
-2026-01-14 10:11:54,076 - INFO - chrome driver setup successfully
-2026-01-14 10:11:54,077 - INFO - Navigating to URL: https://10.103.3.58/iview/views/index.jsf
-2026-01-14 10:11:54,599 - INFO - Attempting to sign in
-2026-01-14 10:11:57,243 - INFO - Successfully signed in - logout button detected
-2026-01-14 10:11:57,245 - INFO - Attempting to open settings
-2026-01-14 10:11:57,335 - INFO - Settings button clicked successfully
-2026-01-14 10:11:57,337 - INFO - Attempting to open user portal
-2026-01-14 10:11:57,905 - INFO - User portal link clicked
-2026-01-14 10:11:57,915 - INFO - User portal page loaded successfully
-2026-01-14 10:11:57,917 - INFO - Attempting to open custom branding option
-2026-01-14 10:11:58,450 - INFO - Custom branding option is visible
-2026-01-14 10:11:58,502 - INFO - Custom branding option clicked successfully
-2026-01-14 10:11:58,502 - INFO - Waiting for Custom Branding content
-2026-01-14 10:11:58,503 - INFO - Waiting for title locator: ('xpath', "//span[normalize-space()='Organization']")
-2026-01-14 10:11:58,503 - INFO - Custom Branding content loaded
-2026-01-14 10:11:58,505 - INFO - Attempting to sign out
-2026-01-14 10:11:58,575 - INFO - Successfully signed out
-2026-01-14 10:11:58,576 - INFO - Attempting to quit the browser
-2026-01-14 10:12:00,982 - INFO - Browser quit successfully
+2026-01-15 10:59:30,996 - INFO - https://10.103.3.58/iview/views/index.jsf
+2026-01-15 10:59:30,998 - INFO - Start function _setup_chrome
+2026-01-15 10:59:30,998 - INFO - Setting up chrome driver
+2026-01-15 10:59:30,999 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-01-15 10:59:38,534 - INFO - chrome driver setup successfully
+2026-01-15 10:59:38,534 - INFO - Navigating to URL: https://10.103.3.58/iview/views/index.jsf
+2026-01-15 10:59:39,020 - INFO - Attempting to sign in
+2026-01-15 10:59:41,622 - INFO - Successfully signed in - logout button detected
+2026-01-15 10:59:41,624 - INFO - Attempting to open settings
+2026-01-15 10:59:41,694 - INFO - Settings button clicked successfully
+2026-01-15 10:59:41,696 - INFO - Attempting to open user portal
+2026-01-15 10:59:42,261 - INFO - User portal link clicked
+2026-01-15 10:59:42,273 - INFO - User portal page loaded successfully
+2026-01-15 10:59:42,274 - INFO - Attempting to open custom branding option
+2026-01-15 10:59:42,805 - INFO - Custom branding option is visible
+2026-01-15 10:59:42,858 - INFO - Custom branding option clicked successfully
+2026-01-15 10:59:42,858 - INFO - Waiting for Custom Branding content
+2026-01-15 10:59:42,859 - INFO - Waiting for title locator: ('xpath', "//span[normalize-space()='Organization']")
+2026-01-15 10:59:42,859 - INFO - Custom Branding content loaded
+2026-01-15 10:59:42,860 - INFO - Attempting to sign out
+2026-01-15 10:59:42,943 - INFO - Successfully signed out
