@@ -4,7 +4,7 @@ Suite Teardown    Safe Quit Browser
 
 *** Variables ***
 ${BROWSER}    chrome
-${URL}        https://10.103.3.58/iview/views/index.jsf
+${iview_URL}        https://10.103.3.58/iview/views/index.jsf
 ${USERNAME}   admin
 ${PASSWORD}   AvayaMcspv_1234$
 
@@ -13,7 +13,7 @@ ${PASSWORD}   AvayaMcspv_1234$
 ...    screenshot_dir=${CURDIR}${/}..${/}Screenshots
 
 &{IVIEW}
-...    iview_address=${URL}
+...    iview_address=${iview_URL}
 ...    iview_username=${USERNAME}
 ...    iview_password=${PASSWORD}
 

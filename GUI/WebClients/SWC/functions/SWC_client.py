@@ -13,6 +13,7 @@ import inspect
 import logging
 from robot.api import logger
 from GUI.WebClients.SWC.pom.MeetNowPage import MeetNowPage
+from GUI.WebClients.SWC.pom.RosterListPage import RosterListPage
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 logging.basicConfig(
     level=logging.INFO,
@@ -242,7 +243,7 @@ class Web_Clients:
                     self.driver.find_element(By.CSS_SELECTOR, 'button.db_btn.ng-binding#dismissBtn').click()
                 except:
                     logger.info('Dismiss button not found')
-                if RosterListPage.RosterListPage().find_participant_in_roster_list(self.driver, my_name):
+                if RosterListPage.find_participant_in_roster_list(self.driver, my_name):
                     try:
                         logger.info('Handle unblock video!')
                         self.handle_popup_during_meeting()
