@@ -17,6 +17,9 @@ ${PASSWORD}   AvayaMcspv_1234$
 ...    iview_username=${USERNAME}
 ...    iview_password=${PASSWORD}
 
+&{PORTAL}
+...    portal_address=https://aawgmt-svc-kvm.hcm.com/portal/tenants/dc1/
+
 *** Test Cases ***
 Simple Web Client Test
     Create Web Client    ${BROWSER}    ${CLIENT}    ${IVIEW}

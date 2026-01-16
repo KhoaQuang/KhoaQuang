@@ -8,8 +8,8 @@ from selenium.webdriver.edge.options import Options as EdgeOptions
 import sys,os,time
 import logging
 from robot.api import logger
-from GUI.POM.LoginIVIEWpage import LoginIVIEWpage
-from GUI.POM.SettingsIVIEWpage import SettingsIVIEWpage
+from GUI.WebClients.IVIEW.pom.LoginIVIEWpage import LoginIVIEWpage
+from GUI.WebClients.IVIEW.pom.SettingsIVIEWpage import SettingsIVIEWpage
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 logging.basicConfig(
     level=logging.INFO,
@@ -26,13 +26,16 @@ file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 class Web_Clients:
-    def __init__(self, browser, client, iview_info, use_local_driver=True):
-        self.browser = browser.lower()
-        self.client_ip  = client.get("host", "localhost")
-        self.client_port = client.get("port", "4444")
+    def __init__(self, browser, client, iview_info, portal_info, use_local_driver=True):
+        self.browser            = browser.lower()
+        self.client_ip          = client.get("host", "localhost")
+        self.client_port        = client.get("port", "4444")
         self.iview_url          = iview_info.get('iview_address')
         self.iview_username     = iview_info.get('iview_username')
         self.iview_password     = iview_info.get('iview_password')
+        self.portal_url         = portal_info.get('portal_address')
+        self.portal_username    = portal_info.get('portal_username')
+        self.portal_password    = portal_info.get('portal_password')
         self.screenshot_dir     = client.get('screenshot_dir')
         self.driver_dir = r"C:\Auto_Browsers"
         self.use_local_driver = use_local_driver
@@ -138,7 +141,7 @@ class Web_Clients:
         except Exception as e:
             logging.error(f"Error setting up Edge: {e}")
             raise
-
+    
     def quit(self):
         try:
             logging.info("Attempting to quit the browser")
