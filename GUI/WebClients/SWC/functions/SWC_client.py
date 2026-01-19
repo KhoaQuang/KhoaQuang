@@ -8,6 +8,7 @@ from selenium.webdriver.edge.options import Options as EdgeOptions
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from robot.libraries.BuiltIn import BuiltIn
 import sys,os,time
 import inspect
 import logging
@@ -31,7 +32,7 @@ file_handler.setLevel(logging.INFO)
 file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
-class Web_Clients:
+class SWC_Clients:
     def __init__(self, browser, client, portal_info, use_local_driver=True):
         self.browser            = browser.lower()
         self.client_ip          = client.get("host", "localhost")
@@ -153,8 +154,8 @@ class Web_Clients:
         except Exception as e:
             logging.error(f"Error quitting the browser: {e}")
             raise
-    
-    def sign_in_portal(self, user_name, password, adfs_name=None):
+
+    def sign_in_portal(self, user_name=None, password=None, adfs_name=None):
         try:
             '''
                 * Function name: sign_in_portal 
@@ -162,26 +163,23 @@ class Web_Clients:
                 * Parameters:  
                     + user_name: LogIn ID
                     + password: password
-                * Author: Dong Nguyen
-                * Date: Feb, 2019
                 * Ex: sign_in_portal  auto2016000  RAPtor1234
-                * Modify by: 
-                * Date
             '''
+
             logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
-            if self.point != None and self.point.is_alive():
+            point = getattr(self, "point", None)
+            if point != None and point.is_alive():
                 logger = logger_bg
                 logger.info('Status is sub thread so log background will be write after back to main thread')
             else:
                 logger = logger_main
             logger.info('Start function sign_in_portal')
-            self.assertTrue(self.switch_window('unified_portal'),'Switch to main window failed')
-            logger.info('Swith to unify portal window')
-            self.assertTrue(MeetNowPage.click_txt_sign_in(self.driver), 'Click to sign text failed')
+            # BuiltIn().should_be_true(self.switch_window('unified_portal'),'Switch to main window failed')
+            # logger.info('Switch to unified portal window')
+            BuiltIn().should_be_true(MeetNowPage.click_txt_sign_in(self.driver),'Click to sign in text failed')
             self.driver_platform.handle_popup_sign_in_on_portal()
-            self.assertTrue(MeetNowPage.enter_user_name_password(self.driver, user_name, password), 'Enter user name and password failed')
-            self.assertTrue(MeetNowPage.click_btn_sign_in(self.driver), 'Click to sign in button failed')
-
+            BuiltIn().should_be_true(MeetNowPage.enter_user_name_password(self.driver, user_name, password), 'Enter user name and password failed')
+            BuiltIn().should_be_true(MeetNowPage.click_btn_sign_in(self.driver),'Click to sign in button failed')
             logger.info('Verify sign_in_portal')
             time.sleep(2)
             name_display = MeetNowPage.get_user_name(self.driver)
@@ -198,9 +196,10 @@ class Web_Clients:
                     return True
             self.result_parallel_execute = "FAILED"
             self.fail('Wrong display name after sign in user %s' % user_name)
-        except:
+        except Exception as e:
             self.result_parallel_execute = "FAILED"
-            raise RuntimeError('Function exception: '+str(sys.exc_info()))
+            logger.exception("Sign in portal failed")
+            raise
 
     def verify_sign_in_portal(self, user_name, password):
         try:

@@ -26,16 +26,13 @@ file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 class Web_Clients:
-    def __init__(self, browser, client, iview_info, portal_info, use_local_driver=True):
+    def __init__(self, browser, client, iview_info, use_local_driver=True):
         self.browser            = browser.lower()
         self.client_ip          = client.get("host", "localhost")
         self.client_port        = client.get("port", "4444")
         self.iview_url          = iview_info.get('iview_address')
         self.iview_username     = iview_info.get('iview_username')
         self.iview_password     = iview_info.get('iview_password')
-        self.portal_url         = portal_info.get('portal_address')
-        self.portal_username    = portal_info.get('portal_username')
-        self.portal_password    = portal_info.get('portal_password')
         self.screenshot_dir     = client.get('screenshot_dir')
         self.driver_dir = r"C:\Auto_Browsers"
         self.use_local_driver = use_local_driver

@@ -3,6 +3,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import logging
 from robot.api import logger
+from robot.libraries.BuiltIn import BuiltIn
+import Utility
 
 logger = logging.getLogger()
 logging.basicConfig(
@@ -17,6 +19,7 @@ class MeetNowPage:
     PASSWORD_INPUT = (By.ID, "loginForm:password")
     LOGIN_BUTTON = (By.ID, "loginForm:submitText")
     LOGOUT_BUTTON = (By.ID, "logoutForm:log_out")
+    XPATH_TXT_SIGN_IN = "//span[contains(text(),'Sign in')]"
     
     def __init__(self, driver):
         """
@@ -27,11 +30,20 @@ class MeetNowPage:
         """
         self.driver = driver
         self.wait = WebDriverWait(driver, 15)
-    
-    def click_txt_sign_in(self, username, password):
+
+    def click_txt_sign_in(self, driver):
         """
         Sign in to the application
         """
+        try:
+            BuiltIn().should_be_true(Utility.Utility().click_element_by_xpath(driver, self.XPATH_TXT_SIGN_IN, 1), 'Click to sign in text failed')
+            logger.info('CLicked on text sign in')
+            return True
+        except Exception as e:
+            logging.error(f"Error during clicking sign in text: {e}")
+            raise
+
+    def enter_user_name_password(self, driver, username, password):    
         try:
             logging.info("Attempting to sign in")
             username_el = self.wait.until(EC.presence_of_element_located(self.USERNAME_INPUT))
@@ -39,10 +51,10 @@ class MeetNowPage:
             username_el.clear()
             username_el.send_keys(username)
             logging.debug(f"Entered username: {username}")
-            password_el = self.driver.find_element(*self.PASSWORD_INPUT)
+            password_el = driver.find_element(*self.PASSWORD_INPUT)
             password_el.send_keys(password)
             logging.debug("Entered password")
-            login_btn = self.driver.find_element(*self.LOGIN_BUTTON)
+            login_btn = driver.find_element(*self.LOGIN_BUTTON)
             login_btn.click()
             logging.debug("Clicked login button")
             

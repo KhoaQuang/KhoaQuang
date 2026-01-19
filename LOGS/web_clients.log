@@ -1,23 +1,28 @@
-2026-01-15 15:34:22,233 - INFO - https://10.103.3.58/iview/views/index.jsf
-2026-01-15 15:34:22,235 - INFO - Start function _setup_chrome
-2026-01-15 15:34:22,236 - INFO - Setting up chrome driver
-2026-01-15 15:34:22,237 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
-2026-01-15 15:34:24,959 - INFO - chrome driver setup successfully
-2026-01-15 15:34:24,960 - INFO - Navigating to URL: https://10.103.3.58/iview/views/index.jsf
-2026-01-15 15:34:30,253 - INFO - Attempting to sign in
-2026-01-15 15:34:32,854 - INFO - Successfully signed in - logout button detected
-2026-01-15 15:34:37,859 - INFO - Attempting to open settings
-2026-01-15 15:34:37,949 - INFO - Settings button clicked successfully
-2026-01-15 15:34:42,955 - INFO - Attempting to open user portal
-2026-01-15 15:34:43,024 - INFO - User portal link clicked
-2026-01-15 15:34:43,038 - INFO - User portal page loaded successfully
-2026-01-15 15:34:48,044 - INFO - Attempting to open custom branding option
-2026-01-15 15:34:48,068 - INFO - Custom branding option is visible
-2026-01-15 15:34:48,120 - INFO - Custom branding option clicked successfully
-2026-01-15 15:34:48,121 - INFO - Waiting for Custom Branding content
-2026-01-15 15:34:48,121 - INFO - Waiting for title locator: ('xpath', "//span[normalize-space()='Organization']")
-2026-01-15 15:34:48,121 - INFO - Custom Branding content loaded
-2026-01-15 15:34:53,130 - INFO - Attempting to sign out
-2026-01-15 15:34:53,180 - INFO - Successfully signed out
-2026-01-15 15:34:53,184 - INFO - Attempting to quit the browser
-2026-01-15 15:34:55,739 - INFO - Browser quit successfully
+2026-01-19 14:29:42,515 - INFO - https://10.103.3.58/iview/views/index.jsf
+2026-01-19 14:29:42,519 - INFO - Start function _setup_chrome
+2026-01-19 14:29:42,520 - INFO - Setting up chrome driver
+2026-01-19 14:29:42,521 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-01-19 14:29:52,029 - INFO - chrome driver setup successfully
+2026-01-19 14:29:52,030 - INFO - Navigating to URL: https://10.103.3.58/iview/views/index.jsf
+2026-01-19 14:29:52,616 - INFO - Attempting to sign in
+2026-01-19 14:29:56,538 - INFO - Successfully signed in - logout button detected
+2026-01-19 14:29:56,559 - INFO - Attempting to open settings
+2026-01-19 14:29:57,006 - INFO - Settings button clicked successfully
+2026-01-19 14:29:57,012 - INFO - Attempting to open user portal
+2026-01-19 14:29:57,930 - INFO - User portal link clicked
+2026-01-19 14:29:58,205 - INFO - User portal page loaded successfully
+2026-01-19 14:29:58,209 - INFO - Attempting to open custom branding option
+2026-01-19 14:29:58,307 - INFO - Custom branding option is visible
+2026-01-19 14:29:58,505 - INFO - Custom branding option clicked successfully
+2026-01-19 14:29:58,506 - INFO - Waiting for Custom Branding content
+2026-01-19 14:29:58,507 - INFO - Waiting for title locator: ('xpath', "//span[normalize-space()='Organization']")
+2026-01-19 14:29:58,508 - INFO - Custom Branding content loaded
+2026-01-19 14:29:58,515 - INFO - Attempting to sign out
+2026-01-19 14:29:58,772 - INFO - Successfully signed out
+2026-01-19 14:30:01,261 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-01-19 14:30:01,263 - INFO - Start function _setup_chrome
+2026-01-19 14:30:01,266 - INFO - Setting up chrome driver
+2026-01-19 14:30:01,269 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-01-19 14:30:04,773 - INFO - chrome driver setup successfully
+2026-01-19 14:30:04,774 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-01-19 14:30:07,865 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal

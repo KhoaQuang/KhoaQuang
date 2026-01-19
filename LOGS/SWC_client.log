@@ -1,0 +1,14 @@
+2026-01-19 14:49:02,207 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-01-19 14:49:02,216 - INFO - Start function _setup_chrome
+2026-01-19 14:49:02,225 - INFO - Setting up chrome driver
+2026-01-19 14:49:02,226 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-01-19 14:49:07,812 - INFO - chrome driver setup successfully
+2026-01-19 14:49:07,815 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-01-19 14:49:11,066 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-01-19 14:49:11,067 - INFO - Start function sign_in_portal
+2026-01-19 14:49:11,068 - ERROR - Sign in portal failed
+Traceback (most recent call last):
+  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\functions\SWC_client.py", line 179, in sign_in_portal
+    BuiltIn().should_be_true(MeetNowPage.click_txt_sign_in(self.driver),'Click to sign in text failed')
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: MeetNowPage.click_txt_sign_in() missing 2 required positional arguments: 'username' and 'password'

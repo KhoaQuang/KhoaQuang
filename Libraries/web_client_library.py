@@ -22,22 +22,35 @@ class WebClientLibrary:
         self.web_client = None
 
     @keyword("Create Web Client")
-    def create_web_client(self, browser, client, iview, use_local_driver=True):
+    def create_web_client(self, browser, client, iview=None, portal=None, use_local_driver=True):
         """
-        Create Web_Clients instance and store it internally
+        Create Web_Clients instance and store it internally.
 
-        browser: chrome / firefox / edge
-        client:  &{CLIENT}
-        iview:   &{IVIEW}
+        Args:
+            browser: chrome / firefox / edge
+            client:  &{CLIENT}
+            portal:  &{PORTAL}
+            iview:   &{IVIEW}
         """
 
-        module = importlib.import_module("GUI.Web_function.Web_clients")
-        WebClients = getattr(module, "Web_Clients")
+        if iview:
+            module_path = "GUI.WebClients.IVIEW.functions.Web_clients"
+            class_name = "Web_Clients"
+            args = (browser, client, iview)
+        elif portal:
+            module_path = "GUI.WebClients.SWC.functions.SWC_client"
+            class_name = "SWC_Clients"
+            args = (browser, client, portal)
+        elif iview and portal:
+            raise ValueError("Provide only one: 'iview' or 'portal'")
+        else:
+            raise ValueError("Either 'iview' or 'portal' must be provided.")
 
-        self.web_client = WebClients(
-            browser,
-            client,
-            iview,
+        module = importlib.import_module(module_path)
+        client_class = getattr(module, class_name)
+
+        self.web_client = client_class(
+            *args,
             use_local_driver=use_local_driver
         )
 
@@ -46,12 +59,9 @@ class WebClientLibrary:
     @keyword("Call Web Client Method")
     def call_web_client_method(self, method_name, *args):
         """
-        Call ANY method from Web_Clients dynamically
-
         Examples:
         Call Web Client Method    sign_in
         Call Web Client Method    open_settings
-        Call Web Client Method    pressing_option_custom_branding
         """
 
         if not self.web_client:
