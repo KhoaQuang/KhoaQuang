@@ -10,6 +10,7 @@ import logging
 from robot.api import logger
 from GUI.WebClients.IVIEW.pom.LoginIVIEWpage import LoginIVIEWpage
 from GUI.WebClients.IVIEW.pom.SettingsIVIEWpage import SettingsIVIEWpage
+from Utility.Utility import Utility
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 logging.basicConfig(
     level=logging.INFO,
@@ -44,14 +45,6 @@ class Web_Clients:
             self._setup_edge()
         else:
             raise ValueError(f"Unsupported browser: {self.browser}")
-    def _take_screenshot(self, filename):
-        try:
-            screenshot_path = os.path.join(self.screenshot_dir, filename)
-            self.driver.save_screenshot(screenshot_path)
-            logging.info(f"Screenshot saved to {screenshot_path}")
-        except Exception as e:
-            logging.error(f"Error saving screenshot: {e}")
-            raise
 
     def _setup_driver(self, browser_name, service, options):
         try:
@@ -157,7 +150,7 @@ class Web_Clients:
             page.sign_in(username, pwd)
         except Exception as e:
             logging.error(f"Error signing in: {e}")
-            self._take_screenshot("sign_in_error.png")
+            Utility.take_screenshot("sign_in_error.png")
             raise
 
     def sign_out(self):
@@ -167,7 +160,7 @@ class Web_Clients:
             page.sign_out()
         except Exception as e:
             logging.error(f"Error signing out: {e}")
-            self._take_screenshot("sign_out_error.png")
+            Utility.take_screenshot("sign_out_error.png")
             raise
 
     def open_settings(self):
@@ -177,7 +170,7 @@ class Web_Clients:
             page.open_settings()
         except Exception as e:
             logging.error(f"Error opening settings: {e}")
-            self._take_screenshot("open_settings_error.png")
+            Utility.take_screenshot("open_settings_error.png")
             raise
 
     def open_user_portal(self):
@@ -187,7 +180,7 @@ class Web_Clients:
             page.open_user_portal()
         except Exception as e:
             logging.error(f"Error opening user portal: {e}")
-            self._take_screenshot("open_user_portal_error.png")
+            Utility.take_screenshot("open_user_portal_error.png")
             raise
 
     def pressing_option_custom_branding(self):
@@ -196,5 +189,5 @@ class Web_Clients:
             page.option_custom_branding()
         except Exception as e:
             logging.error(f"Error opening custom branding option: {e}")
-            self._take_screenshot("open_custom_branding_error.png")
+            Utility.take_screenshot("open_custom_branding_error.png")
             raise

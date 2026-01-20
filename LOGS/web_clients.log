@@ -1,28 +1,83 @@
-2026-01-19 14:29:42,515 - INFO - https://10.103.3.58/iview/views/index.jsf
-2026-01-19 14:29:42,519 - INFO - Start function _setup_chrome
-2026-01-19 14:29:42,520 - INFO - Setting up chrome driver
-2026-01-19 14:29:42,521 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
-2026-01-19 14:29:52,029 - INFO - chrome driver setup successfully
-2026-01-19 14:29:52,030 - INFO - Navigating to URL: https://10.103.3.58/iview/views/index.jsf
-2026-01-19 14:29:52,616 - INFO - Attempting to sign in
-2026-01-19 14:29:56,538 - INFO - Successfully signed in - logout button detected
-2026-01-19 14:29:56,559 - INFO - Attempting to open settings
-2026-01-19 14:29:57,006 - INFO - Settings button clicked successfully
-2026-01-19 14:29:57,012 - INFO - Attempting to open user portal
-2026-01-19 14:29:57,930 - INFO - User portal link clicked
-2026-01-19 14:29:58,205 - INFO - User portal page loaded successfully
-2026-01-19 14:29:58,209 - INFO - Attempting to open custom branding option
-2026-01-19 14:29:58,307 - INFO - Custom branding option is visible
-2026-01-19 14:29:58,505 - INFO - Custom branding option clicked successfully
-2026-01-19 14:29:58,506 - INFO - Waiting for Custom Branding content
-2026-01-19 14:29:58,507 - INFO - Waiting for title locator: ('xpath', "//span[normalize-space()='Organization']")
-2026-01-19 14:29:58,508 - INFO - Custom Branding content loaded
-2026-01-19 14:29:58,515 - INFO - Attempting to sign out
-2026-01-19 14:29:58,772 - INFO - Successfully signed out
-2026-01-19 14:30:01,261 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
-2026-01-19 14:30:01,263 - INFO - Start function _setup_chrome
-2026-01-19 14:30:01,266 - INFO - Setting up chrome driver
-2026-01-19 14:30:01,269 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
-2026-01-19 14:30:04,773 - INFO - chrome driver setup successfully
-2026-01-19 14:30:04,774 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
-2026-01-19 14:30:07,865 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-01-20 17:42:52,469 - INFO - https://aawgte-svc-kvm.hcm.com:443/portal
+2026-01-20 17:42:52,472 - INFO - Start function _setup_chrome
+2026-01-20 17:42:52,473 - INFO - Setting up chrome driver
+2026-01-20 17:42:52,473 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-01-20 17:42:53,984 - INFO - chrome driver setup successfully
+2026-01-20 17:42:53,986 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com:443/portal
+2026-01-20 17:42:55,006 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-01-20 17:42:55,007 - INFO - Start function sign_in_portal
+2026-01-20 17:42:55,007 - ERROR - === DEBUG SIGN IN CONTEXT ===
+2026-01-20 17:42:55,017 - ERROR - Current URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-01-20 17:42:55,027 - ERROR - Window handles: ['69275EE44566B3E612CECAA936B68FA2']
+2026-01-20 17:42:55,030 - ERROR - Current window handle: 69275EE44566B3E612CECAA936B68FA2
+2026-01-20 17:42:55,073 - ERROR - Iframe count: 0
+2026-01-20 17:42:55,087 - ERROR - Page source contains 'Sign in': True
+2026-01-20 17:42:55,092 - ERROR - Page source contains 'sign in': False
+2026-01-20 17:42:55,095 - ERROR - Page source contains 'login': False
+2026-01-20 17:42:55,098 - ERROR - === END DEBUG ===
+2026-01-20 17:42:55,100 - ERROR - <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+2026-01-20 17:42:55,119 - INFO - Verified on text sign in
+2026-01-20 17:42:55,120 - INFO - Attempting to sign in
+2026-01-20 17:43:10,341 - ERROR - Error during sign in: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff63c7788d5
+	0x7ff63c778930
+	0x7ff63c55165d
+	0x7ff63c5a9a33
+	0x7ff63c5a9d3c
+	0x7ff63c5fdf67
+	0x7ff63c5fac97
+	0x7ff63c59ac29
+	0x7ff63c59ba93
+	0x7ff63ca90620
+	0x7ff63ca8af60
+	0x7ff63caa96c6
+	0x7ff63c795dd4
+	0x7ff63c79ed7c
+	0x7ff63c781ff4
+	0x7ff63c7821a5
+	0x7ff63c767ed2
+	0x7fffab35e8d7
+	0x7fffac0cc53c
+
+2026-01-20 17:43:10,342 - ERROR - Sign in portal failed
+Traceback (most recent call last):
+  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\pom\MeetNowPage.py", line 53, in enter_user_name_password
+    username_el = self.wait.until(EC.presence_of_element_located(self.USERNAME_INPUT))
+  File "c:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff63c7788d5
+	0x7ff63c778930
+	0x7ff63c55165d
+	0x7ff63c5a9a33
+	0x7ff63c5a9d3c
+	0x7ff63c5fdf67
+	0x7ff63c5fac97
+	0x7ff63c59ac29
+	0x7ff63c59ba93
+	0x7ff63ca90620
+	0x7ff63ca8af60
+	0x7ff63caa96c6
+	0x7ff63c795dd4
+	0x7ff63c79ed7c
+	0x7ff63c781ff4
+	0x7ff63c7821a5
+	0x7ff63c767ed2
+	0x7fffab35e8d7
+	0x7fffac0cc53c
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\functions\SWC_client.py", line 203, in sign_in_portal
+    BuiltIn().should_be_true(MeetNowPage(self.driver).enter_user_name_password(username, password), 'Enter user name and password failed')
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\pom\MeetNowPage.py", line 70, in enter_user_name_password
+    Web_Clients._take_screenshot("enter_user_name_password.png")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Web_Clients' has no attribute '_take_screenshot'

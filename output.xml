@@ -1,66 +1,196 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.13.3 on win32)" generated="2026-01-19T14:49:01.518289" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.13.3 on win32)" generated="2026-01-20T18:26:21.814186" rpa="false" schemaversion="5">
 <suite id="s1" name="Khoa2" source="e:\Backupwin11\Launch-auto\TESTS\Khoa2.robot">
 <test id="s1-t1" name="Simple SWC Client Test" line="36">
 <kw name="Create Web Client" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-19T14:49:02.208136" level="INFO">https://aawgte-svc-kvm.hcm.com/portal/tenants/default/</msg>
-<msg time="2026-01-19T14:49:02.217276" level="INFO">Start function _setup_chrome</msg>
-<msg time="2026-01-19T14:49:02.225598" level="INFO">Setting up chrome driver</msg>
-<msg time="2026-01-19T14:49:02.227032" level="INFO">Using local chrome driver at C:\Auto_Browsers\chromedriver.exe</msg>
-<msg time="2026-01-19T14:49:07.813112" level="INFO">chrome driver setup successfully</msg>
-<msg time="2026-01-19T14:49:07.816279" level="INFO">Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/</msg>
-<msg time="2026-01-19T14:49:10.691802" level="INFO">Web Client created successfully</msg>
+<msg time="2026-01-20T18:26:21.984695" level="INFO">https://aawgte-svc-kvm.hcm.com:443/portal</msg>
+<msg time="2026-01-20T18:26:21.985966" level="INFO">Start function _setup_chrome</msg>
+<msg time="2026-01-20T18:26:21.986513" level="INFO">Setting up chrome driver</msg>
+<msg time="2026-01-20T18:26:21.986769" level="INFO">Using local chrome driver at C:\Auto_Browsers\chromedriver.exe</msg>
+<msg time="2026-01-20T18:26:23.480360" level="INFO">chrome driver setup successfully</msg>
+<msg time="2026-01-20T18:26:23.480942" level="INFO">Navigating to URL: https://aawgte-svc-kvm.hcm.com:443/portal</msg>
+<msg time="2026-01-20T18:26:24.330075" level="INFO">Web Client created successfully</msg>
 <arg>${BROWSER}</arg>
 <arg>${CLIENT}</arg>
 <arg>${NONE}</arg>
 <arg>${PORTAL}</arg>
 <doc>Create Web_Clients instance and store it internally.</doc>
-<status status="PASS" start="2026-01-19T14:49:01.615668" elapsed="9.076517"/>
+<status status="PASS" start="2026-01-20T18:26:21.854020" elapsed="2.477224"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-19T14:49:11.066770" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal</msg>
-<msg time="2026-01-19T14:49:11.067658" level="INFO">Start function sign_in_portal</msg>
-<msg time="2026-01-19T14:49:11.069557" level="ERROR">Sign in portal failed
+<msg time="2026-01-20T18:26:24.451601" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal</msg>
+<msg time="2026-01-20T18:26:24.451947" level="INFO">Start function sign_in_portal</msg>
+<msg time="2026-01-20T18:26:24.452132" level="ERROR">=== DEBUG SIGN IN CONTEXT ===</msg>
+<msg time="2026-01-20T18:26:24.459940" level="ERROR">Current URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/</msg>
+<msg time="2026-01-20T18:26:24.464042" level="ERROR">Window handles: ['A8F5544DE12A883F9549589C1120C68C']</msg>
+<msg time="2026-01-20T18:26:24.466727" level="ERROR">Current window handle: A8F5544DE12A883F9549589C1120C68C</msg>
+<msg time="2026-01-20T18:26:24.477440" level="ERROR">Iframe count: 0</msg>
+<msg time="2026-01-20T18:26:24.484255" level="ERROR">Page source contains 'Sign in': True</msg>
+<msg time="2026-01-20T18:26:24.485159" level="ERROR">Page source contains 'sign in': False</msg>
+<msg time="2026-01-20T18:26:24.485999" level="ERROR">Page source contains 'login': False</msg>
+<msg time="2026-01-20T18:26:24.486710" level="ERROR">=== END DEBUG ===</msg>
+<msg time="2026-01-20T18:26:24.487747" level="ERROR">&lt;class 'selenium.webdriver.chrome.webdriver.WebDriver'&gt;</msg>
+<msg time="2026-01-20T18:26:24.530198" level="INFO">Verified on text sign in</msg>
+<msg time="2026-01-20T18:26:24.532483" level="INFO">Attempting to sign in</msg>
+<msg time="2026-01-20T18:26:34.690045" level="ERROR">Error during sign in: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff60d9d88d5
+	0x7ff60d9d8930
+	0x7ff60d7b165d
+	0x7ff60d809a33
+	0x7ff60d809d3c
+	0x7ff60d85df67
+	0x7ff60d85ac97
+	0x7ff60d7fac29
+	0x7ff60d7fba93
+	0x7ff60dcf0620
+	0x7ff60dceaf60
+	0x7ff60dd096c6
+	0x7ff60d9f5dd4
+	0x7ff60d9fed7c
+	0x7ff60d9e1ff4
+	0x7ff60d9e21a5
+	0x7ff60d9c7ed2
+	0x7fffab35e8d7
+	0x7fffac0cc53c
+</msg>
+<msg time="2026-01-20T18:26:35.047359" level="INFO">Screenshot saved to E:\Backupwin11\Launch-auto\Screenshots\20260120_182634_enter_user_name_password.png</msg>
+<msg time="2026-01-20T18:26:35.051553" level="ERROR">Sign in portal failed
 Traceback (most recent call last):
-  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\functions\SWC_client.py", line 179, in sign_in_portal
-    BuiltIn().should_be_true(MeetNowPage.click_txt_sign_in(self.driver),'Click to sign in text failed')
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-TypeError: MeetNowPage.click_txt_sign_in() missing 2 required positional arguments: 'username' and 'password'</msg>
-<msg time="2026-01-19T14:49:11.078400" level="FAIL">TypeError: MeetNowPage.click_txt_sign_in() missing 2 required positional arguments: 'username' and 'password'</msg>
+  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\functions\SWC_client.py", line 198, in sign_in_portal
+    MeetNowPage(self.driver).enter_user_name_password(username, password),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\pom\MeetNowPage.py", line 52, in enter_user_name_password
+    username_el = self.wait.until(
+        EC.visibility_of_element_located(self.USERNAME_INPUT)
+    )
+  File "c:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff60d9d88d5
+	0x7ff60d9d8930
+	0x7ff60d7b165d
+	0x7ff60d809a33
+	0x7ff60d809d3c
+	0x7ff60d85df67
+	0x7ff60d85ac97
+	0x7ff60d7fac29
+	0x7ff60d7fba93
+	0x7ff60dcf0620
+	0x7ff60dceaf60
+	0x7ff60dd096c6
+	0x7ff60d9f5dd4
+	0x7ff60d9fed7c
+	0x7ff60d9e1ff4
+	0x7ff60d9e21a5
+	0x7ff60d9c7ed2
+	0x7fffab35e8d7
+	0x7fffac0cc53c
+</msg>
+<msg time="2026-01-20T18:26:35.056375" level="FAIL">TimeoutException: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff60d9d88d5
+	0x7ff60d9d8930
+	0x7ff60d7b165d
+	0x7ff60d809a33
+	0x7ff60d809d3c
+	0x7ff60d85df67
+	0x7ff60d85ac97
+	0x7ff60d7fac29
+	0x7ff60d7fba93
+	0x7ff60dcf0620
+	0x7ff60dceaf60
+	0x7ff60dd096c6
+	0x7ff60d9f5dd4
+	0x7ff60d9fed7c
+	0x7ff60d9e1ff4
+	0x7ff60d9e21a5
+	0x7ff60d9c7ed2
+	0x7fffab35e8d7
+	0x7fffac0cc53c
+</msg>
 <arg>sign_in_portal</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="FAIL" start="2026-01-19T14:49:10.693305" elapsed="0.388561">TypeError: MeetNowPage.click_txt_sign_in() missing 2 required positional arguments: 'username' and 'password'</status>
+<status status="FAIL" start="2026-01-20T18:26:24.332713" elapsed="10.725891">TimeoutException: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff60d9d88d5
+	0x7ff60d9d8930
+	0x7ff60d7b165d
+	0x7ff60d809a33
+	0x7ff60d809d3c
+	0x7ff60d85df67
+	0x7ff60d85ac97
+	0x7ff60d7fac29
+	0x7ff60d7fba93
+	0x7ff60dcf0620
+	0x7ff60dceaf60
+	0x7ff60dd096c6
+	0x7ff60d9f5dd4
+	0x7ff60d9fed7c
+	0x7ff60d9e1ff4
+	0x7ff60d9e21a5
+	0x7ff60d9c7ed2
+	0x7fffab35e8d7
+	0x7fffac0cc53c
+</status>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
 <arg>verify_sign_in_portal</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="NOT RUN" start="2026-01-19T14:49:11.084917" elapsed="0.000405"/>
+<status status="NOT RUN" start="2026-01-20T18:26:35.061838" elapsed="0.000282"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
 <arg>verify_in_meeting</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="NOT RUN" start="2026-01-19T14:49:11.087877" elapsed="0.000689"/>
+<status status="NOT RUN" start="2026-01-20T18:26:35.067418" elapsed="0.000276"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
 <arg>sign_out</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="NOT RUN" start="2026-01-19T14:49:11.091321" elapsed="0.000718"/>
+<status status="NOT RUN" start="2026-01-20T18:26:35.069336" elapsed="0.000198"/>
 </kw>
-<status status="FAIL" start="2026-01-19T14:49:01.612793" elapsed="9.481503">TypeError: MeetNowPage.click_txt_sign_in() missing 2 required positional arguments: 'username' and 'password'</status>
+<status status="FAIL" start="2026-01-20T18:26:21.853261" elapsed="13.218730">TimeoutException: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff60d9d88d5
+	0x7ff60d9d8930
+	0x7ff60d7b165d
+	0x7ff60d809a33
+	0x7ff60d809d3c
+	0x7ff60d85df67
+	0x7ff60d85ac97
+	0x7ff60d7fac29
+	0x7ff60d7fba93
+	0x7ff60dcf0620
+	0x7ff60dceaf60
+	0x7ff60dd096c6
+	0x7ff60d9f5dd4
+	0x7ff60d9fed7c
+	0x7ff60d9e1ff4
+	0x7ff60d9e21a5
+	0x7ff60d9c7ed2
+	0x7fffab35e8d7
+	0x7fffac0cc53c
+</status>
 </test>
 <kw name="Safe Quit Browser" owner="Libraries.web_client_library.WebClientLibrary" type="TEARDOWN">
 <doc>ALWAYS safe to call in teardown</doc>
-<status status="PASS" start="2026-01-19T14:49:11.112166" elapsed="0.001070"/>
+<status status="PASS" start="2026-01-20T18:26:35.074741" elapsed="0.000510"/>
 </kw>
-<status status="FAIL" start="2026-01-19T14:49:01.538761" elapsed="9.574919"/>
+<status status="FAIL" start="2026-01-20T18:26:21.822730" elapsed="13.252724"/>
 </suite>
 <statistics>
 <total>
@@ -73,11 +203,72 @@ Call Web Client Method    open_settings</doc>
 </suite>
 </statistics>
 <errors>
-<msg time="2026-01-19T14:49:11.069557" level="ERROR">Sign in portal failed
+<msg time="2026-01-20T18:26:24.452132" level="ERROR">=== DEBUG SIGN IN CONTEXT ===</msg>
+<msg time="2026-01-20T18:26:24.459940" level="ERROR">Current URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/</msg>
+<msg time="2026-01-20T18:26:24.464042" level="ERROR">Window handles: ['A8F5544DE12A883F9549589C1120C68C']</msg>
+<msg time="2026-01-20T18:26:24.466727" level="ERROR">Current window handle: A8F5544DE12A883F9549589C1120C68C</msg>
+<msg time="2026-01-20T18:26:24.477440" level="ERROR">Iframe count: 0</msg>
+<msg time="2026-01-20T18:26:24.484255" level="ERROR">Page source contains 'Sign in': True</msg>
+<msg time="2026-01-20T18:26:24.485159" level="ERROR">Page source contains 'sign in': False</msg>
+<msg time="2026-01-20T18:26:24.485999" level="ERROR">Page source contains 'login': False</msg>
+<msg time="2026-01-20T18:26:24.486710" level="ERROR">=== END DEBUG ===</msg>
+<msg time="2026-01-20T18:26:24.487747" level="ERROR">&lt;class 'selenium.webdriver.chrome.webdriver.WebDriver'&gt;</msg>
+<msg time="2026-01-20T18:26:34.690045" level="ERROR">Error during sign in: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff60d9d88d5
+	0x7ff60d9d8930
+	0x7ff60d7b165d
+	0x7ff60d809a33
+	0x7ff60d809d3c
+	0x7ff60d85df67
+	0x7ff60d85ac97
+	0x7ff60d7fac29
+	0x7ff60d7fba93
+	0x7ff60dcf0620
+	0x7ff60dceaf60
+	0x7ff60dd096c6
+	0x7ff60d9f5dd4
+	0x7ff60d9fed7c
+	0x7ff60d9e1ff4
+	0x7ff60d9e21a5
+	0x7ff60d9c7ed2
+	0x7fffab35e8d7
+	0x7fffac0cc53c
+</msg>
+<msg time="2026-01-20T18:26:35.051553" level="ERROR">Sign in portal failed
 Traceback (most recent call last):
-  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\functions\SWC_client.py", line 179, in sign_in_portal
-    BuiltIn().should_be_true(MeetNowPage.click_txt_sign_in(self.driver),'Click to sign in text failed')
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-TypeError: MeetNowPage.click_txt_sign_in() missing 2 required positional arguments: 'username' and 'password'</msg>
+  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\functions\SWC_client.py", line 198, in sign_in_portal
+    MeetNowPage(self.driver).enter_user_name_password(username, password),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\pom\MeetNowPage.py", line 52, in enter_user_name_password
+    username_el = self.wait.until(
+        EC.visibility_of_element_located(self.USERNAME_INPUT)
+    )
+  File "c:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff60d9d88d5
+	0x7ff60d9d8930
+	0x7ff60d7b165d
+	0x7ff60d809a33
+	0x7ff60d809d3c
+	0x7ff60d85df67
+	0x7ff60d85ac97
+	0x7ff60d7fac29
+	0x7ff60d7fba93
+	0x7ff60dcf0620
+	0x7ff60dceaf60
+	0x7ff60dd096c6
+	0x7ff60d9f5dd4
+	0x7ff60d9fed7c
+	0x7ff60d9e1ff4
+	0x7ff60d9e21a5
+	0x7ff60d9c7ed2
+	0x7fffab35e8d7
+	0x7fffac0cc53c
+</msg>
 </errors>
 </robot>

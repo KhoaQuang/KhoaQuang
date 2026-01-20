@@ -15,6 +15,7 @@ import logging
 from robot.api import logger
 from GUI.WebClients.SWC.pom.MeetNowPage import MeetNowPage
 from GUI.WebClients.SWC.pom.RosterListPage import RosterListPage
+from Utility.Utility import Utility
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 logging.basicConfig(
     level=logging.INFO,
@@ -155,7 +156,7 @@ class SWC_Clients:
             logging.error(f"Error quitting the browser: {e}")
             raise
 
-    def sign_in_portal(self, user_name=None, password=None, adfs_name=None):
+    def sign_in_portal(self, username=None, password=None, adfs_name=None):
         try:
             '''
                 * Function name: sign_in_portal 
@@ -174,18 +175,35 @@ class SWC_Clients:
             else:
                 logger = logger_main
             logger.info('Start function sign_in_portal')
-            # BuiltIn().should_be_true(self.switch_window('unified_portal'),'Switch to main window failed')
-            # logger.info('Switch to unified portal window')
-            BuiltIn().should_be_true(MeetNowPage.click_txt_sign_in(self.driver),'Click to sign in text failed')
-            self.driver_platform.handle_popup_sign_in_on_portal()
-            BuiltIn().should_be_true(MeetNowPage.enter_user_name_password(self.driver, user_name, password), 'Enter user name and password failed')
-            BuiltIn().should_be_true(MeetNowPage.click_btn_sign_in(self.driver),'Click to sign in button failed')
+            logger.error("=== DEBUG SIGN IN CONTEXT ===")
+            logger.error(f"Current URL: {self.driver.current_url}")
+            logger.error(f"Window handles: {self.driver.window_handles}")
+            logger.error(f"Current window handle: {self.driver.current_window_handle}")
+            iframes = self.driver.find_elements(By.TAG_NAME, "iframe")
+            logger.error(f"Iframe count: {len(iframes)}")
+            source = self.driver.page_source
+            logger.error("Page source contains 'Sign in': %s", "Sign in" in source)
+            logger.error("Page source contains 'sign in': %s", "sign in" in source)
+            logger.error("Page source contains 'login': %s", "login" in source)
+            logger.error("=== END DEBUG ===")
+            logger.error(type(self.driver))
+            BuiltIn().should_be_true(Utility.is_element_present_by_xpath(
+                    self.driver,
+                    MeetNowPage.XPATH_TXT_SIGN_IN
+                ),
+                'Sign in text is not visible'
+            )
+            MeetNowPage(self.driver).click_txt_sign_in()
+            BuiltIn().should_be_true(
+                MeetNowPage(self.driver).enter_user_name_password(username, password),
+                'Enter user name and password failed'
+            )
             logger.info('Verify sign_in_portal')
             time.sleep(2)
-            name_display = MeetNowPage.get_user_name(self.driver)
+            name_display = MeetNowPage(self.driver).get_user_name()
             logger.info('Display name: %s' % name_display)
             if adfs_name is None:
-                if user_name in name_display:
+                if username in name_display:
                     logger.info('Sign_in_portal successfully')
                     self.result_parallel_execute = "PASSED"
                     return True
@@ -195,7 +213,7 @@ class SWC_Clients:
                     self.result_parallel_execute = "PASSED"
                     return True
             self.result_parallel_execute = "FAILED"
-            self.fail('Wrong display name after sign in user %s' % user_name)
+            self.fail('Wrong display name after sign in user %s' % username)
         except Exception as e:
             self.result_parallel_execute = "FAILED"
             logger.exception("Sign in portal failed")

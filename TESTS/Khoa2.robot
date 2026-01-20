@@ -7,7 +7,7 @@ ${BROWSER}        chrome
 ${iview_URL}      https://10.103.3.58/iview/views/index.jsf
 ${USERNAME}       admin
 ${PASSWORD}       AvayaMcspv_1234$
-${Portal_URL}     https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+${Portal_URL}     https://aawgte-svc-kvm.hcm.com:443/portal
 ${USERPORTAL}     khoa
 
 &{CLIENT}
