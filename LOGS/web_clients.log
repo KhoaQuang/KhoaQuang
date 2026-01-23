@@ -1,83 +1,63 @@
-2026-01-20 17:42:52,469 - INFO - https://aawgte-svc-kvm.hcm.com:443/portal
-2026-01-20 17:42:52,472 - INFO - Start function _setup_chrome
-2026-01-20 17:42:52,473 - INFO - Setting up chrome driver
-2026-01-20 17:42:52,473 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
-2026-01-20 17:42:53,984 - INFO - chrome driver setup successfully
-2026-01-20 17:42:53,986 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com:443/portal
-2026-01-20 17:42:55,006 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
-2026-01-20 17:42:55,007 - INFO - Start function sign_in_portal
-2026-01-20 17:42:55,007 - ERROR - === DEBUG SIGN IN CONTEXT ===
-2026-01-20 17:42:55,017 - ERROR - Current URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
-2026-01-20 17:42:55,027 - ERROR - Window handles: ['69275EE44566B3E612CECAA936B68FA2']
-2026-01-20 17:42:55,030 - ERROR - Current window handle: 69275EE44566B3E612CECAA936B68FA2
-2026-01-20 17:42:55,073 - ERROR - Iframe count: 0
-2026-01-20 17:42:55,087 - ERROR - Page source contains 'Sign in': True
-2026-01-20 17:42:55,092 - ERROR - Page source contains 'sign in': False
-2026-01-20 17:42:55,095 - ERROR - Page source contains 'login': False
-2026-01-20 17:42:55,098 - ERROR - === END DEBUG ===
-2026-01-20 17:42:55,100 - ERROR - <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
-2026-01-20 17:42:55,119 - INFO - Verified on text sign in
-2026-01-20 17:42:55,120 - INFO - Attempting to sign in
-2026-01-20 17:43:10,341 - ERROR - Error during sign in: Message: 
-Stacktrace:
-Symbols not available. Dumping unresolved backtrace:
-	0x7ff63c7788d5
-	0x7ff63c778930
-	0x7ff63c55165d
-	0x7ff63c5a9a33
-	0x7ff63c5a9d3c
-	0x7ff63c5fdf67
-	0x7ff63c5fac97
-	0x7ff63c59ac29
-	0x7ff63c59ba93
-	0x7ff63ca90620
-	0x7ff63ca8af60
-	0x7ff63caa96c6
-	0x7ff63c795dd4
-	0x7ff63c79ed7c
-	0x7ff63c781ff4
-	0x7ff63c7821a5
-	0x7ff63c767ed2
-	0x7fffab35e8d7
-	0x7fffac0cc53c
-
-2026-01-20 17:43:10,342 - ERROR - Sign in portal failed
-Traceback (most recent call last):
-  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\pom\MeetNowPage.py", line 53, in enter_user_name_password
-    username_el = self.wait.until(EC.presence_of_element_located(self.USERNAME_INPUT))
-  File "c:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 95, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-Symbols not available. Dumping unresolved backtrace:
-	0x7ff63c7788d5
-	0x7ff63c778930
-	0x7ff63c55165d
-	0x7ff63c5a9a33
-	0x7ff63c5a9d3c
-	0x7ff63c5fdf67
-	0x7ff63c5fac97
-	0x7ff63c59ac29
-	0x7ff63c59ba93
-	0x7ff63ca90620
-	0x7ff63ca8af60
-	0x7ff63caa96c6
-	0x7ff63c795dd4
-	0x7ff63c79ed7c
-	0x7ff63c781ff4
-	0x7ff63c7821a5
-	0x7ff63c767ed2
-	0x7fffab35e8d7
-	0x7fffac0cc53c
-
-
-During handling of the above exception, another exception occurred:
-
+2026-01-21 17:08:36,064 - INFO - https://10.103.3.58/iview/views/index.jsf
+2026-01-21 17:08:36,066 - INFO - Start function _setup_chrome
+2026-01-21 17:08:36,066 - INFO - Setting up chrome driver
+2026-01-21 17:08:36,067 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-01-21 17:08:37,929 - INFO - chrome driver setup successfully
+2026-01-21 17:08:37,929 - INFO - Navigating to URL: https://10.103.3.58/iview/views/index.jsf
+2026-01-21 17:08:38,209 - INFO - Attempting to sign in
+2026-01-21 17:08:41,171 - INFO - Successfully signed in - logout button detected
+2026-01-21 17:08:41,172 - INFO - Attempting to open settings
+2026-01-21 17:08:41,252 - INFO - Settings button clicked successfully
+2026-01-21 17:08:41,253 - INFO - Attempting to open user portal
+2026-01-21 17:08:41,830 - INFO - User portal link clicked
+2026-01-21 17:08:41,840 - INFO - User portal page loaded successfully
+2026-01-21 17:08:41,841 - INFO - Attempting to open custom branding option
+2026-01-21 17:08:42,386 - INFO - Custom branding option is visible
+2026-01-21 17:08:42,439 - INFO - Custom branding option clicked successfully
+2026-01-21 17:08:42,439 - INFO - Waiting for Custom Branding content
+2026-01-21 17:08:42,440 - INFO - Waiting for title locator: ('xpath', "//span[normalize-space()='Organization']")
+2026-01-21 17:08:42,440 - INFO - Custom Branding content loaded
+2026-01-21 17:08:42,442 - INFO - Attempting to sign out
+2026-01-21 17:08:42,529 - INFO - Successfully signed out
+2026-01-21 17:08:45,006 - INFO - https://aawgte-svc-kvm.hcm.com:443/portal
+2026-01-21 17:08:45,007 - INFO - Start function _setup_chrome
+2026-01-21 17:08:45,007 - INFO - Setting up chrome driver
+2026-01-21 17:08:45,008 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-01-21 17:08:46,249 - INFO - chrome driver setup successfully
+2026-01-21 17:08:46,249 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com:443/portal
+2026-01-21 17:08:46,694 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-01-21 17:08:46,695 - INFO - Start function sign_in_portal
+2026-01-21 17:08:46,696 - ERROR - === DEBUG SIGN IN CONTEXT ===
+2026-01-21 17:08:47,175 - ERROR - Current URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-01-21 17:08:47,178 - ERROR - Window handles: ['78B981EE1B669CAEB8DB52F258B67DAC']
+2026-01-21 17:08:47,181 - ERROR - Current window handle: 78B981EE1B669CAEB8DB52F258B67DAC
+2026-01-21 17:08:47,193 - ERROR - Iframe count: 0
+2026-01-21 17:08:47,201 - ERROR - Page source contains 'Sign in': True
+2026-01-21 17:08:47,202 - ERROR - Page source contains 'sign in': False
+2026-01-21 17:08:47,204 - ERROR - Page source contains 'login': False
+2026-01-21 17:08:47,205 - ERROR - === END DEBUG ===
+2026-01-21 17:08:47,206 - ERROR - <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
+2026-01-21 17:08:47,226 - INFO - Verified on text sign in
+2026-01-21 17:08:47,334 - INFO - Attempting to sign in
+2026-01-21 17:08:47,342 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-01-21 17:08:47,603 - INFO - Entered click and clear info
+2026-01-21 17:08:47,643 - INFO - Entered username: khoa
+2026-01-21 17:08:47,773 - INFO - Entered password
+2026-01-21 17:08:47,868 - INFO - Clicked Sign in button
+2026-01-21 17:08:47,869 - ERROR - Error during sign in: WebDriver.find_element() takes from 1 to 3 positional arguments but 33 were given
+2026-01-21 17:08:48,220 - INFO - Screenshot saved to E:\Backupwin11\Launch-auto\Screenshots\20260121_170847_enter_user_name_password.png
+2026-01-21 17:08:48,220 - ERROR - Sign in portal failed
 Traceback (most recent call last):
   File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\functions\SWC_client.py", line 203, in sign_in_portal
-    BuiltIn().should_be_true(MeetNowPage(self.driver).enter_user_name_password(username, password), 'Enter user name and password failed')
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\pom\MeetNowPage.py", line 70, in enter_user_name_password
-    Web_Clients._take_screenshot("enter_user_name_password.png")
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: type object 'Web_Clients' has no attribute '_take_screenshot'
+    MeetNowPage(self.driver).enter_user_name_password(userportal, password),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\pom\MeetNowPage.py", line 81, in enter_user_name_password
+    sign_out_el = self.wait.until(
+        EC.presence_of_element_located(self.SIGN_OUT_BUTTON)
+    )
+  File "c:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 86, in until
+    value = method(self._driver)
+  File "c:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 82, in _predicate
+    return driver.find_element(*locator)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+TypeError: WebDriver.find_element() takes from 1 to 3 positional arguments but 33 were given

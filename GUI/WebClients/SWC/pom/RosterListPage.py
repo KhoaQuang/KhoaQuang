@@ -17,6 +17,8 @@ class RosterListPage:
     PASSWORD_INPUT = (By.ID, "loginForm:password")
     LOGIN_BUTTON = (By.ID, "loginForm:submitText")
     LOGOUT_BUTTON = (By.ID, "logoutForm:log_out")
+    ROSTER_LIST = (By.XPATH, "//div[@class='roster-body']")
+    PARTICIPANT_NAME = (By.XPATH, "//div[@class='participant__name']")
     
     def __init__(self, driver):
         """
@@ -38,15 +40,20 @@ class RosterListPage:
         try:
             logging.info(f"Searching for participant: {participant_name}")
             roster_list = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.ID, "rosterList"))
+                EC.presence_of_element_located(RosterListPage.ROSTER_LIST)
             )
-            participants = roster_list.find_elements(By.CLASS_NAME, "participant-name")
+            participants = roster_list.find_elements(*RosterListPage.PARTICIPANT_NAME)
+            logging.info(f"Total participants found: {len(participants)}")
+            expected = participant_name.strip().lower()
             for participant in participants:
-                if participant.text.strip() == participant_name:
+                ui_name = participant.text.strip().lower()
+                logging.info(f"Checking participant UI name: '{ui_name}'")
+                if expected in ui_name:
                     logging.info(f"Participant '{participant_name}' found in roster list.")
                     return True
             logging.info(f"Participant '{participant_name}' not found in roster list.")
             return False
+        
         except Exception as e:
             logging.error(f"Error while searching for participant '{participant_name}': {e}")
             return False

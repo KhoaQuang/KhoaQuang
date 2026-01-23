@@ -1,3 +1,5 @@
+from asyncio import timeout
+from xml.dom.xmlbuilder import Options
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
@@ -13,8 +15,10 @@ import sys,os,time
 import inspect
 import logging
 from robot.api import logger
+from GUI.WebClients.SWC.pom.AlertPage import AlertPage
 from GUI.WebClients.SWC.pom.MeetNowPage import MeetNowPage
 from GUI.WebClients.SWC.pom.RosterListPage import RosterListPage
+from GUI.WebClients.SWC.pom.ModeratorPage import ModeratorPage
 from Utility.Utility import Utility
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 logging.basicConfig(
@@ -52,14 +56,6 @@ class SWC_Clients:
             self._setup_edge()
         else:
             raise ValueError(f"Unsupported browser: {self.browser}")
-    def _take_screenshot(self, filename):
-        try:
-            screenshot_path = os.path.join(self.screenshot_dir, filename)
-            self.driver.save_screenshot(screenshot_path)
-            logging.info(f"Screenshot saved to {screenshot_path}")
-        except Exception as e:
-            logging.error(f"Error saving screenshot: {e}")
-            raise
 
     def _setup_driver(self, browser_name, service, options):
         try:
@@ -92,6 +88,7 @@ class SWC_Clients:
         logging.info('Start function _setup_chrome')
         try:
             self.chrome_options = ChromeOptions()
+            self._configure_media_permission("chrome", self.chrome_options)
             self.chrome_options.add_argument("--disable-application-cache")
             self.chrome_options.add_argument("--disable-user-media-security=true")
             self.chrome_options.add_argument("--incognito")
@@ -112,6 +109,7 @@ class SWC_Clients:
     def _setup_firefox(self):
         try:
             self.firefox_options = FirefoxOptions()
+            self._configure_media_permission("firefox", self.firefox_options)
             self.firefox_options.add_argument("--ignore-certificate-errors")
             self.firefox_options.add_argument("--disable-application-cache")
             self.firefox_options.add_argument("--disable-popup-blocking")
@@ -131,6 +129,7 @@ class SWC_Clients:
     def _setup_edge(self):
         try:
             self.edge_options = EdgeOptions()
+            self._configure_media_permission("edge", self.edge_options)
             self.edge_options.add_argument("--disable-application-cache")
             self.edge_options.add_argument("--disable-popup-blocking")
             self.edge_options.add_argument("--ignore-certificate-errors")
@@ -146,26 +145,38 @@ class SWC_Clients:
         except Exception as e:
             logging.error(f"Error setting up Edge: {e}")
             raise
-    
-    def quit(self):
-        try:
-            logging.info("Attempting to quit the browser")
-            self.driver.quit()
-            logging.info("Browser quit successfully")
-        except Exception as e:
-            logging.error(f"Error quitting the browser: {e}")
-            raise
 
-    def sign_in_portal(self, username=None, password=None, adfs_name=None):
+    def _configure_media_permission(self, browser_name, options):
+        if browser_name in ("chrome", "edge"):
+            options.add_argument("--use-fake-ui-for-media-stream")
+            options.add_argument("--use-fake-device-for-media-stream")
+
+            prefs = {
+                "profile.default_content_setting_values.media_stream_mic": 1,
+                "profile.default_content_setting_values.media_stream_camera": 1,
+                "profile.content_settings.exceptions.media_stream_mic.*.setting": 1,
+            }
+            options.add_experimental_option("prefs", prefs)
+
+        elif browser_name == "firefox":
+            options.set_preference("media.navigator.permission.disabled", True)
+            options.set_preference("media.navigator.streams.fake", True)
+
+    def sign_in_portal(self, userportal=None, password=None):
         try:
             '''
                 * Function name: sign_in_portal 
                 * Description: This function is used to LogIn web portal
                 * Parameters:  
-                    + user_name: LogIn ID
+                    + userportal: LogIn ID
                     + password: password
-                * Ex: sign_in_portal  auto2016000  RAPtor1234
+                * Ex: sign_in_portal  khoa  AvayaMcspv_1234$
             '''
+
+            if userportal is None:
+                userportal = self.portal_username
+            if password is None:
+                password = self.portal_password
 
             logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
             point = getattr(self, "point", None)
@@ -175,18 +186,6 @@ class SWC_Clients:
             else:
                 logger = logger_main
             logger.info('Start function sign_in_portal')
-            logger.error("=== DEBUG SIGN IN CONTEXT ===")
-            logger.error(f"Current URL: {self.driver.current_url}")
-            logger.error(f"Window handles: {self.driver.window_handles}")
-            logger.error(f"Current window handle: {self.driver.current_window_handle}")
-            iframes = self.driver.find_elements(By.TAG_NAME, "iframe")
-            logger.error(f"Iframe count: {len(iframes)}")
-            source = self.driver.page_source
-            logger.error("Page source contains 'Sign in': %s", "Sign in" in source)
-            logger.error("Page source contains 'sign in': %s", "sign in" in source)
-            logger.error("Page source contains 'login': %s", "login" in source)
-            logger.error("=== END DEBUG ===")
-            logger.error(type(self.driver))
             BuiltIn().should_be_true(Utility.is_element_present_by_xpath(
                     self.driver,
                     MeetNowPage.XPATH_TXT_SIGN_IN
@@ -195,42 +194,95 @@ class SWC_Clients:
             )
             MeetNowPage(self.driver).click_txt_sign_in()
             BuiltIn().should_be_true(
-                MeetNowPage(self.driver).enter_user_name_password(username, password),
+                MeetNowPage(self.driver).enter_user_name_password(userportal, password),
                 'Enter user name and password failed'
             )
             logger.info('Verify sign_in_portal')
             time.sleep(2)
-            name_display = MeetNowPage(self.driver).get_user_name()
-            logger.info('Display name: %s' % name_display)
-            if adfs_name is None:
-                if username in name_display:
-                    logger.info('Sign_in_portal successfully')
-                    self.result_parallel_execute = "PASSED"
-                    return True
-            else:
-                if adfs_name in name_display:
-                    logger.info('Sign_in_portal successfully')
-                    self.result_parallel_execute = "PASSED"
-                    return True
-            self.result_parallel_execute = "FAILED"
-            self.fail('Wrong display name after sign in user %s' % username)
-        except Exception as e:
+
+        except Exception:
             self.result_parallel_execute = "FAILED"
             logger.exception("Sign in portal failed")
             raise
 
-    def verify_sign_in_portal(self, user_name, password):
+    def verify_sign_in_portal(self, user_name):
         try:
-            if self.sign_in_portal(user_name, password):
+            actual_name = MeetNowPage(self.driver).get_user_name()
+            logger.info(f'Display name: {actual_name}')
+
+            if user_name in actual_name:
+                logger.info('Sign_in_portal successfully')
+                self.result_parallel_execute = "PASSED"
                 return True
             else:
-                return False
-        except:
-            logger.info('Function exception: '+str(sys.exc_info()))
-            return False
+                raise AssertionError(
+                    f'Sign_in_portal failed. Expected user: {user_name}, Actual: {actual_name}'
+                )
+
+        except Exception:
+            logger.exception('Verify sign in portal error')
+            self.result_parallel_execute = "FAILED"
+            raise RuntimeError('Function exception: '+str(sys.exc_info()))
+        
+    def join_meeting(self, meeting_id):
+        try:
+            '''
+                * Function name: join_meeting 
+                * Description: This function is used to join meeting via web portal 
+                * Parameters:  
+                    + meeting_id: meeting ID to join meeting
+                    + display_name: display name participant after join meeting
+            '''
+
+            logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
+            logger = logger_main
+            logger.info('Start function join_meeting')
+            logger.info(f'Entering meeting ID: {meeting_id}')
+            meet_page = MeetNowPage(self.driver)
+            meet_page.enter_meeting_id(meeting_id)
+            logger.info("Clicking join meeting button...")
+            meet_page.click_join_meeting()
+            # MeetNowPage(self.driver).enter_display_name(display_name)
+            WebDriverWait(self.driver, 20).until(EC.number_of_windows_to_be(2))
+            logger.info("Waiting for conference window to open...")
+            original_window = self.driver.current_window_handle
+            logger.info(f'Original portal window: {original_window}') 
+            WebDriverWait(self.driver, 20).until(
+                lambda d: len(d.window_handles) > 1
+            )
+            conference_window = next(
+                w for w in self.driver.window_handles if w != original_window
+            )
+            logger.info(f'Conference window: {conference_window}')
+            logger.info(f'Switching to conference window: {conference_window}')
+            self.driver.switch_to.window(conference_window)
+            WebDriverWait(self.driver, 10).until(
+                lambda d: d.current_window_handle == conference_window
+            )
+            logger.info('Successfully focused on conference window')
+            logger.info("join_meeting successfully")
+            self.result_parallel_execute = "PASSED"
+            return True
+        
+        except Exception:
+            logger.exception('Verify join meeting error')
+            self.result_parallel_execute = "FAILED"
+            raise RuntimeError('Function exception: '+str(sys.exc_info()))
+        
+    def handle_unblock_popup(self):
+        try:
+            logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
+            logger.info('Handle unblock popup')
+            handle_popup = AlertPage(self.driver)
+            time.sleep(5)
+            handle_popup.handle_close_popup_microphone()
+            time.sleep(5)
+            handle_popup.handle_close_popup_video()
+            logger.info('Handle unblock popup successfully')
+        except Exception as e:
+            logger.error(f"Error during handle unblock popup: {e}")
     
     def verify_in_meeting(self, my_name):
-        try:
             ''' 
                 * Function name: verify_in_meeting 
                 * Description: This function is used to verify new participant to join the meeting
@@ -244,65 +296,130 @@ class SWC_Clients:
             '''
             logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
             logger.info('Start verify_in_meeting')
-            WebDriverWait(self.driver, 20).until(EC.number_of_windows_to_be(2))
-            self.switch_window('conference_window')
-            time_out = 60
-            past_time = int(time.time())
-            current_time = past_time
-            while(current_time-past_time < time_out):
-                logger.info('Wait for loading roster participant %s second' % int(current_time-past_time))
-                current_time = int(time.time())
-                try:
-                    WebDriverWait(self.driver, 10).until(
-                        EC.presence_of_element_located((By.CSS_SELECTOR, 'button.db_btn.ng-binding#dismissBtn'))
-                    )
-                    logger.info('Found dismiss pop up')
-                    self.driver.find_element(By.CSS_SELECTOR, 'button.db_btn.ng-binding#dismissBtn').click()
-                except:
-                    logger.info('Dismiss button not found')
-                if RosterListPage.find_participant_in_roster_list(self.driver, my_name):
+            time_out = 5
+            start_time = time.time()
+            popup_handled = False
+            while True:
+                elapsed = int(time.time() - start_time)
+                logger.info(f"Waiting for participant '{my_name}' ({elapsed}s)")
+                if elapsed >= time_out:
+                    self.result_parallel_execute = "FAILED"
+                    raise RuntimeError("verify_in_meeting failed")
+                logger.info(f"Waiting for participant '{my_name}' ({elapsed}s)")
+                if not popup_handled:
                     try:
-                        logger.info('Handle unblock video!')
-                        self.handle_popup_during_meeting()
-                        self.handle_unblock_video()
-                    except:
-                        pass
-                    logger.info('verify_in_meeting susccessfuly')
+                        self.handle_unblock_popup()
+                        popup_handled = True
+                        logger.info("Popup handled, will not retry")
+                    except Exception:
+                        logger.debug("Popup not present yet")
+
+                try:
+                    found = RosterListPage.find_participant_in_roster_list(self.driver, my_name)
+                except Exception as e:
+                    logger.warning(f"Roster not ready, retrying: {e}")
+                    time.sleep(1)
+                    continue
+
+                if found:
+                    logger.info(f"Participant '{my_name}' found in roster list. {my_name} joined meeting successfully")
                     self.result_parallel_execute = "PASSED"
                     return True
-            self.result_parallel_execute = "FAILED"
-            self.fail('verify_in_meeting unsusccessfuly')
+        
+    def switch_window(self, window_type):
+        """Switch to a specific window type: 'conference_window' or 'unified_portal'"""
+        try:
+            logger.info(f'=== SWITCHING TO {window_type} ===')
+            logger.info(f'Total windows available: {len(self.driver.window_handles)}')
+            logger.info(f'Window handles: {self.driver.window_handles}')
+            
+            current_window = self.driver.current_window_handle
+            logger.info(f'Current window: {current_window}')
+            
+            if window_type == 'conference_window':
+                for window_handle in self.driver.window_handles:
+                    if window_handle != current_window:
+                        logger.info(f'Switching to conference window: {window_handle}')
+                        self.driver.switch_to.window(window_handle)
+                        logger.info(f'Switched to: {self.driver.current_window_handle}')
+                        logger.info(f'Conference window URL: {self.driver.current_url}')
+                        time.sleep(2)
+                        return True
+                logger.warning('Could not find conference window!')
+                return False
+                
+            elif window_type == 'unified_portal':
+                for window_handle in self.driver.window_handles:
+                    if 'portal' in window_handle or window_handle == self.driver.window_handles[0]:
+                        logger.info(f'Switching to portal window: {window_handle}')
+                        self.driver.switch_to.window(window_handle)
+                        logger.info(f'Switched to: {self.driver.current_window_handle}')
+                        logger.info(f'Portal window URL: {self.driver.current_url}')
+                        time.sleep(2)
+                        return True
+                logger.warning('Could not find portal window!')
+                return False
+            else:
+                logger.error(f'Unknown window type: {window_type}')
+                return False
+        except Exception as e:
+            logger.error(f'Error switching window: {e}')
+            return False
+        
+    def terminate_meeting(self):
+        try:
+            '''
+                * Function name: terminate_meeting 
+                * Description: This function is used to terminate meeting via SWC moderator client 
+                * Parameters:  None
+            '''
+            logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
+            logger = logger_main
+            logger.info('Start function terminate_meeting')
+            # BuiltIn().should_be_true(self.switch_window('conference_window'),'Switch to conference window failed')
+            BuiltIn().should_be_true(ModeratorPage(self.driver).handle_meeting_controls(), 'Handle meeting controls failed')
+            time.sleep(5)
+            BuiltIn().should_be_true(ModeratorPage(self.driver).handle_terminate_meeting(), 'Handle terminate meeting failed')
+            time.sleep(5)
+            logger.info('Terminate_meeting successfuly')
+            self.close_conference_window()
+            self.result_parallel_execute = "PASSED"
+            return True
+        
         except:
             self.result_parallel_execute = "FAILED"
             raise RuntimeError('Function exception: '+str(sys.exc_info()))
+        
+    def close_conference_window(self):
+        logger.info('Closing conference window')
+        all_windows = self.driver.window_handles
+        if len(all_windows) <= 1:
+            logger.warning('No conference window to close')
+            return
 
+        current = self.driver.current_window_handle
+        self.driver.close()
+        logger.info(f'Closed window: {current}')
+        remaining = self.driver.window_handles[0]
+        self.driver.switch_to.window(remaining)
+        logger.info(f'Switched back to original window: {remaining}')
+        
     def sign_out(self):
         try:
             '''
                 * Function name: sign_out_portal 
                 * Description: This function is used to logout web portal 
-                * Parameters:  None
-                * Author: Dong Nguyen
-                * Date: Feb, 2019
-                * Ex: sign_out_portal
-                * Modify by: 
-                * Date
             '''
+
             logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
-            if self.point != None and self.point.is_alive():
-                logger = logger_bg
-                logger.info('Status is sub thread so log background will be write after back to main thread')
-            else:
-                logger = logger_main
+            logger = logger_main
             logger.info('Start function sign_out_portal')
-            self.assertTrue(self.switch_window('unified_portal'),'Switch to main window failed')
-            self.assertTrue(MeetNowPage.MeetNowPage().click_btn_txt_user_name(self.driver), 'click to user name failed')
-            self.assertTrue(MeetNowPage.MeetNowPage().click_btn_sign_out(self.driver), 'Click signout button failed')
-            logger.info('verify sign_out_portal')
-            self.assertTrue(MeetNowPage.MeetNowPage().wait_for_btn_sign_in(self.driver, 20), 'Not found sign in button')
-            logger.info('Sign_out_portal susccessfuly')
+            BuiltIn().should_be_true(MeetNowPage(self.driver).click_txt_sign_out(), 'Handle meeting controls failed')
+            time.sleep(5)
+            logger.info("Successfully signed out - sign out button detected")
             self.result_parallel_execute = "PASSED"
             return True
+        
         except:
             self.result_parallel_execute = "FAILED"
             raise RuntimeError('Function exception: '+str(sys.exc_info()))

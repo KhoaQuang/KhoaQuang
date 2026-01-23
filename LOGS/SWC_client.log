@@ -1,78 +1,65 @@
-2026-01-20 18:26:21,984 - INFO - https://aawgte-svc-kvm.hcm.com:443/portal
-2026-01-20 18:26:21,985 - INFO - Start function _setup_chrome
-2026-01-20 18:26:21,986 - INFO - Setting up chrome driver
-2026-01-20 18:26:21,986 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
-2026-01-20 18:26:23,480 - INFO - chrome driver setup successfully
-2026-01-20 18:26:23,480 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com:443/portal
-2026-01-20 18:26:24,451 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
-2026-01-20 18:26:24,451 - INFO - Start function sign_in_portal
-2026-01-20 18:26:24,452 - ERROR - === DEBUG SIGN IN CONTEXT ===
-2026-01-20 18:26:24,459 - ERROR - Current URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
-2026-01-20 18:26:24,463 - ERROR - Window handles: ['A8F5544DE12A883F9549589C1120C68C']
-2026-01-20 18:26:24,466 - ERROR - Current window handle: A8F5544DE12A883F9549589C1120C68C
-2026-01-20 18:26:24,477 - ERROR - Iframe count: 0
-2026-01-20 18:26:24,484 - ERROR - Page source contains 'Sign in': True
-2026-01-20 18:26:24,485 - ERROR - Page source contains 'sign in': False
-2026-01-20 18:26:24,485 - ERROR - Page source contains 'login': False
-2026-01-20 18:26:24,486 - ERROR - === END DEBUG ===
-2026-01-20 18:26:24,487 - ERROR - <class 'selenium.webdriver.chrome.webdriver.WebDriver'>
-2026-01-20 18:26:24,530 - INFO - Verified on text sign in
-2026-01-20 18:26:24,532 - INFO - Attempting to sign in
-2026-01-20 18:26:34,689 - ERROR - Error during sign in: Message: 
-Stacktrace:
-Symbols not available. Dumping unresolved backtrace:
-	0x7ff60d9d88d5
-	0x7ff60d9d8930
-	0x7ff60d7b165d
-	0x7ff60d809a33
-	0x7ff60d809d3c
-	0x7ff60d85df67
-	0x7ff60d85ac97
-	0x7ff60d7fac29
-	0x7ff60d7fba93
-	0x7ff60dcf0620
-	0x7ff60dceaf60
-	0x7ff60dd096c6
-	0x7ff60d9f5dd4
-	0x7ff60d9fed7c
-	0x7ff60d9e1ff4
-	0x7ff60d9e21a5
-	0x7ff60d9c7ed2
-	0x7fffab35e8d7
-	0x7fffac0cc53c
-
-2026-01-20 18:26:35,047 - INFO - Screenshot saved to E:\Backupwin11\Launch-auto\Screenshots\20260120_182634_enter_user_name_password.png
-2026-01-20 18:26:35,048 - ERROR - Sign in portal failed
-Traceback (most recent call last):
-  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\functions\SWC_client.py", line 198, in sign_in_portal
-    MeetNowPage(self.driver).enter_user_name_password(username, password),
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "e:\Backupwin11\Launch-auto\GUI\WebClients\SWC\pom\MeetNowPage.py", line 52, in enter_user_name_password
-    username_el = self.wait.until(
-        EC.visibility_of_element_located(self.USERNAME_INPUT)
-    )
-  File "c:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 95, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-Symbols not available. Dumping unresolved backtrace:
-	0x7ff60d9d88d5
-	0x7ff60d9d8930
-	0x7ff60d7b165d
-	0x7ff60d809a33
-	0x7ff60d809d3c
-	0x7ff60d85df67
-	0x7ff60d85ac97
-	0x7ff60d7fac29
-	0x7ff60d7fba93
-	0x7ff60dcf0620
-	0x7ff60dceaf60
-	0x7ff60dd096c6
-	0x7ff60d9f5dd4
-	0x7ff60d9fed7c
-	0x7ff60d9e1ff4
-	0x7ff60d9e21a5
-	0x7ff60d9c7ed2
-	0x7fffab35e8d7
-	0x7fffac0cc53c
-
+2026-01-23 18:11:26,857 - INFO - https://aawgott-svc-kvm.hcm.com:443/portal
+2026-01-23 18:11:26,858 - INFO - Start function _setup_chrome
+2026-01-23 18:11:26,859 - INFO - Setting up chrome driver
+2026-01-23 18:11:26,859 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-01-23 18:11:28,604 - INFO - chrome driver setup successfully
+2026-01-23 18:11:28,605 - INFO - Navigating to URL: https://aawgott-svc-kvm.hcm.com:443/portal
+2026-01-23 18:11:29,715 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-01-23 18:11:29,715 - INFO - Start function sign_in_portal
+2026-01-23 18:11:29,930 - INFO - Verified on text sign in
+2026-01-23 18:11:30,042 - INFO - Attempting to sign in
+2026-01-23 18:11:30,069 - INFO - URL: https://aawgott-svc-kvm.hcm.com/portal/tenants/default/
+2026-01-23 18:11:30,300 - INFO - Entered click and clear info
+2026-01-23 18:11:30,335 - INFO - Entered username: khoa
+2026-01-23 18:11:30,424 - INFO - Entered password
+2026-01-23 18:11:30,506 - INFO - Clicked Sign in button
+2026-01-23 18:11:35,562 - INFO - Clicked user avatar button
+2026-01-23 18:11:35,580 - INFO - Successfully signed in - sign out button detected
+2026-01-23 18:11:35,624 - INFO - Navigated back to the iView dashboard
+2026-01-23 18:11:35,625 - INFO - Verify sign_in_portal
+2026-01-23 18:11:37,626 - INFO - Getting user name from Meet Now page
+2026-01-23 18:11:37,660 - INFO - Display name: Quang khoa
+2026-01-23 18:11:37,661 - INFO - Sign_in_portal successfully
+2026-01-23 18:11:37,664 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-01-23 18:11:37,665 - INFO - Start function join_meeting
+2026-01-23 18:11:37,665 - INFO - Entering meeting ID: 5602112
+2026-01-23 18:11:37,665 - INFO - Attempting to enter meeting ID
+2026-01-23 18:11:37,778 - INFO - Entered meeting ID: 5602112
+2026-01-23 18:11:37,778 - INFO - Clicking join meeting button...
+2026-01-23 18:11:37,870 - INFO - Clicked Join Meeting button successfully
+2026-01-23 18:11:38,567 - INFO - Waiting for conference window to open...
+2026-01-23 18:11:38,568 - INFO - Original portal window: D9F691972812B1A2293753C3283B3467
+2026-01-23 18:11:38,571 - INFO - Conference window: CC5823386ECC709CA203D4E8BD27E285
+2026-01-23 18:11:38,572 - INFO - Switching to conference window: CC5823386ECC709CA203D4E8BD27E285
+2026-01-23 18:11:38,578 - INFO - Successfully focused on conference window
+2026-01-23 18:11:38,578 - INFO - join_meeting successfully
+2026-01-23 18:11:48,583 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-01-23 18:11:48,583 - INFO - Start verify_in_meeting
+2026-01-23 18:11:48,583 - INFO - Waiting for participant 'khoa' (0s)
+2026-01-23 18:11:48,584 - INFO - Waiting for participant 'khoa' (0s)
+2026-01-23 18:11:48,586 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-01-23 18:11:48,586 - INFO - Handle unblock popup
+2026-01-23 18:11:56,721 - INFO - Close popup microphone button clicked
+2026-01-23 18:12:01,780 - INFO - Close popup video button clicked
+2026-01-23 18:12:01,780 - INFO - Handle unblock popup successfully
+2026-01-23 18:12:01,780 - INFO - Popup handled, will not retry
+2026-01-23 18:12:01,780 - INFO - Searching for participant: khoa
+2026-01-23 18:12:01,801 - INFO - Total participants found: 1
+2026-01-23 18:12:01,809 - INFO - Checking participant UI name: 'quang khoa'
+2026-01-23 18:12:01,810 - INFO - Participant 'khoa' found in roster list.
+2026-01-23 18:12:01,810 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-01-23 18:12:01,814 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-01-23 18:12:01,815 - INFO - Start function terminate_meeting
+2026-01-23 18:12:01,914 - INFO - Meeting controls button clicked
+2026-01-23 18:12:07,030 - INFO - Terminate meeting button clicked
+2026-01-23 18:12:07,138 - INFO - Submit button clicked
+2026-01-23 18:12:12,139 - INFO - Terminate_meeting successfuly
+2026-01-23 18:12:12,140 - INFO - Closing conference window
+2026-01-23 18:12:12,210 - INFO - Closed window: CC5823386ECC709CA203D4E8BD27E285
+2026-01-23 18:12:12,213 - INFO - Switched back to original window: D9F691972812B1A2293753C3283B3467
+2026-01-23 18:12:12,216 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-01-23 18:12:12,216 - INFO - Start function sign_out_portal
+2026-01-23 18:12:12,226 - INFO - Verified on avatar user button
+2026-01-23 18:12:12,273 - INFO - Clicked avatar user button
+2026-01-23 18:12:12,863 - INFO - Verified on sign in button
+2026-01-23 18:12:17,864 - INFO - Successfully signed out - sign out button detected
