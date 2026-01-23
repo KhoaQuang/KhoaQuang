@@ -371,8 +371,8 @@ class SWC_Clients:
             '''
                 * Function name: terminate_meeting 
                 * Description: This function is used to terminate meeting via SWC moderator client 
-                * Parameters:  None
             '''
+            
             logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
             logger = logger_main
             logger.info('Start function terminate_meeting')
