@@ -11,6 +11,8 @@ from robot.api import logger
 from GUI.WebClients.IVIEW.pom.LoginIVIEWpage import LoginIVIEWpage
 from GUI.WebClients.IVIEW.pom.SettingsIVIEWpage import SettingsIVIEWpage
 from Utility.Utility import Utility
+from robot.libraries.BuiltIn import BuiltIn
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 logging.basicConfig(
     level=logging.INFO,
@@ -187,7 +189,18 @@ class Web_Clients:
         try: 
             page = SettingsIVIEWpage(self.driver)
             page.option_custom_branding()
+
         except Exception as e:
             logging.error(f"Error opening custom branding option: {e}")
             Utility.take_screenshot("open_custom_branding_error.png")
-            raise
+            return False
+
+    def enable_advanced_branding(self):
+        try: 
+            page = SettingsIVIEWpage(self.driver)
+            page.enable_advanced_branding()
+
+        except Exception as e:
+            logging.error(f"Error enabling advanced branding: {e}")
+            Utility.take_screenshot(self.driver, "enable_advanced_branding_error.png")
+            BuiltIn().fail("Enable advanced branding failed")

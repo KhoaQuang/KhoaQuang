@@ -1,157 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.13.3 on win32)" generated="2026-01-23T18:11:26.676558" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.13.3 on win32)" generated="2026-01-29T18:04:37.940094" rpa="false" schemaversion="5">
 <suite id="s1" name="Khoa2" source="e:\Backupwin11\Launch-auto\TESTS\Khoa2.robot">
-<test id="s1-t1" name="Portal Join Meeting Test" line="39">
+<test id="s1-t1" name="IVIEW Web Client Smoke Test" line="31">
 <kw name="Create Web Client" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-23T18:11:26.857596" level="INFO">https://aawgott-svc-kvm.hcm.com:443/portal</msg>
-<msg time="2026-01-23T18:11:26.858914" level="INFO">Start function _setup_chrome</msg>
-<msg time="2026-01-23T18:11:26.859444" level="INFO">Setting up chrome driver</msg>
-<msg time="2026-01-23T18:11:26.859715" level="INFO">Using local chrome driver at C:\Auto_Browsers\chromedriver.exe</msg>
-<msg time="2026-01-23T18:11:28.605026" level="INFO">chrome driver setup successfully</msg>
-<msg time="2026-01-23T18:11:28.605824" level="INFO">Navigating to URL: https://aawgott-svc-kvm.hcm.com:443/portal</msg>
-<msg time="2026-01-23T18:11:29.597325" level="INFO">Web Client created successfully</msg>
+<msg time="2026-01-29T18:04:38.299731" level="INFO">https://10.103.3.173/iview/views/index.jsf</msg>
+<msg time="2026-01-29T18:04:38.301602" level="INFO">Start function _setup_chrome</msg>
+<msg time="2026-01-29T18:04:38.302326" level="INFO">Setting up chrome driver</msg>
+<msg time="2026-01-29T18:04:38.302596" level="INFO">Using local chrome driver at C:\Auto_Browsers\chromedriver.exe</msg>
+<msg time="2026-01-29T18:04:40.301340" level="INFO">chrome driver setup successfully</msg>
+<msg time="2026-01-29T18:04:40.302037" level="INFO">Navigating to URL: https://10.103.3.173/iview/views/index.jsf</msg>
+<msg time="2026-01-29T18:04:40.567935" level="INFO">Web Client created successfully</msg>
 <arg>${BROWSER}</arg>
 <arg>${CLIENT}</arg>
+<arg>${IVIEW}</arg>
 <arg>${NONE}</arg>
-<arg>${PORTAL}</arg>
 <doc>Create Web_Clients instance and store it internally.</doc>
-<status status="PASS" start="2026-01-23T18:11:26.704078" elapsed="2.893520"/>
+<status status="PASS" start="2026-01-29T18:04:38.231372" elapsed="2.337496"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-23T18:11:29.715624" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal</msg>
-<msg time="2026-01-23T18:11:29.715966" level="INFO">Start function sign_in_portal</msg>
-<msg time="2026-01-23T18:11:29.930694" level="INFO">Verified on text sign in</msg>
-<msg time="2026-01-23T18:11:30.042433" level="INFO">Attempting to sign in</msg>
-<msg time="2026-01-23T18:11:30.069257" level="INFO">URL: https://aawgott-svc-kvm.hcm.com/portal/tenants/default/</msg>
-<msg time="2026-01-23T18:11:30.300962" level="INFO">Entered click and clear info</msg>
-<msg time="2026-01-23T18:11:30.335086" level="INFO">Entered username: khoa</msg>
-<msg time="2026-01-23T18:11:30.424379" level="INFO">Entered password</msg>
-<msg time="2026-01-23T18:11:30.506198" level="INFO">Clicked Sign in button</msg>
-<msg time="2026-01-23T18:11:35.562444" level="INFO">Clicked user avatar button</msg>
-<msg time="2026-01-23T18:11:35.580305" level="INFO">Successfully signed in - sign out button detected</msg>
-<msg time="2026-01-23T18:11:35.624964" level="INFO">Navigated back to the iView dashboard</msg>
-<msg time="2026-01-23T18:11:35.625377" level="INFO">Verify sign_in_portal</msg>
-<arg>sign_in_portal</arg>
+<msg time="2026-01-29T18:04:40.572640" level="INFO">Attempting to sign in</msg>
+<msg time="2026-01-29T18:04:43.236829" level="INFO">Successfully signed in - logout button detected</msg>
+<msg time="2026-01-29T18:04:43.237163" level="INFO">Method 'sign_in' executed successfully</msg>
+<arg>sign_in</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-01-23T18:11:29.598508" elapsed="8.027378"/>
+<status status="PASS" start="2026-01-29T18:04:40.571685" elapsed="2.665641"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-23T18:11:37.626817" level="INFO">Getting user name from Meet Now page</msg>
-<msg time="2026-01-23T18:11:37.660909" level="INFO">Display name: Quang khoa</msg>
-<msg time="2026-01-23T18:11:37.661369" level="INFO">Sign_in_portal successfully</msg>
-<arg>verify_sign_in_portal</arg>
-<arg>${USERPORTAL}</arg>
+<msg time="2026-01-29T18:04:43.238598" level="INFO">Attempting to open settings</msg>
+<msg time="2026-01-29T18:04:43.315348" level="INFO">Settings button clicked successfully</msg>
+<msg time="2026-01-29T18:04:43.315657" level="INFO">Method 'open_settings' executed successfully</msg>
+<arg>open_settings</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-01-23T18:11:37.626478" elapsed="0.035519"/>
+<status status="PASS" start="2026-01-29T18:04:43.237923" elapsed="0.077862"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-23T18:11:37.664901" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: join_meeting</msg>
-<msg time="2026-01-23T18:11:37.665239" level="INFO">Start function join_meeting</msg>
-<msg time="2026-01-23T18:11:37.665463" level="INFO">Entering meeting ID: 5602112</msg>
-<msg time="2026-01-23T18:11:37.665670" level="INFO">Attempting to enter meeting ID</msg>
-<msg time="2026-01-23T18:11:37.778139" level="INFO">Entered meeting ID: 5602112</msg>
-<msg time="2026-01-23T18:11:37.778536" level="INFO">Clicking join meeting button...</msg>
-<msg time="2026-01-23T18:11:37.870728" level="INFO">Clicked Join Meeting button successfully</msg>
-<msg time="2026-01-23T18:11:38.567291" level="INFO">Waiting for conference window to open...</msg>
-<msg time="2026-01-23T18:11:38.568986" level="INFO">Original portal window: D9F691972812B1A2293753C3283B3467</msg>
-<msg time="2026-01-23T18:11:38.571850" level="INFO">Conference window: CC5823386ECC709CA203D4E8BD27E285</msg>
-<msg time="2026-01-23T18:11:38.572484" level="INFO">Switching to conference window: CC5823386ECC709CA203D4E8BD27E285</msg>
-<msg time="2026-01-23T18:11:38.578359" level="INFO">Successfully focused on conference window</msg>
-<msg time="2026-01-23T18:11:38.578703" level="INFO">join_meeting successfully</msg>
-<arg>join_meeting</arg>
-<arg>${MEETINGID}</arg>
+<msg time="2026-01-29T18:04:43.316464" level="INFO">Attempting to open user portal</msg>
+<msg time="2026-01-29T18:04:43.880757" level="INFO">User portal link clicked</msg>
+<msg time="2026-01-29T18:04:43.890228" level="INFO">User portal page loaded successfully</msg>
+<msg time="2026-01-29T18:04:43.890521" level="INFO">Method 'open_user_portal' executed successfully</msg>
+<arg>open_user_portal</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-01-23T18:11:37.662498" elapsed="0.916480"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-01-23T18:11:48.580213" level="INFO">Slept 10 seconds.</msg>
-<arg>10s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-01-23T18:11:38.579436" elapsed="10.001161"/>
+<status status="PASS" start="2026-01-29T18:04:43.316217" elapsed="0.574442"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-23T18:11:48.583337" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting</msg>
-<msg time="2026-01-23T18:11:48.583763" level="INFO">Start verify_in_meeting</msg>
-<msg time="2026-01-23T18:11:48.583974" level="INFO">Waiting for participant 'khoa' (0s)</msg>
-<msg time="2026-01-23T18:11:48.584126" level="INFO">Waiting for participant 'khoa' (0s)</msg>
-<msg time="2026-01-23T18:11:48.586137" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup</msg>
-<msg time="2026-01-23T18:11:48.586466" level="INFO">Handle unblock popup</msg>
-<msg time="2026-01-23T18:11:56.721577" level="INFO">Close popup microphone button clicked</msg>
-<msg time="2026-01-23T18:12:01.780236" level="INFO">Close popup video button clicked</msg>
-<msg time="2026-01-23T18:12:01.780534" level="INFO">Handle unblock popup successfully</msg>
-<msg time="2026-01-23T18:12:01.780737" level="INFO">Popup handled, will not retry</msg>
-<msg time="2026-01-23T18:12:01.780939" level="INFO">Searching for participant: khoa</msg>
-<msg time="2026-01-23T18:12:01.801475" level="INFO">Total participants found: 1</msg>
-<msg time="2026-01-23T18:12:01.809770" level="INFO">Checking participant UI name: 'quang khoa'</msg>
-<msg time="2026-01-23T18:12:01.810228" level="INFO">Participant 'khoa' found in roster list.</msg>
-<msg time="2026-01-23T18:12:01.810499" level="INFO">Participant 'khoa' found in roster list. khoa joined meeting successfully</msg>
-<arg>verify_in_meeting</arg>
-<arg>${USERPORTAL}</arg>
+<msg time="2026-01-29T18:04:43.891483" level="INFO">Attempting to open custom branding option</msg>
+<msg time="2026-01-29T18:04:44.419056" level="INFO">Custom branding option is visible</msg>
+<msg time="2026-01-29T18:04:44.466069" level="INFO">Custom branding option clicked successfully</msg>
+<msg time="2026-01-29T18:04:44.466423" level="INFO">Waiting for Custom Branding content</msg>
+<msg time="2026-01-29T18:04:44.466636" level="INFO">Waiting for title locator: ('xpath', "//span[normalize-space()='Organization']")</msg>
+<msg time="2026-01-29T18:04:44.466821" level="INFO">Custom Branding content loaded</msg>
+<msg time="2026-01-29T18:04:44.479530" level="INFO">Total iframes after clicking tab: 6</msg>
+<msg time="2026-01-29T18:04:44.492766" level="INFO">Iframe 0 src=</msg>
+<msg time="2026-01-29T18:04:44.498986" level="INFO">Iframe 1 src=</msg>
+<msg time="2026-01-29T18:04:44.505205" level="INFO">Iframe 2 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=50DFEE3BFD0211F095FC05E23FDBFE73#!Updater</msg>
+<msg time="2026-01-29T18:04:44.511792" level="INFO">Iframe 3 src=javascript:""</msg>
+<msg time="2026-01-29T18:04:44.517593" level="INFO">Iframe 4 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=50DFEE3BFD0211F095FC05E23FDBFE73#!Branding</msg>
+<msg time="2026-01-29T18:04:44.523574" level="INFO">Iframe 5 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=50DFEE3BFD0211F095FC05E23FDBFE73#!Authentication</msg>
+<msg time="2026-01-29T18:04:44.523870" level="INFO">Method 'pressing_option_custom_branding' executed successfully</msg>
+<arg>pressing_option_custom_branding</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-01-23T18:11:48.581222" elapsed="13.229498"/>
+<status status="PASS" start="2026-01-29T18:04:43.891175" elapsed="0.632845"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-23T18:12:01.814965" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting</msg>
-<msg time="2026-01-23T18:12:01.815809" level="INFO">Start function terminate_meeting</msg>
-<msg time="2026-01-23T18:12:01.914565" level="INFO">Meeting controls button clicked</msg>
-<msg time="2026-01-23T18:12:07.030395" level="INFO">Terminate meeting button clicked</msg>
-<msg time="2026-01-23T18:12:07.138618" level="INFO">Submit button clicked</msg>
-<msg time="2026-01-23T18:12:12.139626" level="INFO">Terminate_meeting successfuly</msg>
-<msg time="2026-01-23T18:12:12.140052" level="INFO">Closing conference window</msg>
-<msg time="2026-01-23T18:12:12.210393" level="INFO">Closed window: CC5823386ECC709CA203D4E8BD27E285</msg>
-<msg time="2026-01-23T18:12:12.213568" level="INFO">Switched back to original window: D9F691972812B1A2293753C3283B3467</msg>
-<arg>terminate_meeting</arg>
+<msg time="2026-01-29T18:04:44.524709" level="INFO">Attempting to enable advanced branding</msg>
+<msg time="2026-01-29T18:04:44.524925" level="INFO">Opening Custom Branding tab</msg>
+<msg time="2026-01-29T18:04:46.584804" level="INFO">Total iframes found: 6</msg>
+<msg time="2026-01-29T18:04:46.591750" level="INFO">Iframe 0 src=</msg>
+<msg time="2026-01-29T18:04:46.597688" level="INFO">Iframe 1 src=</msg>
+<msg time="2026-01-29T18:04:46.603123" level="INFO">Iframe 2 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=50DFEE3BFD0211F095FC05E23FDBFE73#!Updater</msg>
+<msg time="2026-01-29T18:04:46.609017" level="INFO">Iframe 3 src=javascript:""</msg>
+<msg time="2026-01-29T18:04:46.616177" level="INFO">Iframe 4 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=50DFEE3BFD0211F095FC05E23FDBFE73#!Branding</msg>
+<msg time="2026-01-29T18:04:46.616463" level="INFO">Switching to iframe index 4 with src containing '#!Branding'</msg>
+<msg time="2026-01-29T18:04:46.634661" level="INFO">Custom Branding content loaded successfully</msg>
+<msg time="2026-01-29T18:04:46.665104" level="INFO">Button Enable advanced branding is not selected, clicking it now</msg>
+<msg time="2026-01-29T18:04:46.672233" level="INFO">Advanced branding enabled</msg>
+<msg time="2026-01-29T18:04:46.689220" level="INFO">Total iframes found: 6</msg>
+<msg time="2026-01-29T18:04:46.698645" level="INFO">Iframe 0 src=</msg>
+<msg time="2026-01-29T18:04:46.705310" level="INFO">Iframe 1 src=</msg>
+<msg time="2026-01-29T18:04:46.712973" level="INFO">Iframe 2 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=50DFEE3BFD0211F095FC05E23FDBFE73#!Updater</msg>
+<msg time="2026-01-29T18:04:46.719523" level="INFO">Iframe 3 src=javascript:""</msg>
+<msg time="2026-01-29T18:04:46.727240" level="INFO">Iframe 4 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=50DFEE3BFD0211F095FC05E23FDBFE73#!Branding</msg>
+<msg time="2026-01-29T18:04:46.727554" level="INFO">Switching to iframe index 4 with src containing '#!Branding'</msg>
+<msg time="2026-01-29T18:05:17.031930" level="ERROR">Enable advanced branding crashed
+Traceback (most recent call last):
+  File "e:\Backupwin11\Launch-auto\GUI\WebClients\IVIEW\pom\SettingsIVIEWpage.py", line 134, in enable_advanced_branding
+    WebDriverWait(self.driver, 30).until(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda d: "Text Adjustment" in d.page_source
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "c:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+</msg>
+<msg time="2026-01-29T18:05:17.033670" level="ERROR">Error enabling advanced branding: Enable advanced branding failed: Message: 
+</msg>
+<msg time="2026-01-29T18:05:17.185183" level="INFO">Screenshot saved to E:\Backupwin11\Launch-auto\Screenshots\20260129_180517_enable_advanced_branding_error.png</msg>
+<msg time="2026-01-29T18:05:17.185578" level="ERROR">Error calling method 'enable_advanced_branding': Enable advanced branding failed</msg>
+<msg time="2026-01-29T18:05:17.186485" level="FAIL">Call Web Client Method 'enable_advanced_branding' failed</msg>
+<arg>enable_advanced_branding</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-01-23T18:12:01.811422" elapsed="10.402459"/>
+<status status="FAIL" start="2026-01-29T18:04:44.524457" elapsed="32.670393">Call Web Client Method 'enable_advanced_branding' failed</status>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-01-23T18:12:12.216064" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: sign_out</msg>
-<msg time="2026-01-23T18:12:12.216361" level="INFO">Start function sign_out_portal</msg>
-<msg time="2026-01-23T18:12:12.226420" level="INFO">Verified on avatar user button</msg>
-<msg time="2026-01-23T18:12:12.273739" level="INFO">Clicked avatar user button</msg>
-<msg time="2026-01-23T18:12:12.863848" level="INFO">Verified on sign in button</msg>
-<msg time="2026-01-23T18:12:17.864416" level="INFO">Successfully signed out - sign out button detected</msg>
 <arg>sign_out</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-01-23T18:12:12.214592" elapsed="5.650113"/>
+<status status="NOT RUN" start="2026-01-29T18:05:17.195495" elapsed="0.000115"/>
 </kw>
 <kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
-<arg>Sleep</arg>
-<arg>20s</arg>
-<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
-<status status="PASS" start="2026-01-23T18:12:17.865302" elapsed="0.000192"/>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-01-29T18:05:17.196614" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-01-29T18:05:17.196454" elapsed="0.000302"/>
 </kw>
-<doc>Sign in portal and join meeting successfully</doc>
-<status status="PASS" start="2026-01-23T18:11:26.703294" elapsed="51.162626"/>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-01-29T18:05:17.196194" elapsed="0.000663"/>
+</kw>
+<doc>Verify iView web client basic flow</doc>
+<status status="FAIL" start="2026-01-29T18:04:38.230475" elapsed="38.966612">Call Web Client Method 'enable_advanced_branding' failed</status>
 </test>
 <kw name="Safe Quit Browser" owner="Libraries.web_client_library.WebClientLibrary" type="TEARDOWN">
 <doc>ALWAYS safe to call in teardown</doc>
-<status status="PASS" start="2026-01-23T18:12:20.190843" elapsed="0.000250"/>
+<status status="PASS" start="2026-01-29T18:05:17.198101" elapsed="0.000197"/>
 </kw>
-<status status="PASS" start="2026-01-23T18:11:26.680762" elapsed="53.510437"/>
+<status status="FAIL" start="2026-01-29T18:04:37.948352" elapsed="39.250043"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Khoa2">Khoa2</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Khoa2">Khoa2</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2026-01-29T18:05:17.031930" level="ERROR">Enable advanced branding crashed
+Traceback (most recent call last):
+  File "e:\Backupwin11\Launch-auto\GUI\WebClients\IVIEW\pom\SettingsIVIEWpage.py", line 134, in enable_advanced_branding
+    WebDriverWait(self.driver, 30).until(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda d: "Text Adjustment" in d.page_source
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "c:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+</msg>
+<msg time="2026-01-29T18:05:17.033670" level="ERROR">Error enabling advanced branding: Enable advanced branding failed: Message: 
+</msg>
+<msg time="2026-01-29T18:05:17.185578" level="ERROR">Error calling method 'enable_advanced_branding': Enable advanced branding failed</msg>
 </errors>
 </robot>

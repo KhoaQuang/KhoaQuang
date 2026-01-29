@@ -1,7 +1,8 @@
 *** Settings ***
 Library           Libraries.web_client_library.WebClientLibrary
+Library    SeleniumLibrary
 Suite Teardown    Safe Quit Browser
-Test Teardown     Run Keyword If Test Failed    Sleep    20s
+Test Teardown     Run Keyword If Test Failed    Capture Page Screenshot
 
 *** Variables ***
 ${BROWSER}        chrome
@@ -34,6 +35,7 @@ IVIEW Web Client Smoke Test
     Call Web Client Method    open_settings
     Call Web Client Method    open_user_portal
     Call Web Client Method    pressing_option_custom_branding
+    Call Web Client Method    enable_advanced_branding
     Call Web Client Method    sign_out
 
 Portal Join Meeting Test

@@ -1,394 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.3 on win32)" generated="2026-01-08T11:30:28.907010" rpa="false" schemaversion="5">
-<suite id="s1" name="Khoa1" source="E:\Backupwin11\Launch-auto\TESTS\Khoa1.robot">
-<test id="s1-t1" name="Simple Web Client Test" line="15">
-<kw name="Create Web Client" type="SETUP">
-<kw name="Create Directory" owner="OperatingSystem">
-<msg time="2026-01-08T11:30:28.962629" level="INFO" html="true">Directory '&lt;a href="file://E:\Backupwin11\Launch-auto\LOGS"&gt;E:\Backupwin11\Launch-auto\LOGS&lt;/a&gt;' already exists.</msg>
-<arg>E:\\Backupwin11\\Launch-auto\\TESTS${/}..${/}LOGS</arg>
-<doc>Creates the specified directory.</doc>
-<status status="PASS" start="2026-01-08T11:30:28.962357" elapsed="0.000362"/>
+<robot generator="Robot 7.0.1 (Python 3.13.3 on win32)" generated="2026-01-27T09:49:37.659045" rpa="false" schemaversion="5">
+<suite id="s1" name="Khoa2" source="E:\Backupwin11\Launch-auto\TESTS\Khoa2.robot">
+<test id="s1-t1" name="IVIEW Web Client Smoke Test" line="30">
+<kw name="Create Web Client">
+<msg time="2026-01-27T09:49:37.760284" level="FAIL">No keyword with name 'Create Web Client' found.</msg>
+<arg>${BROWSER}</arg>
+<arg>${CLIENT}</arg>
+<arg>${IVIEW}</arg>
+<arg>${NONE}</arg>
+<status status="FAIL" start="2026-01-27T09:49:37.760251" elapsed="0.000078">No keyword with name 'Create Web Client' found.</status>
 </kw>
-<kw name="Evaluate" owner="BuiltIn">
-<arg>__import__('sys').path.append(r'E:\\Backupwin11\\Launch-auto')</arg>
-<arg>sys</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-01-08T11:30:28.962866" elapsed="0.000467"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-01-08T11:30:30.157072" level="INFO">https://10.103.3.58/iview/views/index.jsf</msg>
-<msg time="2026-01-08T11:30:30.157470" level="INFO">Start function _setup_chrome</msg>
-<msg time="2026-01-08T11:30:30.158277" level="INFO">Setting up chrome driver</msg>
-<msg time="2026-01-08T11:30:30.158420" level="INFO">Using local chrome driver at C:\Auto_Browsers\chromedriver.exe</msg>
-<msg time="2026-01-08T11:30:30.158567" level="DEBUG">Skipping Selenium Manager; path to chrome driver specified in Service class: C:\Auto_Browsers\chromedriver.exe</msg>
-<msg time="2026-01-08T11:30:30.541554" level="DEBUG">Started executable: `C:\Auto_Browsers\chromedriver.exe` in a child process with pid: 35724 using 0 to output -3</msg>
-<msg time="2026-01-08T11:30:31.077652" level="DEBUG">POST http://localhost:63208/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': &lt;PageLoadStrategy.normal: 'normal'&gt;, 'goog:chromeOptions': {'extensions': [], 'args': ['--disable-application-cache', '--disable-user-media-security=true', '--incognito', '--disable-usb-discovery', '--ignore-certificate-errors']}}}}</msg>
-<msg time="2026-01-08T11:30:31.078126" level="DEBUG">Starting new HTTP connection (1): localhost:63208</msg>
-<msg time="2026-01-08T11:30:32.318077" level="DEBUG">http://localhost:63208 "POST /session HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:32.318321" level="DEBUG">Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"chrome","browserVersion":"143.0.7499.170","chrome":{"chromedriverVersion":"143.0.7499.192 (be2c1f4fd451578a9ada68a0ac12d659362b44bf-refs/branch-heads/7499@{#4083})","userDataDir":"C:\\Users\\cqkhoa\\AppData\\Local\\Temp\\scoped_dir35724_1190435208"},"fedcm:accounts":true,"goog:chromeOptions":{"debuggerAddress":"localhost:50181"},"goog:processID":40508,"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"1c312fc85a9a8fa100441438077ebfda"}} | headers=HTTPHeaderDict({'Content-Length': '908', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:32.318457" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:32.318678" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/window/rect {'x': 0, 'y': 0, 'width': None, 'height': None}</msg>
-<msg time="2026-01-08T11:30:32.347835" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/window/rect HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:32.348061" level="DEBUG">Remote response: status=200 | data={"value":{"height":1012,"width":945,"x":0,"y":0}} | headers=HTTPHeaderDict({'Content-Length': '49', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:32.348188" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:32.348351" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/window/maximize {}</msg>
-<msg time="2026-01-08T11:30:32.459917" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/window/maximize HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:32.460197" level="DEBUG">Remote response: status=200 | data={"value":{"height":1048,"width":1936,"x":-8,"y":-8}} | headers=HTTPHeaderDict({'Content-Length': '52', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:32.460342" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:32.460455" level="INFO">chrome driver setup successfully</msg>
-<msg time="2026-01-08T11:30:32.460787" level="INFO">Navigating to URL: https://10.103.3.58/iview/views/index.jsf</msg>
-<msg time="2026-01-08T11:30:32.461104" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/url {'url': 'https://10.103.3.58/iview/views/index.jsf'}</msg>
-<msg time="2026-01-08T11:30:32.773470" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/url HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:32.773828" level="DEBUG">Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:32.773992" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:32.774497" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x0000015205BB3770&gt;</msg>
-<var>${wc}</var>
-<arg>__import__('importlib').import_module('GUI.Web_function.Web_clients').Web_Clients('${BROWSER}', ${CLIENT}, ${IVIEW}, use_local_driver=True)</arg>
-<arg>importlib</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-01-08T11:30:28.963473" elapsed="3.811081"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-01-08T11:30:32.777157" level="INFO">${WEB_CLIENT} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x0000015205BB3770&gt;</msg>
-<arg>${WEB_CLIENT}</arg>
-<arg>${wc}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-01-08T11:30:32.775087" elapsed="0.002285"/>
-</kw>
-<status status="PASS" start="2026-01-08T11:30:28.961831" elapsed="3.815892"/>
-</kw>
-<kw name="Sign In">
-<kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2026-01-08T11:30:32.782782" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x0000015205BB3770&gt;</msg>
-<var>${wc}</var>
-<arg>${WEB_CLIENT}</arg>
-<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2026-01-08T11:30:32.781592" elapsed="0.001399"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${wc}' == 'None'</arg>
-<arg>Fail</arg>
-<arg>Browser instance not initialized</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-01-08T11:30:32.783643" elapsed="0.000982"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-01-08T11:30:37.786055" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-01-08T11:30:32.785064" elapsed="5.001079"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2026-01-08T11:30:37.786459" level="INFO">Attempting to sign in</msg>
-<msg time="2026-01-08T11:30:37.786665" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'css selector', 'value': '[id="loginForm:username"]'}</msg>
-<msg time="2026-01-08T11:30:37.798298" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:37.798410" level="DEBUG">Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.2"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:37.798475" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:37.798568" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.2/click {}</msg>
-<msg time="2026-01-08T11:30:37.846762" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.2/click HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:37.846875" level="DEBUG">Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:37.846940" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:37.847030" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.2/clear {}</msg>
-<msg time="2026-01-08T11:30:37.865079" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.2/clear HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:37.865189" level="DEBUG">Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:37.865254" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:37.865364" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.2/value {'text': 'admin', 'value': ['a', 'd', 'm', 'i', 'n']}</msg>
-<msg time="2026-01-08T11:30:37.888575" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.2/value HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:37.888747" level="DEBUG">Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:37.888834" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:37.888905" level="DEBUG">Entered username: admin</msg>
-<msg time="2026-01-08T11:30:37.889001" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'css selector', 'value': '[id="loginForm:password"]'}</msg>
-<msg time="2026-01-08T11:30:37.896279" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:37.896406" level="DEBUG">Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.4"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:37.896475" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:37.896593" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.4/value {'text': 'AvayaMcspv_1234$', 'value': ['A', 'v', 'a', 'y', 'a', 'M', 'c', 's', 'p', 'v', '_', '1', '2', '3', '4', '$']}</msg>
-<msg time="2026-01-08T11:30:37.931629" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.4/value HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:37.931755" level="DEBUG">Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:37.931825" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:37.931886" level="DEBUG">Entered password</msg>
-<msg time="2026-01-08T11:30:37.931967" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'css selector', 'value': '[id="loginForm:submitText"]'}</msg>
-<msg time="2026-01-08T11:30:37.949381" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:37.949493" level="DEBUG">Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.30"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:37.949558" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:37.949646" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.30/click {}</msg>
-<msg time="2026-01-08T11:30:37.991080" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.7C52EC49E17A1A7E1D79A2F34D3A378C.e.30/click HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:37.991195" level="DEBUG">Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:37.991262" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:37.991321" level="DEBUG">Clicked login button</msg>
-<msg time="2026-01-08T11:30:37.991404" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'css selector', 'value': '[id="logoutForm:log_out"]'}</msg>
-<msg time="2026-01-08T11:30:38.002108" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 404 0</msg>
-<msg time="2026-01-08T11:30:38.002237" level="DEBUG">Remote response: status=404 | data={"value":{"error":"no such element","message":"no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"[id=\"logoutForm:log_out\"]\"}\n  (Session info: chrome=143.0.7499.170)","stacktrace":"Symbols not available. Dumping unresolved backtrace:\n\t0x7ff7226488d5\n\t0x7ff722648930\n\t0x7ff72242165d\n\t0x7ff722479a33\n\t0x7ff722479d3c\n\t0x7ff7224cdf67\n\t0x7ff7224cac97\n\t0x7ff72246ac29\n\t0x7ff72246ba93\n\t0x7ff722960620\n\t0x7ff72295af60\n\t0x7ff7229796c6\n\t0x7ff722665dd4\n\t0x7ff72266ed7c\n\t0x7ff722651ff4\n\t0x7ff7226521a5\n\t0x7ff722637ed2\n\t0x7ffbfe9ee8d7\n\t0x7ffc0068c53c\n"}} | headers=HTTPHeaderDict({'Content-Length': '620', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:38.002298" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:38.502736" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'css selector', 'value': '[id="logoutForm:log_out"]'}</msg>
-<msg time="2026-01-08T11:30:38.509900" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 404 0</msg>
-<msg time="2026-01-08T11:30:38.510010" level="DEBUG">Remote response: status=404 | data={"value":{"error":"no such element","message":"no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"[id=\"logoutForm:log_out\"]\"}\n  (Session info: chrome=143.0.7499.170)","stacktrace":"Symbols not available. Dumping unresolved backtrace:\n\t0x7ff7226488d5\n\t0x7ff722648930\n\t0x7ff72242165d\n\t0x7ff722479a33\n\t0x7ff722479d3c\n\t0x7ff7224cdf67\n\t0x7ff7224cac97\n\t0x7ff72246ac29\n\t0x7ff72246ba93\n\t0x7ff722960620\n\t0x7ff72295af60\n\t0x7ff7229796c6\n\t0x7ff722665dd4\n\t0x7ff72266ed7c\n\t0x7ff722651ff4\n\t0x7ff7226521a5\n\t0x7ff722637ed2\n\t0x7ffbfe9ee8d7\n\t0x7ffc0068c53c\n"}} | headers=HTTPHeaderDict({'Content-Length': '620', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:38.510165" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:39.010627" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'css selector', 'value': '[id="logoutForm:log_out"]'}</msg>
-<msg time="2026-01-08T11:30:39.018364" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 404 0</msg>
-<msg time="2026-01-08T11:30:39.018475" level="DEBUG">Remote response: status=404 | data={"value":{"error":"no such element","message":"no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"[id=\"logoutForm:log_out\"]\"}\n  (Session info: chrome=143.0.7499.170)","stacktrace":"Symbols not available. Dumping unresolved backtrace:\n\t0x7ff7226488d5\n\t0x7ff722648930\n\t0x7ff72242165d\n\t0x7ff722479a33\n\t0x7ff722479d3c\n\t0x7ff7224cdf67\n\t0x7ff7224cac97\n\t0x7ff72246ac29\n\t0x7ff72246ba93\n\t0x7ff722960620\n\t0x7ff72295af60\n\t0x7ff7229796c6\n\t0x7ff722665dd4\n\t0x7ff72266ed7c\n\t0x7ff722651ff4\n\t0x7ff7226521a5\n\t0x7ff722637ed2\n\t0x7ffbfe9ee8d7\n\t0x7ffc0068c53c\n"}} | headers=HTTPHeaderDict({'Content-Length': '620', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:39.018529" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:39.519303" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'css selector', 'value': '[id="logoutForm:log_out"]'}</msg>
-<msg time="2026-01-08T11:30:39.526641" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 404 0</msg>
-<msg time="2026-01-08T11:30:39.526767" level="DEBUG">Remote response: status=404 | data={"value":{"error":"no such element","message":"no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"[id=\"logoutForm:log_out\"]\"}\n  (Session info: chrome=143.0.7499.170)","stacktrace":"Symbols not available. Dumping unresolved backtrace:\n\t0x7ff7226488d5\n\t0x7ff722648930\n\t0x7ff72242165d\n\t0x7ff722479a33\n\t0x7ff722479d3c\n\t0x7ff7224cdf67\n\t0x7ff7224cac97\n\t0x7ff72246ac29\n\t0x7ff72246ba93\n\t0x7ff722960620\n\t0x7ff72295af60\n\t0x7ff7229796c6\n\t0x7ff722665dd4\n\t0x7ff72266ed7c\n\t0x7ff722651ff4\n\t0x7ff7226521a5\n\t0x7ff722637ed2\n\t0x7ffbfe9ee8d7\n\t0x7ffc0068c53c\n"}} | headers=HTTPHeaderDict({'Content-Length': '620', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:39.526825" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:40.027549" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'css selector', 'value': '[id="logoutForm:log_out"]'}</msg>
-<msg time="2026-01-08T11:30:42.304980" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:42.305210" level="DEBUG">Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.43"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:42.305284" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:42.305364" level="INFO">Successfully signed in - logout button detected</msg>
-<arg>${wc}</arg>
+<kw name="Call Web Client Method">
 <arg>sign_in</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-01-08T11:30:37.786271" elapsed="4.519272"/>
+<status status="NOT RUN" start="2026-01-27T09:49:37.761005" elapsed="0.000021"/>
 </kw>
-<status status="PASS" start="2026-01-08T11:30:32.780721" elapsed="9.524910"/>
-</kw>
-<kw name="Tab Settings">
-<kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2026-01-08T11:30:42.306568" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x0000015205BB3770&gt;</msg>
-<var>${wc}</var>
-<arg>${WEB_CLIENT}</arg>
-<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2026-01-08T11:30:42.306382" elapsed="0.000212"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${wc}' == 'None'</arg>
-<arg>Fail</arg>
-<arg>Browser instance not initialized</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-01-08T11:30:42.306709" elapsed="0.000150"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-01-08T11:30:47.307458" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-01-08T11:30:42.306945" elapsed="5.000607"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2026-01-08T11:30:47.307871" level="INFO">Attempting to open settings</msg>
-<msg time="2026-01-08T11:30:47.308073" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'css selector', 'value': '[id="icm_setting"]'}</msg>
-<msg time="2026-01-08T11:30:47.317490" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:47.317598" level="DEBUG">Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.45"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:47.317661" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:47.319715" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/execute/sync {'script': '/* isDisplayed */return (function(){return (function(){var g=this||self;\nfunction aa(a){var b=typeof...', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.45'}]}</msg>
-<msg time="2026-01-08T11:30:47.328085" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/execute/sync HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:47.328192" level="DEBUG">Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:47.328273" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:47.328361" level="DEBUG">GET http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.45/enabled {}</msg>
-<msg time="2026-01-08T11:30:47.333178" level="DEBUG">http://localhost:63208 "GET /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.45/enabled HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:47.333275" level="DEBUG">Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:47.333336" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:47.333419" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.45/click {}</msg>
-<msg time="2026-01-08T11:30:47.371209" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.45/click HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:47.371336" level="DEBUG">Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:47.371401" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:47.371465" level="INFO">Settings button clicked successfully</msg>
-<arg>${wc}</arg>
+<kw name="Call Web Client Method">
 <arg>open_settings</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-01-08T11:30:47.307680" elapsed="0.063999"/>
+<status status="NOT RUN" start="2026-01-27T09:49:37.761365" elapsed="0.000016"/>
 </kw>
-<status status="PASS" start="2026-01-08T11:30:42.306017" elapsed="5.065735"/>
-</kw>
-<kw name="Tab User Portal">
-<kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2026-01-08T11:30:47.372596" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x0000015205BB3770&gt;</msg>
-<var>${wc}</var>
-<arg>${WEB_CLIENT}</arg>
-<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2026-01-08T11:30:47.372263" elapsed="0.000423"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${wc}' == 'None'</arg>
-<arg>Fail</arg>
-<arg>Browser instance not initialized</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-01-08T11:30:47.372862" elapsed="0.000204"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-01-08T11:30:52.373693" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-01-08T11:30:47.373262" elapsed="5.000552"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2026-01-08T11:30:52.374167" level="INFO">Attempting to open user portal</msg>
-<msg time="2026-01-08T11:30:52.375017" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'xpath', 'value': "//div[contains(@id, 'leftBarPanel')]//a[contains(@id, 'menuForm:menu1021Link')]"}</msg>
-<msg time="2026-01-08T11:30:52.385120" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:52.385227" level="DEBUG">Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.68"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:52.385288" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:52.385438" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/execute/sync {'script': '/* isDisplayed */return (function(){return (function(){var g=this||self;\nfunction aa(a){var b=typeof...', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.68'}]}</msg>
-<msg time="2026-01-08T11:30:52.392803" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/execute/sync HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:52.392919" level="DEBUG">Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:52.392983" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:52.393074" level="DEBUG">GET http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.68/enabled {}</msg>
-<msg time="2026-01-08T11:30:52.396800" level="DEBUG">http://localhost:63208 "GET /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.68/enabled HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:52.396890" level="DEBUG">Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:52.396950" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:52.397031" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.68/click {}</msg>
-<msg time="2026-01-08T11:30:52.430663" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.68/click HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:52.430788" level="DEBUG">Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:52.430854" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:52.430930" level="INFO">User portal link clicked</msg>
-<msg time="2026-01-08T11:30:52.431387" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'xpath', 'value': "//div[contains(@id, 'rightContentSubPanel')]"}</msg>
-<msg time="2026-01-08T11:30:52.439771" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:52.439881" level="DEBUG">Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.69"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:52.439947" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:52.440009" level="INFO">User portal page loaded successfully</msg>
-<arg>${wc}</arg>
+<kw name="Call Web Client Method">
 <arg>open_user_portal</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-01-08T11:30:52.373968" elapsed="0.066154"/>
+<status status="NOT RUN" start="2026-01-27T09:49:37.761697" elapsed="0.000014"/>
 </kw>
-<status status="PASS" start="2026-01-08T11:30:47.372016" elapsed="5.068177"/>
-</kw>
-<kw name="Tab Custom Branding">
-<kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2026-01-08T11:30:52.440817" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x0000015205BB3770&gt;</msg>
-<var>${wc}</var>
-<arg>${WEB_CLIENT}</arg>
-<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2026-01-08T11:30:52.440661" elapsed="0.000179"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${wc}' == 'None'</arg>
-<arg>Fail</arg>
-<arg>Browser instance not initialized</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-01-08T11:30:52.440926" elapsed="0.000136"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-01-08T11:30:57.441408" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-01-08T11:30:52.441143" elapsed="5.000362"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2026-01-08T11:30:57.441877" level="INFO">Attempting to open custom branding option</msg>
-<msg time="2026-01-08T11:30:57.442111" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'xpath', 'value': "//div[contains(@id,'upcsgTabs')]//a[contains(@class,'customBranding_tab')]"}</msg>
-<msg time="2026-01-08T11:30:57.462135" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:57.462355" level="DEBUG">Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.102"}} | headers=HTTPHeaderDict({'Content-Length': '127', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:57.462444" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:57.462632" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/execute/sync {'script': '/* isDisplayed */return (function(){return (function(){var g=this||self;\nfunction aa(a){var b=typeof...', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.102'}]}</msg>
-<msg time="2026-01-08T11:30:57.471907" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/execute/sync HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:57.472023" level="DEBUG">Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:57.472090" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:57.472192" level="DEBUG">GET http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.102/enabled {}</msg>
-<msg time="2026-01-08T11:30:57.479329" level="DEBUG">http://localhost:63208 "GET /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.102/enabled HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:57.479455" level="DEBUG">Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:57.479521" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:57.479585" level="INFO">Custom branding option is visible</msg>
-<msg time="2026-01-08T11:30:57.479734" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/execute/sync {'script': "arguments[0].scrollIntoView({block:'center'});", 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.102'}]}</msg>
-<msg time="2026-01-08T11:30:57.485537" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/execute/sync HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:57.485738" level="DEBUG">Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:57.485829" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:57.485962" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.102/click {}</msg>
-<msg time="2026-01-08T11:30:57.534711" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.102/click HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:30:57.534911" level="DEBUG">Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:30:57.535008" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:30:57.535094" level="INFO">Custom branding option clicked successfully</msg>
-<msg time="2026-01-08T11:30:57.535248" level="INFO">Waiting for Custom Branding content</msg>
-<msg time="2026-01-08T11:30:57.535360" level="INFO">Waiting for title locator: ('xpath', "//span[normalize-space()='Organization']")</msg>
-<msg time="2026-01-08T11:30:57.535457" level="INFO">Custom Branding content loaded</msg>
-<arg>${wc}</arg>
+<kw name="Call Web Client Method">
 <arg>pressing_option_custom_branding</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-01-08T11:30:57.441648" elapsed="0.093939"/>
+<status status="NOT RUN" start="2026-01-27T09:49:37.761970" elapsed="0.000014"/>
 </kw>
-<status status="PASS" start="2026-01-08T11:30:52.440437" elapsed="5.095399"/>
+<kw name="Call Web Client Method">
+<arg>sign_out</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:37.762185" elapsed="0.000015"/>
 </kw>
-<kw name="Sign Out">
-<kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2026-01-08T11:30:57.537207" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x0000015205BB3770&gt;</msg>
-<var>${wc}</var>
-<arg>${WEB_CLIENT}</arg>
-<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2026-01-08T11:30:57.536929" elapsed="0.000332"/>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-27T09:49:57.763308" level="INFO">Slept 20 seconds.</msg>
+<arg>20s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-27T09:49:37.762617" elapsed="20.000782"/>
 </kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${wc}' == 'None'</arg>
-<arg>Fail</arg>
-<arg>Browser instance not initialized</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-01-08T11:30:57.537607" elapsed="0.000242"/>
+<arg>Sleep</arg>
+<arg>20s</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-01-27T09:49:37.762462" elapsed="20.000998"/>
+</kw>
+<doc>Verify iView web client basic flow</doc>
+<status status="FAIL" start="2026-01-27T09:49:37.759145" elapsed="20.004695">No keyword with name 'Create Web Client' found.</status>
+</test>
+<test id="s1-t2" name="Portal Join Meeting Test" line="39">
+<kw name="Create Web Client">
+<msg time="2026-01-27T09:49:57.765752" level="FAIL">No keyword with name 'Create Web Client' found.</msg>
+<arg>${BROWSER}</arg>
+<arg>${CLIENT}</arg>
+<arg>${NONE}</arg>
+<arg>${PORTAL}</arg>
+<status status="FAIL" start="2026-01-27T09:49:57.765727" elapsed="0.000059">No keyword with name 'Create Web Client' found.</status>
+</kw>
+<kw name="Call Web Client Method">
+<arg>sign_in_portal</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:57.766104" elapsed="0.000018"/>
+</kw>
+<kw name="Call Web Client Method">
+<arg>verify_sign_in_portal</arg>
+<arg>${USERPORTAL}</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:57.766418" elapsed="0.000015"/>
+</kw>
+<kw name="Call Web Client Method">
+<arg>join_meeting</arg>
+<arg>${MEETINGID}</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:57.766629" elapsed="0.000015"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-01-08T11:31:02.538668" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
+<arg>10s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-01-08T11:30:57.537981" elapsed="5.000782"/>
+<status status="NOT RUN" start="2026-01-27T09:49:57.766822" elapsed="0.000017"/>
 </kw>
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2026-01-08T11:31:02.539087" level="INFO">Attempting to sign out</msg>
-<msg time="2026-01-08T11:31:02.539244" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element {'using': 'css selector', 'value': '[id="logoutForm:log_out"]'}</msg>
-<msg time="2026-01-08T11:31:02.545628" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:31:02.545729" level="DEBUG">Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.43"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:31:02.545790" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:31:02.545933" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/execute/sync {'script': '/* isDisplayed */return (function(){return (function(){var g=this||self;\nfunction aa(a){var b=typeof...', 'args': [{'element-6066-11e4-a52e-4f735466cecf': 'f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.43'}]}</msg>
-<msg time="2026-01-08T11:31:02.551207" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/execute/sync HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:31:02.551445" level="DEBUG">Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:31:02.551563" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:31:02.551710" level="DEBUG">GET http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.43/enabled {}</msg>
-<msg time="2026-01-08T11:31:02.557303" level="DEBUG">http://localhost:63208 "GET /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.43/enabled HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:31:02.557408" level="DEBUG">Remote response: status=200 | data={"value":true} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:31:02.557471" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:31:02.557555" level="DEBUG">POST http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.43/click {}</msg>
-<msg time="2026-01-08T11:31:02.592955" level="DEBUG">http://localhost:63208 "POST /session/1c312fc85a9a8fa100441438077ebfda/element/f.44FB18C9572005353E7FA1411C64F6D8.d.2F40D2AD1EB4192D2198963C9284EF14.e.43/click HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:31:02.593148" level="DEBUG">Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:31:02.593228" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:31:02.593310" level="INFO">Successfully signed out</msg>
-<arg>${wc}</arg>
+<kw name="Call Web Client Method">
+<arg>verify_in_meeting</arg>
+<arg>${USERPORTAL}</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:57.766986" elapsed="0.000013"/>
+</kw>
+<kw name="Call Web Client Method">
+<arg>terminate_meeting</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:57.767146" elapsed="0.000014"/>
+</kw>
+<kw name="Call Web Client Method">
 <arg>sign_out</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-01-08T11:31:02.538889" elapsed="0.054589"/>
+<status status="NOT RUN" start="2026-01-27T09:49:57.767303" elapsed="0.000014"/>
 </kw>
-<status status="PASS" start="2026-01-08T11:30:57.536458" elapsed="5.057177"/>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-27T09:50:17.768108" level="INFO">Slept 20 seconds.</msg>
+<arg>20s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-27T09:49:57.767657" elapsed="20.000536"/>
 </kw>
-<kw name="Quit Browser" type="TEARDOWN">
-<kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2026-01-08T11:31:02.595339" level="INFO">${wc} = &lt;GUI.Web_function.Web_clients.Web_Clients object at 0x0000015205BB3770&gt;</msg>
-<var>${wc}</var>
-<arg>${WEB_CLIENT}</arg>
-<arg>None</arg>
-<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2026-01-08T11:31:02.594887" elapsed="0.000497"/>
+<arg>Sleep</arg>
+<arg>20s</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-01-27T09:49:57.767543" elapsed="20.000706"/>
 </kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Call Method" owner="BuiltIn">
-<msg time="2026-01-08T11:31:02.596008" level="INFO">Attempting to quit the browser</msg>
-<msg time="2026-01-08T11:31:02.596213" level="DEBUG">DELETE http://localhost:63208/session/1c312fc85a9a8fa100441438077ebfda {}</msg>
-<msg time="2026-01-08T11:31:02.987074" level="DEBUG">http://localhost:63208 "DELETE /session/1c312fc85a9a8fa100441438077ebfda HTTP/1.1" 200 0</msg>
-<msg time="2026-01-08T11:31:02.987312" level="DEBUG">Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})</msg>
-<msg time="2026-01-08T11:31:02.987429" level="DEBUG">Finished Request</msg>
-<msg time="2026-01-08T11:31:05.144438" level="INFO">Browser quit successfully</msg>
-<arg>${wc}</arg>
-<arg>quit</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2026-01-08T11:31:02.595820" elapsed="2.548782"/>
-</kw>
-<arg>'${wc}' != 'None'</arg>
-<arg>Call Method</arg>
-<arg>${wc}</arg>
-<arg>quit</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-01-08T11:31:02.595554" elapsed="2.549112"/>
-</kw>
-<status status="PASS" start="2026-01-08T11:31:02.594188" elapsed="2.550540"/>
-</kw>
-<status status="PASS" start="2026-01-08T11:30:28.961156" elapsed="36.183766"/>
+<doc>Sign in portal and join meeting successfully</doc>
+<status status="FAIL" start="2026-01-27T09:49:57.764889" elapsed="20.003941">No keyword with name 'Create Web Client' found.</status>
 </test>
-<status status="PASS" start="2026-01-08T11:30:28.909143" elapsed="36.236835"/>
+<kw name="Safe Quit Browser" type="TEARDOWN">
+<msg time="2026-01-27T09:50:17.770487" level="FAIL">No keyword with name 'Safe Quit Browser' found.</msg>
+<status status="FAIL" start="2026-01-27T09:50:17.770461" elapsed="0.000062">No keyword with name 'Safe Quit Browser' found.</status>
+</kw>
+<status status="FAIL" start="2026-01-27T09:49:37.661233" elapsed="40.109336">Suite teardown failed:
+No keyword with name 'Safe Quit Browser' found.</status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Khoa1" id="s1" pass="1" fail="0" skip="0">Khoa1</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="Khoa2">Khoa2</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2026-01-27T09:49:37.757379" level="ERROR">Error in file 'E:\Backupwin11\Launch-auto\TESTS\Khoa2.robot' on line 2: Importing library 'Libraries.web_client_library.WebClientLibrary' failed: ModuleNotFoundError: No module named 'Libraries'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Scripts\robot.exe
+  D:\Soctrip-auto\GUI
+  C:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\python313.zip
+  C:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\DLLs
+  C:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib
+  C:\Users\cqkhoa\AppData\Local\Programs\Python\Python313
+  C:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib\site-packages</msg>
 </errors>
 </robot>

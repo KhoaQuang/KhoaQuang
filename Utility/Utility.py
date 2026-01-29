@@ -1,10 +1,12 @@
 from datetime import datetime
 import logging
+from operator import index
 import os
 from robot.libraries.BuiltIn import BuiltIn
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 
 
 class Utility:
@@ -73,6 +75,12 @@ class Utility:
         ).text
 
     @staticmethod
+    def get_element_by_xpath(driver, xpath, timeout=10):
+        return WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((By.XPATH, xpath))
+        )
+
+    @staticmethod
     def is_element_present_by_xpath(driver, xpath, timeout=10):
         try:
             WebDriverWait(driver, timeout).until(
@@ -91,3 +99,21 @@ class Utility:
             return True
         except Exception:
             return False
+        
+    @staticmethod
+    def switch_to_iframe_by_src(driver, src_keyword, timeout=10):
+        WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((By.TAG_NAME, "iframe"))
+        )
+
+        iframes = driver.find_elements(By.TAG_NAME, "iframe")
+        logging.info(f"Total iframes found: {len(iframes)}")
+        for idx, iframe in enumerate(iframes):
+            src = iframe.get_attribute("src") or ""
+            logging.info(f"Iframe {idx} src={src}")
+            if src_keyword in src:
+                logging.info(f"Switching to iframe index {idx} with src containing '{src_keyword}'")
+                driver.switch_to.frame(iframe)
+                return True
+
+        raise TimeoutException(f"Iframe with src containing '{src_keyword}' not found")

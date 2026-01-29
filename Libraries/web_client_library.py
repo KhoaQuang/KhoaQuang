@@ -65,9 +65,21 @@ class WebClientLibrary:
         """
 
         if not self.web_client:
-            raise RuntimeError("Web Client is not initialized. Call 'Create Web Client' first.")
+            BuiltIn().fail("Web Client is not initialized. Call 'Create Web Client' first.")
 
-        return getattr(self.web_client, method_name)(*args)
+        try:
+            method = getattr(self.web_client, method_name)
+            result = method(*args)
+
+            if result is False:
+                BuiltIn().fail(f"Method '{method_name}' returned False")
+
+            BuiltIn().log(f"Method '{method_name}' executed successfully", level="INFO")
+            return result
+
+        except Exception as e:
+            BuiltIn().log(f"Error calling method '{method_name}': {e}", level="ERROR")
+            BuiltIn().fail(f"Call Web Client Method '{method_name}' failed")
 
     @keyword("Safe Quit Browser")
     def safe_quit_browser(self):

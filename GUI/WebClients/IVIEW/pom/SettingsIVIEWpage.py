@@ -4,6 +4,10 @@ from selenium.webdriver.support import expected_conditions as EC
 import logging
 import time
 from robot.api import logger
+from robot.libraries.BuiltIn import BuiltIn
+from selenium.common.exceptions import TimeoutException
+
+from Utility.Utility import Utility
 
 logger = logging.getLogger()
 logging.basicConfig(
@@ -14,12 +18,13 @@ logging.basicConfig(
 class SettingsIVIEWpage:
     """Page Object for iView Settings flows"""
     
-    # Element locators (By.ID)
     SETTINGS_BUTTON = (By.ID, "icm_setting")
     USER_PORTAL = (By.XPATH, "//div[contains(@id, 'leftBarPanel')]//a[contains(@id, 'menuForm:menu1021Link')]")
     USER_PORTAL_TITLE = (By.XPATH, "//div[contains(@id, 'rightContentSubPanel')]")
     Custom_Branding_Option = (By.XPATH, "//div[contains(@id,'upcsgTabs')]//a[contains(@class,'customBranding_tab')]")
     Organization_TITLE = (By.XPATH, "//span[normalize-space()='Organization']")
+    BUTTON_ADVANCED_BRANDING = (By.XPATH,"//label[normalize-space()='Enable advanced branding']")
+    TEXT_ADJUSTMENT = (By.XPATH, "//div[@class='v-captiontext' and text()='Text adjustment']")
 
     
     def __init__(self, driver):
@@ -30,7 +35,8 @@ class SettingsIVIEWpage:
             driver: Selenium WebDriver instance
         """
         self.driver = driver
-        self.wait = WebDriverWait(driver, 20)
+        self.wait = WebDriverWait(driver, 30)
+
     def open_settings(self):
         """
         Open the settings page by clicking the settings button
@@ -42,7 +48,7 @@ class SettingsIVIEWpage:
             logging.info("Settings button clicked successfully")
         except Exception as e:
             logging.error(f"Error opening settings: {e}")
-            raise
+            return False
 
 
     def open_user_portal(self):
@@ -58,7 +64,7 @@ class SettingsIVIEWpage:
             logging.info("User portal page loaded successfully")
         except Exception as e:
             logging.error(f"Error opening user portal: {e}")
-            raise
+            return False
 
     def option_custom_branding(self):
         try:
@@ -69,10 +75,82 @@ class SettingsIVIEWpage:
             custom_branding_portal.click()
             logging.info("Custom branding option clicked successfully")
             logging.info("Waiting for Custom Branding content")
-            # self.wait.until(EC.presence_of_element_located(self.Organization_TITLE))
             logging.info(f"Waiting for title locator: {self.Organization_TITLE}")
             logging.info("Custom Branding content loaded")
+            iframes = self.driver.find_elements(By.TAG_NAME, "iframe")
+            logging.info(f"Total iframes after clicking tab: {len(iframes)}")
+
+            for idx, iframe in enumerate(iframes):
+                logging.info(f"Iframe {idx} src={iframe.get_attribute('src')}")
+
         except Exception as e:
             logging.error(f"Error opening custom branding option: {e}")
-            raise
+            return False
 
+    def open_section_if_needed(self):
+        wait = WebDriverWait(self.driver, 20)
+        tab_xpath = "//div[contains(@id,'upcsgTabs')]//a[contains(@class,'customBranding_tab')]"
+        logging.info("Opening Custom Branding tab")
+        tab = wait.until(EC.element_to_be_clickable((By.XPATH, tab_xpath)))
+        self.driver.execute_script("arguments[0].click();", tab)
+        time.sleep(2)  
+        Utility.switch_to_iframe_by_src(self.driver, "#!Branding")
+        wait.until(
+            EC.presence_of_element_located(
+                (self.BUTTON_ADVANCED_BRANDING)
+            )
+        )
+        logging.info("Custom Branding content loaded successfully")
+
+    def enable_advanced_branding(self):
+        try:
+            logging.info("Attempting to enable advanced branding")
+            self.open_section_if_needed()
+            wait = WebDriverWait(self.driver, 20)
+            label = wait.until(
+                EC.visibility_of_element_located(
+                    (self.BUTTON_ADVANCED_BRANDING)
+                )
+            )
+            self.driver.execute_script(
+                "arguments[0].scrollIntoView({block:'center'});", label
+            )
+
+            checkbox = label.find_element(By.XPATH, "//label[normalize-space()='Enable advanced branding']")
+
+            if not checkbox.is_selected():
+                logging.info("Button Enable advanced branding is not selected, clicking it now")
+                self.driver.execute_script("arguments[0].click();", checkbox)
+                logging.info("Advanced branding enabled")
+            else:
+                logging.info("Advanced branding already enabled")
+
+            self.driver.switch_to.default_content()
+            Utility.switch_to_iframe_by_src(self.driver, "#!Branding")
+            WebDriverWait(self.driver, 30).until(
+                lambda d: d.execute_script("return document.readyState") == "complete"
+            )
+
+            WebDriverWait(self.driver, 30).until(
+                lambda d: "Text Adjustment" in d.page_source
+            )
+
+            elements = self.driver.find_elements(By.XPATH, self.TEXT_ADJUSTMENT)
+            logging.info(f"Text Adjustment elements found: {len(elements)}")
+
+            if not elements:
+                BuiltIn().fail("Text Adjustment UI not rendered after enabling branding")
+
+            text_adjustment = elements[0]
+            self.driver.execute_script(
+                "arguments[0].scrollIntoView({block:'center'});",
+                text_adjustment
+            )
+            self.driver.execute_script("arguments[0].click();", text_adjustment)
+            logging.info("Text adjustment option clicked successfully")
+            return True
+
+        except Exception as e:
+            self.driver.switch_to.default_content()
+            logging.exception("Enable advanced branding crashed")
+            BuiltIn().fail(f"Enable advanced branding failed: {e}")
