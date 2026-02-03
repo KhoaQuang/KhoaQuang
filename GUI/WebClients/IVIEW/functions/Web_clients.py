@@ -185,7 +185,7 @@ class Web_Clients:
             Utility.take_screenshot("open_user_portal_error.png")
             raise
 
-    def pressing_option_custom_branding(self):
+    def option_custom_branding(self):
         try: 
             page = SettingsIVIEWpage(self.driver)
             page.option_custom_branding()

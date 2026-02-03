@@ -1,145 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.13.3 on win32)" generated="2026-02-03T12:35:25.596359" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.13.3 on win32)" generated="2026-02-03T14:51:04.257787" rpa="false" schemaversion="5">
 <suite id="s1" name="Khoa2" source="e:\Backupwin11\Launch-auto\TESTS\Khoa2.robot">
 <test id="s1-t1" name="IVIEW Web Client Smoke Test" line="31">
 <kw name="Create Web Client" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T12:35:25.805140" level="INFO">https://10.103.3.173/iview/views/index.jsf</msg>
-<msg time="2026-02-03T12:35:25.806414" level="INFO">Start function _setup_chrome</msg>
-<msg time="2026-02-03T12:35:25.807012" level="INFO">Setting up chrome driver</msg>
-<msg time="2026-02-03T12:35:25.807301" level="INFO">Using local chrome driver at C:\Auto_Browsers\chromedriver.exe</msg>
-<msg time="2026-02-03T12:35:27.370996" level="INFO">chrome driver setup successfully</msg>
-<msg time="2026-02-03T12:35:27.371519" level="INFO">Navigating to URL: https://10.103.3.173/iview/views/index.jsf</msg>
-<msg time="2026-02-03T12:35:27.602509" level="INFO">Web Client created successfully</msg>
+<msg time="2026-02-03T14:51:04.502056" level="INFO">https://10.103.3.173/iview/views/index.jsf</msg>
+<msg time="2026-02-03T14:51:04.503654" level="INFO">Start function _setup_chrome</msg>
+<msg time="2026-02-03T14:51:04.504474" level="INFO">Setting up chrome driver</msg>
+<msg time="2026-02-03T14:51:04.504725" level="INFO">Using local chrome driver at C:\Auto_Browsers\chromedriver.exe</msg>
+<msg time="2026-02-03T14:51:06.036621" level="INFO">chrome driver setup successfully</msg>
+<msg time="2026-02-03T14:51:06.037631" level="INFO">Navigating to URL: https://10.103.3.173/iview/views/index.jsf</msg>
+<msg time="2026-02-03T14:51:06.268167" level="INFO">Web Client created successfully</msg>
 <arg>${BROWSER}</arg>
 <arg>${CLIENT}</arg>
 <arg>${IVIEW}</arg>
 <arg>${NONE}</arg>
 <doc>Create Web_Clients instance and store it internally.</doc>
-<status status="PASS" start="2026-02-03T12:35:25.780181" elapsed="1.824093"/>
+<status status="PASS" start="2026-02-03T14:51:04.437064" elapsed="1.833293"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T12:35:27.615792" level="INFO">Attempting to sign in</msg>
-<msg time="2026-02-03T12:35:30.266814" level="INFO">Successfully signed in - logout button detected</msg>
-<msg time="2026-02-03T12:35:30.267160" level="INFO">Method 'sign_in' executed successfully</msg>
+<msg time="2026-02-03T14:51:06.277962" level="INFO">Attempting to sign in</msg>
+<msg time="2026-02-03T14:51:08.917963" level="INFO">Successfully signed in - logout button detected</msg>
+<msg time="2026-02-03T14:51:08.918292" level="INFO">Method 'sign_in' executed successfully</msg>
 <arg>sign_in</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-02-03T12:35:27.614306" elapsed="2.653012"/>
+<status status="PASS" start="2026-02-03T14:51:06.277057" elapsed="2.641399"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T12:35:30.268319" level="INFO">Attempting to open settings</msg>
-<msg time="2026-02-03T12:35:30.345706" level="INFO">Settings button clicked successfully</msg>
-<msg time="2026-02-03T12:35:30.345989" level="INFO">Method 'open_settings' executed successfully</msg>
+<msg time="2026-02-03T14:51:08.919731" level="INFO">Attempting to open settings</msg>
+<msg time="2026-02-03T14:51:09.002644" level="INFO">Settings button clicked successfully</msg>
+<msg time="2026-02-03T14:51:09.002973" level="INFO">Method 'open_settings' executed successfully</msg>
 <arg>open_settings</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-02-03T12:35:30.267998" elapsed="0.078124"/>
+<status status="PASS" start="2026-02-03T14:51:08.919211" elapsed="0.083899"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T12:35:30.346786" level="INFO">Attempting to open user portal</msg>
-<msg time="2026-02-03T12:35:30.907629" level="INFO">User portal link clicked</msg>
-<msg time="2026-02-03T12:35:30.918918" level="INFO">User portal page loaded successfully</msg>
-<msg time="2026-02-03T12:35:30.919230" level="INFO">Method 'open_user_portal' executed successfully</msg>
+<msg time="2026-02-03T14:51:09.004007" level="INFO">Attempting to open user portal</msg>
+<msg time="2026-02-03T14:51:09.565195" level="INFO">User portal link clicked</msg>
+<msg time="2026-02-03T14:51:09.575888" level="INFO">User portal page loaded successfully</msg>
+<msg time="2026-02-03T14:51:09.576172" level="INFO">Method 'open_user_portal' executed successfully</msg>
 <arg>open_user_portal</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-02-03T12:35:30.346540" elapsed="0.572836"/>
+<status status="PASS" start="2026-02-03T14:51:09.003649" elapsed="0.572659"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T12:35:30.920209" level="INFO">Attempting to open custom branding option</msg>
-<msg time="2026-02-03T12:35:31.472902" level="INFO">Custom branding option is visible</msg>
-<msg time="2026-02-03T12:35:31.516975" level="INFO">Custom branding option clicked successfully</msg>
-<msg time="2026-02-03T12:35:31.538629" level="INFO">Total iframes found: 6</msg>
-<msg time="2026-02-03T12:35:31.549991" level="INFO">Iframe 0 src=</msg>
-<msg time="2026-02-03T12:35:31.556352" level="INFO">Iframe 1 src=</msg>
-<msg time="2026-02-03T12:35:31.562663" level="INFO">Iframe 2 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=275086BE00C211F1BAD9B99AE1ACE055#!Updater</msg>
-<msg time="2026-02-03T12:35:31.568562" level="INFO">Iframe 3 src=javascript:""</msg>
-<msg time="2026-02-03T12:35:31.574944" level="INFO">Iframe 4 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=275086BE00C211F1BAD9B99AE1ACE055#!Branding</msg>
-<msg time="2026-02-03T12:35:31.575414" level="INFO">Switching to iframe index 4 with src containing '#!Branding'</msg>
-<msg time="2026-02-03T12:35:31.591085" level="INFO">Waiting for Custom Branding content</msg>
-<msg time="2026-02-03T12:35:31.591471" level="INFO">Waiting for title locator: //span[normalize-space()='Organization']</msg>
-<msg time="2026-02-03T12:35:31.591706" level="INFO">Finding element [] (xpath, //span[normalize-space()='Organization'])</msg>
-<msg time="2026-02-03T12:35:31.684509" level="INFO">Custom Branding content loaded</msg>
-<msg time="2026-02-03T12:35:31.702390" level="INFO">Total iframes after clicking tab: 4</msg>
-<msg time="2026-02-03T12:35:31.713156" level="INFO">Iframe 0 src=</msg>
-<msg time="2026-02-03T12:35:31.719863" level="INFO">Iframe 1 src=javascript:''</msg>
-<msg time="2026-02-03T12:35:31.727579" level="INFO">Iframe 2 src=javascript:''</msg>
-<msg time="2026-02-03T12:35:31.734688" level="INFO">Iframe 3 src=javascript:''</msg>
-<msg time="2026-02-03T12:35:31.736401" level="INFO">Exited iframe safely</msg>
-<msg time="2026-02-03T12:35:31.736703" level="INFO">Method 'pressing_option_custom_branding' executed successfully</msg>
-<arg>pressing_option_custom_branding</arg>
+<msg time="2026-02-03T14:51:09.577043" level="INFO">Attempting to open custom branding option</msg>
+<msg time="2026-02-03T14:51:09.577286" level="INFO">Waiting for element to be clickable: Custom Branding tab</msg>
+<msg time="2026-02-03T14:51:10.105491" level="INFO">Element CLICKABLE: Custom Branding tab</msg>
+<msg time="2026-02-03T14:51:10.105782" level="INFO">Custom branding option is visible</msg>
+<msg time="2026-02-03T14:51:10.145482" level="INFO">Custom branding option clicked successfully</msg>
+<msg time="2026-02-03T14:51:10.162987" level="INFO">Total iframes found: 6</msg>
+<msg time="2026-02-03T14:51:10.173206" level="INFO">Iframe 0 src=</msg>
+<msg time="2026-02-03T14:51:10.180869" level="INFO">Iframe 1 src=</msg>
+<msg time="2026-02-03T14:51:10.189238" level="INFO">Iframe 2 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Updater</msg>
+<msg time="2026-02-03T14:51:10.195768" level="INFO">Iframe 3 src=javascript:""</msg>
+<msg time="2026-02-03T14:51:10.202102" level="INFO">Iframe 4 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Branding</msg>
+<msg time="2026-02-03T14:51:10.202450" level="INFO">Switching to iframe index 4 with src containing '#!Branding'</msg>
+<msg time="2026-02-03T14:51:10.214279" level="INFO">Waiting for Custom Branding content</msg>
+<msg time="2026-02-03T14:51:10.214591" level="INFO">Waiting for title locator: //span[normalize-space()='Organization']</msg>
+<msg time="2026-02-03T14:51:10.214790" level="INFO">Finding element [] (xpath, //span[normalize-space()='Organization'])</msg>
+<msg time="2026-02-03T14:51:10.276892" level="INFO">Element [] found successfully</msg>
+<msg time="2026-02-03T14:51:10.277285" level="INFO">Custom Branding content loaded</msg>
+<msg time="2026-02-03T14:51:10.277486" level="INFO">Finding elements: iframe</msg>
+<msg time="2026-02-03T14:51:10.296936" level="INFO">Elements FOUND (4): iframe</msg>
+<msg time="2026-02-03T14:51:10.297253" level="INFO">Total iframes after clicking tab: 4</msg>
+<msg time="2026-02-03T14:51:10.307420" level="INFO">Iframe 0 src=</msg>
+<msg time="2026-02-03T14:51:10.313505" level="INFO">Iframe 1 src=javascript:''</msg>
+<msg time="2026-02-03T14:51:10.319807" level="INFO">Iframe 2 src=javascript:''</msg>
+<msg time="2026-02-03T14:51:10.333797" level="INFO">Iframe 3 src=javascript:''</msg>
+<msg time="2026-02-03T14:51:10.336701" level="INFO">Exited iframe safely</msg>
+<msg time="2026-02-03T14:51:10.337153" level="INFO">Method 'option_custom_branding' executed successfully</msg>
+<arg>option_custom_branding</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-02-03T12:35:30.919896" elapsed="0.816966"/>
+<status status="PASS" start="2026-02-03T14:51:09.576763" elapsed="0.760596"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T12:35:31.737692" level="INFO">Attempting to enable advanced branding</msg>
-<msg time="2026-02-03T12:35:31.737970" level="INFO">Opening Custom Branding tab</msg>
-<msg time="2026-02-03T12:35:31.738204" level="INFO">Finding element [] (xpath, //div[contains(@id,'upcsgTabs')]//a[contains(@class,'customBranding_tab')])</msg>
-<msg time="2026-02-03T12:35:33.761404" level="INFO">Total iframes found: 6</msg>
-<msg time="2026-02-03T12:35:33.767387" level="INFO">Iframe 0 src=</msg>
-<msg time="2026-02-03T12:35:33.773142" level="INFO">Iframe 1 src=</msg>
-<msg time="2026-02-03T12:35:33.779385" level="INFO">Iframe 2 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=275086BE00C211F1BAD9B99AE1ACE055#!Updater</msg>
-<msg time="2026-02-03T12:35:33.784862" level="INFO">Iframe 3 src=javascript:""</msg>
-<msg time="2026-02-03T12:35:33.790293" level="INFO">Iframe 4 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=275086BE00C211F1BAD9B99AE1ACE055#!Branding</msg>
-<msg time="2026-02-03T12:35:33.790585" level="INFO">Switching to iframe index 4 with src containing '#!Branding'</msg>
-<msg time="2026-02-03T12:35:33.802525" level="INFO">Finding element [] (xpath, //label[normalize-space()='Enable advanced branding'])</msg>
-<msg time="2026-02-03T12:35:33.810721" level="INFO">Custom Branding content loaded successfully</msg>
-<msg time="2026-02-03T12:35:33.811029" level="INFO">Finding element [] (xpath, //label[normalize-space()='Enable advanced branding'])</msg>
-<msg time="2026-02-03T12:35:33.818878" level="INFO">Finding element [] (xpath, //span[contains(@class,'v-checkbox')]//input[@type='checkbox'])</msg>
-<msg time="2026-02-03T12:35:33.832343" level="INFO">[Custom Branding] already enabled</msg>
-<msg time="2026-02-03T12:35:33.843116" level="INFO">Total iframes found: 6</msg>
-<msg time="2026-02-03T12:35:33.849000" level="INFO">Iframe 0 src=</msg>
-<msg time="2026-02-03T12:35:33.854305" level="INFO">Iframe 1 src=</msg>
-<msg time="2026-02-03T12:35:33.860616" level="INFO">Iframe 2 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=275086BE00C211F1BAD9B99AE1ACE055#!Updater</msg>
-<msg time="2026-02-03T12:35:33.866006" level="INFO">Iframe 3 src=javascript:""</msg>
-<msg time="2026-02-03T12:35:33.871178" level="INFO">Iframe 4 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=275086BE00C211F1BAD9B99AE1ACE055#!Branding</msg>
-<msg time="2026-02-03T12:35:33.871454" level="INFO">Switching to iframe index 4 with src containing '#!Branding'</msg>
-<msg time="2026-02-03T12:35:33.881956" level="INFO">Waiting for Text Adjustment to be clickable</msg>
-<msg time="2026-02-03T12:35:33.882254" level="INFO">Finding element [] (xpath, //div[@class='v-captiontext' and text()='Text adjustment'])</msg>
-<msg time="2026-02-03T12:35:33.890101" level="INFO">Text Adjustment is visible</msg>
-<msg time="2026-02-03T12:35:33.900418" level="INFO">Text adjustment option clicked successfully</msg>
-<msg time="2026-02-03T12:35:33.901885" level="INFO">Exited iframe safely</msg>
-<msg time="2026-02-03T12:35:33.902107" level="INFO">Method 'enable_advanced_branding' executed successfully</msg>
+<msg time="2026-02-03T14:51:10.338579" level="INFO">Attempting to enable advanced branding</msg>
+<msg time="2026-02-03T14:51:10.338907" level="INFO">Opening Custom Branding tab</msg>
+<msg time="2026-02-03T14:51:10.339135" level="INFO">Finding element [] (xpath, //div[contains(@id,'upcsgTabs')]//a[contains(@class,'customBranding_tab')])</msg>
+<msg time="2026-02-03T14:51:10.376197" level="INFO">Element [] found successfully</msg>
+<msg time="2026-02-03T14:51:12.424885" level="INFO">Total iframes found: 6</msg>
+<msg time="2026-02-03T14:51:12.460072" level="INFO">Iframe 0 src=</msg>
+<msg time="2026-02-03T14:51:12.483676" level="INFO">Iframe 1 src=</msg>
+<msg time="2026-02-03T14:51:12.505270" level="INFO">Iframe 2 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Updater</msg>
+<msg time="2026-02-03T14:51:12.521183" level="INFO">Iframe 3 src=javascript:""</msg>
+<msg time="2026-02-03T14:51:12.532683" level="INFO">Iframe 4 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Branding</msg>
+<msg time="2026-02-03T14:51:12.533032" level="INFO">Switching to iframe index 4 with src containing '#!Branding'</msg>
+<msg time="2026-02-03T14:51:12.548077" level="INFO">Finding element [] (xpath, //label[normalize-space()='Enable advanced branding'])</msg>
+<msg time="2026-02-03T14:51:12.558405" level="INFO">Element [] found successfully</msg>
+<msg time="2026-02-03T14:51:12.559066" level="INFO">Custom Branding content loaded successfully</msg>
+<msg time="2026-02-03T14:51:12.559415" level="INFO">Finding element [Enable Advanced Branding Label] (xpath, //label[normalize-space()='Enable advanced branding'])</msg>
+<msg time="2026-02-03T14:51:12.578596" level="INFO">Element [Enable Advanced Branding Label] found successfully</msg>
+<msg time="2026-02-03T14:51:12.586529" level="INFO">Finding element [] (xpath, //span[contains(@class,'v-checkbox')]//input[@type='checkbox'])</msg>
+<msg time="2026-02-03T14:51:12.606709" level="INFO">Element [] found successfully</msg>
+<msg time="2026-02-03T14:51:12.640852" level="INFO">Advanced Branding state | checked=true, aria-checked=None, class=</msg>
+<msg time="2026-02-03T14:51:12.652244" level="INFO">[Enable advanced branding] already enabled</msg>
+<msg time="2026-02-03T14:51:12.675436" level="INFO">Total iframes found: 6</msg>
+<msg time="2026-02-03T14:51:12.708255" level="INFO">Iframe 0 src=</msg>
+<msg time="2026-02-03T14:51:12.716830" level="INFO">Iframe 1 src=</msg>
+<msg time="2026-02-03T14:51:12.728191" level="INFO">Iframe 2 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Updater</msg>
+<msg time="2026-02-03T14:51:12.736168" level="INFO">Iframe 3 src=javascript:""</msg>
+<msg time="2026-02-03T14:51:12.744150" level="INFO">Iframe 4 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Branding</msg>
+<msg time="2026-02-03T14:51:12.744683" level="INFO">Switching to iframe index 4 with src containing '#!Branding'</msg>
+<msg time="2026-02-03T14:51:12.762545" level="INFO">Waiting for Text Adjustment to be clickable</msg>
+<msg time="2026-02-03T14:51:12.763101" level="INFO">Finding element [] (xpath, //div[@class='v-captiontext' and text()='Text adjustment'])</msg>
+<msg time="2026-02-03T14:51:12.778030" level="INFO">Element [] found successfully</msg>
+<msg time="2026-02-03T14:51:12.778573" level="INFO">Text Adjustment is visible</msg>
+<msg time="2026-02-03T14:51:12.797339" level="INFO">Text adjustment option clicked successfully</msg>
+<msg time="2026-02-03T14:51:12.800774" level="INFO">Exited iframe safely</msg>
+<msg time="2026-02-03T14:51:12.801358" level="INFO">Method 'enable_advanced_branding' executed successfully</msg>
 <arg>enable_advanced_branding</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-02-03T12:35:31.737393" elapsed="2.164868"/>
+<status status="PASS" start="2026-02-03T14:51:10.338066" elapsed="2.463593"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-03T12:35:38.903111" level="INFO">Slept 5 seconds.</msg>
+<msg time="2026-02-03T14:51:17.803664" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-03T12:35:33.902649" elapsed="5.000693"/>
+<status status="PASS" start="2026-02-03T14:51:12.802632" elapsed="5.001323"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T12:35:38.904286" level="INFO">Attempting to sign out</msg>
-<msg time="2026-02-03T12:35:38.960569" level="INFO">Successfully signed out</msg>
-<msg time="2026-02-03T12:35:38.961103" level="INFO">Method 'sign_out' executed successfully</msg>
+<msg time="2026-02-03T14:51:17.804731" level="INFO">Attempting to sign out</msg>
+<msg time="2026-02-03T14:51:17.911659" level="INFO">Successfully signed out</msg>
+<msg time="2026-02-03T14:51:17.912374" level="INFO">Method 'sign_out' executed successfully</msg>
 <arg>sign_out</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-02-03T12:35:38.903929" elapsed="0.057391"/>
+<status status="PASS" start="2026-02-03T14:51:17.804453" elapsed="0.108715"/>
 </kw>
 <kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
 <arg>Capture Page Screenshot</arg>
 <doc>Runs the given keyword with the given arguments, if the test failed.</doc>
-<status status="PASS" start="2026-02-03T12:35:38.962137" elapsed="0.000453"/>
+<status status="PASS" start="2026-02-03T14:51:17.915877" elapsed="0.001037"/>
 </kw>
 <doc>Verify iView web client basic flow</doc>
-<status status="PASS" start="2026-02-03T12:35:25.779184" elapsed="13.184050"/>
+<status status="PASS" start="2026-02-03T14:51:04.436164" elapsed="13.485563"/>
 </test>
 <kw name="Safe Quit Browser" owner="Libraries.web_client_library.WebClientLibrary" type="TEARDOWN">
 <doc>ALWAYS safe to call in teardown</doc>
-<status status="PASS" start="2026-02-03T12:35:41.416503" elapsed="0.000309"/>
+<status status="PASS" start="2026-02-03T14:51:20.934119" elapsed="0.000321"/>
 </kw>
-<status status="PASS" start="2026-02-03T12:35:25.600526" elapsed="15.816429"/>
+<status status="PASS" start="2026-02-03T14:51:04.262297" elapsed="16.672291"/>
 </suite>
 <statistics>
 <total>

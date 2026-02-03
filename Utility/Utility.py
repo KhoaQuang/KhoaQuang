@@ -132,9 +132,12 @@ class Utility:
             wait = WebDriverWait(context, timeout)
 
             if hasattr(context, "find_element"):
-                return wait.until(
+                element = wait.until(
                     lambda d: context.find_element(by, locator)
                 )
+                logging.info(f"Element [{name}] found successfully")
+                return element
+            
             else:
                 raise TypeError("Context must be WebDriver or WebElement")
 
@@ -143,27 +146,52 @@ class Utility:
             raise
 
     @staticmethod
-    def find_elements(context, by, locator, timeout=10):
+    def find_elements(driver, by, locator, timeout=10, name=None):
+        element_name = name or locator
+        logging.info(f"Finding elements: {element_name}")
+
         try:
-            WebDriverWait(context, timeout).until(
-                lambda d: len(context.find_elements(by, locator)) > 0
+            WebDriverWait(driver, timeout).until(
+                lambda d: len(d.find_elements(by, locator)) > 0
             )
-            return context.find_elements(by, locator)
+            elements = driver.find_elements(by, locator)
+            logging.info(f"Elements FOUND ({len(elements)}): {element_name}")
+            return elements
+
         except TimeoutException:
+            logging.error(f"No elements found after {timeout}s: {element_name}")
             return []
-        
+    # @staticmethod
+    # def _detect_by(locator: str):
+    #     if locator.startswith("//") or locator.startswith("(//"):
+    #         return By.XPATH
+    #     if locator.startswith("#"):
+    #         return By.CSS_SELECTOR
+    #     if locator.startswith("."):
+    #         return By.CSS_SELECTOR
+    #     if locator.startswith("name="):
+    #         return By.NAME
+    #     return By.ID
+
     @staticmethod
-    def wait_for_clickable(driver, locator, timeout=30):
-        locator = Utility.normalize_locator(locator)
-        return WebDriverWait(driver, timeout).until(
-            EC.element_to_be_clickable(locator)
-        )
-    
-    @staticmethod
-    def normalize_locator(locator):
-        if isinstance(locator, tuple):
-            return locator
-        elif isinstance(locator, str):
-            return (By.XPATH, locator)
-        else:
-            raise TypeError("Locator must be tuple or xpath string")
+    def wait_for_clickable(context, locator, timeout=30, name=None, by=By.XPATH):
+        """
+        context : WebDriver or WebElement
+        locator : STRING
+        by      : default By.XPATH, có thể override
+        """
+
+        element_name = name or locator
+        logging.info(f"Waiting for element to be clickable: {element_name}")
+
+        try:
+            wait = WebDriverWait(context, timeout)
+            element = wait.until(
+                EC.element_to_be_clickable((by, locator))
+            )
+            logging.info(f"Element CLICKABLE: {element_name}")
+            return element
+
+        except TimeoutException:
+            logging.error(f"Element NOT clickable after {timeout}s: {element_name}")
+            raise

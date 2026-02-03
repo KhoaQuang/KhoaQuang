@@ -71,7 +71,12 @@ class SettingsIVIEWpage:
     def option_custom_branding(self):
         try:
             logging.info("Attempting to open custom branding option") 
-            custom_branding_portal = Utility.wait_for_clickable(self.driver, self.Custom_Branding_Option)
+            custom_branding_portal = Utility.wait_for_clickable(
+                self.driver, 
+                self.Custom_Branding_Option,
+                name="Custom Branding tab",
+                by=By.XPATH
+            )
             logging.info("Custom branding option is visible")
             self.driver.execute_script("arguments[0].scrollIntoView({block:'center'});", custom_branding_portal)
             custom_branding_portal.click()
@@ -114,7 +119,8 @@ class SettingsIVIEWpage:
             label = Utility.find_element(
                 self.driver,
                 By.XPATH,
-                self.BUTTON_ADVANCED_BRANDING
+                self.BUTTON_ADVANCED_BRANDING,
+                name="Enable Advanced Branding Label"
             )
             self.driver.execute_script(
                 "arguments[0].scrollIntoView({block:'center'});", label
@@ -124,11 +130,12 @@ class SettingsIVIEWpage:
                 By.XPATH,
                 self.CHECKBOX_ADVANCED_BRANDING
             )
+            ToggleUtil.log_checkbox_state(checkbox, "Advanced Branding")
             ToggleUtil.enable(
                 self.driver,
                 checkbox,
                 label,
-                name="Custom Branding"
+                name="Enable advanced branding"
             )
 
             self.driver.switch_to.default_content()

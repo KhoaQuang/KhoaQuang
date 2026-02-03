@@ -34,7 +34,7 @@ IVIEW Web Client Smoke Test
     Call Web Client Method    sign_in
     Call Web Client Method    open_settings
     Call Web Client Method    open_user_portal
-    Call Web Client Method    pressing_option_custom_branding
+    Call Web Client Method    option_custom_branding
     Call Web Client Method    enable_advanced_branding
     Sleep    5s
     Call Web Client Method    sign_out

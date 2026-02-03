@@ -57,3 +57,16 @@ class ToggleUtil:
         )
 
         logging.info(f"[{name}] disabled successfully")
+
+    @staticmethod
+    def log_checkbox_state(element, name="Checkbox"):
+        try:
+            checked = element.get_attribute("checked")
+            aria = element.get_attribute("aria-checked")
+            classes = element.get_attribute("class")
+
+            logging.info(
+                f"{name} state | checked={checked}, aria-checked={aria}, class={classes}"
+            )
+        except Exception as e:
+            logging.warning(f"Could not read state of {name}: {e}")
