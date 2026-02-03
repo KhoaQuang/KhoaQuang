@@ -1,6 +1,6 @@
 *** Settings ***
 Library           Libraries.web_client_library.WebClientLibrary
-Library    SeleniumLibrary
+Library           SeleniumLibrary
 Suite Teardown    Safe Quit Browser
 Test Teardown     Run Keyword If Test Failed    Capture Page Screenshot
 
@@ -11,7 +11,7 @@ ${USERNAME}       admin
 ${PASSWORD}       AvayaMcspv_1234$
 ${Portal_URL}     https://aawgott-svc-kvm.hcm.com:443/portal
 ${USERPORTAL}     khoa
-${MEETINGID}      5602112
+${MEETINGID}      4602112
 
 &{CLIENT}
 ...    host=10.128.224.115
@@ -36,6 +36,7 @@ IVIEW Web Client Smoke Test
     Call Web Client Method    open_user_portal
     Call Web Client Method    pressing_option_custom_branding
     Call Web Client Method    enable_advanced_branding
+    Sleep    5s
     Call Web Client Method    sign_out
 
 Portal Join Meeting Test

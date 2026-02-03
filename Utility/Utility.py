@@ -117,3 +117,53 @@ class Utility:
                 return True
 
         raise TimeoutException(f"Iframe with src containing '{src_keyword}' not found")
+    
+    @staticmethod
+    def find_element(context, by, locator, name="", timeout=10):
+        """
+        context: WebDriver OR WebElement
+        by: By.XPATH / By.ID / ...
+        locator: locator string
+        name: optional name for logging purposes
+        """
+
+        try:
+            logging.info(f"Finding element [{name}] ({by}, {locator})")
+            wait = WebDriverWait(context, timeout)
+
+            if hasattr(context, "find_element"):
+                return wait.until(
+                    lambda d: context.find_element(by, locator)
+                )
+            else:
+                raise TypeError("Context must be WebDriver or WebElement")
+
+        except TimeoutException:
+            logging.error(f"Element not found: ({by}, {locator})")
+            raise
+
+    @staticmethod
+    def find_elements(context, by, locator, timeout=10):
+        try:
+            WebDriverWait(context, timeout).until(
+                lambda d: len(context.find_elements(by, locator)) > 0
+            )
+            return context.find_elements(by, locator)
+        except TimeoutException:
+            return []
+        
+    @staticmethod
+    def wait_for_clickable(driver, locator, timeout=30):
+        locator = Utility.normalize_locator(locator)
+        return WebDriverWait(driver, timeout).until(
+            EC.element_to_be_clickable(locator)
+        )
+    
+    @staticmethod
+    def normalize_locator(locator):
+        if isinstance(locator, tuple):
+            return locator
+        elif isinstance(locator, str):
+            return (By.XPATH, locator)
+        else:
+            raise TypeError("Locator must be tuple or xpath string")

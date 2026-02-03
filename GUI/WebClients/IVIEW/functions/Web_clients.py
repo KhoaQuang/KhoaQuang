@@ -162,7 +162,7 @@ class Web_Clients:
             page.sign_out()
         except Exception as e:
             logging.error(f"Error signing out: {e}")
-            Utility.take_screenshot("sign_out_error.png")
+            Utility.take_screenshot(self.driver, "sign_out_error.png")
             raise
 
     def open_settings(self):
