@@ -1,73 +1,135 @@
-2026-02-03 14:51:04,501 - INFO - https://10.103.3.173/iview/views/index.jsf
-2026-02-03 14:51:04,503 - INFO - Start function _setup_chrome
-2026-02-03 14:51:04,504 - INFO - Setting up chrome driver
-2026-02-03 14:51:04,504 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
-2026-02-03 14:51:06,036 - INFO - chrome driver setup successfully
-2026-02-03 14:51:06,037 - INFO - Navigating to URL: https://10.103.3.173/iview/views/index.jsf
-2026-02-03 14:51:06,277 - INFO - Attempting to sign in
-2026-02-03 14:51:08,917 - INFO - Successfully signed in - logout button detected
-2026-02-03 14:51:08,919 - INFO - Attempting to open settings
-2026-02-03 14:51:09,002 - INFO - Settings button clicked successfully
-2026-02-03 14:51:09,003 - INFO - Attempting to open user portal
-2026-02-03 14:51:09,565 - INFO - User portal link clicked
-2026-02-03 14:51:09,575 - INFO - User portal page loaded successfully
-2026-02-03 14:51:09,577 - INFO - Attempting to open custom branding option
-2026-02-03 14:51:09,577 - INFO - Waiting for element to be clickable: Custom Branding tab
-2026-02-03 14:51:10,105 - INFO - Element CLICKABLE: Custom Branding tab
-2026-02-03 14:51:10,105 - INFO - Custom branding option is visible
-2026-02-03 14:51:10,145 - INFO - Custom branding option clicked successfully
-2026-02-03 14:51:10,162 - INFO - Total iframes found: 6
-2026-02-03 14:51:10,173 - INFO - Iframe 0 src=
-2026-02-03 14:51:10,180 - INFO - Iframe 1 src=
-2026-02-03 14:51:10,189 - INFO - Iframe 2 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Updater
-2026-02-03 14:51:10,195 - INFO - Iframe 3 src=javascript:""
-2026-02-03 14:51:10,202 - INFO - Iframe 4 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Branding
-2026-02-03 14:51:10,202 - INFO - Switching to iframe index 4 with src containing '#!Branding'
-2026-02-03 14:51:10,214 - INFO - Waiting for Custom Branding content
-2026-02-03 14:51:10,214 - INFO - Waiting for title locator: //span[normalize-space()='Organization']
-2026-02-03 14:51:10,214 - INFO - Finding element [] (xpath, //span[normalize-space()='Organization'])
-2026-02-03 14:51:10,276 - INFO - Element [] found successfully
-2026-02-03 14:51:10,277 - INFO - Custom Branding content loaded
-2026-02-03 14:51:10,277 - INFO - Finding elements: iframe
-2026-02-03 14:51:10,296 - INFO - Elements FOUND (4): iframe
-2026-02-03 14:51:10,297 - INFO - Total iframes after clicking tab: 4
-2026-02-03 14:51:10,307 - INFO - Iframe 0 src=
-2026-02-03 14:51:10,313 - INFO - Iframe 1 src=javascript:''
-2026-02-03 14:51:10,319 - INFO - Iframe 2 src=javascript:''
-2026-02-03 14:51:10,333 - INFO - Iframe 3 src=javascript:''
-2026-02-03 14:51:10,336 - INFO - Exited iframe safely
-2026-02-03 14:51:10,338 - INFO - Attempting to enable advanced branding
-2026-02-03 14:51:10,338 - INFO - Opening Custom Branding tab
-2026-02-03 14:51:10,339 - INFO - Finding element [] (xpath, //div[contains(@id,'upcsgTabs')]//a[contains(@class,'customBranding_tab')])
-2026-02-03 14:51:10,376 - INFO - Element [] found successfully
-2026-02-03 14:51:12,424 - INFO - Total iframes found: 6
-2026-02-03 14:51:12,459 - INFO - Iframe 0 src=
-2026-02-03 14:51:12,483 - INFO - Iframe 1 src=
-2026-02-03 14:51:12,505 - INFO - Iframe 2 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Updater
-2026-02-03 14:51:12,521 - INFO - Iframe 3 src=javascript:""
-2026-02-03 14:51:12,532 - INFO - Iframe 4 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Branding
-2026-02-03 14:51:12,533 - INFO - Switching to iframe index 4 with src containing '#!Branding'
-2026-02-03 14:51:12,548 - INFO - Finding element [] (xpath, //label[normalize-space()='Enable advanced branding'])
-2026-02-03 14:51:12,558 - INFO - Element [] found successfully
-2026-02-03 14:51:12,559 - INFO - Custom Branding content loaded successfully
-2026-02-03 14:51:12,559 - INFO - Finding element [Enable Advanced Branding Label] (xpath, //label[normalize-space()='Enable advanced branding'])
-2026-02-03 14:51:12,578 - INFO - Element [Enable Advanced Branding Label] found successfully
-2026-02-03 14:51:12,586 - INFO - Finding element [] (xpath, //span[contains(@class,'v-checkbox')]//input[@type='checkbox'])
-2026-02-03 14:51:12,606 - INFO - Element [] found successfully
-2026-02-03 14:51:12,640 - INFO - Advanced Branding state | checked=true, aria-checked=None, class=
-2026-02-03 14:51:12,652 - INFO - [Enable advanced branding] already enabled
-2026-02-03 14:51:12,675 - INFO - Total iframes found: 6
-2026-02-03 14:51:12,708 - INFO - Iframe 0 src=
-2026-02-03 14:51:12,716 - INFO - Iframe 1 src=
-2026-02-03 14:51:12,728 - INFO - Iframe 2 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Updater
-2026-02-03 14:51:12,736 - INFO - Iframe 3 src=javascript:""
-2026-02-03 14:51:12,744 - INFO - Iframe 4 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Branding
-2026-02-03 14:51:12,744 - INFO - Switching to iframe index 4 with src containing '#!Branding'
-2026-02-03 14:51:12,762 - INFO - Waiting for Text Adjustment to be clickable
-2026-02-03 14:51:12,763 - INFO - Finding element [] (xpath, //div[@class='v-captiontext' and text()='Text adjustment'])
-2026-02-03 14:51:12,777 - INFO - Element [] found successfully
-2026-02-03 14:51:12,778 - INFO - Text Adjustment is visible
-2026-02-03 14:51:12,797 - INFO - Text adjustment option clicked successfully
-2026-02-03 14:51:12,800 - INFO - Exited iframe safely
-2026-02-03 14:51:17,804 - INFO - Attempting to sign out
-2026-02-03 14:51:17,911 - INFO - Successfully signed out
+2026-02-04 11:26:14,211 - INFO - https://10.103.3.110/iview/views/index.jsf
+2026-02-04 11:26:14,212 - INFO - Start function _setup_chrome
+2026-02-04 11:26:14,213 - INFO - Setting up chrome driver
+2026-02-04 11:26:14,213 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-04 11:26:16,015 - INFO - chrome driver setup successfully
+2026-02-04 11:26:16,017 - INFO - Navigating to URL: https://10.103.3.110/iview/views/index.jsf
+2026-02-04 11:26:16,648 - INFO - Attempting to sign in
+2026-02-04 11:26:19,728 - INFO - Successfully signed in - logout button detected
+2026-02-04 11:26:19,734 - INFO - Attempting to open settings
+2026-02-04 11:26:19,880 - INFO - Settings button clicked successfully
+2026-02-04 11:26:19,883 - INFO - Attempting to open user portal
+2026-02-04 11:26:20,454 - INFO - User portal link clicked
+2026-02-04 11:26:20,464 - INFO - User portal page loaded successfully
+2026-02-04 11:26:20,465 - INFO - Attempting to open custom branding option
+2026-02-04 11:26:20,466 - INFO - Waiting for element to be clickable: Custom Branding tab
+2026-02-04 11:26:21,012 - INFO - Element CLICKABLE: Custom Branding tab
+2026-02-04 11:26:21,012 - INFO - Custom branding option is visible
+2026-02-04 11:26:21,057 - INFO - Custom branding option clicked successfully
+2026-02-04 11:26:21,102 - INFO - Total iframes found: 5
+2026-02-04 11:26:21,120 - INFO - Iframe 0 src=
+2026-02-04 11:26:21,131 - INFO - Iframe 1 src=https://aawgfed-kvm.hcm.com/ups/up-admin/?UPToken=A7DBBA4F018111F182762D74818A4393#!Updater
+2026-02-04 11:26:21,145 - INFO - Iframe 2 src=javascript:""
+2026-02-04 11:26:21,155 - INFO - Iframe 3 src=https://aawgfed-kvm.hcm.com/ups/up-admin/?UPToken=A7DBBA4F018111F182762D74818A4393#!Branding
+2026-02-04 11:26:21,155 - INFO - Switching to iframe index 3 with src containing '#!Branding'
+2026-02-04 11:26:21,172 - INFO - Waiting for Custom Branding content
+2026-02-04 11:26:21,173 - INFO - Waiting for title locator: //span[normalize-space()='Organization']
+2026-02-04 11:26:21,173 - INFO - Finding element [] (xpath, //span[normalize-space()='Organization'])
+2026-02-04 11:26:21,362 - INFO - Element [] found successfully
+2026-02-04 11:26:21,363 - INFO - Custom Branding content loaded
+2026-02-04 11:26:21,363 - INFO - Finding elements: iframe
+2026-02-04 11:26:21,396 - INFO - Elements FOUND (4): iframe
+2026-02-04 11:26:21,397 - INFO - Total iframes after clicking tab: 4
+2026-02-04 11:26:21,411 - INFO - Iframe 0 src=
+2026-02-04 11:26:21,422 - INFO - Iframe 1 src=javascript:''
+2026-02-04 11:26:21,433 - INFO - Iframe 2 src=javascript:''
+2026-02-04 11:26:21,445 - INFO - Iframe 3 src=javascript:''
+2026-02-04 11:26:21,449 - INFO - Exited iframe safely
+2026-02-04 11:26:21,451 - INFO - Attempting to enable advanced branding
+2026-02-04 11:26:21,452 - INFO - Opening Custom Branding tab
+2026-02-04 11:26:21,452 - INFO - Finding element [] (xpath, //div[contains(@id,'upcsgTabs')]//a[contains(@class,'customBranding_tab')])
+2026-02-04 11:26:21,505 - INFO - Element [] found successfully
+2026-02-04 11:26:23,544 - INFO - Total iframes found: 5
+2026-02-04 11:26:23,550 - INFO - Iframe 0 src=
+2026-02-04 11:26:23,556 - INFO - Iframe 1 src=https://aawgfed-kvm.hcm.com/ups/up-admin/?UPToken=A7DBBA4F018111F182762D74818A4393#!Updater
+2026-02-04 11:26:23,563 - INFO - Iframe 2 src=javascript:""
+2026-02-04 11:26:23,570 - INFO - Iframe 3 src=https://aawgfed-kvm.hcm.com/ups/up-admin/?UPToken=A7DBBA4F018111F182762D74818A4393#!Branding
+2026-02-04 11:26:23,570 - INFO - Switching to iframe index 3 with src containing '#!Branding'
+2026-02-04 11:26:23,582 - INFO - Finding element [] (xpath, //label[normalize-space()='Enable advanced branding'])
+2026-02-04 11:26:23,593 - INFO - Element [] found successfully
+2026-02-04 11:26:23,593 - INFO - Custom Branding content loaded successfully
+2026-02-04 11:26:23,593 - INFO - Finding element [Enable Advanced Branding Label] (xpath, //label[normalize-space()='Enable advanced branding'])
+2026-02-04 11:26:23,599 - INFO - Element [Enable Advanced Branding Label] found successfully
+2026-02-04 11:26:23,606 - INFO - Finding element [] (xpath, //span[contains(@class,'v-checkbox')]//input[@type='checkbox'])
+2026-02-04 11:26:23,615 - INFO - Element [] found successfully
+2026-02-04 11:26:23,637 - INFO - Advanced Branding state | checked=true, aria-checked=None, class=
+2026-02-04 11:26:23,646 - INFO - [Enable advanced branding] already enabled
+2026-02-04 11:26:23,660 - INFO - Total iframes found: 5
+2026-02-04 11:26:23,666 - INFO - Iframe 0 src=
+2026-02-04 11:26:23,672 - INFO - Iframe 1 src=https://aawgfed-kvm.hcm.com/ups/up-admin/?UPToken=A7DBBA4F018111F182762D74818A4393#!Updater
+2026-02-04 11:26:23,679 - INFO - Iframe 2 src=javascript:""
+2026-02-04 11:26:23,686 - INFO - Iframe 3 src=https://aawgfed-kvm.hcm.com/ups/up-admin/?UPToken=A7DBBA4F018111F182762D74818A4393#!Branding
+2026-02-04 11:26:23,686 - INFO - Switching to iframe index 3 with src containing '#!Branding'
+2026-02-04 11:26:23,698 - INFO - Waiting for Text Adjustment to be clickable
+2026-02-04 11:26:23,698 - INFO - Finding element [] (xpath, //div[@class='v-captiontext' and text()='Text adjustment'])
+2026-02-04 11:26:23,707 - INFO - Element [] found successfully
+2026-02-04 11:26:23,707 - INFO - Text Adjustment is visible
+2026-02-04 11:26:23,720 - INFO - Text adjustment option clicked successfully
+2026-02-04 11:26:23,722 - INFO - Exited iframe safely
+2026-02-04 11:26:28,726 - INFO - Attempting to sign out
+2026-02-04 11:26:28,821 - INFO - Successfully signed out
+2026-02-04 11:26:31,750 - INFO - https://aawgfed-kvm.hcm.com/portal/tenants/default/
+2026-02-04 11:26:31,750 - INFO - Start function _setup_chrome
+2026-02-04 11:26:31,751 - INFO - Setting up chrome driver
+2026-02-04 11:26:31,752 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-04 11:26:33,115 - INFO - chrome driver setup successfully
+2026-02-04 11:26:33,117 - INFO - Navigating to URL: https://aawgfed-kvm.hcm.com/portal/tenants/default/
+2026-02-04 11:26:34,583 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-04 11:26:34,585 - INFO - Start function sign_in_portal
+2026-02-04 11:26:34,635 - INFO - Verified on text sign in
+2026-02-04 11:26:34,790 - INFO - Attempting to sign in
+2026-02-04 11:26:34,834 - INFO - URL: https://aawgfed-kvm.hcm.com/portal/tenants/default/
+2026-02-04 11:26:35,109 - INFO - Entered click and clear info
+2026-02-04 11:26:35,204 - INFO - Entered username: khoa
+2026-02-04 11:26:35,349 - INFO - Entered password
+2026-02-04 11:26:35,458 - INFO - Clicked Sign in button
+2026-02-04 11:26:40,512 - INFO - Clicked user avatar button
+2026-02-04 11:26:40,523 - INFO - Successfully signed in - sign out button detected
+2026-02-04 11:26:40,567 - INFO - Navigated back to the iView dashboard
+2026-02-04 11:26:40,567 - INFO - Verify sign_in_portal
+2026-02-04 11:26:42,569 - INFO - Getting user name from Meet Now page
+2026-02-04 11:26:42,606 - INFO - Display name: khoa
+2026-02-04 11:26:42,606 - INFO - Sign_in_portal successfully
+2026-02-04 11:26:42,610 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-04 11:26:42,610 - INFO - Start function join_meeting
+2026-02-04 11:26:42,611 - INFO - Entering meeting ID: 5501509
+2026-02-04 11:26:42,611 - INFO - Attempting to enter meeting ID
+2026-02-04 11:26:42,721 - INFO - Entered meeting ID: 5501509
+2026-02-04 11:26:42,722 - INFO - Clicking join meeting button...
+2026-02-04 11:26:42,797 - INFO - Clicked Join Meeting button successfully
+2026-02-04 11:26:43,322 - INFO - Waiting for conference window to open...
+2026-02-04 11:26:43,329 - INFO - Original portal window: DC1670D4C9B5FB8A8F134DC7A8DB30AA
+2026-02-04 11:26:43,340 - INFO - Conference window: C0CDDFC53BA0E6EF05D43AB1A4637251
+2026-02-04 11:26:43,342 - INFO - Switching to conference window: C0CDDFC53BA0E6EF05D43AB1A4637251
+2026-02-04 11:26:43,349 - INFO - Successfully focused on conference window
+2026-02-04 11:26:43,351 - INFO - join_meeting successfully
+2026-02-04 11:26:53,361 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-04 11:26:53,362 - INFO - Start verify_in_meeting
+2026-02-04 11:26:53,363 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-04 11:26:53,363 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-04 11:26:53,366 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-04 11:26:53,367 - INFO - Handle unblock popup
+2026-02-04 11:26:58,539 - INFO - Close popup microphone button clicked
+2026-02-04 11:27:03,646 - INFO - Close popup video button clicked
+2026-02-04 11:27:03,647 - INFO - Handle unblock popup successfully
+2026-02-04 11:27:03,648 - INFO - Popup handled, will not retry
+2026-02-04 11:27:03,649 - INFO - Searching for participant: khoa
+2026-02-04 11:27:03,697 - INFO - Total participants found: 1
+2026-02-04 11:27:03,715 - INFO - Checking participant UI name: 'khoa'
+2026-02-04 11:27:03,715 - INFO - Participant 'khoa' found in roster list.
+2026-02-04 11:27:03,716 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-04 11:27:03,719 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-04 11:27:03,720 - INFO - Start function terminate_meeting
+2026-02-04 11:27:03,898 - INFO - Meeting controls button clicked
+2026-02-04 11:27:09,051 - INFO - Terminate meeting button clicked
+2026-02-04 11:27:09,583 - INFO - Submit button clicked
+2026-02-04 11:27:14,584 - INFO - Terminate_meeting successfuly
+2026-02-04 11:27:14,584 - INFO - Closing conference window
+2026-02-04 11:27:14,657 - INFO - Closed window: C0CDDFC53BA0E6EF05D43AB1A4637251
+2026-02-04 11:27:14,670 - INFO - Switched back to original window: DC1670D4C9B5FB8A8F134DC7A8DB30AA
+2026-02-04 11:27:14,678 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-04 11:27:14,679 - INFO - Start function sign_out_portal
+2026-02-04 11:27:14,687 - INFO - Verified on avatar user button
+2026-02-04 11:27:14,783 - INFO - Clicked avatar user button
+2026-02-04 11:27:15,393 - INFO - Verified on sign in button
+2026-02-04 11:27:20,394 - INFO - Successfully signed out - sign out button detected

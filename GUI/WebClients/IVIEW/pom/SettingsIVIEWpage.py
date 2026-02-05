@@ -95,6 +95,7 @@ class SettingsIVIEWpage:
         except Exception as e:
             logging.error(f"Error opening custom branding option: {e}")
             return False
+        
         finally:
             self.driver.switch_to.default_content()
             logging.info("Exited iframe safely")

@@ -186,12 +186,6 @@ class SWC_Clients:
             else:
                 logger = logger_main
             logger.info('Start function sign_in_portal')
-            BuiltIn().should_be_true(Utility.is_element_present_by_xpath(
-                    self.driver,
-                    MeetNowPage.XPATH_TXT_SIGN_IN
-                ),
-                'Sign in text is not visible'
-            )
             MeetNowPage(self.driver).click_txt_sign_in()
             BuiltIn().should_be_true(
                 MeetNowPage(self.driver).enter_user_name_password(userportal, password),
@@ -207,7 +201,7 @@ class SWC_Clients:
 
     def verify_sign_in_portal(self, user_name):
         try:
-            actual_name = MeetNowPage(self.driver).get_user_name()
+            actual_name = MeetNowPage(self.driver).get_user_name().lower()
             logger.info(f'Display name: {actual_name}')
 
             if user_name in actual_name:
@@ -242,7 +236,6 @@ class SWC_Clients:
             meet_page.enter_meeting_id(meeting_id)
             logger.info("Clicking join meeting button...")
             meet_page.click_join_meeting()
-            # MeetNowPage(self.driver).enter_display_name(display_name)
             WebDriverWait(self.driver, 20).until(EC.number_of_windows_to_be(2))
             logger.info("Waiting for conference window to open...")
             original_window = self.driver.current_window_handle
@@ -288,12 +281,8 @@ class SWC_Clients:
                 * Description: This function is used to verify new participant to join the meeting
                 * Parameters:  
                     + my_name: display name participant after join meeting
-                * Author: Hao Nguyen
-                * Date: Feb, 2019
-                * Ex: verify_in_meeting  auto2016000
-                * Modify by: 
-                * Date
             '''
+
             logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
             logger.info('Start verify_in_meeting')
             time_out = 5
@@ -376,7 +365,6 @@ class SWC_Clients:
             logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
             logger = logger_main
             logger.info('Start function terminate_meeting')
-            # BuiltIn().should_be_true(self.switch_window('conference_window'),'Switch to conference window failed')
             BuiltIn().should_be_true(ModeratorPage(self.driver).handle_meeting_controls(), 'Handle meeting controls failed')
             time.sleep(5)
             BuiltIn().should_be_true(ModeratorPage(self.driver).handle_terminate_meeting(), 'Handle terminate meeting failed')

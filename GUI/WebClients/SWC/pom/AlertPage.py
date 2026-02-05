@@ -15,10 +15,6 @@ logging.basicConfig(
 class AlertPage:
     """Page Object for iView Login and Logout flows"""
 
-
-    CLOSE_POPUP_MICROPHONE_BUTTON = "//div[contains(@class,'header-close-button')]"
-    CLOSE_POPUP_VIDEO_BUTTON = "//div[contains(@class,'header-close-button')]"
-
     def __init__(self, driver):
         """
         Initialize page object with driver instance
@@ -29,6 +25,9 @@ class AlertPage:
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
 
+        self.CLOSE_POPUP_MICROPHONE_BUTTON = "//div[contains(@class,'header-close-button')]"
+        self.CLOSE_POPUP_VIDEO_BUTTON = "//div[contains(@class,'header-close-button')]"
+
     def handle_close_popup_microphone(self):
         """
         Handle the close popup microphone button
@@ -36,7 +35,7 @@ class AlertPage:
         try:
             Utility.click_element_by_xpath(
                 self.driver,
-                AlertPage.CLOSE_POPUP_MICROPHONE_BUTTON
+                self.CLOSE_POPUP_MICROPHONE_BUTTON
             )
             logging.info('Close popup microphone button clicked')
             return True
@@ -52,7 +51,7 @@ class AlertPage:
         try:
             Utility.click_element_by_xpath(
                 self.driver,
-                AlertPage.CLOSE_POPUP_VIDEO_BUTTON
+                self.CLOSE_POPUP_VIDEO_BUTTON
             )
             logging.info('Close popup video button clicked')
             return True

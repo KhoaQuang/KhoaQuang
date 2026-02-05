@@ -1,156 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.13.3 on win32)" generated="2026-02-03T14:51:04.257787" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.13.3 on win32)" generated="2026-02-04T16:42:46.963334" rpa="false" schemaversion="5">
 <suite id="s1" name="Khoa2" source="e:\Backupwin11\Launch-auto\TESTS\Khoa2.robot">
-<test id="s1-t1" name="IVIEW Web Client Smoke Test" line="31">
+<test id="s1-t1" name="Portal Join Meeting Test" line="43">
 <kw name="Create Web Client" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T14:51:04.502056" level="INFO">https://10.103.3.173/iview/views/index.jsf</msg>
-<msg time="2026-02-03T14:51:04.503654" level="INFO">Start function _setup_chrome</msg>
-<msg time="2026-02-03T14:51:04.504474" level="INFO">Setting up chrome driver</msg>
-<msg time="2026-02-03T14:51:04.504725" level="INFO">Using local chrome driver at C:\Auto_Browsers\chromedriver.exe</msg>
-<msg time="2026-02-03T14:51:06.036621" level="INFO">chrome driver setup successfully</msg>
-<msg time="2026-02-03T14:51:06.037631" level="INFO">Navigating to URL: https://10.103.3.173/iview/views/index.jsf</msg>
-<msg time="2026-02-03T14:51:06.268167" level="INFO">Web Client created successfully</msg>
+<msg time="2026-02-04T16:42:47.229618" level="INFO">https://aawgfed-kvm.hcm.com/portal/tenants/default/</msg>
+<msg time="2026-02-04T16:42:47.231911" level="INFO">Start function _setup_chrome</msg>
+<msg time="2026-02-04T16:42:47.232622" level="INFO">Setting up chrome driver</msg>
+<msg time="2026-02-04T16:42:47.232838" level="INFO">Using local chrome driver at C:\Auto_Browsers\chromedriver.exe</msg>
+<msg time="2026-02-04T16:42:48.807750" level="INFO">chrome driver setup successfully</msg>
+<msg time="2026-02-04T16:42:48.808417" level="INFO">Navigating to URL: https://aawgfed-kvm.hcm.com/portal/tenants/default/</msg>
+<msg time="2026-02-04T16:42:49.716340" level="INFO">Web Client created successfully</msg>
 <arg>${BROWSER}</arg>
 <arg>${CLIENT}</arg>
-<arg>${IVIEW}</arg>
 <arg>${NONE}</arg>
+<arg>${PORTAL}</arg>
 <doc>Create Web_Clients instance and store it internally.</doc>
-<status status="PASS" start="2026-02-03T14:51:04.437064" elapsed="1.833293"/>
+<status status="PASS" start="2026-02-04T16:42:47.155783" elapsed="2.561077"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T14:51:06.277962" level="INFO">Attempting to sign in</msg>
-<msg time="2026-02-03T14:51:08.917963" level="INFO">Successfully signed in - logout button detected</msg>
-<msg time="2026-02-03T14:51:08.918292" level="INFO">Method 'sign_in' executed successfully</msg>
-<arg>sign_in</arg>
+<msg time="2026-02-04T16:42:49.865161" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal</msg>
+<msg time="2026-02-04T16:42:49.865566" level="INFO">Start function sign_in_portal</msg>
+<msg time="2026-02-04T16:42:49.896467" level="INFO">Element visible: //span[contains(text(),'Sign in')]</msg>
+<msg time="2026-02-04T16:42:49.897386" level="INFO">Verified on text sign in</msg>
+<msg time="2026-02-04T16:42:50.050024" level="INFO">Attempting to sign in</msg>
+<msg time="2026-02-04T16:42:50.087495" level="INFO">URL: https://aawgfed-kvm.hcm.com/portal/tenants/default/</msg>
+<msg time="2026-02-04T16:42:50.087812" level="INFO">Waiting for element to be clickable: login</msg>
+<msg time="2026-02-04T16:42:50.139039" level="INFO">Element CLICKABLE: login</msg>
+<msg time="2026-02-04T16:42:50.283536" level="INFO">Entered click and clear info</msg>
+<msg time="2026-02-04T16:42:50.335345" level="INFO">Entered username: khoa</msg>
+<msg time="2026-02-04T16:42:50.335973" level="INFO">Waiting for element to be clickable: password</msg>
+<msg time="2026-02-04T16:42:50.363854" level="INFO">Element CLICKABLE: password</msg>
+<msg time="2026-02-04T16:42:50.509079" level="INFO">Entered password</msg>
+<msg time="2026-02-04T16:42:50.579910" level="INFO">Clicked Sign in button</msg>
+<msg time="2026-02-04T16:42:55.638772" level="INFO">Clicked user avatar button</msg>
+<msg time="2026-02-04T16:42:55.661355" level="INFO">Element visible: //button[contains(text(),'Sign out')]</msg>
+<msg time="2026-02-04T16:42:55.661877" level="INFO">Successfully signed in - sign out button detected</msg>
+<msg time="2026-02-04T16:42:55.712998" level="INFO">Navigated back to the iView dashboard</msg>
+<msg time="2026-02-04T16:42:55.713376" level="INFO">Verify sign_in_portal</msg>
+<msg time="2026-02-04T16:42:57.714001" level="INFO">Method 'sign_in_portal' executed successfully</msg>
+<arg>sign_in_portal</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-02-03T14:51:06.277057" elapsed="2.641399"/>
+<status status="PASS" start="2026-02-04T16:42:49.718156" elapsed="7.996117"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T14:51:08.919731" level="INFO">Attempting to open settings</msg>
-<msg time="2026-02-03T14:51:09.002644" level="INFO">Settings button clicked successfully</msg>
-<msg time="2026-02-03T14:51:09.002973" level="INFO">Method 'open_settings' executed successfully</msg>
-<arg>open_settings</arg>
+<msg time="2026-02-04T16:42:57.715234" level="INFO">Getting user name from Meet Now page</msg>
+<msg time="2026-02-04T16:42:57.715450" level="INFO">Waiting for element visible: User name text</msg>
+<msg time="2026-02-04T16:42:57.729881" level="INFO">Element FOUND: User name text</msg>
+<msg time="2026-02-04T16:42:57.739011" level="INFO">Display name: khoa</msg>
+<msg time="2026-02-04T16:42:57.739306" level="INFO">Sign_in_portal successfully</msg>
+<msg time="2026-02-04T16:42:57.739474" level="INFO">Method 'verify_sign_in_portal' executed successfully</msg>
+<arg>verify_sign_in_portal</arg>
+<arg>${USERPORTAL}</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-02-03T14:51:08.919211" elapsed="0.083899"/>
+<status status="PASS" start="2026-02-04T16:42:57.714929" elapsed="0.024668"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T14:51:09.004007" level="INFO">Attempting to open user portal</msg>
-<msg time="2026-02-03T14:51:09.565195" level="INFO">User portal link clicked</msg>
-<msg time="2026-02-03T14:51:09.575888" level="INFO">User portal page loaded successfully</msg>
-<msg time="2026-02-03T14:51:09.576172" level="INFO">Method 'open_user_portal' executed successfully</msg>
-<arg>open_user_portal</arg>
+<msg time="2026-02-04T16:42:57.741735" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: join_meeting</msg>
+<msg time="2026-02-04T16:42:57.742001" level="INFO">Start function join_meeting</msg>
+<msg time="2026-02-04T16:42:57.742188" level="INFO">Entering meeting ID: 5501509</msg>
+<msg time="2026-02-04T16:42:57.742366" level="INFO">Attempting to enter meeting ID</msg>
+<msg time="2026-02-04T16:42:57.742544" level="INFO">Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]</msg>
+<msg time="2026-02-04T16:42:57.762378" level="INFO">Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]</msg>
+<msg time="2026-02-04T16:42:57.824777" level="INFO">Entered meeting ID: 5501509</msg>
+<msg time="2026-02-04T16:42:57.825317" level="INFO">Clicking join meeting button...</msg>
+<msg time="2026-02-04T16:42:57.878545" level="INFO">Clicked Join Meeting button successfully</msg>
+<msg time="2026-02-04T16:42:58.532568" level="INFO">Waiting for conference window to open...</msg>
+<msg time="2026-02-04T16:42:58.534347" level="INFO">Original portal window: 4F475D6F993079434F380EDB63EF2222</msg>
+<msg time="2026-02-04T16:42:58.538764" level="INFO">Conference window: A4E9A10970E279A26C48A43F2D7E646D</msg>
+<msg time="2026-02-04T16:42:58.539327" level="INFO">Switching to conference window: A4E9A10970E279A26C48A43F2D7E646D</msg>
+<msg time="2026-02-04T16:42:58.544795" level="INFO">Successfully focused on conference window</msg>
+<msg time="2026-02-04T16:42:58.545393" level="INFO">join_meeting successfully</msg>
+<msg time="2026-02-04T16:42:58.545651" level="INFO">Method 'join_meeting' executed successfully</msg>
+<arg>join_meeting</arg>
+<arg>${MEETINGID}</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-02-03T14:51:09.003649" elapsed="0.572659"/>
-</kw>
-<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T14:51:09.577043" level="INFO">Attempting to open custom branding option</msg>
-<msg time="2026-02-03T14:51:09.577286" level="INFO">Waiting for element to be clickable: Custom Branding tab</msg>
-<msg time="2026-02-03T14:51:10.105491" level="INFO">Element CLICKABLE: Custom Branding tab</msg>
-<msg time="2026-02-03T14:51:10.105782" level="INFO">Custom branding option is visible</msg>
-<msg time="2026-02-03T14:51:10.145482" level="INFO">Custom branding option clicked successfully</msg>
-<msg time="2026-02-03T14:51:10.162987" level="INFO">Total iframes found: 6</msg>
-<msg time="2026-02-03T14:51:10.173206" level="INFO">Iframe 0 src=</msg>
-<msg time="2026-02-03T14:51:10.180869" level="INFO">Iframe 1 src=</msg>
-<msg time="2026-02-03T14:51:10.189238" level="INFO">Iframe 2 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Updater</msg>
-<msg time="2026-02-03T14:51:10.195768" level="INFO">Iframe 3 src=javascript:""</msg>
-<msg time="2026-02-03T14:51:10.202102" level="INFO">Iframe 4 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Branding</msg>
-<msg time="2026-02-03T14:51:10.202450" level="INFO">Switching to iframe index 4 with src containing '#!Branding'</msg>
-<msg time="2026-02-03T14:51:10.214279" level="INFO">Waiting for Custom Branding content</msg>
-<msg time="2026-02-03T14:51:10.214591" level="INFO">Waiting for title locator: //span[normalize-space()='Organization']</msg>
-<msg time="2026-02-03T14:51:10.214790" level="INFO">Finding element [] (xpath, //span[normalize-space()='Organization'])</msg>
-<msg time="2026-02-03T14:51:10.276892" level="INFO">Element [] found successfully</msg>
-<msg time="2026-02-03T14:51:10.277285" level="INFO">Custom Branding content loaded</msg>
-<msg time="2026-02-03T14:51:10.277486" level="INFO">Finding elements: iframe</msg>
-<msg time="2026-02-03T14:51:10.296936" level="INFO">Elements FOUND (4): iframe</msg>
-<msg time="2026-02-03T14:51:10.297253" level="INFO">Total iframes after clicking tab: 4</msg>
-<msg time="2026-02-03T14:51:10.307420" level="INFO">Iframe 0 src=</msg>
-<msg time="2026-02-03T14:51:10.313505" level="INFO">Iframe 1 src=javascript:''</msg>
-<msg time="2026-02-03T14:51:10.319807" level="INFO">Iframe 2 src=javascript:''</msg>
-<msg time="2026-02-03T14:51:10.333797" level="INFO">Iframe 3 src=javascript:''</msg>
-<msg time="2026-02-03T14:51:10.336701" level="INFO">Exited iframe safely</msg>
-<msg time="2026-02-03T14:51:10.337153" level="INFO">Method 'option_custom_branding' executed successfully</msg>
-<arg>option_custom_branding</arg>
-<doc>Examples:
-Call Web Client Method    sign_in
-Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-02-03T14:51:09.576763" elapsed="0.760596"/>
-</kw>
-<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T14:51:10.338579" level="INFO">Attempting to enable advanced branding</msg>
-<msg time="2026-02-03T14:51:10.338907" level="INFO">Opening Custom Branding tab</msg>
-<msg time="2026-02-03T14:51:10.339135" level="INFO">Finding element [] (xpath, //div[contains(@id,'upcsgTabs')]//a[contains(@class,'customBranding_tab')])</msg>
-<msg time="2026-02-03T14:51:10.376197" level="INFO">Element [] found successfully</msg>
-<msg time="2026-02-03T14:51:12.424885" level="INFO">Total iframes found: 6</msg>
-<msg time="2026-02-03T14:51:12.460072" level="INFO">Iframe 0 src=</msg>
-<msg time="2026-02-03T14:51:12.483676" level="INFO">Iframe 1 src=</msg>
-<msg time="2026-02-03T14:51:12.505270" level="INFO">Iframe 2 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Updater</msg>
-<msg time="2026-02-03T14:51:12.521183" level="INFO">Iframe 3 src=javascript:""</msg>
-<msg time="2026-02-03T14:51:12.532683" level="INFO">Iframe 4 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Branding</msg>
-<msg time="2026-02-03T14:51:12.533032" level="INFO">Switching to iframe index 4 with src containing '#!Branding'</msg>
-<msg time="2026-02-03T14:51:12.548077" level="INFO">Finding element [] (xpath, //label[normalize-space()='Enable advanced branding'])</msg>
-<msg time="2026-02-03T14:51:12.558405" level="INFO">Element [] found successfully</msg>
-<msg time="2026-02-03T14:51:12.559066" level="INFO">Custom Branding content loaded successfully</msg>
-<msg time="2026-02-03T14:51:12.559415" level="INFO">Finding element [Enable Advanced Branding Label] (xpath, //label[normalize-space()='Enable advanced branding'])</msg>
-<msg time="2026-02-03T14:51:12.578596" level="INFO">Element [Enable Advanced Branding Label] found successfully</msg>
-<msg time="2026-02-03T14:51:12.586529" level="INFO">Finding element [] (xpath, //span[contains(@class,'v-checkbox')]//input[@type='checkbox'])</msg>
-<msg time="2026-02-03T14:51:12.606709" level="INFO">Element [] found successfully</msg>
-<msg time="2026-02-03T14:51:12.640852" level="INFO">Advanced Branding state | checked=true, aria-checked=None, class=</msg>
-<msg time="2026-02-03T14:51:12.652244" level="INFO">[Enable advanced branding] already enabled</msg>
-<msg time="2026-02-03T14:51:12.675436" level="INFO">Total iframes found: 6</msg>
-<msg time="2026-02-03T14:51:12.708255" level="INFO">Iframe 0 src=</msg>
-<msg time="2026-02-03T14:51:12.716830" level="INFO">Iframe 1 src=</msg>
-<msg time="2026-02-03T14:51:12.728191" level="INFO">Iframe 2 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Updater</msg>
-<msg time="2026-02-03T14:51:12.736168" level="INFO">Iframe 3 src=javascript:""</msg>
-<msg time="2026-02-03T14:51:12.744150" level="INFO">Iframe 4 src=https://aawgott-kvm-sec.hcm.com/ups/up-admin/?UPToken=1A4E772000D511F1BAD9B99AE1ACE055#!Branding</msg>
-<msg time="2026-02-03T14:51:12.744683" level="INFO">Switching to iframe index 4 with src containing '#!Branding'</msg>
-<msg time="2026-02-03T14:51:12.762545" level="INFO">Waiting for Text Adjustment to be clickable</msg>
-<msg time="2026-02-03T14:51:12.763101" level="INFO">Finding element [] (xpath, //div[@class='v-captiontext' and text()='Text adjustment'])</msg>
-<msg time="2026-02-03T14:51:12.778030" level="INFO">Element [] found successfully</msg>
-<msg time="2026-02-03T14:51:12.778573" level="INFO">Text Adjustment is visible</msg>
-<msg time="2026-02-03T14:51:12.797339" level="INFO">Text adjustment option clicked successfully</msg>
-<msg time="2026-02-03T14:51:12.800774" level="INFO">Exited iframe safely</msg>
-<msg time="2026-02-03T14:51:12.801358" level="INFO">Method 'enable_advanced_branding' executed successfully</msg>
-<arg>enable_advanced_branding</arg>
-<doc>Examples:
-Call Web Client Method    sign_in
-Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-02-03T14:51:10.338066" elapsed="2.463593"/>
+<status status="PASS" start="2026-02-04T16:42:57.740023" elapsed="0.805814"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-03T14:51:17.803664" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
+<msg time="2026-02-04T16:43:08.547529" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-03T14:51:12.802632" elapsed="5.001323"/>
+<status status="PASS" start="2026-02-04T16:42:58.546547" elapsed="10.001277"/>
 </kw>
 <kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
-<msg time="2026-02-03T14:51:17.804731" level="INFO">Attempting to sign out</msg>
-<msg time="2026-02-03T14:51:17.911659" level="INFO">Successfully signed out</msg>
-<msg time="2026-02-03T14:51:17.912374" level="INFO">Method 'sign_out' executed successfully</msg>
+<msg time="2026-02-04T16:43:08.550883" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting</msg>
+<msg time="2026-02-04T16:43:08.551319" level="INFO">Start verify_in_meeting</msg>
+<msg time="2026-02-04T16:43:08.551575" level="INFO">Waiting for participant 'khoa' (0s)</msg>
+<msg time="2026-02-04T16:43:08.551797" level="INFO">Waiting for participant 'khoa' (0s)</msg>
+<msg time="2026-02-04T16:43:08.554352" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup</msg>
+<msg time="2026-02-04T16:43:08.555075" level="INFO">Handle unblock popup</msg>
+<msg time="2026-02-04T16:43:13.683137" level="INFO">Close popup microphone button clicked</msg>
+<msg time="2026-02-04T16:43:18.744924" level="INFO">Close popup video button clicked</msg>
+<msg time="2026-02-04T16:43:18.745891" level="INFO">Handle unblock popup successfully</msg>
+<msg time="2026-02-04T16:43:18.746222" level="INFO">Popup handled, will not retry</msg>
+<msg time="2026-02-04T16:43:18.746523" level="INFO">Searching for participant: khoa</msg>
+<msg time="2026-02-04T16:43:18.782089" level="INFO">Total participants found: 1</msg>
+<msg time="2026-02-04T16:43:18.797577" level="INFO">Checking participant UI name: 'khoa'</msg>
+<msg time="2026-02-04T16:43:18.797990" level="INFO">Participant 'khoa' found in roster list.</msg>
+<msg time="2026-02-04T16:43:18.798247" level="INFO">Participant 'khoa' found in roster list. khoa joined meeting successfully</msg>
+<msg time="2026-02-04T16:43:18.798787" level="INFO">Method 'verify_in_meeting' executed successfully</msg>
+<arg>verify_in_meeting</arg>
+<arg>${USERPORTAL}</arg>
+<doc>Examples:
+Call Web Client Method    sign_in
+Call Web Client Method    open_settings</doc>
+<status status="PASS" start="2026-02-04T16:43:08.548335" elapsed="10.250718"/>
+</kw>
+<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
+<msg time="2026-02-04T16:43:18.801775" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting</msg>
+<msg time="2026-02-04T16:43:18.802205" level="INFO">Start function terminate_meeting</msg>
+<msg time="2026-02-04T16:43:18.956335" level="INFO">Meeting controls button clicked</msg>
+<msg time="2026-02-04T16:43:24.088323" level="INFO">Terminate meeting button clicked</msg>
+<msg time="2026-02-04T16:43:24.254094" level="INFO">Submit button clicked</msg>
+<msg time="2026-02-04T16:43:29.254953" level="INFO">Terminate_meeting successfuly</msg>
+<msg time="2026-02-04T16:43:29.255347" level="INFO">Closing conference window</msg>
+<msg time="2026-02-04T16:43:29.318417" level="INFO">Closed window: A4E9A10970E279A26C48A43F2D7E646D</msg>
+<msg time="2026-02-04T16:43:29.321646" level="INFO">Switched back to original window: 4F475D6F993079434F380EDB63EF2222</msg>
+<msg time="2026-02-04T16:43:29.321924" level="INFO">Method 'terminate_meeting' executed successfully</msg>
+<arg>terminate_meeting</arg>
+<doc>Examples:
+Call Web Client Method    sign_in
+Call Web Client Method    open_settings</doc>
+<status status="PASS" start="2026-02-04T16:43:18.799717" elapsed="10.522356"/>
+</kw>
+<kw name="Call Web Client Method" owner="Libraries.web_client_library.WebClientLibrary">
+<msg time="2026-02-04T16:43:29.324582" level="INFO">Client IP: 10.128.224.115, Port: 4444, Function: sign_out</msg>
+<msg time="2026-02-04T16:43:29.325082" level="INFO">Start function sign_out_portal</msg>
+<msg time="2026-02-04T16:43:29.368239" level="INFO">Element visible: //div[contains(@class,'avatar')]</msg>
+<msg time="2026-02-04T16:43:29.368923" level="INFO">Verified on avatar user button</msg>
+<msg time="2026-02-04T16:43:29.438277" level="INFO">Clicked avatar user button</msg>
+<msg time="2026-02-04T16:43:30.036109" level="INFO">Element visible: //span[contains(text(),'Sign in')]</msg>
+<msg time="2026-02-04T16:43:30.036420" level="INFO">Verified on sign in button</msg>
+<msg time="2026-02-04T16:43:35.036822" level="INFO">Successfully signed out - sign out button detected</msg>
+<msg time="2026-02-04T16:43:35.037105" level="INFO">Method 'sign_out' executed successfully</msg>
 <arg>sign_out</arg>
 <doc>Examples:
 Call Web Client Method    sign_in
 Call Web Client Method    open_settings</doc>
-<status status="PASS" start="2026-02-03T14:51:17.804453" elapsed="0.108715"/>
+<status status="PASS" start="2026-02-04T16:43:29.322644" elapsed="5.714587"/>
 </kw>
 <kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
 <arg>Capture Page Screenshot</arg>
 <doc>Runs the given keyword with the given arguments, if the test failed.</doc>
-<status status="PASS" start="2026-02-03T14:51:17.915877" elapsed="0.001037"/>
+<status status="PASS" start="2026-02-04T16:43:35.037854" elapsed="0.000277"/>
 </kw>
-<doc>Verify iView web client basic flow</doc>
-<status status="PASS" start="2026-02-03T14:51:04.436164" elapsed="13.485563"/>
+<doc>Sign in portal and join meeting successfully</doc>
+<status status="PASS" start="2026-02-04T16:42:47.154784" elapsed="47.883989"/>
 </test>
 <kw name="Safe Quit Browser" owner="Libraries.web_client_library.WebClientLibrary" type="TEARDOWN">
 <doc>ALWAYS safe to call in teardown</doc>
-<status status="PASS" start="2026-02-03T14:51:20.934119" elapsed="0.000321"/>
+<status status="PASS" start="2026-02-04T16:43:37.671596" elapsed="0.000256"/>
 </kw>
-<status status="PASS" start="2026-02-03T14:51:04.262297" elapsed="16.672291"/>
+<status status="PASS" start="2026-02-04T16:42:46.968984" elapsed="50.702998"/>
 </suite>
 <statistics>
 <total>

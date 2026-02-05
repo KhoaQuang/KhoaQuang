@@ -81,25 +81,61 @@ class Utility:
         )
 
     @staticmethod
-    def is_element_present_by_xpath(driver, xpath, timeout=10):
+    def is_element_visible_by_xpath(driver, xpath, timeout=10, name=None):
+        element_name = name or xpath
         try:
             WebDriverWait(driver, timeout).until(
-                EC.presence_of_element_located((By.XPATH, xpath))
+                EC.visibility_of_element_located((By.XPATH, xpath))
             )
+            logging.info(f"Element visible: {element_name}")
             return True
-        except:
+        except TimeoutException:
+            logging.warning(f"Element NOT visible: {element_name}")
             return False
 
     @staticmethod
-    def is_element_visible_by_css(driver, css, timeout=5):
+    def is_element_visible_by_css(driver, css, timeout=10, name=None):
         try:
             WebDriverWait(driver, timeout).until(
                 EC.visibility_of_element_located((By.CSS_SELECTOR, css))
             )
+            logging.info(f"Element visible: {name or css}")
             return True
-        except Exception:
+        except TimeoutException:
+            logging.warning(f"Element NOT visible: {name or css}")
             return False
         
+    @staticmethod
+    def wait_for_visible_by_css(driver, css, timeout=10, name=None):
+        element_name = name or css
+        logging.info(f"Waiting for element visible: {element_name}")
+
+        try:
+            el = WebDriverWait(driver, timeout).until(
+                EC.visibility_of_element_located((By.CSS_SELECTOR, css))
+            )
+            logging.info(f"Element FOUND: {element_name}")
+            return el
+        except TimeoutException:
+            logging.error(f"Element NOT found: {element_name}")
+            raise
+
+    @staticmethod
+    def wait_for_visible_by_xpath(driver, xpath, timeout=10, name=None):
+        element_name = name or xpath
+        logging.info(f"Waiting for element visible: {element_name}")
+
+        try:
+            element = WebDriverWait(driver, timeout).until(
+                EC.visibility_of_element_located((By.XPATH, xpath))
+            )
+            logging.info(f"Element FOUND: {element_name}")
+            return element
+        except TimeoutException:
+            logging.error(f"Element NOT found: {element_name}")
+            raise
+
+            
     @staticmethod
     def switch_to_iframe_by_src(driver, src_keyword, timeout=10):
         WebDriverWait(driver, timeout).until(
@@ -161,17 +197,6 @@ class Utility:
         except TimeoutException:
             logging.error(f"No elements found after {timeout}s: {element_name}")
             return []
-    # @staticmethod
-    # def _detect_by(locator: str):
-    #     if locator.startswith("//") or locator.startswith("(//"):
-    #         return By.XPATH
-    #     if locator.startswith("#"):
-    #         return By.CSS_SELECTOR
-    #     if locator.startswith("."):
-    #         return By.CSS_SELECTOR
-    #     if locator.startswith("name="):
-    #         return By.NAME
-    #     return By.ID
 
     @staticmethod
     def wait_for_clickable(context, locator, timeout=30, name=None, by=By.XPATH):

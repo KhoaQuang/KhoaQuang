@@ -16,16 +16,6 @@ logging.basicConfig(
 class MeetNowPage:
     """Page Object for iView Login and Logout flows"""
     
-    USERNAME_INPUT = (By.NAME, "login")
-    PASSWORD_INPUT = (By.NAME, "password")
-    SIGN_IN_BUTTON = "//button[contains(text(),'Sign in')]"
-    AVATAR_USER_BUTTON = "//div[contains(@class,'avatar')]"
-    SIGN_OUT_BUTTON = "//button[contains(text(),'Sign out')]"
-    XPATH_TXT_SIGN_IN = "//span[contains(text(),'Sign in')]"
-    VERIFY_USER_PORTAL_TEXT = (By.CSS_SELECTOR, "span.user-name")
-    BACK_TO_IVIEW_DASHBOARD = (By.XPATH, "//div[contains(@class,'join-page')]")
-    MEETING_ID_INPUT = (By.XPATH, "//input[contains(@formcontrolname, 'meetingId')]")
-    JOIN_MEETING_BUTTON = "//span[contains(text(),'Join with Browser')]"
     
     def __init__(self, driver):
         """
@@ -37,19 +27,30 @@ class MeetNowPage:
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
 
+        self.USERNAME_INPUT = "login"
+        self.PASSWORD_INPUT = "password"
+        self.SIGN_IN_BUTTON = "//button[contains(text(),'Sign in')]"
+        self.AVATAR_USER_BUTTON = "//div[contains(@class,'avatar')]"
+        self.SIGN_OUT_BUTTON = "//button[contains(text(),'Sign out')]"
+        self.XPATH_TXT_SIGN_IN = "//span[contains(text(),'Sign in')]"
+        self.VERIFY_USER_PORTAL_TEXT = "span.user-name"
+        self.BACK_TO_IVIEW_DASHBOARD = "//div[contains(@class,'join-page')]"
+        self.MEETING_ID_INPUT = "//input[contains(@formcontrolname, 'meetingId')]"
+        self.JOIN_MEETING_BUTTON = "//span[contains(text(),'Join with Browser')]"
+
     def click_txt_sign_in(self):
         """
         Sign in to the application
         """
         try:
-            Utility.is_element_present_by_xpath(
+            Utility.is_element_visible_by_xpath(
                 self.driver,
-                MeetNowPage.XPATH_TXT_SIGN_IN
+                self.XPATH_TXT_SIGN_IN
             )
             logger.info('Verified on text sign in')
             Utility.click_element_by_xpath(
                 self.driver,
-                MeetNowPage.XPATH_TXT_SIGN_IN
+                self.XPATH_TXT_SIGN_IN
             )
             return True
         except Exception as e:
@@ -61,23 +62,23 @@ class MeetNowPage:
         Sign in to the application
         """
         try:
-            Utility.is_element_present_by_xpath(
+            Utility.is_element_visible_by_xpath(
                 self.driver,
-                MeetNowPage.AVATAR_USER_BUTTON
+                self.AVATAR_USER_BUTTON
             )
             logger.info('Verified on avatar user button')
             Utility.click_element_by_xpath(
                 self.driver,
-                MeetNowPage.AVATAR_USER_BUTTON
+                self.AVATAR_USER_BUTTON
             )
             logger.info('Clicked avatar user button')
             Utility.click_element_by_xpath(
                 self.driver,
-                MeetNowPage.SIGN_OUT_BUTTON
+                self.SIGN_OUT_BUTTON
             )
-            Utility.is_element_present_by_xpath(
+            Utility.is_element_visible_by_xpath(
                 self.driver,
-                MeetNowPage.XPATH_TXT_SIGN_IN
+                self.XPATH_TXT_SIGN_IN
             )
             logger.info('Verified on sign in button')
             return True
@@ -95,39 +96,45 @@ class MeetNowPage:
                 raise ValueError("Username (userportal) is None or empty")
             if not password:
                 raise ValueError("Password is None or empty")
-            username_el = self.wait.until(
-                EC.presence_of_element_located(self.USERNAME_INPUT)
+            username_el = Utility.wait_for_clickable(
+                self.driver, 
+                self.USERNAME_INPUT,
+                by=By.NAME
             )
             username_el.click()
             username_el.clear()
             logging.info(f"Entered click and clear info")
             username_el.send_keys(userportal)
             logging.info(f"Entered username: {userportal}")
-            password_el = self.wait.until(
-                EC.presence_of_element_located(self.PASSWORD_INPUT)
+            password_el = Utility.wait_for_clickable(
+                self.driver,
+                self.PASSWORD_INPUT,
+                by=By.NAME
             )
+            password_el.click()
             password_el.clear()
             password_el.send_keys(password)
             logging.info("Entered password")
             Utility.click_element_by_xpath(
                 self.driver,
-                MeetNowPage.SIGN_IN_BUTTON
+                self.SIGN_IN_BUTTON
             )
             logging.info("Clicked Sign in button")
             time.sleep(5)
             Utility.click_element_by_xpath(
                 self.driver,
-                MeetNowPage.AVATAR_USER_BUTTON
+                self.AVATAR_USER_BUTTON
             )
             logging.info("Clicked user avatar button")
-            Utility.is_element_present_by_xpath(
+            Utility.is_element_visible_by_xpath(
                 self.driver,
-                MeetNowPage.SIGN_OUT_BUTTON
+                self.SIGN_OUT_BUTTON
             )
             logging.info("Successfully signed in - sign out button detected")
-            self.wait.until(
-                EC.presence_of_element_located(self.BACK_TO_IVIEW_DASHBOARD)
-            ).click()
+            Utility.click_element_by_xpath(
+                self.driver,
+                self.BACK_TO_IVIEW_DASHBOARD
+            )
             logging.info("Navigated back to the iView dashboard")
             return True
             
@@ -141,17 +148,19 @@ class MeetNowPage:
         
     def get_user_name(self):
         logging.info("Getting user name from Meet Now page")
-
-        user_el = self.wait.until(
-            EC.visibility_of_element_located(self.VERIFY_USER_PORTAL_TEXT)
+        user_el = Utility.wait_for_visible_by_css(
+            self.driver,
+            self.VERIFY_USER_PORTAL_TEXT,
+            name="User name text"
         )
         return user_el.text.strip()
     
     def enter_meeting_id(self, meeting_id):
         try:
             logging.info("Attempting to enter meeting ID")
-            meeting_id_input = self.wait.until(
-                EC.presence_of_element_located(self.MEETING_ID_INPUT)
+            meeting_id_input = Utility.wait_for_clickable(
+                self.driver,
+                self.MEETING_ID_INPUT
             )
             meeting_id_input.clear()
             meeting_id_input.send_keys(meeting_id)
@@ -169,7 +178,7 @@ class MeetNowPage:
         try:
             Utility.click_element_by_xpath(
                 self.driver,
-                MeetNowPage.JOIN_MEETING_BUTTON
+                self.JOIN_MEETING_BUTTON
             )
             logging.info("Clicked Join Meeting button successfully")
             return True

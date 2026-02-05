@@ -5,13 +5,14 @@ Suite Teardown    Safe Quit Browser
 Test Teardown     Run Keyword If Test Failed    Capture Page Screenshot
 
 *** Variables ***
-${BROWSER}        chrome
-${iview_URL}      https://10.103.3.173/iview/views/index.jsf
-${USERNAME}       admin
-${PASSWORD}       AvayaMcspv_1234$
-${Portal_URL}     https://aawgott-svc-kvm.hcm.com:443/portal
-${USERPORTAL}     khoa
-${MEETINGID}      4602112
+${BROWSER}            chrome
+${iview_URL}          https://10.103.3.110/iview/views/index.jsf
+${USERNAME}           khoa2@hcm.com
+${PASSWORD}           RAPtor1234
+${Portal_URL}         https://aawgfed-kvm.hcm.com/portal/tenants/default/
+${USERPORTAL}         khoa
+${PASSWORDPORTAL}     Avaya_123$Avaya
+${MEETINGID}          5501509
 
 &{CLIENT}
 ...    host=10.128.224.115
@@ -25,7 +26,7 @@ ${MEETINGID}      4602112
 &{PORTAL}
 ...    portal_address=${Portal_URL}
 ...    portal_username=${USERPORTAL}
-...    portal_password=${PASSWORD}
+...    portal_password=${PASSWORDPORTAL}
 
 *** Test Cases ***
 IVIEW Web Client Smoke Test
@@ -43,9 +44,9 @@ Portal Join Meeting Test
     [Documentation]    Sign in portal and join meeting successfully
     Create Web Client    ${BROWSER}    ${CLIENT}    ${NONE}    ${PORTAL}
     Call Web Client Method    sign_in_portal
-    Call Web Client Method    verify_sign_in_portal    ${USERPORTAL}
-    Call Web Client Method    join_meeting            ${MEETINGID}
+    Call Web Client Method    verify_sign_in_portal        ${USERPORTAL}
+    Call Web Client Method    join_meeting                 ${MEETINGID}
     Sleep    10s
-    Call Web Client Method    verify_in_meeting        ${USERPORTAL}
+    Call Web Client Method    verify_in_meeting            ${USERPORTAL}
     Call Web Client Method    terminate_meeting
     Call Web Client Method    sign_out
