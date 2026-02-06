@@ -16,17 +16,17 @@ ${MEETINGID}      5602112
 *** Test Cases ***
 Test IVIEW Variables Configuration
     [Documentation]    Verify iView configuration variables are set correctly
-    Should Not Be Empty    ${iview_URL}
-    Should Contain    ${iview_URL}    iview
-    Should Not Be Empty    ${USERNAME}
-    Should Not Be Empty    ${PASSWORD}
+    Should Not Be Empty        ${iview_URL}
+    Should Contain             ${iview_URL}    iview
+    Should Not Be Empty        ${USERNAME}
+    Should Not Be Empty        ${PASSWORD}
 
 Test Portal Variables Configuration
     [Documentation]    Verify Portal configuration variables are set correctly
-    Should Not Be Empty    ${Portal_URL}
-    Should Contain    ${Portal_URL}    portal
-    Should Not Be Empty    ${USERPORTAL}
-    Should Not Be Empty    ${MEETINGID}
+    Should Not Be Empty        ${Portal_URL}
+    Should Contain             ${Portal_URL}    portal
+    Should Not Be Empty        ${USERPORTAL}
+    Should Not Be Empty        ${MEETINGID}
 
 Test Browser Configuration
     [Documentation]    Verify browser type is set

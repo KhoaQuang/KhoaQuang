@@ -1,77 +1,1566 @@
-2026-02-04 16:42:47,229 - INFO - https://aawgfed-kvm.hcm.com/portal/tenants/default/
-2026-02-04 16:42:47,231 - INFO - Start function _setup_chrome
-2026-02-04 16:42:47,232 - INFO - Setting up chrome driver
-2026-02-04 16:42:47,232 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
-2026-02-04 16:42:48,807 - INFO - chrome driver setup successfully
-2026-02-04 16:42:48,808 - INFO - Navigating to URL: https://aawgfed-kvm.hcm.com/portal/tenants/default/
-2026-02-04 16:42:49,865 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
-2026-02-04 16:42:49,865 - INFO - Start function sign_in_portal
-2026-02-04 16:42:49,896 - INFO - Element visible: //span[contains(text(),'Sign in')]
-2026-02-04 16:42:49,897 - INFO - Verified on text sign in
-2026-02-04 16:42:50,049 - INFO - Attempting to sign in
-2026-02-04 16:42:50,087 - INFO - URL: https://aawgfed-kvm.hcm.com/portal/tenants/default/
-2026-02-04 16:42:50,087 - INFO - Waiting for element to be clickable: login
-2026-02-04 16:42:50,138 - INFO - Element CLICKABLE: login
-2026-02-04 16:42:50,283 - INFO - Entered click and clear info
-2026-02-04 16:42:50,335 - INFO - Entered username: khoa
-2026-02-04 16:42:50,335 - INFO - Waiting for element to be clickable: password
-2026-02-04 16:42:50,363 - INFO - Element CLICKABLE: password
-2026-02-04 16:42:50,508 - INFO - Entered password
-2026-02-04 16:42:50,579 - INFO - Clicked Sign in button
-2026-02-04 16:42:55,638 - INFO - Clicked user avatar button
-2026-02-04 16:42:55,661 - INFO - Element visible: //button[contains(text(),'Sign out')]
-2026-02-04 16:42:55,661 - INFO - Successfully signed in - sign out button detected
-2026-02-04 16:42:55,712 - INFO - Navigated back to the iView dashboard
-2026-02-04 16:42:55,713 - INFO - Verify sign_in_portal
-2026-02-04 16:42:57,715 - INFO - Getting user name from Meet Now page
-2026-02-04 16:42:57,715 - INFO - Waiting for element visible: User name text
-2026-02-04 16:42:57,729 - INFO - Element FOUND: User name text
-2026-02-04 16:42:57,738 - INFO - Display name: khoa
-2026-02-04 16:42:57,739 - INFO - Sign_in_portal successfully
-2026-02-04 16:42:57,741 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
-2026-02-04 16:42:57,741 - INFO - Start function join_meeting
-2026-02-04 16:42:57,742 - INFO - Entering meeting ID: 5501509
-2026-02-04 16:42:57,742 - INFO - Attempting to enter meeting ID
-2026-02-04 16:42:57,742 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
-2026-02-04 16:42:57,762 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
-2026-02-04 16:42:57,824 - INFO - Entered meeting ID: 5501509
-2026-02-04 16:42:57,825 - INFO - Clicking join meeting button...
-2026-02-04 16:42:57,878 - INFO - Clicked Join Meeting button successfully
-2026-02-04 16:42:58,532 - INFO - Waiting for conference window to open...
-2026-02-04 16:42:58,534 - INFO - Original portal window: 4F475D6F993079434F380EDB63EF2222
-2026-02-04 16:42:58,538 - INFO - Conference window: A4E9A10970E279A26C48A43F2D7E646D
-2026-02-04 16:42:58,539 - INFO - Switching to conference window: A4E9A10970E279A26C48A43F2D7E646D
-2026-02-04 16:42:58,544 - INFO - Successfully focused on conference window
-2026-02-04 16:42:58,545 - INFO - join_meeting successfully
-2026-02-04 16:43:08,550 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
-2026-02-04 16:43:08,551 - INFO - Start verify_in_meeting
-2026-02-04 16:43:08,551 - INFO - Waiting for participant 'khoa' (0s)
-2026-02-04 16:43:08,551 - INFO - Waiting for participant 'khoa' (0s)
-2026-02-04 16:43:08,554 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
-2026-02-04 16:43:08,555 - INFO - Handle unblock popup
-2026-02-04 16:43:13,683 - INFO - Close popup microphone button clicked
-2026-02-04 16:43:18,744 - INFO - Close popup video button clicked
-2026-02-04 16:43:18,745 - INFO - Handle unblock popup successfully
-2026-02-04 16:43:18,746 - INFO - Popup handled, will not retry
-2026-02-04 16:43:18,746 - INFO - Searching for participant: khoa
-2026-02-04 16:43:18,781 - INFO - Total participants found: 1
-2026-02-04 16:43:18,797 - INFO - Checking participant UI name: 'khoa'
-2026-02-04 16:43:18,797 - INFO - Participant 'khoa' found in roster list.
-2026-02-04 16:43:18,798 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
-2026-02-04 16:43:18,801 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
-2026-02-04 16:43:18,802 - INFO - Start function terminate_meeting
-2026-02-04 16:43:18,956 - INFO - Meeting controls button clicked
-2026-02-04 16:43:24,088 - INFO - Terminate meeting button clicked
-2026-02-04 16:43:24,254 - INFO - Submit button clicked
-2026-02-04 16:43:29,254 - INFO - Terminate_meeting successfuly
-2026-02-04 16:43:29,255 - INFO - Closing conference window
-2026-02-04 16:43:29,318 - INFO - Closed window: A4E9A10970E279A26C48A43F2D7E646D
-2026-02-04 16:43:29,321 - INFO - Switched back to original window: 4F475D6F993079434F380EDB63EF2222
-2026-02-04 16:43:29,324 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
-2026-02-04 16:43:29,325 - INFO - Start function sign_out_portal
-2026-02-04 16:43:29,368 - INFO - Element visible: //div[contains(@class,'avatar')]
-2026-02-04 16:43:29,368 - INFO - Verified on avatar user button
-2026-02-04 16:43:29,438 - INFO - Clicked avatar user button
-2026-02-04 16:43:30,036 - INFO - Element visible: //span[contains(text(),'Sign in')]
-2026-02-04 16:43:30,036 - INFO - Verified on sign in button
-2026-02-04 16:43:35,036 - INFO - Successfully signed out - sign out button detected
+2026-02-06 10:55:02,608 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:55:02,610 - INFO - Start function _setup_chrome
+2026-02-06 10:55:02,611 - INFO - Setting up chrome driver
+2026-02-06 10:55:02,611 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 10:55:04,113 - INFO - chrome driver setup successfully
+2026-02-06 10:55:04,113 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:55:05,110 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 10:55:05,110 - INFO - Start function sign_in_portal
+2026-02-06 10:55:05,156 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 10:55:05,156 - INFO - Verified on text sign in
+2026-02-06 10:55:05,245 - INFO - Attempting to sign in
+2026-02-06 10:55:05,256 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:55:05,256 - INFO - Waiting for element to be clickable: login
+2026-02-06 10:55:05,806 - INFO - Element CLICKABLE: login
+2026-02-06 10:55:05,865 - INFO - Entered click and clear info
+2026-02-06 10:55:05,892 - INFO - Entered username: khoa
+2026-02-06 10:55:05,892 - INFO - Waiting for element to be clickable: password
+2026-02-06 10:55:05,909 - INFO - Element CLICKABLE: password
+2026-02-06 10:55:05,992 - INFO - Entered password
+2026-02-06 10:55:06,046 - INFO - Clicked Sign in button
+2026-02-06 10:55:11,102 - INFO - Clicked user avatar button
+2026-02-06 10:55:11,118 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 10:55:11,118 - INFO - Successfully signed in - sign out button detected
+2026-02-06 10:55:11,175 - INFO - Navigated back to the iView dashboard
+2026-02-06 10:55:11,175 - INFO - Verify sign_in_portal
+2026-02-06 10:55:13,177 - INFO - Getting user name from Meet Now page
+2026-02-06 10:55:13,177 - INFO - Waiting for element visible: User name text
+2026-02-06 10:55:13,195 - INFO - Element FOUND: User name text
+2026-02-06 10:55:13,206 - INFO - Display name: khoa
+2026-02-06 10:55:13,206 - INFO - Sign_in_portal successfully
+2026-02-06 10:55:13,209 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 10:55:13,210 - INFO - Start function join_meeting
+2026-02-06 10:55:13,210 - INFO - Entering meeting ID: 6001509
+2026-02-06 10:55:13,210 - INFO - Attempting to enter meeting ID
+2026-02-06 10:55:13,210 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 10:55:13,229 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 10:55:13,286 - INFO - Entered meeting ID: 6001509
+2026-02-06 10:55:13,286 - INFO - Clicking join meeting button...
+2026-02-06 10:55:13,335 - INFO - Clicked Join Meeting button successfully
+2026-02-06 10:55:13,842 - INFO - Waiting for conference window to open...
+2026-02-06 10:55:13,843 - INFO - Original portal window: 80BBEFDDFB63DFB15E6EBEAC0897446E
+2026-02-06 10:55:13,854 - INFO - Conference window: 9757804F9C2FE0B195E6C12F8AEC5CFD
+2026-02-06 10:55:13,855 - INFO - Switching to conference window: 9757804F9C2FE0B195E6C12F8AEC5CFD
+2026-02-06 10:55:13,859 - INFO - Successfully focused on conference window
+2026-02-06 10:55:13,860 - INFO - join_meeting successfully
+2026-02-06 10:55:23,865 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 10:55:23,866 - INFO - Start verify_in_meeting
+2026-02-06 10:55:23,866 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 10:55:23,866 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 10:55:23,869 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 10:55:23,869 - INFO - Handle unblock popup
+2026-02-06 10:55:28,963 - INFO - Close popup microphone button clicked
+2026-02-06 10:55:34,016 - INFO - Close popup video button clicked
+2026-02-06 10:55:34,017 - INFO - Handle unblock popup successfully
+2026-02-06 10:55:34,017 - INFO - Popup handled, will not retry
+2026-02-06 10:55:34,017 - INFO - Searching for participant: khoa
+2026-02-06 10:55:34,039 - INFO - Total participants found: 1
+2026-02-06 10:55:34,047 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 10:55:34,048 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 10:55:34,048 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 10:55:34,051 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 10:55:34,051 - INFO - Start function terminate_meeting
+2026-02-06 10:55:34,126 - INFO - Meeting controls button clicked
+2026-02-06 10:55:39,236 - INFO - Terminate meeting button clicked
+2026-02-06 10:55:39,349 - INFO - Submit button clicked
+2026-02-06 10:55:44,351 - INFO - Terminate_meeting successfuly
+2026-02-06 10:55:44,351 - INFO - Closing conference window
+2026-02-06 10:55:44,416 - INFO - Closed window: 9757804F9C2FE0B195E6C12F8AEC5CFD
+2026-02-06 10:55:44,419 - INFO - Switched back to original window: 80BBEFDDFB63DFB15E6EBEAC0897446E
+2026-02-06 10:55:44,422 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 10:55:44,422 - INFO - Start function sign_out_portal
+2026-02-06 10:55:44,433 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 10:55:44,434 - INFO - Verified on avatar user button
+2026-02-06 10:55:44,480 - INFO - Clicked avatar user button
+2026-02-06 10:55:45,059 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 10:55:45,059 - INFO - Verified on sign in button
+2026-02-06 10:55:50,060 - INFO - Successfully signed out - sign out button detected
+2026-02-06 10:55:52,577 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:55:52,577 - INFO - Start function _setup_chrome
+2026-02-06 10:55:52,578 - INFO - Setting up chrome driver
+2026-02-06 10:55:52,578 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 10:55:53,781 - INFO - chrome driver setup successfully
+2026-02-06 10:55:53,782 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:55:54,744 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 10:55:54,745 - INFO - Start function sign_in_portal
+2026-02-06 10:55:54,778 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 10:55:54,779 - INFO - Verified on text sign in
+2026-02-06 10:55:54,854 - INFO - Attempting to sign in
+2026-02-06 10:55:54,865 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:55:54,865 - INFO - Waiting for element to be clickable: login
+2026-02-06 10:55:55,403 - INFO - Element CLICKABLE: login
+2026-02-06 10:55:55,468 - INFO - Entered click and clear info
+2026-02-06 10:55:55,497 - INFO - Entered username: khoa
+2026-02-06 10:55:55,497 - INFO - Waiting for element to be clickable: password
+2026-02-06 10:55:55,517 - INFO - Element CLICKABLE: password
+2026-02-06 10:55:55,618 - INFO - Entered password
+2026-02-06 10:55:55,689 - INFO - Clicked Sign in button
+2026-02-06 10:56:00,752 - INFO - Clicked user avatar button
+2026-02-06 10:56:00,771 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 10:56:00,771 - INFO - Successfully signed in - sign out button detected
+2026-02-06 10:56:00,857 - INFO - Navigated back to the iView dashboard
+2026-02-06 10:56:00,857 - INFO - Verify sign_in_portal
+2026-02-06 10:56:02,859 - INFO - Getting user name from Meet Now page
+2026-02-06 10:56:02,859 - INFO - Waiting for element visible: User name text
+2026-02-06 10:56:02,874 - INFO - Element FOUND: User name text
+2026-02-06 10:56:02,884 - INFO - Display name: khoa
+2026-02-06 10:56:02,885 - INFO - Sign_in_portal successfully
+2026-02-06 10:56:02,887 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 10:56:02,888 - INFO - Start function join_meeting
+2026-02-06 10:56:02,888 - INFO - Entering meeting ID: 6001509
+2026-02-06 10:56:02,888 - INFO - Attempting to enter meeting ID
+2026-02-06 10:56:02,888 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 10:56:02,904 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 10:56:02,957 - INFO - Entered meeting ID: 6001509
+2026-02-06 10:56:02,958 - INFO - Clicking join meeting button...
+2026-02-06 10:56:03,007 - INFO - Clicked Join Meeting button successfully
+2026-02-06 10:56:03,514 - INFO - Waiting for conference window to open...
+2026-02-06 10:56:03,515 - INFO - Original portal window: 0C72F0A94AF3E28B816CE6A4C3313E4F
+2026-02-06 10:56:03,517 - INFO - Conference window: 63B5CE7AF732C93269D2E168DF6BF710
+2026-02-06 10:56:03,518 - INFO - Switching to conference window: 63B5CE7AF732C93269D2E168DF6BF710
+2026-02-06 10:56:03,520 - INFO - Successfully focused on conference window
+2026-02-06 10:56:03,520 - INFO - join_meeting successfully
+2026-02-06 10:56:13,523 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 10:56:13,523 - INFO - Start verify_in_meeting
+2026-02-06 10:56:13,523 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 10:56:13,524 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 10:56:13,525 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 10:56:13,526 - INFO - Handle unblock popup
+2026-02-06 10:56:18,724 - INFO - Close popup microphone button clicked
+2026-02-06 10:56:23,784 - INFO - Close popup video button clicked
+2026-02-06 10:56:23,785 - INFO - Handle unblock popup successfully
+2026-02-06 10:56:23,785 - INFO - Popup handled, will not retry
+2026-02-06 10:56:23,785 - INFO - Searching for participant: khoa
+2026-02-06 10:56:23,807 - INFO - Total participants found: 1
+2026-02-06 10:56:23,817 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 10:56:23,818 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 10:56:23,818 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 10:56:23,821 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 10:56:23,821 - INFO - Start function terminate_meeting
+2026-02-06 10:56:23,903 - INFO - Meeting controls button clicked
+2026-02-06 10:56:29,008 - INFO - Terminate meeting button clicked
+2026-02-06 10:56:29,608 - INFO - Submit button clicked
+2026-02-06 10:56:34,608 - INFO - Terminate_meeting successfuly
+2026-02-06 10:56:34,609 - INFO - Closing conference window
+2026-02-06 10:56:34,684 - INFO - Closed window: 63B5CE7AF732C93269D2E168DF6BF710
+2026-02-06 10:56:34,687 - INFO - Switched back to original window: 0C72F0A94AF3E28B816CE6A4C3313E4F
+2026-02-06 10:56:34,691 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 10:56:34,691 - INFO - Start function sign_out_portal
+2026-02-06 10:56:34,715 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 10:56:34,716 - INFO - Verified on avatar user button
+2026-02-06 10:56:34,781 - INFO - Clicked avatar user button
+2026-02-06 10:56:35,420 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 10:56:35,421 - INFO - Verified on sign in button
+2026-02-06 10:56:40,422 - INFO - Successfully signed out - sign out button detected
+2026-02-06 10:56:42,874 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:56:42,874 - INFO - Start function _setup_chrome
+2026-02-06 10:56:42,874 - INFO - Setting up chrome driver
+2026-02-06 10:56:42,875 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 10:56:44,125 - INFO - chrome driver setup successfully
+2026-02-06 10:56:44,125 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:56:45,232 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 10:56:45,233 - INFO - Start function sign_in_portal
+2026-02-06 10:56:45,258 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 10:56:45,258 - INFO - Verified on text sign in
+2026-02-06 10:56:45,349 - INFO - Attempting to sign in
+2026-02-06 10:56:45,357 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:56:45,357 - INFO - Waiting for element to be clickable: login
+2026-02-06 10:56:45,920 - INFO - Element CLICKABLE: login
+2026-02-06 10:56:45,981 - INFO - Entered click and clear info
+2026-02-06 10:56:46,005 - INFO - Entered username: khoa
+2026-02-06 10:56:46,005 - INFO - Waiting for element to be clickable: password
+2026-02-06 10:56:46,023 - INFO - Element CLICKABLE: password
+2026-02-06 10:56:46,105 - INFO - Entered password
+2026-02-06 10:56:46,158 - INFO - Clicked Sign in button
+2026-02-06 10:56:51,214 - INFO - Clicked user avatar button
+2026-02-06 10:56:51,232 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 10:56:51,233 - INFO - Successfully signed in - sign out button detected
+2026-02-06 10:56:51,293 - INFO - Navigated back to the iView dashboard
+2026-02-06 10:56:51,294 - INFO - Verify sign_in_portal
+2026-02-06 10:56:53,295 - INFO - Getting user name from Meet Now page
+2026-02-06 10:56:53,295 - INFO - Waiting for element visible: User name text
+2026-02-06 10:56:53,312 - INFO - Element FOUND: User name text
+2026-02-06 10:56:53,322 - INFO - Display name: khoa
+2026-02-06 10:56:53,322 - INFO - Sign_in_portal successfully
+2026-02-06 10:56:53,325 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 10:56:53,326 - INFO - Start function join_meeting
+2026-02-06 10:56:53,326 - INFO - Entering meeting ID: 6032145
+2026-02-06 10:56:53,326 - INFO - Attempting to enter meeting ID
+2026-02-06 10:56:53,326 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 10:56:53,343 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 10:56:53,398 - INFO - Entered meeting ID: 6032145
+2026-02-06 10:56:53,399 - INFO - Clicking join meeting button...
+2026-02-06 10:56:53,448 - INFO - Clicked Join Meeting button successfully
+2026-02-06 10:56:53,981 - INFO - Waiting for conference window to open...
+2026-02-06 10:56:53,982 - INFO - Original portal window: 0CF8BD94EF8331C331CCA318E8FA95F3
+2026-02-06 10:56:53,984 - INFO - Conference window: B9751AD5AC8F50C9451718BDFF9B3048
+2026-02-06 10:56:53,984 - INFO - Switching to conference window: B9751AD5AC8F50C9451718BDFF9B3048
+2026-02-06 10:56:53,987 - INFO - Successfully focused on conference window
+2026-02-06 10:56:53,987 - INFO - join_meeting successfully
+2026-02-06 10:57:03,990 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 10:57:03,991 - INFO - Start verify_in_meeting
+2026-02-06 10:57:03,991 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 10:57:03,991 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 10:57:03,993 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 10:57:03,994 - INFO - Handle unblock popup
+2026-02-06 10:57:09,080 - INFO - Close popup microphone button clicked
+2026-02-06 10:57:24,239 - ERROR - Error during handle the close popup video button: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff7a41588d5
+	0x7ff7a4158930
+	0x7ff7a3f3165d
+	0x7ff7a3f89a33
+	0x7ff7a3f89d3c
+	0x7ff7a3fddf67
+	0x7ff7a3fdac97
+	0x7ff7a3f7ac29
+	0x7ff7a3f7ba93
+	0x7ff7a4470620
+	0x7ff7a446af60
+	0x7ff7a44896c6
+	0x7ff7a4175dd4
+	0x7ff7a417ed7c
+	0x7ff7a4161ff4
+	0x7ff7a41621a5
+	0x7ff7a4147ed2
+	0x7ff9e6a3e8d7
+	0x7ff9e7e4c53c
+
+2026-02-06 10:57:24,241 - ERROR - Error during handle unblock popup: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff7a41588d5
+	0x7ff7a4158930
+	0x7ff7a3f3165d
+	0x7ff7a3f89a33
+	0x7ff7a3f89d3c
+	0x7ff7a3fddf67
+	0x7ff7a3fdac97
+	0x7ff7a3f7ac29
+	0x7ff7a3f7ba93
+	0x7ff7a4470620
+	0x7ff7a446af60
+	0x7ff7a44896c6
+	0x7ff7a4175dd4
+	0x7ff7a417ed7c
+	0x7ff7a4161ff4
+	0x7ff7a41621a5
+	0x7ff7a4147ed2
+	0x7ff9e6a3e8d7
+	0x7ff9e7e4c53c
+
+2026-02-06 10:57:24,243 - INFO - Popup handled, will not retry
+2026-02-06 10:57:24,243 - INFO - Searching for participant: khoa
+2026-02-06 10:57:24,260 - INFO - Total participants found: 0
+2026-02-06 10:57:24,260 - INFO - Participant 'khoa' not found in roster list.
+2026-02-06 10:57:24,261 - INFO - Waiting for participant 'khoa' (20s)
+2026-02-06 10:57:24,271 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:57:24,272 - INFO - Start function _setup_chrome
+2026-02-06 10:57:24,273 - INFO - Setting up chrome driver
+2026-02-06 10:57:24,274 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 10:57:25,510 - INFO - chrome driver setup successfully
+2026-02-06 10:57:25,510 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:57:26,487 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 10:57:26,487 - INFO - Start function sign_in_portal
+2026-02-06 10:57:26,510 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 10:57:26,510 - INFO - Verified on text sign in
+2026-02-06 10:57:26,592 - INFO - Attempting to sign in
+2026-02-06 10:57:26,604 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:57:26,604 - INFO - Waiting for element to be clickable: login
+2026-02-06 10:57:27,170 - INFO - Element CLICKABLE: login
+2026-02-06 10:57:27,232 - INFO - Entered click and clear info
+2026-02-06 10:57:27,259 - INFO - Entered username: khoa
+2026-02-06 10:57:27,260 - INFO - Waiting for element to be clickable: password
+2026-02-06 10:57:27,279 - INFO - Element CLICKABLE: password
+2026-02-06 10:57:27,366 - INFO - Entered password
+2026-02-06 10:57:27,422 - INFO - Clicked Sign in button
+2026-02-06 10:57:32,478 - INFO - Clicked user avatar button
+2026-02-06 10:57:32,492 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 10:57:32,493 - INFO - Successfully signed in - sign out button detected
+2026-02-06 10:57:32,550 - INFO - Navigated back to the iView dashboard
+2026-02-06 10:57:32,550 - INFO - Verify sign_in_portal
+2026-02-06 10:57:34,551 - INFO - Getting user name from Meet Now page
+2026-02-06 10:57:34,551 - INFO - Waiting for element visible: User name text
+2026-02-06 10:57:34,567 - INFO - Element FOUND: User name text
+2026-02-06 10:57:34,576 - INFO - Display name: khoa
+2026-02-06 10:57:34,576 - INFO - Sign_in_portal successfully
+2026-02-06 10:57:34,579 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 10:57:34,579 - INFO - Start function join_meeting
+2026-02-06 10:57:34,579 - INFO - Entering meeting ID: 6001509
+2026-02-06 10:57:34,579 - INFO - Attempting to enter meeting ID
+2026-02-06 10:57:34,580 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 10:57:34,596 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 10:57:34,649 - INFO - Entered meeting ID: 6001509
+2026-02-06 10:57:34,649 - INFO - Clicking join meeting button...
+2026-02-06 10:57:34,700 - INFO - Clicked Join Meeting button successfully
+2026-02-06 10:57:35,207 - INFO - Waiting for conference window to open...
+2026-02-06 10:57:35,208 - INFO - Original portal window: 2565FEF226327D0D002FAB777649836C
+2026-02-06 10:57:35,210 - INFO - Conference window: 6FBC1F42ADCA4AC0F4F93E613D7D6077
+2026-02-06 10:57:35,210 - INFO - Switching to conference window: 6FBC1F42ADCA4AC0F4F93E613D7D6077
+2026-02-06 10:57:35,216 - INFO - Successfully focused on conference window
+2026-02-06 10:57:35,217 - INFO - join_meeting successfully
+2026-02-06 10:57:45,221 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 10:57:45,221 - INFO - Start verify_in_meeting
+2026-02-06 10:57:45,221 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 10:57:45,222 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 10:57:45,224 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 10:57:45,224 - INFO - Handle unblock popup
+2026-02-06 10:57:50,319 - INFO - Close popup microphone button clicked
+2026-02-06 10:57:55,372 - INFO - Close popup video button clicked
+2026-02-06 10:57:55,373 - INFO - Handle unblock popup successfully
+2026-02-06 10:57:55,373 - INFO - Popup handled, will not retry
+2026-02-06 10:57:55,373 - INFO - Searching for participant: khoa
+2026-02-06 10:57:55,392 - INFO - Total participants found: 1
+2026-02-06 10:57:55,402 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 10:57:55,402 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 10:57:55,403 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 10:57:55,405 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 10:57:55,405 - INFO - Start function terminate_meeting
+2026-02-06 10:57:55,480 - INFO - Meeting controls button clicked
+2026-02-06 10:58:00,568 - INFO - Terminate meeting button clicked
+2026-02-06 10:58:00,694 - INFO - Submit button clicked
+2026-02-06 10:58:05,695 - INFO - Terminate_meeting successfuly
+2026-02-06 10:58:05,695 - INFO - Closing conference window
+2026-02-06 10:58:05,763 - INFO - Closed window: 6FBC1F42ADCA4AC0F4F93E613D7D6077
+2026-02-06 10:58:05,767 - INFO - Switched back to original window: 2565FEF226327D0D002FAB777649836C
+2026-02-06 10:58:05,770 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 10:58:05,770 - INFO - Start function sign_out_portal
+2026-02-06 10:58:05,784 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 10:58:05,785 - INFO - Verified on avatar user button
+2026-02-06 10:58:05,827 - INFO - Clicked avatar user button
+2026-02-06 10:58:06,424 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 10:58:06,424 - INFO - Verified on sign in button
+2026-02-06 10:58:11,425 - INFO - Successfully signed out - sign out button detected
+2026-02-06 10:58:13,754 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:58:13,754 - INFO - Start function _setup_chrome
+2026-02-06 10:58:13,755 - INFO - Setting up chrome driver
+2026-02-06 10:58:13,755 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 10:58:14,983 - INFO - chrome driver setup successfully
+2026-02-06 10:58:14,984 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:58:15,930 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 10:58:15,931 - INFO - Start function sign_in_portal
+2026-02-06 10:58:15,960 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 10:58:15,961 - INFO - Verified on text sign in
+2026-02-06 10:58:16,040 - INFO - Attempting to sign in
+2026-02-06 10:58:16,052 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:58:16,053 - INFO - Waiting for element to be clickable: login
+2026-02-06 10:58:16,606 - INFO - Element CLICKABLE: login
+2026-02-06 10:58:16,742 - INFO - Entered click and clear info
+2026-02-06 10:58:16,794 - INFO - Entered username: khoa
+2026-02-06 10:58:16,795 - INFO - Waiting for element to be clickable: password
+2026-02-06 10:58:16,811 - INFO - Element CLICKABLE: password
+2026-02-06 10:58:16,895 - INFO - Entered password
+2026-02-06 10:58:16,950 - INFO - Clicked Sign in button
+2026-02-06 10:58:22,011 - INFO - Clicked user avatar button
+2026-02-06 10:58:22,027 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 10:58:22,027 - INFO - Successfully signed in - sign out button detected
+2026-02-06 10:58:22,080 - INFO - Navigated back to the iView dashboard
+2026-02-06 10:58:22,080 - INFO - Verify sign_in_portal
+2026-02-06 10:58:24,082 - INFO - Getting user name from Meet Now page
+2026-02-06 10:58:24,082 - INFO - Waiting for element visible: User name text
+2026-02-06 10:58:24,098 - INFO - Element FOUND: User name text
+2026-02-06 10:58:24,107 - INFO - Display name: khoa
+2026-02-06 10:58:24,108 - INFO - Sign_in_portal successfully
+2026-02-06 10:58:24,110 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 10:58:24,110 - INFO - Start function join_meeting
+2026-02-06 10:58:24,111 - INFO - Entering meeting ID: 6001509
+2026-02-06 10:58:24,111 - INFO - Attempting to enter meeting ID
+2026-02-06 10:58:24,111 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 10:58:24,127 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 10:58:24,189 - INFO - Entered meeting ID: 6001509
+2026-02-06 10:58:24,189 - INFO - Clicking join meeting button...
+2026-02-06 10:58:24,243 - INFO - Clicked Join Meeting button successfully
+2026-02-06 10:58:24,751 - INFO - Waiting for conference window to open...
+2026-02-06 10:58:24,752 - INFO - Original portal window: D87CA54347D21E338D7C2F7915A452FA
+2026-02-06 10:58:24,754 - INFO - Conference window: DA5041E882A44C752A6F84CA4B633CA6
+2026-02-06 10:58:24,754 - INFO - Switching to conference window: DA5041E882A44C752A6F84CA4B633CA6
+2026-02-06 10:58:24,765 - INFO - Successfully focused on conference window
+2026-02-06 10:58:24,765 - INFO - join_meeting successfully
+2026-02-06 10:58:34,769 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 10:58:34,769 - INFO - Start verify_in_meeting
+2026-02-06 10:58:34,769 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 10:58:34,770 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 10:58:34,772 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 10:58:34,772 - INFO - Handle unblock popup
+2026-02-06 10:58:39,865 - INFO - Close popup microphone button clicked
+2026-02-06 10:58:44,918 - INFO - Close popup video button clicked
+2026-02-06 10:58:44,918 - INFO - Handle unblock popup successfully
+2026-02-06 10:58:44,918 - INFO - Popup handled, will not retry
+2026-02-06 10:58:44,919 - INFO - Searching for participant: khoa
+2026-02-06 10:58:44,942 - INFO - Total participants found: 1
+2026-02-06 10:58:44,953 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 10:58:44,953 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 10:58:44,954 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 10:58:44,956 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 10:58:44,956 - INFO - Start function terminate_meeting
+2026-02-06 10:58:45,030 - INFO - Meeting controls button clicked
+2026-02-06 10:58:50,151 - INFO - Terminate meeting button clicked
+2026-02-06 10:58:50,736 - INFO - Submit button clicked
+2026-02-06 10:58:55,736 - INFO - Terminate_meeting successfuly
+2026-02-06 10:58:55,737 - INFO - Closing conference window
+2026-02-06 10:58:55,810 - INFO - Closed window: DA5041E882A44C752A6F84CA4B633CA6
+2026-02-06 10:58:55,813 - INFO - Switched back to original window: D87CA54347D21E338D7C2F7915A452FA
+2026-02-06 10:58:55,816 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 10:58:55,816 - INFO - Start function sign_out_portal
+2026-02-06 10:58:55,828 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 10:58:55,829 - INFO - Verified on avatar user button
+2026-02-06 10:58:55,871 - INFO - Clicked avatar user button
+2026-02-06 10:58:56,458 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 10:58:56,459 - INFO - Verified on sign in button
+2026-02-06 10:59:01,460 - INFO - Successfully signed out - sign out button detected
+2026-02-06 10:59:03,802 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:59:03,802 - INFO - Start function _setup_chrome
+2026-02-06 10:59:03,803 - INFO - Setting up chrome driver
+2026-02-06 10:59:03,803 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 10:59:05,011 - INFO - chrome driver setup successfully
+2026-02-06 10:59:05,011 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:59:05,945 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 10:59:05,946 - INFO - Start function sign_in_portal
+2026-02-06 10:59:05,978 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 10:59:05,978 - INFO - Verified on text sign in
+2026-02-06 10:59:06,052 - INFO - Attempting to sign in
+2026-02-06 10:59:06,063 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:59:06,063 - INFO - Waiting for element to be clickable: login
+2026-02-06 10:59:06,602 - INFO - Element CLICKABLE: login
+2026-02-06 10:59:06,663 - INFO - Entered click and clear info
+2026-02-06 10:59:06,687 - INFO - Entered username: khoa
+2026-02-06 10:59:06,688 - INFO - Waiting for element to be clickable: password
+2026-02-06 10:59:06,716 - INFO - Element CLICKABLE: password
+2026-02-06 10:59:06,822 - INFO - Entered password
+2026-02-06 10:59:06,878 - INFO - Clicked Sign in button
+2026-02-06 10:59:11,938 - INFO - Clicked user avatar button
+2026-02-06 10:59:11,953 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 10:59:11,954 - INFO - Successfully signed in - sign out button detected
+2026-02-06 10:59:12,009 - INFO - Navigated back to the iView dashboard
+2026-02-06 10:59:12,009 - INFO - Verify sign_in_portal
+2026-02-06 10:59:14,010 - INFO - Getting user name from Meet Now page
+2026-02-06 10:59:14,010 - INFO - Waiting for element visible: User name text
+2026-02-06 10:59:14,027 - INFO - Element FOUND: User name text
+2026-02-06 10:59:14,036 - INFO - Display name: khoa
+2026-02-06 10:59:14,037 - INFO - Sign_in_portal successfully
+2026-02-06 10:59:14,039 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 10:59:14,039 - INFO - Start function join_meeting
+2026-02-06 10:59:14,040 - INFO - Entering meeting ID: 6001509
+2026-02-06 10:59:14,040 - INFO - Attempting to enter meeting ID
+2026-02-06 10:59:14,040 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 10:59:14,057 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 10:59:14,109 - INFO - Entered meeting ID: 6001509
+2026-02-06 10:59:14,109 - INFO - Clicking join meeting button...
+2026-02-06 10:59:14,161 - INFO - Clicked Join Meeting button successfully
+2026-02-06 10:59:14,667 - INFO - Waiting for conference window to open...
+2026-02-06 10:59:14,668 - INFO - Original portal window: AF47608C8D4FC568F075CC701DEC0DE3
+2026-02-06 10:59:14,670 - INFO - Conference window: 40AF2752E6E2A6CEED81F2DB2C6C5487
+2026-02-06 10:59:14,670 - INFO - Switching to conference window: 40AF2752E6E2A6CEED81F2DB2C6C5487
+2026-02-06 10:59:14,672 - INFO - Successfully focused on conference window
+2026-02-06 10:59:14,672 - INFO - join_meeting successfully
+2026-02-06 10:59:24,676 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 10:59:24,677 - INFO - Start verify_in_meeting
+2026-02-06 10:59:24,677 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 10:59:24,677 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 10:59:24,680 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 10:59:24,680 - INFO - Handle unblock popup
+2026-02-06 10:59:29,772 - INFO - Close popup microphone button clicked
+2026-02-06 10:59:34,835 - INFO - Close popup video button clicked
+2026-02-06 10:59:34,836 - INFO - Handle unblock popup successfully
+2026-02-06 10:59:34,836 - INFO - Popup handled, will not retry
+2026-02-06 10:59:34,836 - INFO - Searching for participant: khoa
+2026-02-06 10:59:34,856 - INFO - Total participants found: 1
+2026-02-06 10:59:34,865 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 10:59:34,866 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 10:59:34,866 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 10:59:34,868 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 10:59:34,869 - INFO - Start function terminate_meeting
+2026-02-06 10:59:34,941 - INFO - Meeting controls button clicked
+2026-02-06 10:59:40,020 - INFO - Terminate meeting button clicked
+2026-02-06 10:59:40,142 - INFO - Submit button clicked
+2026-02-06 10:59:45,143 - INFO - Terminate_meeting successfuly
+2026-02-06 10:59:45,144 - INFO - Closing conference window
+2026-02-06 10:59:45,207 - INFO - Closed window: 40AF2752E6E2A6CEED81F2DB2C6C5487
+2026-02-06 10:59:45,215 - INFO - Switched back to original window: AF47608C8D4FC568F075CC701DEC0DE3
+2026-02-06 10:59:45,220 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 10:59:45,220 - INFO - Start function sign_out_portal
+2026-02-06 10:59:45,240 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 10:59:45,240 - INFO - Verified on avatar user button
+2026-02-06 10:59:45,323 - INFO - Clicked avatar user button
+2026-02-06 10:59:45,903 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 10:59:45,903 - INFO - Verified on sign in button
+2026-02-06 10:59:50,904 - INFO - Successfully signed out - sign out button detected
+2026-02-06 10:59:53,285 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:59:53,286 - INFO - Start function _setup_chrome
+2026-02-06 10:59:53,287 - INFO - Setting up chrome driver
+2026-02-06 10:59:53,288 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 10:59:54,474 - INFO - chrome driver setup successfully
+2026-02-06 10:59:54,475 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:59:55,570 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 10:59:55,570 - INFO - Start function sign_in_portal
+2026-02-06 10:59:55,594 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 10:59:55,595 - INFO - Verified on text sign in
+2026-02-06 10:59:55,686 - INFO - Attempting to sign in
+2026-02-06 10:59:55,697 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 10:59:55,697 - INFO - Waiting for element to be clickable: login
+2026-02-06 10:59:56,261 - INFO - Element CLICKABLE: login
+2026-02-06 10:59:56,323 - INFO - Entered click and clear info
+2026-02-06 10:59:56,350 - INFO - Entered username: khoa
+2026-02-06 10:59:56,350 - INFO - Waiting for element to be clickable: password
+2026-02-06 10:59:56,366 - INFO - Element CLICKABLE: password
+2026-02-06 10:59:56,451 - INFO - Entered password
+2026-02-06 10:59:56,503 - INFO - Clicked Sign in button
+2026-02-06 11:00:01,559 - INFO - Clicked user avatar button
+2026-02-06 11:00:01,574 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:00:01,574 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:00:01,634 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:00:01,634 - INFO - Verify sign_in_portal
+2026-02-06 11:00:03,635 - INFO - Getting user name from Meet Now page
+2026-02-06 11:00:03,636 - INFO - Waiting for element visible: User name text
+2026-02-06 11:00:03,651 - INFO - Element FOUND: User name text
+2026-02-06 11:00:03,661 - INFO - Display name: khoa
+2026-02-06 11:00:03,661 - INFO - Sign_in_portal successfully
+2026-02-06 11:00:03,664 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:00:03,664 - INFO - Start function join_meeting
+2026-02-06 11:00:03,664 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:00:03,664 - INFO - Attempting to enter meeting ID
+2026-02-06 11:00:03,664 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:00:03,681 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:00:03,734 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:00:03,735 - INFO - Clicking join meeting button...
+2026-02-06 11:00:03,785 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:00:04,291 - INFO - Waiting for conference window to open...
+2026-02-06 11:00:04,293 - INFO - Original portal window: A3E9D24A6FA0B280F94C86BF8D10B81C
+2026-02-06 11:00:04,297 - INFO - Conference window: 96AE5E2814E72611E7998F81DD48BED5
+2026-02-06 11:00:04,298 - INFO - Switching to conference window: 96AE5E2814E72611E7998F81DD48BED5
+2026-02-06 11:00:04,300 - INFO - Successfully focused on conference window
+2026-02-06 11:00:04,301 - INFO - join_meeting successfully
+2026-02-06 11:00:14,304 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:00:14,304 - INFO - Start verify_in_meeting
+2026-02-06 11:00:14,304 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:00:14,305 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:00:14,306 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:00:14,307 - INFO - Handle unblock popup
+2026-02-06 11:00:19,399 - INFO - Close popup microphone button clicked
+2026-02-06 11:00:24,454 - INFO - Close popup video button clicked
+2026-02-06 11:00:24,454 - INFO - Handle unblock popup successfully
+2026-02-06 11:00:24,454 - INFO - Popup handled, will not retry
+2026-02-06 11:00:24,454 - INFO - Searching for participant: khoa
+2026-02-06 11:00:24,490 - INFO - Total participants found: 1
+2026-02-06 11:00:24,509 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:00:24,511 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:00:24,511 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:00:24,519 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:00:24,519 - INFO - Start function terminate_meeting
+2026-02-06 11:00:24,614 - INFO - Meeting controls button clicked
+2026-02-06 11:00:29,690 - INFO - Terminate meeting button clicked
+2026-02-06 11:00:29,786 - INFO - Submit button clicked
+2026-02-06 11:00:34,786 - INFO - Terminate_meeting successfuly
+2026-02-06 11:00:34,787 - INFO - Closing conference window
+2026-02-06 11:00:34,858 - INFO - Closed window: 96AE5E2814E72611E7998F81DD48BED5
+2026-02-06 11:00:34,865 - INFO - Switched back to original window: A3E9D24A6FA0B280F94C86BF8D10B81C
+2026-02-06 11:00:34,868 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:00:34,868 - INFO - Start function sign_out_portal
+2026-02-06 11:00:34,887 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:00:34,887 - INFO - Verified on avatar user button
+2026-02-06 11:00:34,937 - INFO - Clicked avatar user button
+2026-02-06 11:00:35,534 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:00:35,535 - INFO - Verified on sign in button
+2026-02-06 11:00:40,535 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:00:42,856 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:00:42,856 - INFO - Start function _setup_chrome
+2026-02-06 11:00:42,857 - INFO - Setting up chrome driver
+2026-02-06 11:00:42,857 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:00:44,049 - INFO - chrome driver setup successfully
+2026-02-06 11:00:44,050 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:00:44,945 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:00:44,945 - INFO - Start function sign_in_portal
+2026-02-06 11:00:44,979 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:00:44,979 - INFO - Verified on text sign in
+2026-02-06 11:00:45,062 - INFO - Attempting to sign in
+2026-02-06 11:00:45,071 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:00:45,072 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:00:45,607 - INFO - Element CLICKABLE: login
+2026-02-06 11:00:45,665 - INFO - Entered click and clear info
+2026-02-06 11:00:45,691 - INFO - Entered username: khoa
+2026-02-06 11:00:45,692 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:00:45,709 - INFO - Element CLICKABLE: password
+2026-02-06 11:00:45,791 - INFO - Entered password
+2026-02-06 11:00:45,851 - INFO - Clicked Sign in button
+2026-02-06 11:00:50,907 - INFO - Clicked user avatar button
+2026-02-06 11:00:50,922 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:00:50,922 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:00:50,981 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:00:50,981 - INFO - Verify sign_in_portal
+2026-02-06 11:00:52,982 - INFO - Getting user name from Meet Now page
+2026-02-06 11:00:52,982 - INFO - Waiting for element visible: User name text
+2026-02-06 11:00:53,000 - INFO - Element FOUND: User name text
+2026-02-06 11:00:53,010 - INFO - Display name: khoa
+2026-02-06 11:00:53,011 - INFO - Sign_in_portal successfully
+2026-02-06 11:00:53,013 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:00:53,013 - INFO - Start function join_meeting
+2026-02-06 11:00:53,014 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:00:53,014 - INFO - Attempting to enter meeting ID
+2026-02-06 11:00:53,014 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:00:53,031 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:00:53,087 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:00:53,087 - INFO - Clicking join meeting button...
+2026-02-06 11:00:53,139 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:00:53,645 - INFO - Waiting for conference window to open...
+2026-02-06 11:00:53,646 - INFO - Original portal window: 0CE661910DBBD3C9F64336D30EA3C35E
+2026-02-06 11:00:53,648 - INFO - Conference window: D9A0C6B0C985C3CAFC561B5B4AB80DCF
+2026-02-06 11:00:53,649 - INFO - Switching to conference window: D9A0C6B0C985C3CAFC561B5B4AB80DCF
+2026-02-06 11:00:53,651 - INFO - Successfully focused on conference window
+2026-02-06 11:00:53,651 - INFO - join_meeting successfully
+2026-02-06 11:01:03,654 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:01:03,654 - INFO - Start verify_in_meeting
+2026-02-06 11:01:03,654 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:01:03,655 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:01:03,656 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:01:03,657 - INFO - Handle unblock popup
+2026-02-06 11:01:08,750 - INFO - Close popup microphone button clicked
+2026-02-06 11:01:13,883 - INFO - Close popup video button clicked
+2026-02-06 11:01:13,884 - INFO - Handle unblock popup successfully
+2026-02-06 11:01:13,884 - INFO - Popup handled, will not retry
+2026-02-06 11:01:13,885 - INFO - Searching for participant: khoa
+2026-02-06 11:01:13,932 - INFO - Total participants found: 1
+2026-02-06 11:01:13,956 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:01:13,957 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:01:13,957 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:01:13,961 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:01:13,963 - INFO - Start function terminate_meeting
+2026-02-06 11:01:14,083 - INFO - Meeting controls button clicked
+2026-02-06 11:01:19,168 - INFO - Terminate meeting button clicked
+2026-02-06 11:01:19,287 - INFO - Submit button clicked
+2026-02-06 11:01:24,288 - INFO - Terminate_meeting successfuly
+2026-02-06 11:01:24,289 - INFO - Closing conference window
+2026-02-06 11:01:24,356 - INFO - Closed window: D9A0C6B0C985C3CAFC561B5B4AB80DCF
+2026-02-06 11:01:24,358 - INFO - Switched back to original window: 0CE661910DBBD3C9F64336D30EA3C35E
+2026-02-06 11:01:24,362 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:01:24,363 - INFO - Start function sign_out_portal
+2026-02-06 11:01:24,380 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:01:24,381 - INFO - Verified on avatar user button
+2026-02-06 11:01:24,426 - INFO - Clicked avatar user button
+2026-02-06 11:01:25,011 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:01:25,012 - INFO - Verified on sign in button
+2026-02-06 11:01:30,012 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:01:32,171 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:01:32,171 - INFO - Start function _setup_chrome
+2026-02-06 11:01:32,171 - INFO - Setting up chrome driver
+2026-02-06 11:01:32,172 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:01:33,376 - INFO - chrome driver setup successfully
+2026-02-06 11:01:33,376 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:01:34,353 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:01:34,354 - INFO - Start function sign_in_portal
+2026-02-06 11:01:34,382 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:01:34,382 - INFO - Verified on text sign in
+2026-02-06 11:01:34,482 - INFO - Attempting to sign in
+2026-02-06 11:01:34,505 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:01:34,505 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:01:34,574 - INFO - Element CLICKABLE: login
+2026-02-06 11:01:34,783 - INFO - Entered click and clear info
+2026-02-06 11:01:34,841 - INFO - Entered username: khoa
+2026-02-06 11:01:34,842 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:01:34,877 - INFO - Element CLICKABLE: password
+2026-02-06 11:01:35,031 - INFO - Entered password
+2026-02-06 11:01:35,105 - INFO - Clicked Sign in button
+2026-02-06 11:01:40,163 - INFO - Clicked user avatar button
+2026-02-06 11:01:40,205 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:01:40,205 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:01:40,256 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:01:40,257 - INFO - Verify sign_in_portal
+2026-02-06 11:01:42,258 - INFO - Getting user name from Meet Now page
+2026-02-06 11:01:42,258 - INFO - Waiting for element visible: User name text
+2026-02-06 11:01:42,274 - INFO - Element FOUND: User name text
+2026-02-06 11:01:42,284 - INFO - Display name: khoa
+2026-02-06 11:01:42,285 - INFO - Sign_in_portal successfully
+2026-02-06 11:01:42,287 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:01:42,287 - INFO - Start function join_meeting
+2026-02-06 11:01:42,287 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:01:42,288 - INFO - Attempting to enter meeting ID
+2026-02-06 11:01:42,288 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:01:42,306 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:01:42,357 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:01:42,358 - INFO - Clicking join meeting button...
+2026-02-06 11:01:42,411 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:01:42,917 - INFO - Waiting for conference window to open...
+2026-02-06 11:01:42,918 - INFO - Original portal window: DF21F292D2FBDE3923DA77008E994DE4
+2026-02-06 11:01:42,921 - INFO - Conference window: BC6BEAE76A4256C43A22FD5A1AD4E040
+2026-02-06 11:01:42,921 - INFO - Switching to conference window: BC6BEAE76A4256C43A22FD5A1AD4E040
+2026-02-06 11:01:42,923 - INFO - Successfully focused on conference window
+2026-02-06 11:01:42,923 - INFO - join_meeting successfully
+2026-02-06 11:01:55,276 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:01:55,276 - INFO - Start verify_in_meeting
+2026-02-06 11:01:55,276 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:01:55,277 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:01:55,279 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:01:55,280 - INFO - Handle unblock popup
+2026-02-06 11:02:00,378 - INFO - Close popup microphone button clicked
+2026-02-06 11:02:05,430 - INFO - Close popup video button clicked
+2026-02-06 11:02:05,430 - INFO - Handle unblock popup successfully
+2026-02-06 11:02:05,430 - INFO - Popup handled, will not retry
+2026-02-06 11:02:05,431 - INFO - Searching for participant: khoa
+2026-02-06 11:02:05,452 - INFO - Total participants found: 1
+2026-02-06 11:02:05,458 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:02:05,459 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:02:05,459 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:02:05,463 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:02:05,463 - INFO - Start function terminate_meeting
+2026-02-06 11:02:05,538 - INFO - Meeting controls button clicked
+2026-02-06 11:02:10,622 - INFO - Terminate meeting button clicked
+2026-02-06 11:02:10,716 - INFO - Submit button clicked
+2026-02-06 11:02:15,716 - INFO - Terminate_meeting successfuly
+2026-02-06 11:02:15,717 - INFO - Closing conference window
+2026-02-06 11:02:15,778 - INFO - Closed window: BC6BEAE76A4256C43A22FD5A1AD4E040
+2026-02-06 11:02:15,782 - INFO - Switched back to original window: DF21F292D2FBDE3923DA77008E994DE4
+2026-02-06 11:02:15,784 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:02:15,784 - INFO - Start function sign_out_portal
+2026-02-06 11:02:15,801 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:02:15,801 - INFO - Verified on avatar user button
+2026-02-06 11:02:15,849 - INFO - Clicked avatar user button
+2026-02-06 11:02:16,463 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:02:16,464 - INFO - Verified on sign in button
+2026-02-06 11:02:21,464 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:02:23,915 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:02:23,915 - INFO - Start function _setup_chrome
+2026-02-06 11:02:23,916 - INFO - Setting up chrome driver
+2026-02-06 11:02:23,916 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:02:29,957 - INFO - chrome driver setup successfully
+2026-02-06 11:02:29,957 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:02:30,935 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:02:30,936 - INFO - Start function sign_in_portal
+2026-02-06 11:02:30,965 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:02:30,965 - INFO - Verified on text sign in
+2026-02-06 11:02:31,053 - INFO - Attempting to sign in
+2026-02-06 11:02:31,065 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:02:31,065 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:02:31,641 - INFO - Element CLICKABLE: login
+2026-02-06 11:02:31,698 - INFO - Entered click and clear info
+2026-02-06 11:02:31,724 - INFO - Entered username: khoa
+2026-02-06 11:02:31,725 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:02:31,741 - INFO - Element CLICKABLE: password
+2026-02-06 11:02:31,829 - INFO - Entered password
+2026-02-06 11:02:31,885 - INFO - Clicked Sign in button
+2026-02-06 11:02:36,942 - INFO - Clicked user avatar button
+2026-02-06 11:02:36,957 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:02:36,958 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:02:37,016 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:02:37,016 - INFO - Verify sign_in_portal
+2026-02-06 11:02:39,018 - INFO - Getting user name from Meet Now page
+2026-02-06 11:02:39,018 - INFO - Waiting for element visible: User name text
+2026-02-06 11:02:39,036 - INFO - Element FOUND: User name text
+2026-02-06 11:02:39,046 - INFO - Display name: khoa
+2026-02-06 11:02:39,046 - INFO - Sign_in_portal successfully
+2026-02-06 11:02:39,049 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:02:39,049 - INFO - Start function join_meeting
+2026-02-06 11:02:39,049 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:02:39,049 - INFO - Attempting to enter meeting ID
+2026-02-06 11:02:39,049 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:02:39,066 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:02:39,119 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:02:39,120 - INFO - Clicking join meeting button...
+2026-02-06 11:02:39,170 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:02:39,681 - INFO - Waiting for conference window to open...
+2026-02-06 11:02:39,682 - INFO - Original portal window: 34005B6CC8DCFE6B03A5AC814E8D5774
+2026-02-06 11:02:39,683 - INFO - Conference window: DDDE7EBD0E63F6AB3CF0DE9F9C6E5484
+2026-02-06 11:02:39,684 - INFO - Switching to conference window: DDDE7EBD0E63F6AB3CF0DE9F9C6E5484
+2026-02-06 11:02:39,686 - INFO - Successfully focused on conference window
+2026-02-06 11:02:39,686 - INFO - join_meeting successfully
+2026-02-06 11:02:49,689 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:02:49,689 - INFO - Start verify_in_meeting
+2026-02-06 11:02:49,690 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:02:49,690 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:02:49,692 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:02:49,693 - INFO - Handle unblock popup
+2026-02-06 11:02:54,819 - INFO - Close popup microphone button clicked
+2026-02-06 11:02:59,871 - INFO - Close popup video button clicked
+2026-02-06 11:02:59,871 - INFO - Handle unblock popup successfully
+2026-02-06 11:02:59,872 - INFO - Popup handled, will not retry
+2026-02-06 11:02:59,872 - INFO - Searching for participant: khoa
+2026-02-06 11:02:59,890 - INFO - Total participants found: 1
+2026-02-06 11:02:59,900 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:02:59,901 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:02:59,901 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:02:59,903 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:02:59,903 - INFO - Start function terminate_meeting
+2026-02-06 11:02:59,981 - INFO - Meeting controls button clicked
+2026-02-06 11:03:05,086 - INFO - Terminate meeting button clicked
+2026-02-06 11:03:05,669 - INFO - Submit button clicked
+2026-02-06 11:03:10,670 - INFO - Terminate_meeting successfuly
+2026-02-06 11:03:10,671 - INFO - Closing conference window
+2026-02-06 11:03:10,747 - INFO - Closed window: DDDE7EBD0E63F6AB3CF0DE9F9C6E5484
+2026-02-06 11:03:10,749 - INFO - Switched back to original window: 34005B6CC8DCFE6B03A5AC814E8D5774
+2026-02-06 11:03:10,752 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:03:10,752 - INFO - Start function sign_out_portal
+2026-02-06 11:03:10,764 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:03:10,764 - INFO - Verified on avatar user button
+2026-02-06 11:03:10,811 - INFO - Clicked avatar user button
+2026-02-06 11:03:11,390 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:03:11,390 - INFO - Verified on sign in button
+2026-02-06 11:03:16,391 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:03:18,551 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:03:18,551 - INFO - Start function _setup_chrome
+2026-02-06 11:03:18,552 - INFO - Setting up chrome driver
+2026-02-06 11:03:18,552 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:03:19,757 - INFO - chrome driver setup successfully
+2026-02-06 11:03:19,758 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:03:20,739 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:03:20,739 - INFO - Start function sign_in_portal
+2026-02-06 11:03:20,772 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:03:20,773 - INFO - Verified on text sign in
+2026-02-06 11:03:20,853 - INFO - Attempting to sign in
+2026-02-06 11:03:20,864 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:03:20,864 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:03:21,401 - INFO - Element CLICKABLE: login
+2026-02-06 11:03:21,463 - INFO - Entered click and clear info
+2026-02-06 11:03:21,488 - INFO - Entered username: khoa
+2026-02-06 11:03:21,488 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:03:21,505 - INFO - Element CLICKABLE: password
+2026-02-06 11:03:21,590 - INFO - Entered password
+2026-02-06 11:03:21,646 - INFO - Clicked Sign in button
+2026-02-06 11:03:26,703 - INFO - Clicked user avatar button
+2026-02-06 11:03:26,720 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:03:26,720 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:03:26,774 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:03:26,774 - INFO - Verify sign_in_portal
+2026-02-06 11:03:28,775 - INFO - Getting user name from Meet Now page
+2026-02-06 11:03:28,776 - INFO - Waiting for element visible: User name text
+2026-02-06 11:03:28,800 - INFO - Element FOUND: User name text
+2026-02-06 11:03:28,812 - INFO - Display name: khoa
+2026-02-06 11:03:28,813 - INFO - Sign_in_portal successfully
+2026-02-06 11:03:28,816 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:03:28,817 - INFO - Start function join_meeting
+2026-02-06 11:03:28,817 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:03:28,817 - INFO - Attempting to enter meeting ID
+2026-02-06 11:03:28,818 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:03:28,861 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:03:28,916 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:03:28,916 - INFO - Clicking join meeting button...
+2026-02-06 11:03:28,966 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:03:29,473 - INFO - Waiting for conference window to open...
+2026-02-06 11:03:29,475 - INFO - Original portal window: 1F68E4D305A9EF55C0B0F34D14B7FB67
+2026-02-06 11:03:29,479 - INFO - Conference window: 84DACB3B3A888BB3DAE6903AFA11D617
+2026-02-06 11:03:29,480 - INFO - Switching to conference window: 84DACB3B3A888BB3DAE6903AFA11D617
+2026-02-06 11:03:29,482 - INFO - Successfully focused on conference window
+2026-02-06 11:03:29,482 - INFO - join_meeting successfully
+2026-02-06 11:03:39,485 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:03:39,485 - INFO - Start verify_in_meeting
+2026-02-06 11:03:39,485 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:03:39,485 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:03:39,487 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:03:39,488 - INFO - Handle unblock popup
+2026-02-06 11:03:44,580 - INFO - Close popup microphone button clicked
+2026-02-06 11:03:49,631 - INFO - Close popup video button clicked
+2026-02-06 11:03:49,631 - INFO - Handle unblock popup successfully
+2026-02-06 11:03:49,632 - INFO - Popup handled, will not retry
+2026-02-06 11:03:49,632 - INFO - Searching for participant: khoa
+2026-02-06 11:03:49,651 - INFO - Total participants found: 1
+2026-02-06 11:03:49,656 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:03:49,657 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:03:49,657 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:03:49,660 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:03:49,661 - INFO - Start function terminate_meeting
+2026-02-06 11:03:49,734 - INFO - Meeting controls button clicked
+2026-02-06 11:03:54,815 - INFO - Terminate meeting button clicked
+2026-02-06 11:03:54,916 - INFO - Submit button clicked
+2026-02-06 11:03:59,917 - INFO - Terminate_meeting successfuly
+2026-02-06 11:03:59,917 - INFO - Closing conference window
+2026-02-06 11:03:59,984 - INFO - Closed window: 84DACB3B3A888BB3DAE6903AFA11D617
+2026-02-06 11:03:59,987 - INFO - Switched back to original window: 1F68E4D305A9EF55C0B0F34D14B7FB67
+2026-02-06 11:03:59,989 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:03:59,990 - INFO - Start function sign_out_portal
+2026-02-06 11:04:00,008 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:04:00,009 - INFO - Verified on avatar user button
+2026-02-06 11:04:00,068 - INFO - Clicked avatar user button
+2026-02-06 11:04:00,654 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:04:00,654 - INFO - Verified on sign in button
+2026-02-06 11:04:05,655 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:04:08,041 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:04:08,042 - INFO - Start function _setup_chrome
+2026-02-06 11:04:08,042 - INFO - Setting up chrome driver
+2026-02-06 11:04:08,043 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:04:09,275 - INFO - chrome driver setup successfully
+2026-02-06 11:04:09,276 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:04:10,230 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:04:10,230 - INFO - Start function sign_in_portal
+2026-02-06 11:04:10,258 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:04:10,258 - INFO - Verified on text sign in
+2026-02-06 11:04:10,352 - INFO - Attempting to sign in
+2026-02-06 11:04:10,376 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:04:10,378 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:04:10,936 - INFO - Element CLICKABLE: login
+2026-02-06 11:04:10,994 - INFO - Entered click and clear info
+2026-02-06 11:04:11,021 - INFO - Entered username: khoa
+2026-02-06 11:04:11,022 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:04:11,038 - INFO - Element CLICKABLE: password
+2026-02-06 11:04:11,121 - INFO - Entered password
+2026-02-06 11:04:11,176 - INFO - Clicked Sign in button
+2026-02-06 11:04:16,233 - INFO - Clicked user avatar button
+2026-02-06 11:04:16,249 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:04:16,250 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:04:16,306 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:04:16,306 - INFO - Verify sign_in_portal
+2026-02-06 11:04:18,308 - INFO - Getting user name from Meet Now page
+2026-02-06 11:04:18,308 - INFO - Waiting for element visible: User name text
+2026-02-06 11:04:18,324 - INFO - Element FOUND: User name text
+2026-02-06 11:04:18,333 - INFO - Display name: khoa
+2026-02-06 11:04:18,333 - INFO - Sign_in_portal successfully
+2026-02-06 11:04:18,336 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:04:18,336 - INFO - Start function join_meeting
+2026-02-06 11:04:18,336 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:04:18,336 - INFO - Attempting to enter meeting ID
+2026-02-06 11:04:18,336 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:04:18,352 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:04:18,404 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:04:18,404 - INFO - Clicking join meeting button...
+2026-02-06 11:04:18,456 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:04:18,963 - INFO - Waiting for conference window to open...
+2026-02-06 11:04:18,964 - INFO - Original portal window: C395E98CE96562CCEF78C14334EDCC84
+2026-02-06 11:04:18,966 - INFO - Conference window: 27F9C6B3FAE1074999EB816963E1BCE1
+2026-02-06 11:04:18,966 - INFO - Switching to conference window: 27F9C6B3FAE1074999EB816963E1BCE1
+2026-02-06 11:04:18,968 - INFO - Successfully focused on conference window
+2026-02-06 11:04:18,968 - INFO - join_meeting successfully
+2026-02-06 11:04:28,972 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:04:28,972 - INFO - Start verify_in_meeting
+2026-02-06 11:04:28,972 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:04:28,972 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:04:28,974 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:04:28,975 - INFO - Handle unblock popup
+2026-02-06 11:04:34,072 - INFO - Close popup microphone button clicked
+2026-02-06 11:04:39,131 - INFO - Close popup video button clicked
+2026-02-06 11:04:39,131 - INFO - Handle unblock popup successfully
+2026-02-06 11:04:39,132 - INFO - Popup handled, will not retry
+2026-02-06 11:04:39,132 - INFO - Searching for participant: khoa
+2026-02-06 11:04:39,156 - INFO - Total participants found: 1
+2026-02-06 11:04:39,167 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:04:39,167 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:04:39,167 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:04:39,170 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:04:39,170 - INFO - Start function terminate_meeting
+2026-02-06 11:04:39,254 - INFO - Meeting controls button clicked
+2026-02-06 11:04:44,338 - INFO - Terminate meeting button clicked
+2026-02-06 11:04:44,474 - INFO - Submit button clicked
+2026-02-06 11:04:49,475 - INFO - Terminate_meeting successfuly
+2026-02-06 11:04:49,475 - INFO - Closing conference window
+2026-02-06 11:04:49,539 - INFO - Closed window: 27F9C6B3FAE1074999EB816963E1BCE1
+2026-02-06 11:04:49,544 - INFO - Switched back to original window: C395E98CE96562CCEF78C14334EDCC84
+2026-02-06 11:04:49,547 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:04:49,547 - INFO - Start function sign_out_portal
+2026-02-06 11:04:49,558 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:04:49,558 - INFO - Verified on avatar user button
+2026-02-06 11:04:49,602 - INFO - Clicked avatar user button
+2026-02-06 11:04:50,206 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:04:50,206 - INFO - Verified on sign in button
+2026-02-06 11:04:55,207 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:04:57,649 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:04:57,649 - INFO - Start function _setup_chrome
+2026-02-06 11:04:57,650 - INFO - Setting up chrome driver
+2026-02-06 11:04:57,650 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:04:58,882 - INFO - chrome driver setup successfully
+2026-02-06 11:04:58,883 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:04:59,815 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:04:59,815 - INFO - Start function sign_in_portal
+2026-02-06 11:04:59,840 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:04:59,841 - INFO - Verified on text sign in
+2026-02-06 11:04:59,918 - INFO - Attempting to sign in
+2026-02-06 11:04:59,926 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:04:59,928 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:05:00,486 - INFO - Element CLICKABLE: login
+2026-02-06 11:05:00,563 - INFO - Entered click and clear info
+2026-02-06 11:05:00,589 - INFO - Entered username: khoa
+2026-02-06 11:05:00,590 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:05:00,620 - INFO - Element CLICKABLE: password
+2026-02-06 11:05:00,707 - INFO - Entered password
+2026-02-06 11:05:00,766 - INFO - Clicked Sign in button
+2026-02-06 11:05:05,826 - INFO - Clicked user avatar button
+2026-02-06 11:05:05,858 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:05:05,858 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:05:05,915 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:05:05,915 - INFO - Verify sign_in_portal
+2026-02-06 11:05:07,917 - INFO - Getting user name from Meet Now page
+2026-02-06 11:05:07,917 - INFO - Waiting for element visible: User name text
+2026-02-06 11:05:07,933 - INFO - Element FOUND: User name text
+2026-02-06 11:05:07,942 - INFO - Display name: khoa
+2026-02-06 11:05:07,943 - INFO - Sign_in_portal successfully
+2026-02-06 11:05:07,945 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:05:07,945 - INFO - Start function join_meeting
+2026-02-06 11:05:07,945 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:05:07,945 - INFO - Attempting to enter meeting ID
+2026-02-06 11:05:07,946 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:05:07,963 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:05:08,016 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:05:08,016 - INFO - Clicking join meeting button...
+2026-02-06 11:05:08,068 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:05:08,577 - INFO - Waiting for conference window to open...
+2026-02-06 11:05:08,578 - INFO - Original portal window: 0232F47DCD8C3196305CDDCF256CA101
+2026-02-06 11:05:08,580 - INFO - Conference window: 77AD4B41665185748C975EE70249C0A6
+2026-02-06 11:05:08,581 - INFO - Switching to conference window: 77AD4B41665185748C975EE70249C0A6
+2026-02-06 11:05:08,589 - INFO - Successfully focused on conference window
+2026-02-06 11:05:08,590 - INFO - join_meeting successfully
+2026-02-06 11:05:18,594 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:05:18,594 - INFO - Start verify_in_meeting
+2026-02-06 11:05:18,594 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:05:18,595 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:05:18,597 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:05:18,597 - INFO - Handle unblock popup
+2026-02-06 11:05:23,689 - INFO - Close popup microphone button clicked
+2026-02-06 11:05:28,745 - INFO - Close popup video button clicked
+2026-02-06 11:05:28,745 - INFO - Handle unblock popup successfully
+2026-02-06 11:05:28,746 - INFO - Popup handled, will not retry
+2026-02-06 11:05:28,746 - INFO - Searching for participant: khoa
+2026-02-06 11:05:28,768 - INFO - Total participants found: 1
+2026-02-06 11:05:28,777 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:05:28,777 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:05:28,778 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:05:28,780 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:05:28,780 - INFO - Start function terminate_meeting
+2026-02-06 11:05:28,855 - INFO - Meeting controls button clicked
+2026-02-06 11:05:33,932 - INFO - Terminate meeting button clicked
+2026-02-06 11:05:34,024 - INFO - Submit button clicked
+2026-02-06 11:05:39,024 - INFO - Terminate_meeting successfuly
+2026-02-06 11:05:39,025 - INFO - Closing conference window
+2026-02-06 11:05:39,088 - INFO - Closed window: 77AD4B41665185748C975EE70249C0A6
+2026-02-06 11:05:39,091 - INFO - Switched back to original window: 0232F47DCD8C3196305CDDCF256CA101
+2026-02-06 11:05:39,094 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:05:39,094 - INFO - Start function sign_out_portal
+2026-02-06 11:05:39,105 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:05:39,105 - INFO - Verified on avatar user button
+2026-02-06 11:05:39,150 - INFO - Clicked avatar user button
+2026-02-06 11:05:39,759 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:05:39,760 - INFO - Verified on sign in button
+2026-02-06 11:05:44,760 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:05:46,915 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:05:46,916 - INFO - Start function _setup_chrome
+2026-02-06 11:05:46,916 - INFO - Setting up chrome driver
+2026-02-06 11:05:46,917 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:05:48,139 - INFO - chrome driver setup successfully
+2026-02-06 11:05:48,139 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:05:49,076 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:05:49,077 - INFO - Start function sign_in_portal
+2026-02-06 11:05:49,148 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:05:49,149 - INFO - Verified on text sign in
+2026-02-06 11:05:49,254 - INFO - Attempting to sign in
+2026-02-06 11:05:49,287 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:05:49,287 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:05:49,321 - INFO - Element CLICKABLE: login
+2026-02-06 11:05:49,487 - INFO - Entered click and clear info
+2026-02-06 11:05:49,525 - INFO - Entered username: khoa
+2026-02-06 11:05:49,527 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:05:49,551 - INFO - Element CLICKABLE: password
+2026-02-06 11:05:49,668 - INFO - Entered password
+2026-02-06 11:05:49,733 - INFO - Clicked Sign in button
+2026-02-06 11:05:54,792 - INFO - Clicked user avatar button
+2026-02-06 11:05:54,811 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:05:54,812 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:05:54,875 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:05:54,875 - INFO - Verify sign_in_portal
+2026-02-06 11:05:56,877 - INFO - Getting user name from Meet Now page
+2026-02-06 11:05:56,877 - INFO - Waiting for element visible: User name text
+2026-02-06 11:05:56,894 - INFO - Element FOUND: User name text
+2026-02-06 11:05:56,904 - INFO - Display name: khoa
+2026-02-06 11:05:56,905 - INFO - Sign_in_portal successfully
+2026-02-06 11:05:56,907 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:05:56,907 - INFO - Start function join_meeting
+2026-02-06 11:05:56,908 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:05:56,908 - INFO - Attempting to enter meeting ID
+2026-02-06 11:05:56,908 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:05:56,925 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:05:56,973 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:05:56,974 - INFO - Clicking join meeting button...
+2026-02-06 11:05:57,025 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:05:57,533 - INFO - Waiting for conference window to open...
+2026-02-06 11:05:57,534 - INFO - Original portal window: 7BE840A22D3152187CC2EAD54A8B082F
+2026-02-06 11:05:57,537 - INFO - Conference window: F44C4C97AA112B934EABD988A4408E8A
+2026-02-06 11:05:57,538 - INFO - Switching to conference window: F44C4C97AA112B934EABD988A4408E8A
+2026-02-06 11:05:57,541 - INFO - Successfully focused on conference window
+2026-02-06 11:05:57,542 - INFO - join_meeting successfully
+2026-02-06 11:06:07,548 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:06:07,548 - INFO - Start verify_in_meeting
+2026-02-06 11:06:07,548 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:06:07,549 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:06:07,551 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:06:07,551 - INFO - Handle unblock popup
+2026-02-06 11:06:12,672 - INFO - Close popup microphone button clicked
+2026-02-06 11:06:17,957 - INFO - Close popup video button clicked
+2026-02-06 11:06:17,958 - INFO - Handle unblock popup successfully
+2026-02-06 11:06:17,959 - INFO - Popup handled, will not retry
+2026-02-06 11:06:17,959 - INFO - Searching for participant: khoa
+2026-02-06 11:06:18,005 - INFO - Total participants found: 1
+2026-02-06 11:06:18,031 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:06:18,032 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:06:18,032 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:06:18,036 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:06:18,037 - INFO - Start function terminate_meeting
+2026-02-06 11:06:18,298 - INFO - Meeting controls button clicked
+2026-02-06 11:06:23,381 - INFO - Terminate meeting button clicked
+2026-02-06 11:06:23,967 - INFO - Submit button clicked
+2026-02-06 11:06:28,968 - INFO - Terminate_meeting successfuly
+2026-02-06 11:06:28,968 - INFO - Closing conference window
+2026-02-06 11:06:29,037 - INFO - Closed window: F44C4C97AA112B934EABD988A4408E8A
+2026-02-06 11:06:29,040 - INFO - Switched back to original window: 7BE840A22D3152187CC2EAD54A8B082F
+2026-02-06 11:06:29,044 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:06:29,046 - INFO - Start function sign_out_portal
+2026-02-06 11:06:29,066 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:06:29,066 - INFO - Verified on avatar user button
+2026-02-06 11:06:29,109 - INFO - Clicked avatar user button
+2026-02-06 11:06:29,688 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:06:29,688 - INFO - Verified on sign in button
+2026-02-06 11:06:34,689 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:06:37,087 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:06:37,087 - INFO - Start function _setup_chrome
+2026-02-06 11:06:37,088 - INFO - Setting up chrome driver
+2026-02-06 11:06:37,088 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:06:38,398 - INFO - chrome driver setup successfully
+2026-02-06 11:06:38,399 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:06:39,419 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:06:39,420 - INFO - Start function sign_in_portal
+2026-02-06 11:06:39,444 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:06:39,444 - INFO - Verified on text sign in
+2026-02-06 11:06:39,520 - INFO - Attempting to sign in
+2026-02-06 11:06:39,529 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:06:39,529 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:06:40,092 - INFO - Element CLICKABLE: login
+2026-02-06 11:06:40,148 - INFO - Entered click and clear info
+2026-02-06 11:06:40,172 - INFO - Entered username: khoa
+2026-02-06 11:06:40,172 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:06:40,188 - INFO - Element CLICKABLE: password
+2026-02-06 11:06:40,273 - INFO - Entered password
+2026-02-06 11:06:40,332 - INFO - Clicked Sign in button
+2026-02-06 11:06:45,402 - INFO - Clicked user avatar button
+2026-02-06 11:06:45,417 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:06:45,418 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:06:45,480 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:06:45,481 - INFO - Verify sign_in_portal
+2026-02-06 11:06:47,482 - INFO - Getting user name from Meet Now page
+2026-02-06 11:06:47,482 - INFO - Waiting for element visible: User name text
+2026-02-06 11:06:47,496 - INFO - Element FOUND: User name text
+2026-02-06 11:06:47,506 - INFO - Display name: khoa
+2026-02-06 11:06:47,506 - INFO - Sign_in_portal successfully
+2026-02-06 11:06:47,510 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:06:47,510 - INFO - Start function join_meeting
+2026-02-06 11:06:47,510 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:06:47,511 - INFO - Attempting to enter meeting ID
+2026-02-06 11:06:47,511 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:06:47,530 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:06:47,596 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:06:47,596 - INFO - Clicking join meeting button...
+2026-02-06 11:06:47,650 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:06:48,159 - INFO - Waiting for conference window to open...
+2026-02-06 11:06:48,160 - INFO - Original portal window: 6BCC7911CFE39515A07B685BEACB766F
+2026-02-06 11:06:48,163 - INFO - Conference window: 95B142C6CFA242531F721AF842804F0B
+2026-02-06 11:06:48,163 - INFO - Switching to conference window: 95B142C6CFA242531F721AF842804F0B
+2026-02-06 11:06:48,165 - INFO - Successfully focused on conference window
+2026-02-06 11:06:48,165 - INFO - join_meeting successfully
+2026-02-06 11:06:58,168 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:06:58,169 - INFO - Start verify_in_meeting
+2026-02-06 11:06:58,169 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:06:58,169 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:06:58,171 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:06:58,171 - INFO - Handle unblock popup
+2026-02-06 11:07:03,268 - INFO - Close popup microphone button clicked
+2026-02-06 11:07:08,326 - INFO - Close popup video button clicked
+2026-02-06 11:07:08,327 - INFO - Handle unblock popup successfully
+2026-02-06 11:07:08,328 - INFO - Popup handled, will not retry
+2026-02-06 11:07:08,328 - INFO - Searching for participant: khoa
+2026-02-06 11:07:08,350 - INFO - Total participants found: 1
+2026-02-06 11:07:08,360 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:07:08,360 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:07:08,361 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:07:08,363 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:07:08,364 - INFO - Start function terminate_meeting
+2026-02-06 11:07:08,441 - INFO - Meeting controls button clicked
+2026-02-06 11:07:13,551 - INFO - Terminate meeting button clicked
+2026-02-06 11:07:14,136 - INFO - Submit button clicked
+2026-02-06 11:07:19,137 - INFO - Terminate_meeting successfuly
+2026-02-06 11:07:19,137 - INFO - Closing conference window
+2026-02-06 11:07:19,215 - INFO - Closed window: 95B142C6CFA242531F721AF842804F0B
+2026-02-06 11:07:19,217 - INFO - Switched back to original window: 6BCC7911CFE39515A07B685BEACB766F
+2026-02-06 11:07:19,220 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:07:19,220 - INFO - Start function sign_out_portal
+2026-02-06 11:07:19,232 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:07:19,232 - INFO - Verified on avatar user button
+2026-02-06 11:07:19,276 - INFO - Clicked avatar user button
+2026-02-06 11:07:19,892 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:07:19,893 - INFO - Verified on sign in button
+2026-02-06 11:07:24,893 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:07:27,321 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:07:27,321 - INFO - Start function _setup_chrome
+2026-02-06 11:07:27,322 - INFO - Setting up chrome driver
+2026-02-06 11:07:27,322 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:07:28,545 - INFO - chrome driver setup successfully
+2026-02-06 11:07:28,546 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:07:29,534 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:07:29,535 - INFO - Start function sign_in_portal
+2026-02-06 11:07:29,561 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:07:29,562 - INFO - Verified on text sign in
+2026-02-06 11:07:29,648 - INFO - Attempting to sign in
+2026-02-06 11:07:29,662 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:07:29,664 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:07:30,219 - INFO - Element CLICKABLE: login
+2026-02-06 11:07:30,321 - INFO - Entered click and clear info
+2026-02-06 11:07:30,347 - INFO - Entered username: khoa
+2026-02-06 11:07:30,348 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:07:30,364 - INFO - Element CLICKABLE: password
+2026-02-06 11:07:30,450 - INFO - Entered password
+2026-02-06 11:07:30,505 - INFO - Clicked Sign in button
+2026-02-06 11:07:35,582 - INFO - Clicked user avatar button
+2026-02-06 11:07:35,598 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:07:35,598 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:07:35,648 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:07:35,649 - INFO - Verify sign_in_portal
+2026-02-06 11:07:37,650 - INFO - Getting user name from Meet Now page
+2026-02-06 11:07:37,650 - INFO - Waiting for element visible: User name text
+2026-02-06 11:07:37,666 - INFO - Element FOUND: User name text
+2026-02-06 11:07:37,676 - INFO - Display name: khoa
+2026-02-06 11:07:37,676 - INFO - Sign_in_portal successfully
+2026-02-06 11:07:37,678 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:07:37,678 - INFO - Start function join_meeting
+2026-02-06 11:07:37,679 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:07:37,679 - INFO - Attempting to enter meeting ID
+2026-02-06 11:07:37,679 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:07:37,696 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:07:37,748 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:07:37,748 - INFO - Clicking join meeting button...
+2026-02-06 11:07:37,799 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:07:38,305 - INFO - Waiting for conference window to open...
+2026-02-06 11:07:38,307 - INFO - Original portal window: D6DA8BB93921C8A79B1CEC9F87E4F630
+2026-02-06 11:07:38,311 - INFO - Conference window: 538105D691AB2BC15B5CD0B2E5507A57
+2026-02-06 11:07:38,312 - INFO - Switching to conference window: 538105D691AB2BC15B5CD0B2E5507A57
+2026-02-06 11:07:38,314 - INFO - Successfully focused on conference window
+2026-02-06 11:07:38,315 - INFO - join_meeting successfully
+2026-02-06 11:07:48,318 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:07:48,319 - INFO - Start verify_in_meeting
+2026-02-06 11:07:48,319 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:07:48,319 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:07:48,321 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:07:48,321 - INFO - Handle unblock popup
+2026-02-06 11:07:53,421 - INFO - Close popup microphone button clicked
+2026-02-06 11:07:58,476 - INFO - Close popup video button clicked
+2026-02-06 11:07:58,476 - INFO - Handle unblock popup successfully
+2026-02-06 11:07:58,477 - INFO - Popup handled, will not retry
+2026-02-06 11:07:58,477 - INFO - Searching for participant: khoa
+2026-02-06 11:07:58,499 - INFO - Total participants found: 1
+2026-02-06 11:07:58,504 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:07:58,505 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:07:58,505 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:07:58,507 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:07:58,508 - INFO - Start function terminate_meeting
+2026-02-06 11:07:58,598 - INFO - Meeting controls button clicked
+2026-02-06 11:08:03,701 - INFO - Terminate meeting button clicked
+2026-02-06 11:08:03,799 - INFO - Submit button clicked
+2026-02-06 11:08:08,800 - INFO - Terminate_meeting successfuly
+2026-02-06 11:08:08,801 - INFO - Closing conference window
+2026-02-06 11:08:08,877 - INFO - Closed window: 538105D691AB2BC15B5CD0B2E5507A57
+2026-02-06 11:08:08,880 - INFO - Switched back to original window: D6DA8BB93921C8A79B1CEC9F87E4F630
+2026-02-06 11:08:08,882 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:08:08,882 - INFO - Start function sign_out_portal
+2026-02-06 11:08:08,894 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:08:08,894 - INFO - Verified on avatar user button
+2026-02-06 11:08:08,936 - INFO - Clicked avatar user button
+2026-02-06 11:08:09,537 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:08:09,537 - INFO - Verified on sign in button
+2026-02-06 11:08:14,538 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:08:16,914 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:08:16,915 - INFO - Start function _setup_chrome
+2026-02-06 11:08:16,915 - INFO - Setting up chrome driver
+2026-02-06 11:08:16,915 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:08:18,107 - INFO - chrome driver setup successfully
+2026-02-06 11:08:18,107 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:08:19,021 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:08:19,022 - INFO - Start function sign_in_portal
+2026-02-06 11:08:19,048 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:08:19,049 - INFO - Verified on text sign in
+2026-02-06 11:08:19,129 - INFO - Attempting to sign in
+2026-02-06 11:08:19,140 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:08:19,140 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:08:19,698 - INFO - Element CLICKABLE: login
+2026-02-06 11:08:19,758 - INFO - Entered click and clear info
+2026-02-06 11:08:19,782 - INFO - Entered username: khoa
+2026-02-06 11:08:19,782 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:08:19,800 - INFO - Element CLICKABLE: password
+2026-02-06 11:08:19,883 - INFO - Entered password
+2026-02-06 11:08:19,935 - INFO - Clicked Sign in button
+2026-02-06 11:08:24,991 - INFO - Clicked user avatar button
+2026-02-06 11:08:25,009 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:08:25,009 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:08:25,068 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:08:25,069 - INFO - Verify sign_in_portal
+2026-02-06 11:08:27,070 - INFO - Getting user name from Meet Now page
+2026-02-06 11:08:27,070 - INFO - Waiting for element visible: User name text
+2026-02-06 11:08:27,085 - INFO - Element FOUND: User name text
+2026-02-06 11:08:27,094 - INFO - Display name: khoa
+2026-02-06 11:08:27,095 - INFO - Sign_in_portal successfully
+2026-02-06 11:08:27,097 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:08:27,098 - INFO - Start function join_meeting
+2026-02-06 11:08:27,098 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:08:27,098 - INFO - Attempting to enter meeting ID
+2026-02-06 11:08:27,098 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:08:27,116 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:08:27,177 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:08:27,177 - INFO - Clicking join meeting button...
+2026-02-06 11:08:27,232 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:08:27,739 - INFO - Waiting for conference window to open...
+2026-02-06 11:08:27,741 - INFO - Original portal window: B16C23423F807967A61D9D9F4CD3FDFD
+2026-02-06 11:08:27,744 - INFO - Conference window: 935F9B2A4CC108957248D3090D4676A2
+2026-02-06 11:08:27,745 - INFO - Switching to conference window: 935F9B2A4CC108957248D3090D4676A2
+2026-02-06 11:08:27,757 - INFO - Successfully focused on conference window
+2026-02-06 11:08:27,758 - INFO - join_meeting successfully
+2026-02-06 11:08:37,762 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:08:37,762 - INFO - Start verify_in_meeting
+2026-02-06 11:08:37,762 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:08:37,762 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:08:37,764 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:08:37,764 - INFO - Handle unblock popup
+2026-02-06 11:08:42,859 - INFO - Close popup microphone button clicked
+2026-02-06 11:08:47,913 - INFO - Close popup video button clicked
+2026-02-06 11:08:47,913 - INFO - Handle unblock popup successfully
+2026-02-06 11:08:47,913 - INFO - Popup handled, will not retry
+2026-02-06 11:08:47,913 - INFO - Searching for participant: khoa
+2026-02-06 11:08:47,934 - INFO - Total participants found: 1
+2026-02-06 11:08:47,943 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:08:47,943 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:08:47,943 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:08:47,947 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:08:47,947 - INFO - Start function terminate_meeting
+2026-02-06 11:08:48,018 - INFO - Meeting controls button clicked
+2026-02-06 11:08:53,096 - INFO - Terminate meeting button clicked
+2026-02-06 11:08:53,196 - INFO - Submit button clicked
+2026-02-06 11:08:58,197 - INFO - Terminate_meeting successfuly
+2026-02-06 11:08:58,197 - INFO - Closing conference window
+2026-02-06 11:08:58,259 - INFO - Closed window: 935F9B2A4CC108957248D3090D4676A2
+2026-02-06 11:08:58,263 - INFO - Switched back to original window: B16C23423F807967A61D9D9F4CD3FDFD
+2026-02-06 11:08:58,266 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:08:58,266 - INFO - Start function sign_out_portal
+2026-02-06 11:08:58,280 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:08:58,280 - INFO - Verified on avatar user button
+2026-02-06 11:08:58,322 - INFO - Clicked avatar user button
+2026-02-06 11:08:58,964 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:08:58,964 - INFO - Verified on sign in button
+2026-02-06 11:09:03,964 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:09:06,140 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:09:06,140 - INFO - Start function _setup_chrome
+2026-02-06 11:09:06,141 - INFO - Setting up chrome driver
+2026-02-06 11:09:06,141 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:09:07,381 - INFO - chrome driver setup successfully
+2026-02-06 11:09:07,382 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:09:08,318 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:09:08,319 - INFO - Start function sign_in_portal
+2026-02-06 11:09:08,346 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:09:08,346 - INFO - Verified on text sign in
+2026-02-06 11:09:08,441 - INFO - Attempting to sign in
+2026-02-06 11:09:08,450 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:09:08,450 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:09:09,009 - INFO - Element CLICKABLE: login
+2026-02-06 11:09:09,067 - INFO - Entered click and clear info
+2026-02-06 11:09:09,093 - INFO - Entered username: khoa
+2026-02-06 11:09:09,093 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:09:09,110 - INFO - Element CLICKABLE: password
+2026-02-06 11:09:09,192 - INFO - Entered password
+2026-02-06 11:09:09,247 - INFO - Clicked Sign in button
+2026-02-06 11:09:14,304 - INFO - Clicked user avatar button
+2026-02-06 11:09:14,319 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:09:14,319 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:09:14,379 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:09:14,380 - INFO - Verify sign_in_portal
+2026-02-06 11:09:16,381 - INFO - Getting user name from Meet Now page
+2026-02-06 11:09:16,381 - INFO - Waiting for element visible: User name text
+2026-02-06 11:09:16,398 - INFO - Element FOUND: User name text
+2026-02-06 11:09:16,408 - INFO - Display name: khoa
+2026-02-06 11:09:16,409 - INFO - Sign_in_portal successfully
+2026-02-06 11:09:16,411 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:09:16,411 - INFO - Start function join_meeting
+2026-02-06 11:09:16,412 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:09:16,412 - INFO - Attempting to enter meeting ID
+2026-02-06 11:09:16,412 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:09:16,428 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:09:16,480 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:09:16,481 - INFO - Clicking join meeting button...
+2026-02-06 11:09:16,531 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:09:17,038 - INFO - Waiting for conference window to open...
+2026-02-06 11:09:17,039 - INFO - Original portal window: 0679416C239F4203AD738FC6B9C7F1D2
+2026-02-06 11:09:17,042 - INFO - Conference window: C52D23D0295E78E35AC1C4FAA7480AB3
+2026-02-06 11:09:17,043 - INFO - Switching to conference window: C52D23D0295E78E35AC1C4FAA7480AB3
+2026-02-06 11:09:17,045 - INFO - Successfully focused on conference window
+2026-02-06 11:09:17,045 - INFO - join_meeting successfully
+2026-02-06 11:09:27,048 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:09:27,048 - INFO - Start verify_in_meeting
+2026-02-06 11:09:27,049 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:09:27,049 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:09:27,051 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:09:27,051 - INFO - Handle unblock popup
+2026-02-06 11:09:32,144 - INFO - Close popup microphone button clicked
+2026-02-06 11:09:37,198 - INFO - Close popup video button clicked
+2026-02-06 11:09:37,199 - INFO - Handle unblock popup successfully
+2026-02-06 11:09:37,199 - INFO - Popup handled, will not retry
+2026-02-06 11:09:37,199 - INFO - Searching for participant: khoa
+2026-02-06 11:09:37,218 - INFO - Total participants found: 1
+2026-02-06 11:09:37,226 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:09:37,226 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:09:37,227 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:09:37,230 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:09:37,230 - INFO - Start function terminate_meeting
+2026-02-06 11:09:37,302 - INFO - Meeting controls button clicked
+2026-02-06 11:09:42,455 - INFO - Terminate meeting button clicked
+2026-02-06 11:09:42,686 - INFO - Submit button clicked
+2026-02-06 11:09:47,687 - INFO - Terminate_meeting successfuly
+2026-02-06 11:09:47,687 - INFO - Closing conference window
+2026-02-06 11:09:47,766 - INFO - Closed window: C52D23D0295E78E35AC1C4FAA7480AB3
+2026-02-06 11:09:47,769 - INFO - Switched back to original window: 0679416C239F4203AD738FC6B9C7F1D2
+2026-02-06 11:09:47,772 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:09:47,772 - INFO - Start function sign_out_portal
+2026-02-06 11:09:47,787 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:09:47,788 - INFO - Verified on avatar user button
+2026-02-06 11:09:47,837 - INFO - Clicked avatar user button
+2026-02-06 11:09:48,445 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:09:48,445 - INFO - Verified on sign in button
+2026-02-06 11:09:53,446 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:09:55,648 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:09:55,648 - INFO - Start function _setup_chrome
+2026-02-06 11:09:55,648 - INFO - Setting up chrome driver
+2026-02-06 11:09:55,649 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:09:56,867 - INFO - chrome driver setup successfully
+2026-02-06 11:09:56,868 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:09:57,844 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:09:57,844 - INFO - Start function sign_in_portal
+2026-02-06 11:09:57,873 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:09:57,873 - INFO - Verified on text sign in
+2026-02-06 11:09:57,952 - INFO - Attempting to sign in
+2026-02-06 11:09:57,963 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:09:57,964 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:09:58,504 - INFO - Element CLICKABLE: login
+2026-02-06 11:09:58,564 - INFO - Entered click and clear info
+2026-02-06 11:09:58,588 - INFO - Entered username: khoa
+2026-02-06 11:09:58,588 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:09:58,604 - INFO - Element CLICKABLE: password
+2026-02-06 11:09:58,687 - INFO - Entered password
+2026-02-06 11:09:58,741 - INFO - Clicked Sign in button
+2026-02-06 11:10:03,797 - INFO - Clicked user avatar button
+2026-02-06 11:10:03,812 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:10:03,812 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:10:03,870 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:10:03,871 - INFO - Verify sign_in_portal
+2026-02-06 11:10:05,872 - INFO - Getting user name from Meet Now page
+2026-02-06 11:10:05,872 - INFO - Waiting for element visible: User name text
+2026-02-06 11:10:05,887 - INFO - Element FOUND: User name text
+2026-02-06 11:10:05,897 - INFO - Display name: khoa
+2026-02-06 11:10:05,898 - INFO - Sign_in_portal successfully
+2026-02-06 11:10:05,900 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:10:05,900 - INFO - Start function join_meeting
+2026-02-06 11:10:05,900 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:10:05,901 - INFO - Attempting to enter meeting ID
+2026-02-06 11:10:05,901 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:10:05,927 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:10:05,997 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:10:05,997 - INFO - Clicking join meeting button...
+2026-02-06 11:10:06,048 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:10:06,554 - INFO - Waiting for conference window to open...
+2026-02-06 11:10:06,556 - INFO - Original portal window: A5A9A3D2997F0F19E5A326DE993673DB
+2026-02-06 11:10:06,559 - INFO - Conference window: 70591436119CAA52DD18012CCAA79AA3
+2026-02-06 11:10:06,560 - INFO - Switching to conference window: 70591436119CAA52DD18012CCAA79AA3
+2026-02-06 11:10:06,562 - INFO - Successfully focused on conference window
+2026-02-06 11:10:06,562 - INFO - join_meeting successfully
+2026-02-06 11:10:16,565 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:10:16,566 - INFO - Start verify_in_meeting
+2026-02-06 11:10:16,566 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:10:16,566 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:10:16,568 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:10:16,568 - INFO - Handle unblock popup
+2026-02-06 11:10:21,659 - INFO - Close popup microphone button clicked
+2026-02-06 11:10:26,721 - INFO - Close popup video button clicked
+2026-02-06 11:10:26,721 - INFO - Handle unblock popup successfully
+2026-02-06 11:10:26,721 - INFO - Popup handled, will not retry
+2026-02-06 11:10:26,722 - INFO - Searching for participant: khoa
+2026-02-06 11:10:26,744 - INFO - Total participants found: 1
+2026-02-06 11:10:26,752 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:10:26,752 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:10:26,752 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:10:26,755 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:10:26,755 - INFO - Start function terminate_meeting
+2026-02-06 11:10:26,837 - INFO - Meeting controls button clicked
+2026-02-06 11:10:31,943 - INFO - Terminate meeting button clicked
+2026-02-06 11:10:32,036 - INFO - Submit button clicked
+2026-02-06 11:10:37,037 - INFO - Terminate_meeting successfuly
+2026-02-06 11:10:37,037 - INFO - Closing conference window
+2026-02-06 11:10:37,103 - INFO - Closed window: 70591436119CAA52DD18012CCAA79AA3
+2026-02-06 11:10:37,106 - INFO - Switched back to original window: A5A9A3D2997F0F19E5A326DE993673DB
+2026-02-06 11:10:37,112 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:10:37,112 - INFO - Start function sign_out_portal
+2026-02-06 11:10:37,126 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:10:37,126 - INFO - Verified on avatar user button
+2026-02-06 11:10:37,176 - INFO - Clicked avatar user button
+2026-02-06 11:10:37,754 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:10:37,755 - INFO - Verified on sign in button
+2026-02-06 11:10:42,755 - INFO - Successfully signed out - sign out button detected
+2026-02-06 11:10:45,179 - INFO - https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:10:45,179 - INFO - Start function _setup_chrome
+2026-02-06 11:10:45,179 - INFO - Setting up chrome driver
+2026-02-06 11:10:45,179 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-06 11:10:46,399 - INFO - chrome driver setup successfully
+2026-02-06 11:10:46,399 - INFO - Navigating to URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:10:47,354 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_in_portal
+2026-02-06 11:10:47,355 - INFO - Start function sign_in_portal
+2026-02-06 11:10:47,384 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:10:47,385 - INFO - Verified on text sign in
+2026-02-06 11:10:47,499 - INFO - Attempting to sign in
+2026-02-06 11:10:47,514 - INFO - URL: https://aawgte-svc-kvm.hcm.com/portal/tenants/default/
+2026-02-06 11:10:47,515 - INFO - Waiting for element to be clickable: login
+2026-02-06 11:10:47,556 - INFO - Element CLICKABLE: login
+2026-02-06 11:10:47,749 - INFO - Entered click and clear info
+2026-02-06 11:10:47,787 - INFO - Entered username: khoa
+2026-02-06 11:10:47,788 - INFO - Waiting for element to be clickable: password
+2026-02-06 11:10:47,821 - INFO - Element CLICKABLE: password
+2026-02-06 11:10:47,954 - INFO - Entered password
+2026-02-06 11:10:48,015 - INFO - Clicked Sign in button
+2026-02-06 11:10:53,079 - INFO - Clicked user avatar button
+2026-02-06 11:10:53,094 - INFO - Element visible: //button[contains(text(),'Sign out')]
+2026-02-06 11:10:53,095 - INFO - Successfully signed in - sign out button detected
+2026-02-06 11:10:53,143 - INFO - Navigated back to the iView dashboard
+2026-02-06 11:10:53,144 - INFO - Verify sign_in_portal
+2026-02-06 11:10:55,145 - INFO - Getting user name from Meet Now page
+2026-02-06 11:10:55,145 - INFO - Waiting for element visible: User name text
+2026-02-06 11:10:55,161 - INFO - Element FOUND: User name text
+2026-02-06 11:10:55,170 - INFO - Display name: khoa
+2026-02-06 11:10:55,171 - INFO - Sign_in_portal successfully
+2026-02-06 11:10:55,173 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: join_meeting
+2026-02-06 11:10:55,173 - INFO - Start function join_meeting
+2026-02-06 11:10:55,174 - INFO - Entering meeting ID: 6001509
+2026-02-06 11:10:55,174 - INFO - Attempting to enter meeting ID
+2026-02-06 11:10:55,174 - INFO - Waiting for element to be clickable: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:10:55,190 - INFO - Element CLICKABLE: //input[contains(@formcontrolname, 'meetingId')]
+2026-02-06 11:10:55,243 - INFO - Entered meeting ID: 6001509
+2026-02-06 11:10:55,243 - INFO - Clicking join meeting button...
+2026-02-06 11:10:55,295 - INFO - Clicked Join Meeting button successfully
+2026-02-06 11:10:55,802 - INFO - Waiting for conference window to open...
+2026-02-06 11:10:55,804 - INFO - Original portal window: 1F05313C4A724EED852FA611632A21FF
+2026-02-06 11:10:55,807 - INFO - Conference window: 36FC283D4B264B6A122DE47AB8C5F8F8
+2026-02-06 11:10:55,808 - INFO - Switching to conference window: 36FC283D4B264B6A122DE47AB8C5F8F8
+2026-02-06 11:10:55,810 - INFO - Successfully focused on conference window
+2026-02-06 11:10:55,810 - INFO - join_meeting successfully
+2026-02-06 11:11:05,813 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: verify_in_meeting
+2026-02-06 11:11:05,814 - INFO - Start verify_in_meeting
+2026-02-06 11:11:05,814 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:11:05,814 - INFO - Waiting for participant 'khoa' (0s)
+2026-02-06 11:11:05,816 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: handle_unblock_popup
+2026-02-06 11:11:05,816 - INFO - Handle unblock popup
+2026-02-06 11:11:10,913 - INFO - Close popup microphone button clicked
+2026-02-06 11:11:16,001 - INFO - Close popup video button clicked
+2026-02-06 11:11:16,001 - INFO - Handle unblock popup successfully
+2026-02-06 11:11:16,002 - INFO - Popup handled, will not retry
+2026-02-06 11:11:16,002 - INFO - Searching for participant: khoa
+2026-02-06 11:11:16,097 - INFO - Total participants found: 1
+2026-02-06 11:11:16,104 - INFO - Checking participant UI name: 'khoa'
+2026-02-06 11:11:16,105 - INFO - Participant 'khoa' found in roster list.
+2026-02-06 11:11:16,105 - INFO - Participant 'khoa' found in roster list. khoa joined meeting successfully
+2026-02-06 11:11:16,108 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: terminate_meeting
+2026-02-06 11:11:16,109 - INFO - Start function terminate_meeting
+2026-02-06 11:11:16,226 - INFO - Meeting controls button clicked
+2026-02-06 11:11:21,304 - INFO - Terminate meeting button clicked
+2026-02-06 11:11:21,435 - INFO - Submit button clicked
+2026-02-06 11:11:26,435 - INFO - Terminate_meeting successfuly
+2026-02-06 11:11:26,436 - INFO - Closing conference window
+2026-02-06 11:11:26,500 - INFO - Closed window: 36FC283D4B264B6A122DE47AB8C5F8F8
+2026-02-06 11:11:26,502 - INFO - Switched back to original window: 1F05313C4A724EED852FA611632A21FF
+2026-02-06 11:11:26,504 - INFO - Client IP: 10.128.224.115, Port: 4444, Function: sign_out
+2026-02-06 11:11:26,504 - INFO - Start function sign_out_portal
+2026-02-06 11:11:26,528 - INFO - Element visible: //div[contains(@class,'avatar')]
+2026-02-06 11:11:26,528 - INFO - Verified on avatar user button
+2026-02-06 11:11:26,575 - INFO - Clicked avatar user button
+2026-02-06 11:11:27,227 - INFO - Element visible: //span[contains(text(),'Sign in')]
+2026-02-06 11:11:27,227 - INFO - Verified on sign in button
+2026-02-06 11:11:32,228 - INFO - Successfully signed out - sign out button detected

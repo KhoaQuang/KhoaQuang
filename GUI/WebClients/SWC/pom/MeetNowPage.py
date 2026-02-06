@@ -36,7 +36,9 @@ class MeetNowPage:
         self.VERIFY_USER_PORTAL_TEXT = "span.user-name"
         self.BACK_TO_IVIEW_DASHBOARD = "//div[contains(@class,'join-page')]"
         self.MEETING_ID_INPUT = "//input[contains(@formcontrolname, 'meetingId')]"
-        self.JOIN_MEETING_BUTTON = "//span[contains(text(),'Join with Browser')]"
+        self.JOIN_WITH_BROWSER_BUTTON = "//span[contains(text(),'Join with Browser')]"
+        self.MEETING_PIN_INPUT = "pinCode"
+        self.ENTER_BUTTON = "//div[contains(text(), 'Enter')]"
 
     def click_txt_sign_in(self):
         """
@@ -174,19 +176,39 @@ class MeetNowPage:
                 filename="enter_meeting_id.png"
             )
             raise
-    def click_join_meeting(self):
+    def click_join_with_browser_button(self):
         try:
             Utility.click_element_by_xpath(
                 self.driver,
-                self.JOIN_MEETING_BUTTON
+                self.JOIN_WITH_BROWSER_BUTTON
             )
-            logging.info("Clicked Join Meeting button successfully")
+            logging.info("Clicked Join with Browser button successfully")
             return True
         
         except Exception as e:
-            logging.error(f"Error clicking Join Meeting button: {e}")
+            logging.error(f"Error clicking Join with Browser button: {e}")
             Utility.take_screenshot(
                 driver=self.driver,
-                filename="click_join_meeting.png"
+                filename="click_join_with_browser.png"
+            )
+            raise
+
+    def enter_meeting_pin(self, meeting_pin):
+        try:
+            logging.info("Attempting to enter meeting PIN")
+            meeting_pin_input = Utility.wait_for_clickable(
+                self.driver,
+                self.MEETING_PIN_INPUT
+            )
+            meeting_pin_input.clear()
+            meeting_pin_input.send_keys(meeting_pin)
+            logging.info(f"Entered meeting PIN: {meeting_pin}")
+            return True
+        
+        except Exception as e:
+            logging.error(f"Error entering meeting PIN: {e}")
+            Utility.take_screenshot(
+                driver=self.driver,
+                filename="enter_meeting_pin.png"
             )
             raise

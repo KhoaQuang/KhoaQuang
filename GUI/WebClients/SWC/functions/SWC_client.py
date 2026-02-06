@@ -217,7 +217,48 @@ class SWC_Clients:
             logger.exception('Verify sign in portal error')
             self.result_parallel_execute = "FAILED"
             raise RuntimeError('Function exception: '+str(sys.exc_info()))
+    
+    def start_my_meeting(self):
+        try:
+            '''
+                * Function name: start_my_meeting 
+                * Description: This function is used to start my meeting via web portal 
+                * Parameters:  
+                    + display_name: display name participant after start meeting
+            '''
+
+            logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
+            logger = logger_main
+            logger.info('Start function start_my_meeting')
+            meet_page = MeetNowPage(self.driver)
+            logger.info("Clicking join with browser button...")
+            meet_page.click_join_with_browser_button()
+            WebDriverWait(self.driver, 20).until(EC.number_of_windows_to_be(2))
+            logger.info("Waiting for conference window to open...")
+            original_window = self.driver.current_window_handle
+            logger.info(f'Original portal window: {original_window}') 
+            WebDriverWait(self.driver, 20).until(
+                lambda d: len(d.window_handles) > 1
+            )
+            conference_window = next(
+                w for w in self.driver.window_handles if w != original_window
+            )
+            logger.info(f'Conference window: {conference_window}')
+            logger.info(f'Switching to conference window: {conference_window}')
+            self.driver.switch_to.window(conference_window)
+            WebDriverWait(self.driver, 10).until(
+                lambda d: d.current_window_handle == conference_window
+            )
+            logger.info('Successfully focused on conference window')
+            logger.info("join_meeting successfully")
+            self.result_parallel_execute = "PASSED"
+            return True
         
+        except Exception:
+            logger.exception('Verify join meeting error')
+            self.result_parallel_execute = "FAILED"
+            raise RuntimeError('Function exception: '+str(sys.exc_info()))
+
     def join_meeting(self, meeting_id):
         try:
             '''
@@ -234,8 +275,8 @@ class SWC_Clients:
             logger.info(f'Entering meeting ID: {meeting_id}')
             meet_page = MeetNowPage(self.driver)
             meet_page.enter_meeting_id(meeting_id)
-            logger.info("Clicking join meeting button...")
-            meet_page.click_join_meeting()
+            logger.info("Clicking join with browser button...")
+            meet_page.click_join_with_browser_button()
             WebDriverWait(self.driver, 20).until(EC.number_of_windows_to_be(2))
             logger.info("Waiting for conference window to open...")
             original_window = self.driver.current_window_handle

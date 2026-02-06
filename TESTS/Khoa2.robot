@@ -6,13 +6,13 @@ Test Teardown     Run Keyword If Test Failed    Capture Page Screenshot
 
 *** Variables ***
 ${BROWSER}            chrome
-${iview_URL}          https://10.103.3.110/iview/views/index.jsf
-${USERNAME}           khoa2@hcm.com
-${PASSWORD}           RAPtor1234
+${iview_URL}          https://10.103.3.58/iview/views/index.jsf
+${USERNAME}           admin
+${PASSWORD}           AvayaMcspv_1234$
 ${Portal_URL}         https://aawgfed-kvm.hcm.com/portal/tenants/default/
 ${USERPORTAL}         khoa
 ${PASSWORDPORTAL}     Avaya_123$Avaya
-${MEETINGID}          5501509
+${MEETINGID}          6001509
 
 &{CLIENT}
 ...    host=10.128.224.115
@@ -45,7 +45,7 @@ Portal Join Meeting Test
     Create Web Client    ${BROWSER}    ${CLIENT}    ${NONE}    ${PORTAL}
     Call Web Client Method    sign_in_portal
     Call Web Client Method    verify_sign_in_portal        ${USERPORTAL}
-    Call Web Client Method    join_meeting                 ${MEETINGID}
+    Call Web Client Method    start_my_meeting           
     Sleep    10s
     Call Web Client Method    verify_in_meeting            ${USERPORTAL}
     Call Web Client Method    terminate_meeting
