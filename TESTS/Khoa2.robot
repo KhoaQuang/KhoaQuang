@@ -45,8 +45,10 @@ Portal Join Meeting Test
     Create Web Client    ${BROWSER}    ${CLIENT}    ${NONE}    ${PORTAL}
     Call Web Client Method    sign_in_portal
     Call Web Client Method    verify_sign_in_portal        ${USERPORTAL}
-    Call Web Client Method    start_my_meeting           
+    Call Web Client Method    start_my_meeting    
     Sleep    10s
     Call Web Client Method    verify_in_meeting            ${USERPORTAL}
+    
+    Create Web Client    ${BROWSER}    ${CLIENT}    ${NONE}    ${PORTAL}
     Call Web Client Method    terminate_meeting
     Call Web Client Method    sign_out
