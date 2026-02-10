@@ -1,0 +1,10 @@
+{
+  "robot.pythonpath": [
+    "${workspaceFolder}"
+  ],
+  "robot.language-server.python": "c:\\Users\\cqkhoa\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+  "python.defaultInterpreterPath": "C:\\Users\\cqkhoa\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "[robotframework]": {
+    "editor.formatOnSave": true
+  }
+}

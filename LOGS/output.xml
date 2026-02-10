@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.13.3 on win32)" generated="2026-01-27T09:49:37.659045" rpa="false" schemaversion="5">
+<suite id="s1" name="Khoa2" source="E:\Backupwin11\Launch-auto\TESTS\Khoa2.robot">
+<test id="s1-t1" name="IVIEW Web Client Smoke Test" line="30">
+<kw name="Create Web Client">
+<msg time="2026-01-27T09:49:37.760284" level="FAIL">No keyword with name 'Create Web Client' found.</msg>
+<arg>${BROWSER}</arg>
+<arg>${CLIENT}</arg>
+<arg>${IVIEW}</arg>
+<arg>${NONE}</arg>
+<status status="FAIL" start="2026-01-27T09:49:37.760251" elapsed="0.000078">No keyword with name 'Create Web Client' found.</status>
+</kw>
+<kw name="Call Web Client Method">
+<arg>sign_in</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:37.761005" elapsed="0.000021"/>
+</kw>
+<kw name="Call Web Client Method">
+<arg>open_settings</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:37.761365" elapsed="0.000016"/>
+</kw>
+<kw name="Call Web Client Method">
+<arg>open_user_portal</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:37.761697" elapsed="0.000014"/>
+</kw>
+<kw name="Call Web Client Method">
+<arg>pressing_option_custom_branding</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:37.761970" elapsed="0.000014"/>
+</kw>
+<kw name="Call Web Client Method">
+<arg>sign_out</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:37.762185" elapsed="0.000015"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-27T09:49:57.763308" level="INFO">Slept 20 seconds.</msg>
+<arg>20s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-27T09:49:37.762617" elapsed="20.000782"/>
+</kw>
+<arg>Sleep</arg>
+<arg>20s</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-01-27T09:49:37.762462" elapsed="20.000998"/>
+</kw>
+<doc>Verify iView web client basic flow</doc>
+<status status="FAIL" start="2026-01-27T09:49:37.759145" elapsed="20.004695">No keyword with name 'Create Web Client' found.</status>
+</test>
+<test id="s1-t2" name="Portal Join Meeting Test" line="39">
+<kw name="Create Web Client">
+<msg time="2026-01-27T09:49:57.765752" level="FAIL">No keyword with name 'Create Web Client' found.</msg>
+<arg>${BROWSER}</arg>
+<arg>${CLIENT}</arg>
+<arg>${NONE}</arg>
+<arg>${PORTAL}</arg>
+<status status="FAIL" start="2026-01-27T09:49:57.765727" elapsed="0.000059">No keyword with name 'Create Web Client' found.</status>
+</kw>
+<kw name="Call Web Client Method">
+<arg>sign_in_portal</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:57.766104" elapsed="0.000018"/>
+</kw>
+<kw name="Call Web Client Method">
+<arg>verify_sign_in_portal</arg>
+<arg>${USERPORTAL}</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:57.766418" elapsed="0.000015"/>
+</kw>
+<kw name="Call Web Client Method">
+<arg>join_meeting</arg>
+<arg>${MEETINGID}</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:57.766629" elapsed="0.000015"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-01-27T09:49:57.766822" elapsed="0.000017"/>
+</kw>
+<kw name="Call Web Client Method">
+<arg>verify_in_meeting</arg>
+<arg>${USERPORTAL}</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:57.766986" elapsed="0.000013"/>
+</kw>
+<kw name="Call Web Client Method">
+<arg>terminate_meeting</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:57.767146" elapsed="0.000014"/>
+</kw>
+<kw name="Call Web Client Method">
+<arg>sign_out</arg>
+<status status="NOT RUN" start="2026-01-27T09:49:57.767303" elapsed="0.000014"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-27T09:50:17.768108" level="INFO">Slept 20 seconds.</msg>
+<arg>20s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-27T09:49:57.767657" elapsed="20.000536"/>
+</kw>
+<arg>Sleep</arg>
+<arg>20s</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2026-01-27T09:49:57.767543" elapsed="20.000706"/>
+</kw>
+<doc>Sign in portal and join meeting successfully</doc>
+<status status="FAIL" start="2026-01-27T09:49:57.764889" elapsed="20.003941">No keyword with name 'Create Web Client' found.</status>
+</test>
+<kw name="Safe Quit Browser" type="TEARDOWN">
+<msg time="2026-01-27T09:50:17.770487" level="FAIL">No keyword with name 'Safe Quit Browser' found.</msg>
+<status status="FAIL" start="2026-01-27T09:50:17.770461" elapsed="0.000062">No keyword with name 'Safe Quit Browser' found.</status>
+</kw>
+<status status="FAIL" start="2026-01-27T09:49:37.661233" elapsed="40.109336">Suite teardown failed:
+No keyword with name 'Safe Quit Browser' found.</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Khoa2">Khoa2</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-01-27T09:49:37.757379" level="ERROR">Error in file 'E:\Backupwin11\Launch-auto\TESTS\Khoa2.robot' on line 2: Importing library 'Libraries.web_client_library.WebClientLibrary' failed: ModuleNotFoundError: No module named 'Libraries'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Scripts\robot.exe
+  D:\Soctrip-auto\GUI
+  C:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\python313.zip
+  C:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\DLLs
+  C:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib
+  C:\Users\cqkhoa\AppData\Local\Programs\Python\Python313
+  C:\Users\cqkhoa\AppData\Local\Programs\Python\Python313\Lib\site-packages</msg>
+</errors>
+</robot>

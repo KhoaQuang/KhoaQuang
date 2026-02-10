@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.9 on win32)" generated="2024-07-26T15:35:03.057142" rpa="false" schemaversion="5">
+<suite id="s1" name="Khoa1" source="c:\Backup-HDD-Khoa\Practice ROBOT\TESTS\Khoa1.robot">
+<test id="s1-t1" name="Test Browser Automation" line="18">
+<kw name="Open Browser And Navigate To URL" type="SETUP">
+<kw name="Initialize Browser Automation">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-26T15:35:03.294827" level="INFO">Create a object website</msg>
+<msg time="2024-07-26T15:35:03.295824" level="INFO">${BROWSER} = &lt;Khoa.Web object at 0x000002A33C448E50&gt;</msg>
+<var>${BROWSER}</var>
+<arg>Khoa.Web()</arg>
+<arg>modules=Khoa</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-26T15:35:03.293829" elapsed="0.001995"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-07-26T15:35:03.296821" level="INFO">${BROWSER} = &lt;Khoa.Web object at 0x000002A33C448E50&gt;</msg>
+<arg>${BROWSER}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-07-26T15:35:03.296821" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-07-26T15:35:03.292833" elapsed="0.003988"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2024-07-26T15:35:09.893980" level="INFO">Start launch_browser
+Webdriver is ready
+Webdriver was created
+End launch_browser</msg>
+<arg>${BROWSER}</arg>
+<arg>launch_browser</arg>
+<arg>${url}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-07-26T15:35:03.296821" elapsed="6.597159"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2024-07-26T15:35:03.292833" elapsed="6.601147"/>
+</kw>
+<kw name="Sign In">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2024-07-26T15:35:23.063752" level="INFO">Input Username
+Input Password
+Click button Sign In</msg>
+<arg>${BROWSER}</arg>
+<arg>signin</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-07-26T15:35:09.894870" elapsed="13.168882"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2024-07-26T15:35:09.894870" elapsed="13.168882"/>
+</kw>
+<kw name="Sign Out">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2024-07-26T15:35:28.104231" level="INFO">Click button Sign Out</msg>
+<arg>${BROWSER}</arg>
+<arg>signout</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-07-26T15:35:23.064956" elapsed="5.039275"/>
+</kw>
+<status status="PASS" start="2024-07-26T15:35:23.063752" elapsed="5.040479"/>
+</kw>
+<kw name="Close Browser">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2024-07-26T15:35:40.248512" level="INFO">Đóng browser</msg>
+<arg>${BROWSER}</arg>
+<arg>close_browser</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-07-26T15:35:28.105231" elapsed="12.143281"/>
+</kw>
+<arg>'${BROWSER}' != 'None'</arg>
+<arg>Call Method</arg>
+<arg>${BROWSER}</arg>
+<arg>close_browser</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-26T15:35:28.105231" elapsed="12.143281"/>
+</kw>
+<status status="PASS" start="2024-07-26T15:35:28.105231" elapsed="12.143281"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-07-26T15:35:40.249511" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-07-26T15:35:03.291864" elapsed="36.957647"/>
+</test>
+<status status="PASS" start="2024-07-26T15:35:03.062101" elapsed="37.189406"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Khoa1">Khoa1</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-07-26T15:35:03.290837" level="WARN">Imported library 'c:\Backup-HDD-Khoa\Practice ROBOT\GUI\Khoa.py' contains no keywords.</msg>
+</errors>
+</robot>

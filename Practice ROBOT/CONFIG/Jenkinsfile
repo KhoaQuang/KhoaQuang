@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        // stage('Install Dependencies') {
+        //     steps {
+        //         sh 'pip install -r requirements.txt'
+        //     }
+        // }
+        stage('Run API Tests') {
+            steps {
+                sh 'pytest GUI/test_api.py'
+            }
+        }
+        stage('Run UI Tests') {
+            steps {
+                sh 'pytest GUI/test_ui.py'
+            }
+        }
+    }
+}
