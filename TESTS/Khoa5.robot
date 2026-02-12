@@ -47,7 +47,7 @@ ${MEETING_TOPIC}       Automation Test Meeting
 
 *** Test Cases ***
 User A starts meeting, User B joins
-
+    [Documentation]    Verify test case: All user join meeting then Owner terminate meeting
     Create Web Client
     ...    user_key=${OWNER}
     ...    browser=${BROWSER_FIREFOX}
@@ -71,7 +71,8 @@ User A starts meeting, User B joins
     Call Web Client Method    ${USER}     join_meeting                 ${MEETING_ID}
     Sleep    10s
     Call Web Client Method    ${USER}     verify_in_meeting            ${PORTAL_USER_B['portal_username']}
-    Sleep    300s
+    Sleep    10s
+    Call Web Client Method    ${OWNER}    mute_all_participants
     Call Web Client Method    ${OWNER}    terminate_meeting
     Call Web Client Method    ${OWNER}    sign_out
     Call Web Client Method    ${USER}     sign_out

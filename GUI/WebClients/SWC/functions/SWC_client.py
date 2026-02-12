@@ -421,6 +421,21 @@ class SWC_Clients:
             self.result_parallel_execute = "FAILED"
             raise RuntimeError('Function exception: '+str(sys.exc_info()))
         
+    def mute_all_participants(self):
+        try:
+            logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
+            logging.info("Start function mute all participants")
+            BuiltIn().should_be_true(ModeratorPage(self.driver).handle_meeting_controls(), 'Handle meeting controls failed')
+            time.sleep(5)
+            BuiltIn().should_be_true(ModeratorPage(self.driver).mute_all_participants(), 'Handle mute all participants failed')
+            time.sleep(5)
+            logger.info('Mute all participantsg successfuly')
+            self.result_parallel_execute = "PASSED"
+            return True
+        except:
+            self.result_parallel_execute = "FAILED"
+            raise RuntimeError('Function exception: '+str(sys.exc_info()))
+        
     def close_conference_window(self):
         logger.info('Closing conference window')
         all_windows = self.driver.window_handles

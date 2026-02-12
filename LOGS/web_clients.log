@@ -1,0 +1,73 @@
+2026-02-12 09:41:54,119 - INFO - https://10.103.3.173/iview/views/index.jsf
+2026-02-12 09:41:54,121 - INFO - Start function _setup_chrome
+2026-02-12 09:41:54,122 - INFO - Setting up chrome driver
+2026-02-12 09:41:54,122 - INFO - Using local chrome driver at C:\Auto_Browsers\chromedriver.exe
+2026-02-12 09:41:56,279 - INFO - chrome driver setup successfully
+2026-02-12 09:41:56,281 - INFO - Navigating to URL: https://10.103.3.173/iview/views/index.jsf
+2026-02-12 09:41:56,760 - INFO - Attempting to sign in
+2026-02-12 09:41:59,480 - INFO - Successfully signed in - logout button detected
+2026-02-12 09:41:59,482 - INFO - Attempting to open settings
+2026-02-12 09:41:59,567 - INFO - Settings button clicked successfully
+2026-02-12 09:41:59,569 - INFO - Attempting to open user portal
+2026-02-12 09:42:00,138 - INFO - User portal link clicked
+2026-02-12 09:42:00,148 - INFO - User portal page loaded successfully
+2026-02-12 09:42:00,149 - INFO - Attempting to open custom branding option
+2026-02-12 09:42:00,150 - INFO - Waiting for element to be clickable: Custom Branding tab
+2026-02-12 09:42:00,685 - INFO - Element CLICKABLE: Custom Branding tab
+2026-02-12 09:42:00,685 - INFO - Custom branding option is visible
+2026-02-12 09:42:00,739 - INFO - Custom branding option clicked successfully
+2026-02-12 09:42:00,774 - INFO - Total iframes found: 6
+2026-02-12 09:42:00,785 - INFO - Iframe 0 src=
+2026-02-12 09:42:00,792 - INFO - Iframe 1 src=
+2026-02-12 09:42:00,798 - INFO - Iframe 2 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=67C8E06907BC11F193C67730A2FC5E2B#!Updater
+2026-02-12 09:42:00,808 - INFO - Iframe 3 src=javascript:""
+2026-02-12 09:42:00,814 - INFO - Iframe 4 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=67C8E06907BC11F193C67730A2FC5E2B#!Branding
+2026-02-12 09:42:00,815 - INFO - Switching to iframe index 4 with src containing '#!Branding'
+2026-02-12 09:42:00,830 - INFO - Waiting for Custom Branding content
+2026-02-12 09:42:00,831 - INFO - Waiting for title locator: //span[normalize-space()='Organization']
+2026-02-12 09:42:00,831 - INFO - Finding element [] (xpath, //span[normalize-space()='Organization'])
+2026-02-12 09:42:00,957 - INFO - Element [] found successfully
+2026-02-12 09:42:00,958 - INFO - Custom Branding content loaded
+2026-02-12 09:42:00,958 - INFO - Finding elements: iframe
+2026-02-12 09:42:01,006 - INFO - Elements FOUND (4): iframe
+2026-02-12 09:42:01,007 - INFO - Total iframes after clicking tab: 4
+2026-02-12 09:42:01,020 - INFO - Iframe 0 src=
+2026-02-12 09:42:01,028 - INFO - Iframe 1 src=javascript:''
+2026-02-12 09:42:01,036 - INFO - Iframe 2 src=javascript:''
+2026-02-12 09:42:01,043 - INFO - Iframe 3 src=javascript:''
+2026-02-12 09:42:01,045 - INFO - Exited iframe safely
+2026-02-12 09:42:01,047 - INFO - Attempting to enable advanced branding
+2026-02-12 09:42:01,047 - INFO - Opening Custom Branding tab
+2026-02-12 09:42:01,047 - INFO - Finding element [] (xpath, //div[contains(@id,'upcsgTabs')]//a[contains(@class,'customBranding_tab')])
+2026-02-12 09:42:01,055 - INFO - Element [] found successfully
+2026-02-12 09:42:03,075 - INFO - Total iframes found: 6
+2026-02-12 09:42:03,081 - INFO - Iframe 0 src=
+2026-02-12 09:42:03,088 - INFO - Iframe 1 src=
+2026-02-12 09:42:03,094 - INFO - Iframe 2 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=67C8E06907BC11F193C67730A2FC5E2B#!Updater
+2026-02-12 09:42:03,099 - INFO - Iframe 3 src=javascript:""
+2026-02-12 09:42:03,106 - INFO - Iframe 4 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=67C8E06907BC11F193C67730A2FC5E2B#!Branding
+2026-02-12 09:42:03,106 - INFO - Switching to iframe index 4 with src containing '#!Branding'
+2026-02-12 09:42:03,128 - INFO - Finding element [] (xpath, //label[normalize-space()='Enable advanced branding'])
+2026-02-12 09:42:03,139 - INFO - Element [] found successfully
+2026-02-12 09:42:03,140 - INFO - Custom Branding content loaded successfully
+2026-02-12 09:42:03,140 - INFO - Finding element [Enable Advanced Branding Label] (xpath, //label[normalize-space()='Enable advanced branding'])
+2026-02-12 09:42:03,152 - INFO - Element [Enable Advanced Branding Label] found successfully
+2026-02-12 09:42:03,161 - INFO - Finding element [] (xpath, //span[contains(@class,'v-checkbox')]//input[@type='checkbox'])
+2026-02-12 09:42:03,173 - INFO - Element [] found successfully
+2026-02-12 09:42:03,199 - INFO - Advanced Branding state | checked=true, aria-checked=None, class=
+2026-02-12 09:42:03,207 - INFO - [Enable advanced branding] already enabled
+2026-02-12 09:42:03,218 - INFO - Total iframes found: 6
+2026-02-12 09:42:03,224 - INFO - Iframe 0 src=
+2026-02-12 09:42:03,229 - INFO - Iframe 1 src=
+2026-02-12 09:42:03,236 - INFO - Iframe 2 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=67C8E06907BC11F193C67730A2FC5E2B#!Updater
+2026-02-12 09:42:03,241 - INFO - Iframe 3 src=javascript:""
+2026-02-12 09:42:03,247 - INFO - Iframe 4 src=https://aawgott-svc-kvm.hcm.com/ups/up-admin/?UPToken=67C8E06907BC11F193C67730A2FC5E2B#!Branding
+2026-02-12 09:42:03,247 - INFO - Switching to iframe index 4 with src containing '#!Branding'
+2026-02-12 09:42:03,258 - INFO - Waiting for Text Adjustment to be clickable
+2026-02-12 09:42:03,259 - INFO - Finding element [] (xpath, //div[@class='v-captiontext' and text()='Text adjustment'])
+2026-02-12 09:42:03,267 - INFO - Element [] found successfully
+2026-02-12 09:42:03,268 - INFO - Text Adjustment is visible
+2026-02-12 09:42:03,279 - INFO - Text adjustment option clicked successfully
+2026-02-12 09:42:03,281 - INFO - Exited iframe safely
+2026-02-12 09:42:08,284 - INFO - Attempting to sign out
+2026-02-12 09:42:08,359 - INFO - Successfully signed out
