@@ -1,7 +1,7 @@
 *** Settings ***
 Library           Libraries.web_client_library.WebClientLibrary
 Library           SeleniumLibrary
-Suite Teardown    Safe Quit Browser
+Variables         Recources/Variables.robot
 Test Teardown     Run Keyword If Test Failed    Capture Page Screenshot
 
 *** Variables ***

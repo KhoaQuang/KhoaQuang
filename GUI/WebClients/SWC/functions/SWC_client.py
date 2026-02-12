@@ -159,10 +159,12 @@ class SWC_Clients:
             options.add_experimental_option("prefs", prefs)
 
         elif browser_name == "firefox":
-            options.set_preference("media.navigator.permission.disabled", True)
-            options.set_preference("media.navigator.streams.fake", True)
+            options.set_preference("permissions.default.microphone", 1)
+            options.set_preference("permissions.default.camera", 1)
+            options.set_preference("media.navigator.permission.disabled", 1)
+            options.set_preference("media.navigator.streams.fake", 1)
 
-    def sign_in_portal(self, userportal=None, password=None):
+    def sign_in_portal(self, username=None, password=None):
         try:
             '''
                 * Function name: sign_in_portal 
@@ -173,8 +175,8 @@ class SWC_Clients:
                 * Ex: sign_in_portal  khoa  AvayaMcspv_1234$
             '''
 
-            if userportal is None:
-                userportal = self.portal_username
+            if username is None:
+                username = self.portal_username
             if password is None:
                 password = self.portal_password
 
@@ -188,7 +190,7 @@ class SWC_Clients:
             logger.info('Start function sign_in_portal')
             MeetNowPage(self.driver).click_txt_sign_in()
             BuiltIn().should_be_true(
-                MeetNowPage(self.driver).enter_user_name_password(userportal, password),
+                MeetNowPage(self.driver).enter_user_name_password(username, password),
                 'Enter user name and password failed'
             )
             logger.info('Verify sign_in_portal')
@@ -204,7 +206,7 @@ class SWC_Clients:
             actual_name = MeetNowPage(self.driver).get_user_name().lower()
             logger.info(f'Display name: {actual_name}')
 
-            if user_name in actual_name:
+            if user_name == actual_name or user_name in actual_name:
                 logger.info('Sign_in_portal successfully')
                 self.result_parallel_execute = "PASSED"
                 return True
@@ -443,6 +445,7 @@ class SWC_Clients:
             logging.info(f"Client IP: {self.client_ip}, Port: {self.client_port}, Function: {inspect.stack()[0][3]}")
             logger = logger_main
             logger.info('Start function sign_out_portal')
+            self.close_conference_window()
             BuiltIn().should_be_true(MeetNowPage(self.driver).click_txt_sign_out(), 'Handle meeting controls failed')
             time.sleep(5)
             logger.info("Successfully signed out - sign out button detected")
@@ -452,3 +455,13 @@ class SWC_Clients:
         except:
             self.result_parallel_execute = "FAILED"
             raise RuntimeError('Function exception: '+str(sys.exc_info()))
+    
+    def quit_browser(self):
+        try:
+            if hasattr(self, "driver") and self.driver:
+                self.driver.quit()
+                logger.info("Browser quit successfully")
+        except Exception as e:
+            logger.warning(f"Quit browser failed or browser already closed: {e}")
+        finally:
+            self.driver = None

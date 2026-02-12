@@ -89,13 +89,13 @@ class MeetNowPage:
             logging.error(f"Error during clicking sign in text: {e}")
             raise
 
-    def enter_user_name_password(self, userportal, password):    
+    def enter_user_name_password(self, username, password):    
         try:
             logging.info("Attempting to sign in")
             self.wait.until(lambda d: d.execute_script("return document.readyState") == "complete")
             logging.info(f"URL: {self.driver.current_url}")
-            if not userportal:
-                raise ValueError("Username (userportal) is None or empty")
+            if not username:
+                raise ValueError("Username is None or empty")
             if not password:
                 raise ValueError("Password is None or empty")
             username_el = Utility.wait_for_clickable(
@@ -106,8 +106,8 @@ class MeetNowPage:
             username_el.click()
             username_el.clear()
             logging.info(f"Entered click and clear info")
-            username_el.send_keys(userportal)
-            logging.info(f"Entered username: {userportal}")
+            username_el.send_keys(username)
+            logging.info(f"Entered username: {username}")
             password_el = Utility.wait_for_clickable(
                 self.driver,
                 self.PASSWORD_INPUT,
