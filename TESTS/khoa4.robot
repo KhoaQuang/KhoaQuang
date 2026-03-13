@@ -1,7 +1,7 @@
 *** Settings ***
 Library           Libraries.web_client_library.WebClientLibrary
 Library           SeleniumLibrary
-Suite Teardown    Safe Quit Browser
+Suite Teardown    Quit All Browsers
 Test Teardown     Run Keyword If Test Failed    Capture Page Screenshot
 Test Template     Portal Join Meeting Test
 
@@ -55,14 +55,14 @@ Portal Join Meeting Test Run 8     ${MEETINGID}
 Portal Join Meeting Test Run 9     ${MEETINGID}
 Portal Join Meeting Test Run 10    ${MEETINGID}
 Portal Join Meeting Test Run 11    ${MEETINGID}
-Portal Join Meeting Test Run 12     ${MEETINGID}
-Portal Join Meeting Test Run 13     ${MEETINGID}
-Portal Join Meeting Test Run 14     ${MEETINGID}
-Portal Join Meeting Test Run 15     ${MEETINGID}    
-Portal Join Meeting Test Run 16     ${MEETINGID}
-Portal Join Meeting Test Run 17     ${MEETINGID}
-Portal Join Meeting Test Run 18     ${MEETINGID}
-Portal Join Meeting Test Run 19     ${MEETINGID}
-Portal Join Meeting Test Run 20     ${MEETINGID}
+Portal Join Meeting Test Run 12    ${MEETINGID}
+Portal Join Meeting Test Run 13    ${MEETINGID}
+Portal Join Meeting Test Run 14    ${MEETINGID}
+Portal Join Meeting Test Run 15    ${MEETINGID}    
+Portal Join Meeting Test Run 16    ${MEETINGID}
+Portal Join Meeting Test Run 17    ${MEETINGID}
+Portal Join Meeting Test Run 18    ${MEETINGID}
+Portal Join Meeting Test Run 19    ${MEETINGID}
+Portal Join Meeting Test Run 20    ${MEETINGID}
 
 
