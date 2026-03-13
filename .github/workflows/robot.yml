@@ -28,7 +28,7 @@ jobs:
 
       - name: Run Robot Tests
         run: |
-          robot -d results TESTS/Khoa5.robot
+          robot --pythonpath . --outputdir results TESTS/Khoa5.robot
 
       - name: Upload Robot Report
         uses: actions/upload-artifact@v4
