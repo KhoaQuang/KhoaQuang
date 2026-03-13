@@ -85,13 +85,21 @@ class Web_Clients:
             self.chrome_options.add_argument("--disable-usb-discovery")
             self.chrome_options.add_argument("--ignore-certificate-errors")
             driver_path = os.path.join(self.driver_dir, "chromedriver.exe")
-            if not os.path.exists(driver_path):
-                raise FileNotFoundError(f"ChromeDriver not found at {driver_path}")
+            if os.path.exists(driver_path):
+                logging.info(f"Using local ChromeDriver: {driver_path}")
+                self.service = ChromeService(driver_path)
+                self._setup_driver("chrome", self.service, self.chrome_options)
 
-            self.service = ChromeService(driver_path)
-            self._setup_driver("chrome", self.service, self.chrome_options)
+            else:
+                logging.warning("Local ChromeDriver not found. Switching to Selenium Manager (CI mode).")
+                self.chrome_options.add_argument("--headless=new")
+                self.chrome_options.add_argument("--no-sandbox")
+                self.chrome_options.add_argument("--disable-dev-shm-usage")
+                self._setup_driver("chrome", None, self.chrome_options)
+
             logging.info(f"Navigating to URL: {self.iview_url}")
-            self.driver.get(self.iview_url) 
+            self.driver.get(self.iview_url)
+            
         except Exception as e:
             logging.error(f"Error setting up Chrome: {e}")
             raise

@@ -50,7 +50,7 @@ User A starts meeting, User B joins
     [Documentation]    Verify test case: All user join meeting then Owner terminate meeting
     Create Web Client
     ...    user_key=${OWNER}
-    ...    browser=${BROWSER_FIREFOX}
+    ...    browser=${BROWSER_CHROME}
     ...    client=${CLIENT}
     ...    portal=&{PORTAL_USER_A}
 
