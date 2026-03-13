@@ -85,6 +85,7 @@ class Web_Clients:
             self.chrome_options.add_argument("--disable-usb-discovery")
             self.chrome_options.add_argument("--ignore-certificate-errors")
             driver_path = os.path.join(self.driver_dir, "chromedriver.exe")
+            
             if os.path.exists(driver_path):
                 logging.info(f"Using local ChromeDriver: {driver_path}")
                 self.service = ChromeService(driver_path)
@@ -99,7 +100,7 @@ class Web_Clients:
 
             logging.info(f"Navigating to URL: {self.iview_url}")
             self.driver.get(self.iview_url)
-            
+
         except Exception as e:
             logging.error(f"Error setting up Chrome: {e}")
             raise
