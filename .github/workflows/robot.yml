@@ -8,7 +8,10 @@ on:
 jobs:
   robot-tests:
     runs-on: ubuntu-latest
-
+    
+    env:
+      PHOENIX_BASE_PATH: /home/runner/work/KhoaQuang/KhoaQuang
+    
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
