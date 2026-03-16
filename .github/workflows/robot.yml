@@ -11,6 +11,7 @@ jobs:
     
     env:
       PHOENIX_BASE_PATH: /home/runner/work/KhoaQuang/KhoaQuang
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     
     steps:
       - name: Checkout source
