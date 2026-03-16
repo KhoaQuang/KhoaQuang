@@ -107,7 +107,6 @@ class SWC_Clients:
     #         raise
 
     def _setup_chrome(self):
-        logging.info('%s' %self.iview_url)
         logging.info('Start function _setup_chrome')
         try:
             self.chrome_options = ChromeOptions()
@@ -131,8 +130,8 @@ class SWC_Clients:
                 self.chrome_options.add_argument("--disable-dev-shm-usage")
                 self._setup_driver("chrome", None, self.chrome_options)
 
-            logging.info(f"Navigating to URL: {self.iview_url}")
-            self.driver.get(self.iview_url)
+            logging.info(f"Navigating to URL: {self.portal_url}")
+            self.driver.get(self.portal_url)
 
         except Exception as e:
             logging.error(f"Error setting up Chrome: {e}")
