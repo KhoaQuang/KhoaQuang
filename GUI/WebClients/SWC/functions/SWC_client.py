@@ -83,25 +83,57 @@ class SWC_Clients:
             logging.error(f"Error setting up {browser_name} driver: {e}")
             raise
 
+    # def _setup_chrome(self):
+    #     logging.info('%s' %self.portal_url)
+    #     logging.info('Start function _setup_chrome')
+    #     try:
+    #         self.chrome_options = ChromeOptions()
+    #         self._configure_media_permission("chrome", self.chrome_options)
+    #         self.chrome_options.add_argument("--disable-application-cache")
+    #         self.chrome_options.add_argument("--disable-user-media-security=true")
+    #         self.chrome_options.add_argument("--incognito")
+    #         self.chrome_options.add_argument("--disable-usb-discovery")
+    #         self.chrome_options.add_argument("--ignore-certificate-errors")
+    #         driver_path = os.path.join(self.driver_dir, "chromedriver.exe")
+    #         if not os.path.exists(driver_path):
+    #             raise FileNotFoundError(f"ChromeDriver not found at {driver_path}")
+
+    #         self.service = ChromeService(driver_path)
+    #         self._setup_driver("chrome", self.service, self.chrome_options)
+    #         logging.info(f"Navigating to URL: {self.portal_url}")
+    #         self.driver.get(self.portal_url) 
+    #     except Exception as e:
+    #         logging.error(f"Error setting up Chrome: {e}")
+    #         raise
+
     def _setup_chrome(self):
-        logging.info('%s' %self.portal_url)
+        logging.info('%s' %self.iview_url)
         logging.info('Start function _setup_chrome')
         try:
             self.chrome_options = ChromeOptions()
-            self._configure_media_permission("chrome", self.chrome_options)
             self.chrome_options.add_argument("--disable-application-cache")
             self.chrome_options.add_argument("--disable-user-media-security=true")
             self.chrome_options.add_argument("--incognito")
             self.chrome_options.add_argument("--disable-usb-discovery")
             self.chrome_options.add_argument("--ignore-certificate-errors")
             driver_path = os.path.join(self.driver_dir, "chromedriver.exe")
-            if not os.path.exists(driver_path):
-                raise FileNotFoundError(f"ChromeDriver not found at {driver_path}")
 
-            self.service = ChromeService(driver_path)
-            self._setup_driver("chrome", self.service, self.chrome_options)
-            logging.info(f"Navigating to URL: {self.portal_url}")
-            self.driver.get(self.portal_url) 
+            if os.path.exists(driver_path):
+                logging.info(f"Using local ChromeDriver: {driver_path}")
+                self.service = ChromeService(driver_path)
+                self._setup_driver("chrome", self.service, self.chrome_options)
+
+            else:
+                logging.warning("Local ChromeDriver not found. Switching to Selenium Manager (CI mode).")
+                logging.info("Running Chrome setup with CI fallback")
+                self.chrome_options.add_argument("--headless=new")
+                self.chrome_options.add_argument("--no-sandbox")
+                self.chrome_options.add_argument("--disable-dev-shm-usage")
+                self._setup_driver("chrome", None, self.chrome_options)
+
+            logging.info(f"Navigating to URL: {self.iview_url}")
+            self.driver.get(self.iview_url)
+
         except Exception as e:
             logging.error(f"Error setting up Chrome: {e}")
             raise
