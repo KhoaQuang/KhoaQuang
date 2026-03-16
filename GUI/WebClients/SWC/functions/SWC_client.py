@@ -136,7 +136,7 @@ class SWC_Clients:
             else:
                 logging.warning("Local ChromeDriver not found. Switching to Selenium Manager (CI mode).")
                 logging.info("Running Chrome setup with CI fallback")
-                # self.chrome_options.add_argument("--headless=new")
+                self.chrome_options.add_argument("--headless=new")
                 self.chrome_options.add_argument("--no-sandbox")
                 self.chrome_options.add_argument("--disable-dev-shm-usage")
                 self.chrome_options.add_argument("--window-size=1920,1080")

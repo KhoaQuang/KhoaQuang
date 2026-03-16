@@ -3,7 +3,7 @@ Library           Libraries.web_client_library.WebClientLibrary
 Library           SeleniumLibrary
 # Variables         Recources/Variables.robot
 # Suite Teardown    Quit All Browsers
-Test Teardown     Run Keyword If Test Failed    Quit All Browsers
+Test Teardown    Run Keyword If Test Failed    Capture Page Screenshot
 
 *** Variables ***
 ###############################################################################
