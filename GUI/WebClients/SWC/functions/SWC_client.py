@@ -21,6 +21,7 @@ from GUI.WebClients.SWC.pom.RosterListPage import RosterListPage
 from GUI.WebClients.SWC.pom.ModeratorPage import ModeratorPage
 from Utility.Utility import Utility
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+is_ci = os.getenv("CI") == "true"
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -61,16 +62,18 @@ class SWC_Clients:
         try:
             logging.info(f"Setting up {browser_name} driver")
             if self.use_local_driver:
-                logging.info(f"Using local {browser_name} driver at {service.path}")
                 if browser_name == "chrome":
-                    if service is not None:
+                    if service:
+                        logging.info(f"Using local {browser_name} driver at {service.path}")
                         self.driver = webdriver.Chrome(service=service, options=options)
                     else:
                         logging.info("Using Selenium Manager for Chrome driver")
                         self.driver = webdriver.Chrome(options=options)
                 elif browser_name == "firefox":
+                    logging.info(f"Using local {browser_name} driver at {service.path}")
                     self.driver = webdriver.Firefox(service=service, options=options)
                 elif browser_name == "edge":
+                    logging.info(f"Using local {browser_name} driver at {service.path}")
                     self.driver = webdriver.Edge(service=service, options=options)
                 else:
                     raise ValueError(f"Unsupported browser for local driver: {browser_name}")
@@ -124,7 +127,11 @@ class SWC_Clients:
             if os.path.exists(driver_path):
                 logging.info(f"Using local ChromeDriver: {driver_path}")
                 self.service = ChromeService(driver_path)
-                self._setup_driver("chrome", self.service, self.chrome_options)
+                self._setup_driver(
+                    "chrome", 
+                    self.service, 
+                    self.chrome_options
+                )
 
             else:
                 logging.warning("Local ChromeDriver not found. Switching to Selenium Manager (CI mode).")
@@ -132,7 +139,11 @@ class SWC_Clients:
                 self.chrome_options.add_argument("--headless=new")
                 self.chrome_options.add_argument("--no-sandbox")
                 self.chrome_options.add_argument("--disable-dev-shm-usage")
-                self._setup_driver("chrome", None, self.chrome_options)
+                self._setup_driver(
+                    "chrome", 
+                    None, 
+                    self.chrome_options
+                )
 
             logging.info(f"Navigating to URL: {self.portal_url}")
             self.driver.get(self.portal_url)
