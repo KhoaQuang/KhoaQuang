@@ -63,7 +63,11 @@ class SWC_Clients:
             if self.use_local_driver:
                 logging.info(f"Using local {browser_name} driver at {service.path}")
                 if browser_name == "chrome":
-                    self.driver = webdriver.Chrome(service=service, options=options)
+                    if service is not None:
+                        self.driver = webdriver.Chrome(service=service, options=options)
+                    else:
+                        logging.info("Using Selenium Manager for Chrome driver")
+                        self.driver = webdriver.Chrome(options=options)
                 elif browser_name == "firefox":
                     self.driver = webdriver.Firefox(service=service, options=options)
                 elif browser_name == "edge":
