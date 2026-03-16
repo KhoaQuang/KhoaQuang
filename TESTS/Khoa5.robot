@@ -21,7 +21,7 @@ ${BROWSER_FIREFOX}     firefox
 ...    screenshot_dir=${CURDIR}${/}..${/}Screenshots
 
 ###############################################################################
-${IVIEW_URL}           https://10.103.3.173/iview/views/index.jsf
+${IVIEW_URL}           https://10.103.3.212/iview/views/index.jsf
 ${USERNAME}            admin
 ${PASSWORD}            AvayaMcspv_1234$
 &{IVIEW}
@@ -31,17 +31,17 @@ ${PASSWORD}            AvayaMcspv_1234$
 
 ###############################################################################
 &{PORTAL_USER_A}
-...    portal_address=https://aawgott-svc-kvm.hcm.com/portal/tenants/default/
+...    portal_address=https://esg116.hcm.com/portal/tenants/default/
 ...    portal_username=khoa
-...    portal_password=AvayaMcspv_1234$
+...    portal_password=Avaya_123$Avaya
 
 &{PORTAL_USER_B}
-...    portal_address=https://aawgott-svc-kvm.hcm.com/portal/tenants/default/
+...    portal_address=https://esg116.hcm.com/portal/tenants/default/
 ...    portal_username=khoa2
 ...    portal_password=RAPtor1234
 
 ###############################################################################
-${MEETING_ID}          4602112
+${MEETING_ID}          4402112
 ${MEETING_TOPIC}       Automation Test Meeting
 
 
