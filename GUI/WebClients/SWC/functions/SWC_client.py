@@ -139,6 +139,7 @@ class SWC_Clients:
                 self.chrome_options.add_argument("--headless=new")
                 self.chrome_options.add_argument("--no-sandbox")
                 self.chrome_options.add_argument("--disable-dev-shm-usage")
+                self.chrome_options.add_argument("--window-size=1920,1080")
                 self._setup_driver(
                     "chrome", 
                     None, 
