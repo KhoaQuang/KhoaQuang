@@ -45,11 +45,13 @@ class MeetNowPage:
         Sign in to the application
         """
         try:
+            time.sleep(20)
             Utility.is_element_visible_by_xpath(
                 self.driver,
                 self.XPATH_TXT_SIGN_IN
             )
             logger.info('Verified on text sign in')
+            time.sleep(20)
             Utility.click_element_by_xpath(
                 self.driver,
                 self.XPATH_TXT_SIGN_IN

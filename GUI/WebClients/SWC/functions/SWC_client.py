@@ -211,7 +211,7 @@ class SWC_Clients:
             logging.info("Browser launched successfully.")
             logging.info(f"Navigating to URL: {self.portal_url}")
             self.driver.get(self.portal_url) 
-            
+
         except Exception as e:
             logging.error(f"Error setting up Edge: {e}")
             raise
