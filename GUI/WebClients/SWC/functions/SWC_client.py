@@ -70,11 +70,19 @@ class SWC_Clients:
                         logging.info("Using Selenium Manager for Chrome driver")
                         self.driver = webdriver.Chrome(options=options)
                 elif browser_name == "firefox":
-                    logging.info(f"Using local {browser_name} driver at {service.path}")
-                    self.driver = webdriver.Firefox(service=service, options=options)
+                    if service:
+                        logging.info(f"Using local {browser_name} driver at {service.path}")
+                        self.driver = webdriver.Firefox(service=service, options=options)
+                    else:
+                        logging.info("Using Selenium Manager for Firefox driver")
+                        self.driver = webdriver.Firefox(options=options)
                 elif browser_name == "edge":
-                    logging.info(f"Using local {browser_name} driver at {service.path}")
-                    self.driver = webdriver.Edge(service=service, options=options)
+                    if service:
+                        logging.info(f"Using local {browser_name} driver at {service.path}")
+                        self.driver = webdriver.Edge(service=service, options=options)
+                    else:
+                        logging.info("Using Selenium Manager for Edge driver")
+                        self.driver = webdriver.Edge(options=options)
                 else:
                     raise ValueError(f"Unsupported browser for local driver: {browser_name}")
             else:
@@ -90,28 +98,6 @@ class SWC_Clients:
             logging.error(f"Error setting up {browser_name} driver: {e}")
             raise
 
-    # def _setup_chrome(self):
-    #     logging.info('%s' %self.portal_url)
-    #     logging.info('Start function _setup_chrome')
-    #     try:
-    #         self.chrome_options = ChromeOptions()
-    #         self._configure_media_permission("chrome", self.chrome_options)
-    #         self.chrome_options.add_argument("--disable-application-cache")
-    #         self.chrome_options.add_argument("--disable-user-media-security=true")
-    #         self.chrome_options.add_argument("--incognito")
-    #         self.chrome_options.add_argument("--disable-usb-discovery")
-    #         self.chrome_options.add_argument("--ignore-certificate-errors")
-    #         driver_path = os.path.join(self.driver_dir, "chromedriver.exe")
-    #         if not os.path.exists(driver_path):
-    #             raise FileNotFoundError(f"ChromeDriver not found at {driver_path}")
-
-    #         self.service = ChromeService(driver_path)
-    #         self._setup_driver("chrome", self.service, self.chrome_options)
-    #         logging.info(f"Navigating to URL: {self.portal_url}")
-    #         self.driver.get(self.portal_url) 
-    #     except Exception as e:
-    #         logging.error(f"Error setting up Chrome: {e}")
-    #         raise
 
     def _setup_chrome(self):
         logging.info('Start function _setup_chrome')
@@ -161,14 +147,33 @@ class SWC_Clients:
             self.firefox_options.add_argument("--disable-application-cache")
             self.firefox_options.add_argument("--disable-popup-blocking")
             driver_path = os.path.join(self.driver_dir, "geckodriver.exe")
-            if not os.path.exists(driver_path):
-                raise FileNotFoundError(f"GeckoDriver not found at {driver_path}")
 
-            self.service = FirefoxService(driver_path)
-            self._setup_driver("firefox", self.service, self.firefox_options)
+            if os.path.exists(driver_path):
+                logging.info(f"Using local FirefoxDriver: {driver_path}")
+                self.service = FirefoxService(driver_path)
+                self._setup_driver(
+                    "firefox", 
+                    self.service, 
+                    self.firefox_options
+                )
+
+            else:
+                logging.warning("Local FirefoxDriver not found. Switching to Selenium Manager (CI mode).")
+                logging.info("Running Firefox setup with CI fallback")
+                self.firefox_options.add_argument("--headless")
+                self.firefox_options.add_argument("--no-sandbox")
+                self.firefox_options.add_argument("--disable-dev-shm-usage")
+                self.firefox_options.add_argument("--window-size=1920,1080")
+                self._setup_driver(
+                    "firefox", 
+                    None, 
+                    self.firefox_options
+                )
+
             logging.info("Browser launched successfully.")
             logging.info(f"Navigating to URL: {self.portal_url}")
             self.driver.get(self.portal_url)
+
         except Exception as e:
             logging.error(f"Error setting up Firefox: {e}")
             raise
@@ -181,14 +186,32 @@ class SWC_Clients:
             self.edge_options.add_argument("--disable-popup-blocking")
             self.edge_options.add_argument("--ignore-certificate-errors")
             driver_path = os.path.join(self.driver_dir, "msedgedriver.exe")
-            if not os.path.exists(driver_path):
-                raise FileNotFoundError(f"EdgeDriver not found at {driver_path}")
 
-            self.service = EdgeService(driver_path)
-            self._setup_driver("edge", self.service, self.edge_options)
+            if os.path.exists(driver_path):
+                logging.info(f"Using local EdgeDriver: {driver_path}")
+                self.service = EdgeService(driver_path)
+                self._setup_driver(
+                    "edge", 
+                    self.service, 
+                    self.edge_options
+                )
+            else:
+                logging.warning("Local EdgeDriver not found. Switching to Selenium Manager (CI mode).")
+                logging.info("Running Edge setup with CI fallback")
+                self.edge_options.add_argument("--headless=new")
+                self.edge_options.add_argument("--no-sandbox")
+                self.edge_options.add_argument("--disable-dev-shm-usage")
+                self.edge_options.add_argument("--window-size=1920,1080")
+                self._setup_driver(
+                    "edge", 
+                    None, 
+                    self.edge_options
+                )
+
             logging.info("Browser launched successfully.")
             logging.info(f"Navigating to URL: {self.portal_url}")
             self.driver.get(self.portal_url) 
+            
         except Exception as e:
             logging.error(f"Error setting up Edge: {e}")
             raise
