@@ -271,6 +271,7 @@ class SWC_Clients:
             logger.exception("Sign in portal failed")
             raise
 
+
     def verify_sign_in_portal(self, user_name):
         try:
             actual_name = MeetNowPage(self.driver).get_user_name().lower()
