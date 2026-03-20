@@ -1,7 +1,0 @@
-{
-    "python.analysis.typeCheckingMode": "basic",
-    "robot.pythonpath": [
-        "${workspaceFolder}",
-        "e:\\Backupwin11\\Launch-auto"
-    ]
-}
