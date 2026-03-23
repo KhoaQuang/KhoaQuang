@@ -27,9 +27,12 @@ jobs:
         run: npx playwright install --with-deps
 
       # - run: ls -R
+      - name: Print test titles
+        run: npx playwright test --list
 
       - name: Run Tests
-        run: npx playwright test TESTS/login.descr.spec.ts --reporter=html
+        # run: npx playwright test TESTS/login.descr.spec.ts
+        run: npx playwright test TESTS/example.spec.ts
 
       - name: Upload HTML Report
         if: always()   # 🔥 rất quan trọng
