@@ -26,10 +26,10 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - run: ls -R
+      # - run: ls -R
 
       - name: Run Tests
-        run: npx playwright test tests --reporter=html
+        run: npx playwright test TESTS/login.descr.spec.ts --reporter=html
 
       - name: Upload HTML Report
         if: always()   # 🔥 rất quan trọng
