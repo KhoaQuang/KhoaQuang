@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: 'npm'   # 🔥 thêm cache cho nhanh
 
       - name: Install dependencies
@@ -27,7 +27,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Tests
-        run: npx playwright test --reporter=html
+        run: npx playwright tests/login.descr.spec.ts --reporter=html
 
       - name: Upload HTML Report
         if: always()   # 🔥 rất quan trọng
