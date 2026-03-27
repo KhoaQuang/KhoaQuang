@@ -1,0 +1,22 @@
+[
+  {
+    "username": "admin",
+    "password": "AvayaMcspv_1234$",
+    "expected": "success"
+  },
+  {
+    "username": "admin",
+    "password": "wrong123",
+    "expected": "fail"
+  },
+  {
+    "username": "",
+    "password": "123",
+    "expected": "fail"
+  },
+  {
+    "username": "' OR 1=1 --",
+    "password": "123",
+    "expected": "fail"
+  }
+]
