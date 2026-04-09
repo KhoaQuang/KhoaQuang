@@ -38,22 +38,23 @@ import loginData from '../data/loginData.json';
 
 test.describe('Login Data Driven', () => {
 
-  loginData.forEach((data) => {
+  loginData.forEach((data, index) => {
+    test.describe(`User ${index}`, () => {
+      test(`With ${data.username}`, async ({ page }) => {
+        const loginPage = new LoginPage(page);
 
-    test(`Login with ${data.username}`, async ({ page }) => {
-      const loginPage = new LoginPage(page);
+        await loginPage.goto();
+        await loginPage.login(data.username, data.password);
 
-      await loginPage.goto();
-      await loginPage.login(data.username, data.password);
+        if (data.expected === 'success') {
+          await expect(page).toHaveURL(/iview/);
+        } else {
+          await expect(page.locator('.error')).toBeVisible();
+        }
 
-      if (data.expected === 'success') {
-        await expect(page).toHaveURL(/iview/);
-      } else {
-        await expect(page.locator('.error')).toBeVisible();
-      }
+      });
 
     });
-
   });
 
 });

@@ -1,6 +1,6 @@
 import { devices } from '@playwright/test';
 import { test, expect } from '../fixtures/test-fixtures';
-import { LoginPage } from '../pages/login.page';
+// import { LoginPage } from '../pages/login.page';
 // import { ENV } from '../utils/env';
 
 test.describe('Login Tests', () => {

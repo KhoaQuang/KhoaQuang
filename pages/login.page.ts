@@ -24,9 +24,9 @@ export class LoginPage {
     await this.page.goto(ENV.baseUrl);
   }
 
-  async login() {
-    await this.usernameInput.fill(ENV.username);
-    await this.passwordInput.fill(ENV.password);
+  async login(username:any , password:any) {
+    await this.usernameInput.fill(username);
+    await this.passwordInput.fill(password);
     await this.signInButton.click();
   }
 
